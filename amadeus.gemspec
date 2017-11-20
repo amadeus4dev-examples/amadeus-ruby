@@ -6,8 +6,8 @@ require "amadeus/version"
 Gem::Specification.new do |spec|
   spec.name          = "amadeus"
   spec.version       = Amadeus::VERSION
-  spec.authors       = ["Cristiano Betta"]
-  spec.email         = ["cristiano@betta.io"]
+  spec.authors       = ["Amadeus", "Cristiano Betta"]
+  spec.email         = ["developer@amadeus.com", "cristiano@betta.io"]
 
   spec.summary       = "Ruby library for the Amadeus travel APIs"
   spec.description   = "Ruby library for the Amadeus travel APIs"
