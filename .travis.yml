@@ -1,5 +1,21 @@
-sudo: false
 language: ruby
+cache: bundler
 rvm:
-  - 2.4.1
-before_install: gem install bundler -v 1.15.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - ruby-head
+  - jruby
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby
+before_install:
+  - gem update bundler
+deploy:
+  provider: rubygems
+  email: developer@amadeus.com
+  api_key:
+    secure: [insert travis key]
+  on:
+    tags: true

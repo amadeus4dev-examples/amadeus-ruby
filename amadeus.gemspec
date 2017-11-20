@@ -9,13 +9,13 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Cristiano Betta"]
   spec.email         = ["cristiano@betta.io"]
 
-  spec.summary       = "Placeholder gem for Amadeus API"
-  spec.description   = "Placeholder gem for Amadeus API"
-  spec.homepage      = "https://github.com/cbetta/amadeus"
+  spec.summary       = "Ruby library for the Amadeus travel APIs"
+  spec.description   = "Ruby library for the Amadeus travel APIs"
+  spec.homepage      = "https://github.com/amadeusdev/amadeus-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
+    f.match(%r{^(test|spec|features|bin|.github)/})
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
