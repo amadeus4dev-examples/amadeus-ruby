@@ -46,8 +46,8 @@ The client can be initialized directly or via environment variables.
 amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
 
 # Alternative: Initialize using environment variables
-# * AMADEUS_CLIENT_ID
-# * AMADEUS_CLIENT_SECRET
+# * AMADEUS_API_KEY
+# * AMADEUS_API_SECRET
 amadeus = Amadeus::Client.new
 ```
 
