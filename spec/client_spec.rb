@@ -77,8 +77,6 @@ RSpec.describe Amadeus::Client do
       end
     end
   end
-<<<<<<< HEAD
-=======
 
   describe 'with an instance' do
     before do
@@ -112,5 +110,4 @@ RSpec.describe Amadeus::Client do
       end
     end
   end
->>>>>>> Add client ready for authentication
 end

@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-require 'net/https'
-require 'json'
-=======
 # require 'net/https'
 # require 'json'
->>>>>>> Add client ready for authentication
 require 'logger'
 
 module Amadeus
@@ -32,8 +27,6 @@ module Amadeus
       @logger.level = initialize_optional(:log_level, options, Logger::WARN)
     end
 
-<<<<<<< HEAD
-=======
     # The namespace for the checkin links and locations APIs:
     #
     #   amadeus.reference_data.urls.checkin_links
@@ -64,7 +57,6 @@ module Amadeus
       Amadeus::Client::Travel.new(self)
     end
 
->>>>>>> Add client ready for authentication
     private
 
     def initialize_required(key, options)
