@@ -6,7 +6,12 @@ module Amadeus
   # The Amadeus client library for accessing
   # the travel APIs.
   class Client
-    attr_reader :api_key, :api_secret, :logger
+    # The API key used to authenticate against the API
+    attr_reader :api_key
+    # The API secret used to authenticate against the API
+    attr_reader :api_secret
+    # The logger used to output warnings and debug messages
+    attr_reader :logger
 
     # Initialize using your credentials:
     #
@@ -59,12 +64,19 @@ module Amadeus
 
     private
 
+    # Tries to find a required option by string, symbol,
+    # or environment variable.
+    #
+    # If it can not find any, it raises an +ArgumentError+
     def initialize_required(key, options)
-      initialize_optional(key, options, nil) ||
+      initialize_optional(key, options) ||
         raise(ArgumentError, "Missing required argument: #{key}")
     end
 
-    def initialize_optional(key, options, default)
+    # Tries to find an option option by string, symbol,
+    # and when it can not find it defaults to the provided
+    # default option.
+    def initialize_optional(key, options, default = nil)
       options[key] ||
         options[key.to_s] ||
         ENV["AMADEUS_#{key.to_s.upcase}"] ||
