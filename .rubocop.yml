@@ -1,0 +1,6 @@
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+Layout/SpaceBeforeBlockBraces:
+  Exclude:
+    - "**/*_spec.rb"
