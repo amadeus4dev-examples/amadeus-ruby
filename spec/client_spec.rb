@@ -77,4 +77,40 @@ RSpec.describe Amadeus::Client do
       end
     end
   end
+<<<<<<< HEAD
+=======
+
+  describe 'with an instance' do
+    before do
+      @amadeus = Amadeus::Client.new(
+        api_key: '123',
+        api_secret: '234'
+      )
+    end
+
+    describe '.reference_data' do
+      it 'should return a Amadeus::Client::ReferenceData object' do
+        expect(@amadeus.reference_data).to(
+          be_instance_of Amadeus::Client::ReferenceData
+        )
+      end
+    end
+
+    describe '.shopping' do
+      it 'should return a Amadeus::Client::Shopping object' do
+        expect(@amadeus.shopping).to(
+          be_instance_of Amadeus::Client::Shopping
+        )
+      end
+    end
+
+    describe '.travel' do
+      it 'should return a Amadeus::Client::Travel object' do
+        expect(@amadeus.travel).to(
+          be_instance_of Amadeus::Client::Travel
+        )
+      end
+    end
+  end
+>>>>>>> Add client ready for authentication
 end
