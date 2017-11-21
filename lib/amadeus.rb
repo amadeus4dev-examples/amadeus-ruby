@@ -1,5 +1,2 @@
-require "amadeus/version"
-
-module Amadeus
-  # Your code goes here...
-end
+require 'amadeus/version'
+require 'amadeus/client'
