@@ -43,7 +43,7 @@ The client can be initialized directly or via environment variables.
 
 ```ruby
 # Initialize using parameters
-amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
+amadeus = Amadeus::Client.new(api_key: '...', api_secret: '...')
 
 # Alternative: Initialize using environment variables
 # * AMADEUS_API_KEY
@@ -60,20 +60,24 @@ __Next__: [Learn more about our initializing the Ruby SDK](https://developer.ama
 The SDK makes it easy to add your own logger.
 
 ```ruby
+require 'logger'
+
 amadeus = Amadeus::Client.new(
-  client_id: '...',
-  client_secret: '...',
-  logger: MyOwnLogger.new
+  api_key: '...',
+  api_secret: '...',
+  logger: Logger.new(STDOUT)
 )
 ```
 
 Additionally, to enable more verbose logging, you can set the appropriate level either via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
 
 ```ruby
+require 'logger'
+
 amadeus = Amadeus::Client.new(
-  client_id: '...',
-  client_secret: '...',
-  log_level: 1 # defaults to silent, 0
+  api_key: '...',
+  api_secret: '...',
+  log_level: Logger::DEBUG # defaults to Logger::WARN, aka "2"
 )
 ```
 
