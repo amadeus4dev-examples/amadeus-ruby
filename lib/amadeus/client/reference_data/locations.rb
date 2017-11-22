@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.reference_data.locations
       #
-      class Locations < Amadeus::Client::Base
+      class Locations < Amadeus::Client::Decorator
         # The namespace for the Airports API:
         #
         #   amadeus.reference_data.locations.airports

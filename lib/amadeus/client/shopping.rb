@@ -8,7 +8,7 @@ module Amadeus
     #   amadeus = Amadeus::Client.new
     #   amadeus.shopping
     #
-    class Shopping < Amadeus::Client::Base
+    class Shopping < Amadeus::Client::Decorator
       # The namespace for the FlightDestinations API:
       #
       #   amadeus.shopping.flight_destinations

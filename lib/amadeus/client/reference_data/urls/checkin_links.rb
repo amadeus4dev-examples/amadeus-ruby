@@ -10,7 +10,7 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.reference_data.urls.checkin_links
         #
-        class CheckinLinks < Amadeus::Client::Base
+        class CheckinLinks < Amadeus::Client::Decorator
         end
       end
     end

@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.shopping.hotels
       #
-      class Hotels < Amadeus::Client::Base
+      class Hotels < Amadeus::Client::Decorator
         # The namespace for the Offers API:
         #
         #   amadeus.shopping.hotels,offers

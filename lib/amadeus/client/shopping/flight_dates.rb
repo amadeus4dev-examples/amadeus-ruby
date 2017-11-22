@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.shopping.flight_dates
       #
-      class FlightDates < Amadeus::Client::Base
+      class FlightDates < Amadeus::Client::Decorator
       end
     end
   end

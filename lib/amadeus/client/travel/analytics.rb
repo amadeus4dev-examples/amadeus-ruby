@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.travel.analytics
       #
-      class Analytics < Amadeus::Client::Base
+      class Analytics < Amadeus::Client::Decorator
         # The namespace for the AirTraffics API:
         #
         #   amadeus.travel.analytics.air_traffics
