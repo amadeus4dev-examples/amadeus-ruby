@@ -10,7 +10,7 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.reference_data.locations.airports
         #
-        class Airports < Amadeus::Client::Base
+        class Airports < Amadeus::Client::Decorator
         end
       end
     end

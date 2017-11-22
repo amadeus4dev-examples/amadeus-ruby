@@ -1,7 +1,8 @@
 module Amadeus
   class Client
-    # A base namespaced client
-    class Base
+    # A superclass that allows any namespaced superclass
+    # to easily wrap the client object
+    class Decorator
       # The +Amadeus::Client+ instance used to make API calls
       attr_reader :client
 

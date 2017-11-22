@@ -10,7 +10,7 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.travel.analytics.air_traffics
         #
-        class AirTraffics < Amadeus::Client::Base
+        class AirTraffics < Amadeus::Client::Decorator
         end
       end
     end

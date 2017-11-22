@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.reference_data.urls
       #
-      class Urls < Amadeus::Client::Base
+      class Urls < Amadeus::Client::Decorator
         # The namespace for the CheckinLinks APIs:
         #
         #   amadeus.reference_data.urls.checkin_links

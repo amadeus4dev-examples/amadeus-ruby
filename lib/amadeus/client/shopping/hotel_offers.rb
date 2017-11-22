@@ -9,7 +9,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.shopping.hotel_offers
       #
-      class HotelOffers < Amadeus::Client::Base
+      class HotelOffers < Amadeus::Client::Decorator
       end
     end
   end
