@@ -11,6 +11,17 @@ module Amadeus
         #   amadeus.reference_data.urls.checkin_links
         #
         class CheckinLinks < Amadeus::Client::Decorator
+          # Returns the checkin links for an airline, for the
+          # language of your choice
+          #
+          #   response = amadeus.reference_data.urls.checkin_links.get(
+          #     airline: '1X',
+          #     language: 'en-GB'
+          #   )
+          #
+          def get(params = {})
+            client.get('/v2/reference-data/urls/checkin-links', params)
+          end
         end
       end
     end
