@@ -1,12 +1,20 @@
-require 'net/https'
-require 'json'
 require 'logger'
+require 'amadeus/client/validator'
+require 'amadeus/client/namespaces'
 
 module Amadeus
   # The Amadeus client library for accessing
   # the travel APIs.
   class Client
-    attr_reader :api_key, :api_secret, :logger
+    include Validator
+    include Namespaces
+
+    # The API key used to authenticate against the API
+    attr_reader :api_key
+    # The API secret used to authenticate against the API
+    attr_reader :api_secret
+    # The logger used to output warnings and debug messages
+    attr_reader :logger
 
     # Initialize using your credentials:
     #
@@ -23,26 +31,8 @@ module Amadeus
     def initialize(options = {})
       @api_key = initialize_required(:api_key, options)
       @api_secret = initialize_required(:api_secret, options)
-      @logger = initialize_logger(options)
+      @logger = initialize_optional(:logger, options, Logger.new(STDOUT))
       @logger.level = initialize_optional(:log_level, options, Logger::WARN)
-    end
-
-    private
-
-    def initialize_required(key, options)
-      initialize_optional(key, options, nil) ||
-        raise(ArgumentError, "Missing required argument: #{key}")
-    end
-
-    def initialize_optional(key, options, default)
-      options[key] ||
-        options[key.to_s] ||
-        ENV["AMADEUS_#{key.to_s.upcase}"] ||
-        default
-    end
-
-    def initialize_logger(options)
-      options[:logger] || options['logger'] || Logger.new(STDOUT)
     end
   end
 end

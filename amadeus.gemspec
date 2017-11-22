@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'awesome_print', '~> 1.8.0'
   spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'guard', '~> 2.14.1'
+  spec.add_development_dependency 'guard-rake', '~> 1.0.0'
   spec.add_development_dependency 'rake', '~> 12.3'
   spec.add_development_dependency 'rspec', '~> 3.7'
   spec.add_development_dependency 'rubocop', '~> 0.51.0'
