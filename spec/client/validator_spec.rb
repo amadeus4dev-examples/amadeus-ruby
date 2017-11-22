@@ -72,5 +72,33 @@ RSpec.describe Amadeus::Client::Validator do
         expect(amadeus.logger.level).to eq(Logger::FATAL)
       end
     end
+
+    it 'should warn when an unrecognized option is passed in' do
+      logger = double('Logger')
+      allow(logger).to receive(:level=).with(2)
+      expect(logger).to receive(:warn).with('Amadeus::Client::Validator')
+
+      @valid_params[:logger] = logger
+      @valid_params[:foobar] = 'test'
+      Amadeus::Client.new(@valid_params)
+    end
+
+    it 'should default to the test host' do
+      amadeus = Amadeus::Client.new(@valid_params)
+      expect(amadeus.host).to eq(Amadeus::Client::HOSTS[:test])
+    end
+
+    it 'should allow for setting a different hostname' do
+      @valid_params[:hostname] = 'production'
+      amadeus = Amadeus::Client.new(@valid_params)
+      expect(amadeus.host).to eq(Amadeus::Client::HOSTS[:production])
+    end
+
+    it 'should allow for setting a full different host' do
+      host = 'http://foo.bar.com/'
+      @valid_params[:host] = host
+      amadeus = Amadeus::Client.new(@valid_params)
+      expect(amadeus.host).to eq(host)
+    end
   end
 end

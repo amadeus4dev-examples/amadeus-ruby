@@ -21,6 +21,16 @@ module Amadeus
           ENV["AMADEUS_#{key.to_s.upcase}"] ||
           default
       end
+
+      # Warns the user when an unrecognized option is passed in
+      def warn_on_unrecognized_options(options, logger, recognized_options)
+        options.each_key do |key|
+          next if recognized_options.include?(key.to_sym)
+          logger.warn('Amadeus::Client::Validator') do
+            "Unrecognized option: #{key}"
+          end
+        end
+      end
     end
   end
 end
