@@ -1,6 +1,8 @@
 require 'amadeus/response/parser'
 
 module Amadeus
+  # A wrapper for a HTTP response. Parses the data into a
+  # JSON object if the response was JSON
   class Response
     include Parser
 
@@ -17,7 +19,7 @@ module Amadeus
 
     def log_response
       logger.debug('Amadeus::Response') do
-        "#{http_response.class.name} - #{http_response.body}"
+        "#{http_response.class.name}\n#{http_response.body}"
       end
     end
   end

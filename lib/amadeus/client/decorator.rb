@@ -9,7 +9,7 @@ module Amadeus
       # Initialize the namespaced client with an
       # Amadeus::Client instance
       def initialize(client)
-        if client.nil? || !client.instance_of?(Amadeus::Client)
+        if client.nil?
           raise(ArgumentError, 'Missing required parameter: Amadeus::Client')
         end
         @client = client
