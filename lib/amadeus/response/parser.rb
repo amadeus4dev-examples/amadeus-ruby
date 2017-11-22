@@ -4,8 +4,10 @@ module Amadeus
   class Response
     # Helper methods to parse a response
     module Parser
+      private
+
       def parse_response
-        logger.debug('Amadeus::Response::Parser') { http_response.class.name }
+        @logger.debug('Amadeus::Response::Parser') { http_response.class.name }
 
         @data = parse_json(http_response)
 
