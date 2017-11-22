@@ -10,6 +10,13 @@ module Amadeus
       #   amadeus.shopping.hotels
       #
       class Hotels < Amadeus::Client::Base
+        # The namespace for the hotels offers API:
+        #
+        #   amadeus.shopping.hotels,offers
+        #
+        def offers
+          Amadeus::Client::Shopping::Hotels::Offers.new(client)
+        end
       end
     end
   end
