@@ -9,7 +9,7 @@ module Amadeus
     #   amadeus.travel
     #
     class Travel < Amadeus::Client::Base
-      # The namespace for the travel analytics APIs:
+      # The namespace for the travel Analytics APIs:
       #
       #   amadeus.travel.analytics.air_traffics
       #   amadeus.travel.analytics.fare_searches

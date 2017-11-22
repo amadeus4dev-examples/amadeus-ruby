@@ -9,7 +9,7 @@ module Amadeus
     #   amadeus.shopping
     #
     class Shopping < Amadeus::Client::Base
-      # The namespace for the flight_destinations API:
+      # The namespace for the FlightDestinations API:
       #
       #   amadeus.shopping.flight_destinations
       #
@@ -17,7 +17,7 @@ module Amadeus
         Amadeus::Client::Shopping::FlightDestinations.new(client)
       end
 
-      # The namespace for the flight_offers API:
+      # The namespace for the FlightOffers API:
       #
       #   amadeus.shopping.flight_offers
       #
@@ -25,7 +25,7 @@ module Amadeus
         Amadeus::Client::Shopping::FlightOffers.new(client)
       end
 
-      # The namespace for the flight_dates API:
+      # The namespace for the FlightDates API:
       #
       #   amadeus.shopping.flight_dates
       #
@@ -33,7 +33,7 @@ module Amadeus
         Amadeus::Client::Shopping::FlightDates.new(client)
       end
 
-      # The namespace for the hotel_offers API:
+      # The namespace for the HotelOffers API:
       #
       #   amadeus.shopping.hotel_offers
       #
@@ -41,7 +41,7 @@ module Amadeus
         Amadeus::Client::Shopping::HotelOffers.new(client)
       end
 
-      # The namespace for the hotels API:
+      # The namespace for the Hotels API:
       #
       #   amadeus.shopping.hotels
       #

@@ -10,7 +10,7 @@ module Amadeus
       #   amadeus.reference_data.locations
       #
       class Locations < Amadeus::Client::Base
-        # The namespace for the airport locations API:
+        # The namespace for the Airports API:
         #
         #   amadeus.reference_data.locations.airports
         #
