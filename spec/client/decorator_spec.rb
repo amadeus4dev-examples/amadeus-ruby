@@ -30,12 +30,6 @@ RSpec.describe Amadeus::Client::Decorator do
         raise_error(ArgumentError)
       )
     end
-
-    it 'should raise an error with the wrong kind of client' do
-      expect{ Amadeus::Client::Decorator.new('test') }.to(
-        raise_error(ArgumentError)
-      )
-    end
   end
 
   describe 'with an instance' do

@@ -1,7 +1,7 @@
 require 'logger'
 require 'amadeus/client/validator'
 require 'amadeus/client/namespaces'
-require 'amadeus/client/http'
+require 'amadeus/client/request'
 
 module Amadeus
   # The Amadeus client library for accessing
@@ -9,7 +9,7 @@ module Amadeus
   class Client
     include Validator
     include Namespaces
-    include HTTP
+    include Request
 
     # The API key used to authenticate against the API
     attr_reader :api_key

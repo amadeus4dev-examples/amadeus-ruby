@@ -19,6 +19,9 @@ module Amadeus
           #     language: 'en-GB'
           #   )
           #
+          #   p response.data
+          #   # {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.ama...
+          #
           def get(params = {})
             client.get('/v2/reference-data/urls/checkin-links', params)
           end
