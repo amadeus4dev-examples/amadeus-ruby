@@ -10,7 +10,7 @@ module Amadeus
       #   amadeus.travel.analytics
       #
       class Analytics < Amadeus::Client::Base
-        # The namespace for the air traffics API:
+        # The namespace for the AirTraffics API:
         #
         #   amadeus.travel.analytics.air_traffics
         #
@@ -18,7 +18,7 @@ module Amadeus
           Amadeus::Client::Travel::Analytics::AirTraffics.new(client)
         end
 
-        # The namespace for the fare searches API:
+        # The namespace for the FareSearches API:
         #
         #   amadeus.travel.analytics.fare_searches
         #

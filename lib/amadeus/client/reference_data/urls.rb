@@ -10,7 +10,7 @@ module Amadeus
       #   amadeus.reference_data.urls
       #
       class Urls < Amadeus::Client::Base
-        # The namespace for the checkin links APIs:
+        # The namespace for the CheckinLinks APIs:
         #
         #   amadeus.reference_data.urls.checkin_links
         #
