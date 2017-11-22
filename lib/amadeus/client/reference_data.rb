@@ -9,6 +9,22 @@ module Amadeus
     #   amadeus.reference_data
     #
     class ReferenceData < Amadeus::Client::Base
+      # The namespace for the checkin links APIs:
+      #
+      #   amadeus.reference_data.urls.checkin_links
+      #
+      def urls
+        Amadeus::Client::ReferenceData::Urls.new(client)
+      end
+
+      # The namespace for the location APIs:
+      #
+      #   amadeus.reference_data.locations
+      #   amadeus.reference_data.locations.airports
+      #
+      def locations
+        Amadeus::Client::ReferenceData::Locations.new(client)
+      end
     end
   end
 end
