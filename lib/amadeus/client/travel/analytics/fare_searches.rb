@@ -10,7 +10,7 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.travel.analytics.fair_searches
         #
-        class FairSearches < Amadeus::Client::Base
+        class FareSearches < Amadeus::Client::Base
         end
       end
     end

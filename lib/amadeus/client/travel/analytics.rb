@@ -22,7 +22,7 @@ module Amadeus
         #
         #   amadeus.travel.analytics.fare_searches
         #
-        def fair_searches
+        def fare_searches
           Amadeus::Client::Travel::Analytics::FareSearches.new(client)
         end
       end

@@ -15,7 +15,9 @@ require 'amadeus/client/shopping/flight_dates'
 require 'amadeus/client/shopping/hotel_offers'
 require 'amadeus/client/shopping/hotels'
 require 'amadeus/client/shopping/hotels/offers'
-
+require 'amadeus/client/travel/analytics'
+require 'amadeus/client/travel/analytics/fare_searches'
+require 'amadeus/client/travel/analytics/air_traffics'
 
 # The namespace for the files used to make API
 # calls to the Amadeus travel APIs
