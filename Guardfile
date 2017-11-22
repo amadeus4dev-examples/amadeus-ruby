@@ -15,6 +15,6 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'rake', :task => 'spec' do
-  watch(%r{^(.*).rb})
+guard 'rake', task: :default do
+  watch(/^(.*).rb/)
 end
