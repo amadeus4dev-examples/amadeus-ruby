@@ -12,7 +12,9 @@ module Amadeus
       class Hotels < Amadeus::Client::Decorator
         # The namespace for the Offers API:
         #
-        #   amadeus.shopping.hotels,offers
+        # @return [Amadeus::Client::Shopping::Hotels::Offers]
+        # @example
+        #   amadeus.shopping.hotels.offers
         #
         def offers
           Amadeus::Client::Shopping::Hotels::Offers.new(client)

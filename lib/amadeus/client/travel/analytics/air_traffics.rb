@@ -3,7 +3,7 @@ module Amadeus
     class Travel
       class Analytics
         # A namespaced client for the
-        # +/v1/travel/analytics/air_traffics+ endpoints
+        # +/v1/travel/analytics/air-traffics+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #

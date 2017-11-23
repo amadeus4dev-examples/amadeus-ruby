@@ -1,9 +1,20 @@
 module Amadeus
   class Client
-    # The root namespaces for this client
+    # The namespaces that allow this API to map the paths
+    # of the API to similar calls on the SDK
+    #
+    # Access via the +Amadeus::Client+ object
+    #
+    #   amadeus = Amadeus::Client.new
+    #   amadeus.reference_data
+    #   amadeus.shopping
+    #   amadeus.travel
+    #
     module Namespaces
       # The namespace for the checkin links and locations APIs:
       #
+      # @return [Amadeus::Client::ReferenceData]
+      # @example Some of the further namespaces available
       #   amadeus.reference_data.urls.checkin_links
       #   amadeus.reference_data.locations
       #
@@ -13,6 +24,8 @@ module Amadeus
 
       # The namespace for the shopping APIs:
       #
+      # @return [Amadeus::Client::Shopping]
+      # @example Some of the further namespaces available
       #   amadeus.shopping.flight_destinations
       #   amadeus.shopping.flight_offers
       #   amadeus.shopping.flight_dates
@@ -25,6 +38,8 @@ module Amadeus
 
       # The namespace for the travel analytics APIs:
       #
+      # @return [Amadeus::Client::Travel]
+      # @example Some of the further namespaces available
       #   amadeus.travel.analytics.air_traffics
       #   amadeus.travel.analytics.fare_searches
       #

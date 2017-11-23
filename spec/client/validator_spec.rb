@@ -4,8 +4,8 @@ RSpec.describe Amadeus::Client::Validator do
   describe 'Amadeus::Client.initialize' do
     before do
       @valid_params = {
-        api_key: '1234',
-        api_secret: '4546'
+        client_id: '1234',
+        client_secret: '4546'
       }
     end
 
@@ -17,8 +17,8 @@ RSpec.describe Amadeus::Client::Validator do
 
     it 'should create a new client with string-key variables' do
       params = {
-        'api_key' => '1234',
-        'api_secret' => '4546'
+        'client_id' => '1234',
+        'client_secret' => '4546'
       }
 
       expect(Amadeus::Client.new(params)).to(
@@ -27,19 +27,19 @@ RSpec.describe Amadeus::Client::Validator do
     end
 
     it 'should create a new client with environment variables' do
-      ENV['AMADEUS_API_KEY'] = '123'
-      ENV['AMADEUS_API_SECRET'] = '234'
+      ENV['AMADEUS_CLIENT_ID'] = '123'
+      ENV['AMADEUS_CLIENT_SECRET'] = '234'
 
       expect(Amadeus::Client.new).to(
         be_instance_of(Amadeus::Client)
       )
 
-      ENV.delete('AMADEUS_API_KEY')
-      ENV.delete('AMADEUS_API_SECRET')
+      ENV.delete('AMADEUS_CLIENT_ID')
+      ENV.delete('AMADEUS_CLIENT_SECRET')
     end
 
     describe 'with missing parameters' do
-      %i[api_key api_secret].each do |key|
+      %i[client_id client_secret].each do |key|
         it "should refuse to create a new client without #{key}" do
           @valid_params.delete(key)
           expect{ Amadeus::Client.new(@valid_params) }.to(

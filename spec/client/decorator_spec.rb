@@ -3,8 +3,8 @@ require 'spec_helper'
 RSpec.describe Amadeus::Client::Decorator do
   before do
     @amadeus = Amadeus::Client.new(
-      api_key: '123',
-      api_secret: '234'
+      client_id: '123',
+      client_secret: '234'
     )
   end
 
@@ -26,7 +26,7 @@ RSpec.describe Amadeus::Client::Decorator do
     end
 
     it 'should raise an error with a nil client' do
-      expect{ Amadeus::Client::Decorator.new }.to(
+      expect{ Amadeus::Client::Decorator.new(nil) }.to(
         raise_error(ArgumentError)
       )
     end

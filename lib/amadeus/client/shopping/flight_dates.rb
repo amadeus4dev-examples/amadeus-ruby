@@ -2,7 +2,7 @@ module Amadeus
   class Client
     class Shopping
       # A namespaced client for the
-      # +/v1/shopping/flight_dates+ endpoints
+      # +/v1/shopping/flight-dates+ endpoints
       #
       # Access via the +Amadeus::Client+ object
       #
