@@ -26,9 +26,9 @@ module Amadeus
       #     airline: '1X'
       #   }, nil)
       #
-      # @param [String] :path the full path for the API call
-      # @param [Hash] :params the optional GET params to pass to the API
-      # @param [String] :token the optional OAuth2 bearer token
+      # @param [String] path the full path for the API call
+      # @param [Hash] params the optional GET params to pass to the API
+      # @param [String] token the optional OAuth2 bearer token
       #
       def get(path, params = {}, token = access_token.bearer_token)
         request(:GET, path, params, token)
@@ -49,9 +49,9 @@ module Amadeus
       #
       #   amadeus.post('/v2/foo/bar', { some: 'data' }, nil)
       #
-      # @param [String] :path the full path for the API call
-      # @param [Hash] :params the optional POST params to pass to the API
-      # @param [String] :token the optional OAuth2 bearer token
+      # @param [String] path the full path for the API call
+      # @param [Hash] params the optional POST params to pass to the API
+      # @param [String] token the optional OAuth2 bearer token
       #
       def post(path, params = {}, token = access_token.bearer_token)
         request(:POST, path, params, token)

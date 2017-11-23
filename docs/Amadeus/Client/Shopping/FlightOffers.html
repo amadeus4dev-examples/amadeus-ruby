@@ -131,6 +131,41 @@ endpoints</p>
   <p class="inherited"><span class='object_link'><a href="../Decorator.html#client-instance_method" title="Amadeus::Client::Decorator#client (method)">#client</a></span></p>
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(params = {})  &#x21d2; Amadeus::Response </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Find the cheapest bookable flights.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
 
   
   
@@ -138,7 +173,7 @@ endpoints</p>
   
   
   
-  <h2>Method Summary</h2>
+  
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Decorator.html" title="Amadeus::Client::Decorator (class)">Decorator</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="../Decorator.html#initialize-instance_method" title="Amadeus::Client::Decorator#initialize (method)">#initialize</a></span></p>
@@ -150,10 +185,166 @@ endpoints</p>
 </div>
 
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get-instance_method">
+  
+    #<strong>get</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find the cheapest bookable flights.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Find the cheapest destination from London to Paris for Xmas</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight_offers'>flight_offers</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+  <span class='label'>origin:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHR</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>destination:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LAX</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>departureDate:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-12-24</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:origin</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>City/Airport IATA code from which the flight will depart. BOS, for example.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:destination</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>City/Airport IATA code to which the traveler is going. PAR, for example</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a parsed response</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Exceptions/Base.html" title="Amadeus::Exceptions::Base (class)">Amadeus::Exceptions::Base</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an exception if the call failed</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/shopping/flight_offers.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/shopping/flight-offers</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 23 14:02:52 2017 by
+  Generated on Thu Nov 23 15:46:06 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.10 (ruby-2.4.2).
 </div>
