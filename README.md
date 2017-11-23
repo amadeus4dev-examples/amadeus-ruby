@@ -28,7 +28,7 @@ To send make your first API call you will need to [register for an Amadeus Devel
     })
 
     amadeus.reference_data.urls.checkin_links.get({ airport: '1X' })
-    #=> {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
+    # => {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
 
 __Next__: [Learn more about Locations](https://developer.amadeus.com/docs/ruby/get_started/locations) with our Ruby SDK.
 

@@ -5,7 +5,7 @@ require 'amadeus/client/request'
 
 module Amadeus
   # The Amadeus client library for accessing
-  # the travel APIs.
+  # the travel APIs
   class Client
     include Validator
     include Namespaces
