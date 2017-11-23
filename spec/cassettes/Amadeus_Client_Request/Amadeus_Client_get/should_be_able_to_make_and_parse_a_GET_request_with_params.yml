@@ -5,7 +5,7 @@ http_interactions:
     uri: https://test.api.amadeus.com/v1/security/oauth2/token
     body:
       encoding: US-ASCII
-      string: grant_type=client_credentials&client_id=abc123&client_secret=def345
+      string: grant_type=client_credentials&client_id=123&client_secret=345
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -35,11 +35,11 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-03489e325e6bcf6de-c-eu-12768-18094290-1
+      - rrt-03489e325e6bcf6de-c-eu-12767-18246169-2
       Content-Type:
       - application/json
       Date:
-      - Thu, 23 Nov 2017 11:26:47 GMT
+      - Thu, 23 Nov 2017 17:08:03 GMT
       Server:
       - Amadeus
       User-Agent:
@@ -58,12 +58,12 @@ http_interactions:
       encoding: UTF-8
       string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
         \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
-        \           \"client_id\": \"abc123\",\n            \"token_type\":
-        \"Bearer\",\n            \"access_token\": \"IYGd5qsoauK65sFjdJCvx1o5c6U4\",\n
+        \           \"client_id\": \"123\",\n            \"token_type\":
+        \"Bearer\",\n            \"access_token\": \"6pgvKAZ3ZnDElR9JgCb4uBTHpJVo\",\n
         \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
         \           \"scope\": \"\"\n        }\n        "
-    http_version: 
-  recorded_at: Thu, 23 Nov 2017 11:26:47 GMT
+    http_version:
+  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
 - request:
     method: get
     uri: https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airline=1X
@@ -80,7 +80,7 @@ http_interactions:
       Host:
       - test.api.amadeus.com
       Authorization:
-      - Bearer IYGd5qsoauK65sFjdJCvx1o5c6U4
+      - Bearer 6pgvKAZ3ZnDElR9JgCb4uBTHpJVo
   response:
     status:
       code: 200
@@ -95,13 +95,13 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-007569a84b3a191ad-a-eu-14544-17451659-1
+      - rrt-08097fc2483a32805-c-eu-15597-17524878-2
       Ama-Request-Id:
-      - CIGFJZVBSN
+      - 6EH2PZVRLF
       Content-Type:
       - application/vnd.amadeus+json
       Date:
-      - Thu, 23 Nov 2017 11:26:47 GMT
+      - Thu, 23 Nov 2017 17:08:03 GMT
       Server:
       - Amadeus
       Content-Length:
@@ -144,6 +144,6 @@ http_interactions:
                 }
             ]
         }
-    http_version: 
-  recorded_at: Thu, 23 Nov 2017 11:26:47 GMT
+    http_version:
+  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
 recorded_with: VCR 3.0.3
