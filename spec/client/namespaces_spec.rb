@@ -89,7 +89,7 @@ RSpec.describe Amadeus::Client::Namespaces do
 
     describe '.shopping.hotels' do
       it 'should return a Hotels object' do
-        expect(@amadeus.shopping.hotels).to(
+        expect(@amadeus.shopping.hotels(123)).to(
           be_instance_of Amadeus::Client::Shopping::Hotels
         )
       end
@@ -97,8 +97,16 @@ RSpec.describe Amadeus::Client::Namespaces do
 
     describe '.shopping.hotels.offers' do
       it 'should return a Offers object' do
-        expect(@amadeus.shopping.hotels.offers).to(
+        expect(@amadeus.shopping.hotels(123).offers(234)).to(
           be_instance_of Amadeus::Client::Shopping::Hotels::Offers
+        )
+      end
+    end
+
+    describe '.shopping.hotels.hotel_offers' do
+      it 'should return a Offers object' do
+        expect(@amadeus.shopping.hotels(123).hotel_offers).to(
+          be_instance_of Amadeus::Client::Shopping::Hotels::HotelOffers
         )
       end
     end
