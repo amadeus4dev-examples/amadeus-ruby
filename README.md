@@ -47,6 +47,22 @@ Your credentials can be found on the [Amadeus dashboard](https://dashboard.devel
 
 __Next__: [Learn more about our initializing the Ruby SDK](https://developer.amadeus.com/docs/ruby/get_started_initialize) in our documentation.
 
+## Documentation
+
+Amadeus has a large set of APIs, and our documentation is here to get you started today.
+
+* [Get Started](https://developer.amadeus.com/docs/ruby/get_started) documentation
+  * [Initialize the SDK](https://developer.amadeus.com/docs/ruby/get_started/initialize)
+  * [Find an Airport](https://developer.amadeus.com/docs/ruby/get_started/find_an_airport)
+  * [Book a Flight](https://developer.amadeus.com/docs/ruby/get_started/book_a_flight)
+  * [Get Flight Inspiration](https://developer.amadeus.com/docs/ruby/get_started/get_flight_inspiration)
+
+Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentaton for in-depth information about every SDK method, it's arguments and return types.
+
+## API calls
+
+
+
 ## Logging & Debugging
 
 The SDK makes it easy to add your own logger.
@@ -68,18 +84,6 @@ Additionally, to enable more verbose logging, you can set the appropriate level 
       client_secret: '...',
       log_level: Logger::DEBUG # defaults to Logger::WARN, aka "2"
     )
-
-## Documentation
-
-Amadeus has a large set of APIs, and our documentation is here to get you started today.
-
-* [Get Started](https://developer.amadeus.com/docs/ruby/get_started) documentation
-  * [Initialize the SDK](https://developer.amadeus.com/docs/ruby/get_started/initialize)
-  * [Find an Airport](https://developer.amadeus.com/docs/ruby/get_started/find_an_airport)
-  * [Book a Flight](https://developer.amadeus.com/docs/ruby/get_started/book_a_flight)
-  * [Get Flight Inspiration](https://developer.amadeus.com/docs/ruby/get_started/get_flight_inspiration)
-
-Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentaton for in-depth information about every SDK method, it's arguments and return types.
 
 ## License
 
