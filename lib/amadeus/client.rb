@@ -42,16 +42,37 @@ module Amadeus
     #   amadeus = Amadeus::Client.new
     #
     def initialize(options = {})
-      @client_id =     init_required(:client_id, options)
-      @client_secret = init_required(:client_secret, options)
-      @logger =        init_optional(:logger, options, Logger.new(STDOUT))
-      @logger.level =  init_optional(:log_level, options, Logger::WARN)
-      @hostname =      init_optional(:hostname, options, :test).to_sym
-      @host =          init_optional(:host, options, HOSTS[hostname])
+      initialize_client_credentials(options)
+      initialize_logger(options)
+      initialize_host(options)
+      initialize_custom_app(options)
 
       recognized_options = %i[client_id client_secret
-                              logger log_level host hostname]
+                              logger log_level host hostname
+                              custome_app_id custom_app_version]
       warn_on_unrecognized_options(options, logger, recognized_options)
+    end
+
+    private
+
+    def initialize_client_credentials(options)
+      @client_id = init_required(:client_id, options)
+      @client_secret = init_required(:client_secret, options)
+    end
+
+    def initialize_logger(options)
+      @logger = init_optional(:logger, options, Logger.new(STDOUT))
+      @logger.level = init_optional(:log_level, options, Logger::WARN)
+    end
+
+    def initialize_host(options)
+      @hostname = init_optional(:hostname, options, :test).to_sym
+      @host = init_optional(:host, options, HOSTS[hostname])
+    end
+
+    def initialize_custom_app(options)
+      @custom_app_id = init_optional(:custom_app_id, options, nil)
+      @custom_app_version = init_optional(:custom_app_version, options, nil)
     end
   end
 end

@@ -92,6 +92,11 @@ module Amadeus
         request = method.new(uri)
         request.form_data = params if verb == :POST
         request['Authorization'] = token unless token.nil?
+        request['User-Agent'] =
+          "amadeus-ruby/#{Amadeus::VERSION} ruby/#{RUBY_VERSION}"
+        if @custom_app_id
+          request['User-Agent'] += " #{@custom_app_id}/#{@custom_app_version}"
+        end
         request
       end
 
