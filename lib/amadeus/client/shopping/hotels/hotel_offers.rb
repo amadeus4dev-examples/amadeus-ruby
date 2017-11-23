@@ -3,50 +3,37 @@ module Amadeus
     class Shopping
       class Hotels
         # A namespaced client for the
-        # +/v1/shopping/hotels/:id/offers+ endpoints
+        # +/v1/shopping/hotels/:id/hotel-offers+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #
         #   amadeus = Amadeus::Client.new
-        #   amadeus.shopping.hotels.offers
+        #   amadeus.shopping.hotels.hotel_offers
         #
-        class Offers < Amadeus::Client::Decorator
+        class HotelOffers < Amadeus::Client::Decorator
           # the Hotel ID
           attr_reader :hotel_id
-          # the Offer ID
-          attr_reader :offer_id
 
           # Initialize this namespaced client with an
-          # {Amadeus::Client} instance, a Hotel ID, and an Offer ID
+          # {Amadeus::Client} instance and a Hotel ID
           #
           # @param [Amadeus::Client] client
           # @param [Number] hotel_id
-          # @param [Number] offer_id
           #
-          def initialize(client, hotel_id, offer_id)
+          def initialize(client, hotel_id)
             super(client)
             @hotel_id = hotel_id
-            @offer_id = offer_id
           end
 
-          # Get room and rate details
+          # Get one hotel and its available offers
           #
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Exceptions::Base] an exception if the call failed
           # @example Search for hotels in London
-          #   amadeus.hotels(123).offers(234).get
+          #   amadeus.hotels(123).hotel_offers.get
           #
           def get(params = {})
-            @offer_id ||= begin
-              offer_id = params[:id] || params['id']
-              params.delete(:id)
-              params.delete('id')
-              offer_id
-            end
-
-            client.get(
-              "/v1/shopping/hotel/#{@hotel_id}/offers/#{@offer_id}", params
-            )
+            client.get("/v1/shopping/hotel/#{@hotel_id}/hotel-offers", params)
           end
         end
       end
