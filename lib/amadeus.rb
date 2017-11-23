@@ -1,6 +1,8 @@
 require 'amadeus/version'
+require 'amadeus/exceptions'
+require 'amadeus/response'
+require 'amadeus/client/decorator'
 require 'amadeus/client'
-require 'amadeus/client/base'
 
 require 'amadeus/client/travel'
 require 'amadeus/client/shopping'

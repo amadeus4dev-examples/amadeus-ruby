@@ -2,16 +2,18 @@ module Amadeus
   class Client
     class ReferenceData
       # A namespaced client for the
-      # +/v2/reference_data/locations+ endpoints
+      # +/v2/reference-data/locations+ endpoints
       #
       # Access via the +Amadeus::Client+ object
       #
       #   amadeus = Amadeus::Client.new
       #   amadeus.reference_data.locations
       #
-      class Locations < Amadeus::Client::Base
-        # The namespace for the airport locations API:
+      class Locations < Amadeus::Client::Decorator
+        # The namespace for the Airports API:
         #
+        # @return [Amadeus::Client::ReferenceData::Locations::Airports]
+        # @example
         #   amadeus.reference_data.locations.airports
         #
         def airports

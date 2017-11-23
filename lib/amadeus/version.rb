@@ -1,4 +1,4 @@
 module Amadeus
-  # The version of this API
+  # The current client version
   VERSION = '0.1.0'.freeze
 end

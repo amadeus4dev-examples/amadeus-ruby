@@ -3,14 +3,14 @@ module Amadeus
     class Travel
       class Analytics
         # A namespaced client for the
-        # +/v1/travel/analytics/air_traffics+ endpoints
+        # +/v1/travel/analytics/fare-searches+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #
         #   amadeus = Amadeus::Client.new
-        #   amadeus.travel.analytics.fair_searches
+        #   amadeus.travel.analytics.fare_searches
         #
-        class FareSearches < Amadeus::Client::Base
+        class FareSearches < Amadeus::Client::Decorator
         end
       end
     end
