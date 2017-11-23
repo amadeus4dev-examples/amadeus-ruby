@@ -8,9 +8,11 @@ module Amadeus
     #   amadeus = Amadeus::Client.new
     #   amadeus.travel
     #
-    class Travel < Amadeus::Client::Base
-      # The namespace for the travel analytics APIs:
+    class Travel < Amadeus::Client::Decorator
+      # The namespace for the travel Analytics APIs:
       #
+      # @return [Amadeus::Client::Travel::Analytics]
+      # @example
       #   amadeus.travel.analytics.air_traffics
       #   amadeus.travel.analytics.fare_searches
       #
