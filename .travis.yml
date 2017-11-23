@@ -15,7 +15,7 @@ before_install:
 deploy:
   provider: rubygems
   email: developer@amadeus.com
-  api_key:
+  client_id:
     secure: [insert travis key]
   on:
     tags: true

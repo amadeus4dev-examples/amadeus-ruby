@@ -12,9 +12,7 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
-```ruby
-gem install 'amadeus'
-```
+    gem 'amadeus', github: 'workbetta/amadeus-ruby'
 
 __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
 
@@ -22,36 +20,30 @@ __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ru
 
 To send make your first API call you will need to [register for an Amadeus Developer Account](https://developer.amadeus.com/register) and [set up your first application](https://dashboard.developer.amadeus.com/applications).
 
-```ruby
-require 'amadeus'
+    require 'amadeus'
 
-amadeus = Amadeus::Client.new({
-  api_key: '[YOUR_API_KEY]',
-  api_secret: '[YOUR_API_SECRET]'
-})
+    amadeus = Amadeus::Client.new({
+      client_id: '[YOUR_CLIENT_ID]',
+      client_secret: '[YOUR_CLIENT_SECRET]'
+    })
 
-amadeus.reference_data.locations.get({ keyword: 'Lon' })
-#=> Returns a list of locations (Airport ad City codes)
-#   that match this string in some way
-```
+    amadeus.reference_data.urls.checkin_links.get({ airport: '1X' })
+    #=> {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
 
 __Next__: [Learn more about Locations](https://developer.amadeus.com/docs/ruby/get_started/locations) with our Ruby SDK.
 
 ## Initialization
 
-The client can be initialized directly or via environment variables.
+The client can be initialized directly.
 
-```ruby
-# Initialize using parameters
-amadeus = Amadeus::Client.new(api_key: '...', api_secret: '...')
+    # Initialize using parameters
+    amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
 
-# Alternative: Initialize using environment variables
-# * AMADEUS_API_KEY
-# * AMADEUS_API_SECRET
-amadeus = Amadeus::Client.new
-```
+Alternatively it can be initialized without any paramters if the environment variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
 
-Your credentials can be found on the [Amadeus dashboard](https://dashboard.developer.amadeus.com/api_keys). [Sign up](https://developer.amadeus.com/register) for an account today.
+    amadeus = Amadeus::Client.new
+
+Your credentials can be found on the [Amadeus dashboard](https://dashboard.developer.amadeus.com/client_ids). [Sign up](https://developer.amadeus.com/register) for an account today.
 
 __Next__: [Learn more about our initializing the Ruby SDK](https://developer.amadeus.com/docs/ruby/get_started_initialize) in our documentation.
 
@@ -59,27 +51,23 @@ __Next__: [Learn more about our initializing the Ruby SDK](https://developer.ama
 
 The SDK makes it easy to add your own logger.
 
-```ruby
-require 'logger'
+    require 'logger'
 
-amadeus = Amadeus::Client.new(
-  api_key: '...',
-  api_secret: '...',
-  logger: Logger.new(STDOUT)
-)
-```
+    amadeus = Amadeus::Client.new(
+      client_id: '...',
+      client_secret: '...',
+      logger: Logger.new(STDOUT)
+    )
 
 Additionally, to enable more verbose logging, you can set the appropriate level either via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
 
-```ruby
-require 'logger'
+    require 'logger'
 
-amadeus = Amadeus::Client.new(
-  api_key: '...',
-  api_secret: '...',
-  log_level: Logger::DEBUG # defaults to Logger::WARN, aka "2"
-)
-```
+    amadeus = Amadeus::Client.new(
+      client_id: '...',
+      client_secret: '...',
+      log_level: Logger::DEBUG # defaults to Logger::WARN, aka "2"
+    )
 
 ## Documentation
 

@@ -34,5 +34,5 @@ Then, you should be able to run the tests.
 
 ```sh
 bundle install # ensure all gems are installed
-bundle run rake #run all tests
+guard # watches for changes and runs all tests and updates docs
 ```

@@ -4,8 +4,8 @@ RSpec.describe Amadeus::Client::Namespaces do
   describe 'Amadeus::Client' do
     before do
       @amadeus = Amadeus::Client.new(
-        api_key: '123',
-        api_secret: '234'
+        client_id: '123',
+        client_secret: '234'
       )
     end
 

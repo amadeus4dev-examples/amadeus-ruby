@@ -2,22 +2,21 @@ require 'json'
 
 module Amadeus
   class Response
-    # Helper methods to parse a response
+    # Helper methods to for the {Amadeus::Response} object to help it
+    # parse the response received from the API
     module Parser
       private
 
       def parse_response
-        @logger.debug('Amadeus::Response::Parser') { http_response.class.name }
-
         @data = parse_json(http_response)
 
         case http_response
         when Net::HTTPNotFound
           raise Amadeus::Exceptions::HTTPNotFound, self
-        when Net::HTTPUnauthorized
-          raise Amadeus::Exceptions::HTTPUnauthorized, self
-        when Net::HTTPBadRequest
-          raise Amadeus::Exceptions::HTTPBadRequest, self
+        when Net::HTTPClientError
+          raise Amadeus::Exceptions::HTTPClientError, self
+        when Net::HTTPServerError
+          raise Amadeus::Exceptions::HTTPServerError, self
         end
       end
 
@@ -29,16 +28,17 @@ module Amadeus
       end
 
       def json?(http_response)
-        content_type = http_response['Content-Type']
-        allowed_content_types = ['application/json',
-                                 'application/vnd.amadeus+json']
-        json_header = content_type &&
-                      allowed_content_types.include?(
-                        content_type.split(';').first
-                      )
+        json_header?(http_response) && body?(http_response)
+      end
 
-        has_body = http_response.body && !http_response.body.empty?
-        json_header && has_body
+      def body?(http_response)
+        http_response.body && !http_response.body.empty?
+      end
+
+      def json_header?(http_response)
+        content_type = http_response['Content-Type']
+        content_types = ['application/json', 'application/vnd.amadeus+json']
+        content_type && content_types.include?(content_type.split(';').first)
       end
     end
   end

@@ -3,7 +3,7 @@ module Amadeus
     class ReferenceData
       class Locations
         # A namespaced client for the
-        # +/v1/reference_data/locations/airports+ endpoints
+        # +/v2/reference-data/locations/airports+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #

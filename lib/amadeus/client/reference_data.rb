@@ -9,8 +9,10 @@ module Amadeus
     #   amadeus.reference_data
     #
     class ReferenceData < Amadeus::Client::Decorator
-      # The namespace for the Urls APIs:
+      # The namespace for the Urls APIs.
       #
+      # @return [Amadeus::Client::ReferenceData::Urls]
+      # @example
       #   amadeus.reference_data.urls.checkin_links
       #
       def urls
@@ -19,6 +21,8 @@ module Amadeus
 
       # The namespace for the Locations APIs:
       #
+      # @return [Amadeus::Client::ReferenceData::Locations]
+      # @example
       #   amadeus.reference_data.locations
       #   amadeus.reference_data.locations.airports
       #

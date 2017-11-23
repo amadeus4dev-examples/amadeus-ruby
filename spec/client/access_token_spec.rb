@@ -2,10 +2,13 @@ require 'spec_helper'
 
 RSpec.describe Amadeus::Client::AccessToken do
   before do
+    logger = double('Logger')
+    allow(logger).to receive(:debug)
+
     @client = double('Amadeus::Client')
-    allow(@client).to receive(:logger).and_return(Logger.new(STDOUT))
-    allow(@client).to receive(:api_key).and_return('123')
-    allow(@client).to receive(:api_secret).and_return('234')
+    allow(@client).to receive(:logger).and_return(logger)
+    allow(@client).to receive(:client_id).and_return('123')
+    allow(@client).to receive(:client_secret).and_return('234')
 
     @access_token = Amadeus::Client::AccessToken.new(@client)
 
@@ -49,7 +52,7 @@ RSpec.describe Amadeus::Client::AccessToken do
               }, nil).and_return(@response)
 
       expect(@access_token.bearer_token).to eq('Bearer abc')
-      @access_token.expires_at = Time.now
+      @access_token.instance_variable_set(:@expires_at, Time.now)
       expect(@access_token.bearer_token).to eq('Bearer abc')
     end
   end

@@ -16,5 +16,11 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'rake', task: :default do
-  watch(/^(.*).rb/)
+  watch(%r{lib\/.+\.rb})
+  watch(%r{spec\/.+\.rb})
+end
+
+guard 'yard' do
+  watch(%r{lib\/.+\.rb})
+  watch('README.md')
 end

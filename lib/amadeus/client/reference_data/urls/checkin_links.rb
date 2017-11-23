@@ -3,7 +3,7 @@ module Amadeus
     class ReferenceData
       class Urls
         # A namespaced client for the
-        # +/v1/reference_data/urls/checkin_links+ endpoints
+        # +/v2/reference-data/urls/checkin-links+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #
@@ -14,13 +14,12 @@ module Amadeus
           # Returns the checkin links for an airline, for the
           # language of your choice
           #
-          #   response = amadeus.reference_data.urls.checkin_links.get(
-          #     airline: '1X',
-          #     language: 'en-GB'
-          #   )
-          #
-          #   p response.data
-          #   # {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.ama...
+          # @option params [String] :airline airline ID - required
+          # @option params [String] :language (en-GB) the locale for the links
+          # @return [Amadeus::Response] a parsed response
+          # @raise [Amadeus::Exceptions::Base] an exception if the call failed
+          # @example Find a the checkin links for Branson AirExpress
+          #   amadeus.reference_data.urls.checkin_links(airline: '1X')
           #
           def get(params = {})
             client.get('/v2/reference-data/urls/checkin-links', params)
