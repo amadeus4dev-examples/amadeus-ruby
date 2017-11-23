@@ -15,7 +15,7 @@ module Amadeus
       # that raised this error. The continues to determien the custom
       # error message
       #
-      # @params [Amadeus::Response] response
+      # @param [Amadeus::Response] response
       def initialize(response)
         @response = response
         super(error_message)

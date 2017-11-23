@@ -4,7 +4,7 @@ module Amadeus
     # arguments past into the {Amadeus::Client}
     module Validator
       # Uses {init_optional} to find an entry, and it that returns
-      # nil it raises an {ArgumentError}
+      # nil it raises an ArgumentError
       #
       # @param [String or Symbol] key the key to find the entry
       # @param [Hash] options the arguments were passed to the {Amadeus::Client}
