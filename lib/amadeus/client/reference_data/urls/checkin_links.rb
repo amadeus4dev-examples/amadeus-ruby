@@ -19,7 +19,7 @@ module Amadeus
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Exceptions::Base] an exception if the call failed
           # @example Find a the checkin links for Branson AirExpress
-          #   amadeus.reference_data.urls.checkin_links(airline: '1X')
+          #   amadeus.reference_data.urls.checkin_links.get(airline: '1X')
           #
           def get(params = {})
             client.get('/v2/reference-data/urls/checkin-links', params)
