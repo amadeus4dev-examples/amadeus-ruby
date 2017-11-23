@@ -29,11 +29,11 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-08097fc2483a32805-c-eu-15596-17373166-1
+      - rrt-007569a84b3a191ad-a-eu-14545-17603700-2
       Content-Type:
       - application/vnd.amadeus+json
       Date:
-      - Thu, 23 Nov 2017 11:26:47 GMT
+      - Thu, 23 Nov 2017 17:08:03 GMT
       Server:
       - Amadeus
       Www-Authenticate:
@@ -51,5 +51,5 @@ http_interactions:
         keyword missing in the Authorization header\",\n                            \"status\":
         \"401\"\n                        }\n                ]\n            }\n        "
     http_version: 
-  recorded_at: Thu, 23 Nov 2017 11:26:47 GMT
+  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
 recorded_with: VCR 3.0.3
