@@ -5,14 +5,14 @@ http_interactions:
     uri: https://test.api.amadeus.com/v1/security/oauth2/token
     body:
       encoding: US-ASCII
-      string: grant_type=client_credentials&client_id=123&client_secret=345
+      string: grant_type=client_credentials&client_id=abc123&client_secret=def234
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
       Content-Type:
@@ -35,15 +35,15 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-02cc7c27492e1359a-b-eu-14031-17597841-3
+      - rrt-007569a84b3a191ad-a-eu-14544-18051312-1
       Content-Type:
       - application/json
       Date:
-      - Thu, 23 Nov 2017 17:08:03 GMT
+      - Fri, 24 Nov 2017 11:01:57 GMT
       Server:
       - Amadeus
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       X-Forwarded-For:
       - 88.98.227.83
       X-Forwarded-Port:
@@ -58,15 +58,15 @@ http_interactions:
       encoding: UTF-8
       string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
         \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
-        \           \"client_id\": \"123\",\n            \"token_type\":
-        \"Bearer\",\n            \"access_token\": \"VwJ7dpDCKzys9krep7VJWgP4HR9C\",\n
+        \           \"client_id\": \"abc123\",\n            \"token_type\":
+        \"Bearer\",\n            \"access_token\": \"2t4NOAeJOgAHyXpXssqmWdPXUSUw\",\n
         \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
         \           \"scope\": \"\"\n        }\n        "
     http_version: 
-  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
+  recorded_at: Fri, 24 Nov 2017 11:01:57 GMT
 - request:
-    method: post
-    uri: https://test.api.amadeus.com/v1/security/oauth2/token
+    method: get
+    uri: https://test.api.amadeus.com/v2/reference-data/urls/checkin-links
     body:
       encoding: US-ASCII
       string: ''
@@ -76,13 +76,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
-      Content-Type:
-      - application/x-www-form-urlencoded
       Authorization:
-      - Bearer VwJ7dpDCKzys9krep7VJWgP4HR9C
+      - Bearer 2t4NOAeJOgAHyXpXssqmWdPXUSUw
   response:
     status:
       code: 400
@@ -97,23 +95,35 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-01d6647500802f8cb-a-eu-14365-17543474-3
+      - rrt-08097fc2483a32805-c-eu-15596-17971986-1
+      Ama-Request-Id:
+      - D5RLQZX5BA
       Content-Type:
-      - application/json
+      - application/vnd.amadeus+json
       Date:
-      - Thu, 23 Nov 2017 17:08:03 GMT
+      - Fri, 24 Nov 2017 11:01:58 GMT
       Server:
       - Amadeus
-      Content-Length:
-      - '253'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
-      encoding: UTF-8
-      string: "\n        {\n            \"error\":\"invalid_request\",\n            \"error_description\":
-        \"Only client_id, client_secret and grant_type parameters are allowed in the
-        body\",\n            \"code\": 38187,\n            \"title\": \"Invalid parameters\"\n
-        \       }\n        "
+      encoding: ASCII-8BIT
+      string: |-
+        {
+            "errors": [
+                {
+                    "status": 400,
+                    "code": 32171,
+                    "title": "MANDATORY DATA MISSING",
+                    "detail": "Missing mandatory query parameter",
+                    "source": {
+                        "parameter": "airline"
+                    }
+                }
+            ]
+        }
     http_version: 
-  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
+  recorded_at: Fri, 24 Nov 2017 11:01:58 GMT
 recorded_with: VCR 3.0.3

@@ -1,7 +1,7 @@
 require 'logger'
 require 'amadeus/client/validator'
 require 'amadeus/client/namespaces'
-require 'amadeus/client/request'
+require 'amadeus/client/http'
 
 module Amadeus
   # The Amadeus client library for accessing
@@ -9,7 +9,7 @@ module Amadeus
   class Client
     include Validator
     include Namespaces
-    include Request
+    include HTTP
 
     # The API key used to authenticate against the API
     attr_reader :client_id
@@ -21,8 +21,12 @@ module Amadeus
     attr_reader :hostname
     # The host domain used to make API calls against
     attr_reader :host
+    # A custom App ID to be passed in the User Agent to the server
+    attr_reader :custom_app_id
+    # A custom App version to be passed in the User Agent to the server
+    attr_reader :custom_app_version
 
-    # A list of available hosts
+    # The available hosts for this API
     HOSTS = {
       test: 'https://test.api.amadeus.com',
       production: 'https://production.api.amadeus.com'
@@ -49,7 +53,7 @@ module Amadeus
 
       recognized_options = %i[client_id client_secret
                               logger log_level host hostname
-                              custome_app_id custom_app_version]
+                              custom_app_id custom_app_version]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 

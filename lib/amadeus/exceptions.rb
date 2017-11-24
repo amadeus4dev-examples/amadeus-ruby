@@ -35,7 +35,7 @@ module Amadeus
       # For a 400 we return the parsed errors as the message
       # @return [String]
       def error_message
-        response.data['errors']
+        response.json['errors']
       end
     end
 

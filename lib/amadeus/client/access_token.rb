@@ -37,7 +37,7 @@ module Amadeus
       # Fetches a new access token and stores it and its expiry date
       def update_access_token
         response = fetch_access_token
-        store_access_token(response.data)
+        store_access_token(response.json)
       end
 
       # Fetches a new access token
