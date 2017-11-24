@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Client/Namespaces.html" title="Amadeus::Client::Namespaces (module)">Namespaces</a></span>, <span class='object_link'><a href="Client/Request.html" title="Amadeus::Client::Request (module)">Request</a></span>, <span class='object_link'><a href="Client/Validator.html" title="Amadeus::Client::Validator (module)">Validator</a></span></dd>
+      <dd><span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Namespaces.html" title="Amadeus::Client::Namespaces (module)">Namespaces</a></span>, <span class='object_link'><a href="Client/Validator.html" title="Amadeus::Client::Validator (module)">Validator</a></span></dd>
   </dl>
   
   
@@ -100,7 +100,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/client.rb<span class="defines">,<br />
-  lib/amadeus/client/travel.rb,<br /> lib/amadeus/client/request.rb,<br /> lib/amadeus/client/shopping.rb,<br /> lib/amadeus/client/decorator.rb,<br /> lib/amadeus/client/validator.rb,<br /> lib/amadeus/client/namespaces.rb,<br /> lib/amadeus/client/access_token.rb,<br /> lib/amadeus/client/reference_data.rb,<br /> lib/amadeus/client/shopping/hotels.rb,<br /> lib/amadeus/client/travel/analytics.rb,<br /> lib/amadeus/client/reference_data/urls.rb,<br /> lib/amadeus/client/shopping/flight_dates.rb,<br /> lib/amadeus/client/shopping/hotel_offers.rb,<br /> lib/amadeus/client/shopping/flight_offers.rb,<br /> lib/amadeus/client/shopping/hotels/offers.rb,<br /> lib/amadeus/client/reference_data/locations.rb,<br /> lib/amadeus/client/shopping/flight_destinations.rb,<br /> lib/amadeus/client/shopping/hotels/hotel_offers.rb,<br /> lib/amadeus/client/travel/analytics/air_traffics.rb,<br /> lib/amadeus/client/travel/analytics/fare_searches.rb,<br /> lib/amadeus/client/reference_data/locations/airports.rb,<br /> lib/amadeus/client/reference_data/urls/checkin_links.rb</span>
+  lib/amadeus/client/http.rb,<br /> lib/amadeus/client/travel.rb,<br /> lib/amadeus/client/shopping.rb,<br /> lib/amadeus/client/decorator.rb,<br /> lib/amadeus/client/validator.rb,<br /> lib/amadeus/client/namespaces.rb,<br /> lib/amadeus/client/access_token.rb,<br /> lib/amadeus/client/reference_data.rb,<br /> lib/amadeus/client/shopping/hotels.rb,<br /> lib/amadeus/client/travel/analytics.rb,<br /> lib/amadeus/client/reference_data/urls.rb,<br /> lib/amadeus/client/shopping/flight_dates.rb,<br /> lib/amadeus/client/shopping/hotel_offers.rb,<br /> lib/amadeus/client/shopping/flight_offers.rb,<br /> lib/amadeus/client/shopping/hotels/offers.rb,<br /> lib/amadeus/client/reference_data/locations.rb,<br /> lib/amadeus/client/shopping/flight_destinations.rb,<br /> lib/amadeus/client/shopping/hotels/hotel_offers.rb,<br /> lib/amadeus/client/travel/analytics/air_traffics.rb,<br /> lib/amadeus/client/travel/analytics/fare_searches.rb,<br /> lib/amadeus/client/reference_data/locations/airports.rb,<br /> lib/amadeus/client/reference_data/urls/checkin_links.rb</span>
 </dd>
   </dl>
   
@@ -121,7 +121,7 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Client/Namespaces.html" title="Amadeus::Client::Namespaces (module)">Namespaces</a></span>, <span class='object_link'><a href="Client/Request.html" title="Amadeus::Client::Request (module)">Request</a></span>, <span class='object_link'><a href="Client/Validator.html" title="Amadeus::Client::Validator (module)">Validator</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Namespaces.html" title="Amadeus::Client::Namespaces (module)">Namespaces</a></span>, <span class='object_link'><a href="Client/Validator.html" title="Amadeus::Client::Validator (module)">Validator</a></span>
     
   
     
@@ -137,7 +137,7 @@
         <div class="docstring">
   <div class="discussion">
     
-<p>A list of available hosts</p>
+<p>The available hosts for this API</p>
 
 
   </div>
@@ -213,6 +213,64 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The API secret used to authenticate against the API.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#custom_app_id-instance_method" title="#custom_app_id (instance method)">#<strong>custom_app_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A custom App ID to be passed in the User Agent to the server.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#custom_app_version-instance_method" title="#custom_app_version (instance method)">#<strong>custom_app_version</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A custom App version to be passed in the User Agent to the server.</p>
 </div></span>
   
 </li>
@@ -356,8 +414,8 @@
   
   
   
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/Request.html" title="Amadeus::Client::Request (module)">Request</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Client/Request.html#get-instance_method" title="Amadeus::Client::Request#get (method)">#get</a></span>, <span class='object_link'><a href="Client/Request.html#post-instance_method" title="Amadeus::Client::Request#post (method)">#post</a></span></p>
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Client/HTTP.html#call-instance_method" title="Amadeus::Client::HTTP#call (method)">#call</a></span>, <span class='object_link'><a href="Client/HTTP.html#get-instance_method" title="Amadeus::Client::HTTP#get (method)">#get</a></span>, <span class='object_link'><a href="Client/HTTP.html#post-instance_method" title="Amadeus::Client::HTTP#post (method)">#post</a></span></p>
 
   
   
@@ -421,10 +479,6 @@
       <pre class="lines">
 
 
-44
-45
-46
-47
 48
 49
 50
@@ -432,21 +486,23 @@
 52
 53
 54
-55</pre>
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='ivar'>@client_id</span> <span class='op'>=</span>     <span class='id identifier rubyid_init_required'>init_required</span><span class='lparen'>(</span><span class='symbol'>:client_id</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-  <span class='ivar'>@client_secret</span> <span class='op'>=</span> <span class='id identifier rubyid_init_required'>init_required</span><span class='lparen'>(</span><span class='symbol'>:client_secret</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-  <span class='ivar'>@logger</span> <span class='op'>=</span>        <span class='id identifier rubyid_init_optional'>init_optional</span><span class='lparen'>(</span><span class='symbol'>:logger</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='const'>Logger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>STDOUT</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='ivar'>@logger</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span> <span class='op'>=</span>  <span class='id identifier rubyid_init_optional'>init_optional</span><span class='lparen'>(</span><span class='symbol'>:log_level</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='const'>Logger</span><span class='op'>::</span><span class='const'>WARN</span><span class='rparen'>)</span>
-  <span class='ivar'>@hostname</span> <span class='op'>=</span>      <span class='id identifier rubyid_init_optional'>init_optional</span><span class='lparen'>(</span><span class='symbol'>:hostname</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='symbol'>:test</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
-  <span class='ivar'>@host</span> <span class='op'>=</span>          <span class='id identifier rubyid_init_optional'>init_optional</span><span class='lparen'>(</span><span class='symbol'>:host</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#HOSTS-constant" title="Amadeus::Client::HOSTS (constant)">HOSTS</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_hostname'>hostname</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_client_credentials'>initialize_client_credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_logger'>initialize_logger</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_host'>initialize_host</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_custom_app'>initialize_custom_app</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_recognized_options'>recognized_options</span> <span class='op'>=</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>client_id</span><span class='words_sep'> </span><span class='tstring_content'>client_secret</span><span class='words_sep'>
-</span><span class='tstring_content'>                          logger</span><span class='words_sep'> </span><span class='tstring_content'>log_level</span><span class='words_sep'> </span><span class='tstring_content'>host</span><span class='words_sep'> </span><span class='tstring_content'>hostname</span><span class='words_sep'>]</span>
+</span><span class='tstring_content'>                          logger</span><span class='words_sep'> </span><span class='tstring_content'>log_level</span><span class='words_sep'> </span><span class='tstring_content'>host</span><span class='words_sep'> </span><span class='tstring_content'>hostname</span><span class='words_sep'>
+</span><span class='tstring_content'>                          custom_app_id</span><span class='words_sep'> </span><span class='tstring_content'>custom_app_version</span><span class='words_sep'>]</span>
   <span class='id identifier rubyid_warn_on_unrecognized_options'>warn_on_unrecognized_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_logger'>logger</span><span class='comma'>,</span> <span class='id identifier rubyid_recognized_options'>recognized_options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -539,6 +595,92 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client_secret'>client_secret</span>
   <span class='ivar'>@client_secret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="custom_app_id-instance_method">
+  
+    #<strong>custom_app_id</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A custom App ID to be passed in the User Agent to the server</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_custom_app_id'>custom_app_id</span>
+  <span class='ivar'>@custom_app_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="custom_app_version-instance_method">
+  
+    #<strong>custom_app_version</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A custom App version to be passed in the User Agent to the server</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_custom_app_version'>custom_app_version</span>
+  <span class='ivar'>@custom_app_version</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -680,7 +822,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 23 17:19:05 2017 by
+  Generated on Fri Nov 24 13:42:08 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.10 (ruby-2.4.2).
 </div>

@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.api.amadeus.com/v1/security/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials&client_id=abc123&client_secret=def234
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      Host:
+      - test.api.amadeus.com
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept, Content-Type
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Ama-Gateway-Request-Id:
+      - rrt-01d6647500802f8cb-a-eu-14367-17991045-1
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Nov 2017 11:01:58 GMT
+      Server:
+      - Amadeus
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      X-Forwarded-For:
+      - 88.98.227.83
+      X-Forwarded-Port:
+      - '443'
+      X-Forwarded-Proto:
+      - https
+      Content-Length:
+      - '414'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
+        \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
+        \           \"client_id\": \"abc123\",\n            \"token_type\":
+        \"Bearer\",\n            \"access_token\": \"N5uTRMxAzcEPpGCUYr8W88nA2ksF\",\n
+        \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
+        \           \"scope\": \"\"\n        }\n        "
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:01:58 GMT
+- request:
+    method: get
+    uri: https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airline=1X
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      Host:
+      - test.api.amadeus.com
+      Authorization:
+      - Bearer N5uTRMxAzcEPpGCUYr8W88nA2ksF
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept, Content-Type
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Ama-Gateway-Request-Id:
+      - rrt-08e05f2d759518ce8-b-eu-15357-18043081-1
+      Ama-Request-Id:
+      - 6O5OGZX5BB
+      Content-Type:
+      - application/vnd.amadeus+json
+      Date:
+      - Fri, 24 Nov 2017 11:01:59 GMT
+      Server:
+      - Amadeus
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+            "warnings": [
+                {
+                    "status": 200,
+                    "code": 10151,
+                    "title": "DEFAULT LANGUAGE USED",
+                    "detail": "Language not available for this airline, default language applied",
+                    "source": {
+                        "parameter": "language"
+                    }
+                }
+            ],
+            "meta": {
+                "count": 2,
+                "links": {
+                    "self": "https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airline=1X"
+                }
+            },
+            "data": [
+                {
+                    "type": "checkin-link",
+                    "id": "1XEN-GBWeb",
+                    "href": "https://www.onex.com/manage/check-in",
+                    "channel": "Web"
+                },
+                {
+                    "type": "checkin-link",
+                    "id": "1XEN-GBMobile",
+                    "href": "https://checkin.onex.com/mci/start",
+                    "channel": "Mobile"
+                }
+            ]
+        }
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:01:59 GMT
+recorded_with: VCR 3.0.3

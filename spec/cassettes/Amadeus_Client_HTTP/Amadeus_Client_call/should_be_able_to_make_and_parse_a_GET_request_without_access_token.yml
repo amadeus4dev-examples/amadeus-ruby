@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
   response:
@@ -29,11 +29,11 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-007569a84b3a191ad-a-eu-14545-17603700-2
+      - rrt-08097fc2483a32805-c-eu-15594-17973678-1
       Content-Type:
       - application/vnd.amadeus+json
       Date:
-      - Thu, 23 Nov 2017 17:08:03 GMT
+      - Fri, 24 Nov 2017 11:05:37 GMT
       Server:
       - Amadeus
       Www-Authenticate:
@@ -51,5 +51,5 @@ http_interactions:
         keyword missing in the Authorization header\",\n                            \"status\":
         \"401\"\n                        }\n                ]\n            }\n        "
     http_version: 
-  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
+  recorded_at: Fri, 24 Nov 2017 11:05:37 GMT
 recorded_with: VCR 3.0.3

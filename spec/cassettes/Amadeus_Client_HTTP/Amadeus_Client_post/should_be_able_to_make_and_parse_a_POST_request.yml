@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.api.amadeus.com/v1/security/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials&client_id=abc123&client_secret=def234
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      Host:
+      - test.api.amadeus.com
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept, Content-Type
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Ama-Gateway-Request-Id:
+      - rrt-02cc7c27492e1359a-b-eu-14032-18045478-1
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Nov 2017 11:02:00 GMT
+      Server:
+      - Amadeus
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      X-Forwarded-For:
+      - 88.98.227.83
+      X-Forwarded-Port:
+      - '443'
+      X-Forwarded-Proto:
+      - https
+      Content-Length:
+      - '414'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
+        \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
+        \           \"client_id\": \"abc123\",\n            \"token_type\":
+        \"Bearer\",\n            \"access_token\": \"MSXx1jNrwe0RJAwfV2P5rvWKVTwA\",\n
+        \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
+        \           \"scope\": \"\"\n        }\n        "
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:02:00 GMT
+- request:
+    method: post
+    uri: https://test.api.amadeus.com/v1/security/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - amadeus-ruby/0.1.0 ruby/2.4.2
+      Host:
+      - test.api.amadeus.com
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Bearer MSXx1jNrwe0RJAwfV2P5rvWKVTwA
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept, Content-Type
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Ama-Gateway-Request-Id:
+      - rrt-007569a84b3a191ad-a-eu-14544-18051312-2
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Nov 2017 11:02:01 GMT
+      Server:
+      - Amadeus
+      Content-Length:
+      - '253'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "\n        {\n            \"error\":\"invalid_request\",\n            \"error_description\":
+        \"Only client_id, client_secret and grant_type parameters are allowed in the
+        body\",\n            \"code\": 38187,\n            \"title\": \"Invalid parameters\"\n
+        \       }\n        "
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:02:01 GMT
+recorded_with: VCR 3.0.3
