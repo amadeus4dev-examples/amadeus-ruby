@@ -115,7 +115,7 @@ module Amadeus
     # Makes the actual API call using the URL and request objects
     def fetch(uri, request)
       ssl = uri.scheme == 'https'
-      Net::HTTP.start(uri.hostname, uri.port, use_ssl: ssl) do |http|
+      @client.http.start(uri.hostname, uri.port, use_ssl: ssl) do |http|
         http.request(request)
       end
     rescue StandardError => error
