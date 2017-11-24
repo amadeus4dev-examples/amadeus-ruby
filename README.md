@@ -12,7 +12,10 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
-    gem 'amadeus', github: 'workbetta/amadeus-ruby'
+    source 'https://gLLtXNBEsQWTe4u5Un2w@gem.fury.io/workbetta/' do
+      gem 'amadeus', '~> 0.1.0'
+    end
+
 
 __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
 
@@ -57,11 +60,54 @@ Amadeus has a large set of APIs, and our documentation is here to get you starte
   * [Book a Flight](https://developer.amadeus.com/docs/ruby/get_started/book_a_flight)
   * [Get Flight Inspiration](https://developer.amadeus.com/docs/ruby/get_started/get_flight_inspiration)
 
-Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentaton for in-depth information about every SDK method, it's arguments and return types.
+Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentation for in-depth information about every SDK method, it's arguments and return types.
 
-## API calls
+Additionally, this SDK has extensive documentation of itself available on [RubyDoc.info](https://workbetta.github.io/amadeus-ruby/).
 
+## Making API calls
 
+This library conveniently maps every API path to a similar path.
+
+For example, `GET /v2/reference-data/urls/checkin-links?airline=1X` would be:
+
+    amadeus.reference_data.urls.checkin_links.get(airline: '1X')
+
+Similarly, to select a resource by ID, you can pass in the ID to the path.
+
+For example,  `GET /v1/shopping/hotel/123hotel-offers` would be:
+
+    amadeus.hotels(123).hotel_offers.get(...)
+
+You can make any arbitrary API call as well directly with the `.get` method:
+
+    amadeus.get('/v2/reference-data/urls/checkin-links', airline: '1X')
+
+## Response & Pagination
+
+Every API call returns a `Amadeus::Response` object. If the API call contained
+a JSON response it will parse the JSON into the `.json` attribute. If this data
+also contains a `data` key, it will make that available as the `.data`
+attribute.
+
+    response = amadeus.reference_data.locations.get(
+      keyword: 'LON',
+      subType: Amadeus::Location::ANY
+    )
+
+    p reponse.json #=> The complete JSON response
+    p response.data #=> The list of locations
+
+If an API endpoint supports pagination, the other pages are available under the
+`.next`, `.previous`, `.last` and `.first` methods.
+
+    response = amadeus.reference_data.locations.get(
+      keyword: 'LON',
+      subType: Amadeus::Location::ANY
+    )
+
+    response.next #=> returns a new response for the next page
+
+If a page is not available, the method will return `nil`.
 
 ## Logging & Debugging
 
