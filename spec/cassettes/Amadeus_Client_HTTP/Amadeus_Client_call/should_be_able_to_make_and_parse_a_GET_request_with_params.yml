@@ -5,14 +5,14 @@ http_interactions:
     uri: https://test.api.amadeus.com/v1/security/oauth2/token
     body:
       encoding: US-ASCII
-      string: grant_type=client_credentials&client_id=123&client_secret=345
+      string: grant_type=client_credentials&client_id=abc123&client_secret=def234
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
       Content-Type:
@@ -35,15 +35,15 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-03489e325e6bcf6de-c-eu-12767-18246169-2
+      - rrt-01d6647500802f8cb-a-eu-14367-17992953-1
       Content-Type:
       - application/json
       Date:
-      - Thu, 23 Nov 2017 17:08:03 GMT
+      - Fri, 24 Nov 2017 11:05:37 GMT
       Server:
       - Amadeus
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       X-Forwarded-For:
       - 88.98.227.83
       X-Forwarded-Port:
@@ -58,12 +58,12 @@ http_interactions:
       encoding: UTF-8
       string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
         \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
-        \           \"client_id\": \"123\",\n            \"token_type\":
-        \"Bearer\",\n            \"access_token\": \"6pgvKAZ3ZnDElR9JgCb4uBTHpJVo\",\n
+        \           \"client_id\": \"abc123\",\n            \"token_type\":
+        \"Bearer\",\n            \"access_token\": \"NAvxmr0pTSTScODn5VRPcVv98FZ9\",\n
         \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
         \           \"scope\": \"\"\n        }\n        "
-    http_version:
-  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:05:37 GMT
 - request:
     method: get
     uri: https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airline=1X
@@ -76,11 +76,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
       Authorization:
-      - Bearer 6pgvKAZ3ZnDElR9JgCb4uBTHpJVo
+      - Bearer NAvxmr0pTSTScODn5VRPcVv98FZ9
   response:
     status:
       code: 200
@@ -95,13 +95,13 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-08097fc2483a32805-c-eu-15597-17524878-2
+      - rrt-02cc7c27492e1359a-b-eu-14033-18046966-1
       Ama-Request-Id:
-      - 6EH2PZVRLF
+      - 6O6WZZX5HD
       Content-Type:
       - application/vnd.amadeus+json
       Date:
-      - Thu, 23 Nov 2017 17:08:03 GMT
+      - Fri, 24 Nov 2017 11:05:37 GMT
       Server:
       - Amadeus
       Content-Length:
@@ -144,6 +144,6 @@ http_interactions:
                 }
             ]
         }
-    http_version:
-  recorded_at: Thu, 23 Nov 2017 17:08:03 GMT
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 11:05:37 GMT
 recorded_with: VCR 3.0.3

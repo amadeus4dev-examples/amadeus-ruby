@@ -5,14 +5,14 @@ http_interactions:
     uri: https://test.api.amadeus.com/v1/security/oauth2/token
     body:
       encoding: US-ASCII
-      string: grant_type=client_credentials&client_id=123&client_secret=345
+      string: grant_type=client_credentials&client_id=abc123&client_secret=def234
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       Host:
       - test.api.amadeus.com
       Content-Type:
@@ -35,15 +35,15 @@ http_interactions:
       Access-Control-Max-Age:
       - '3628800'
       Ama-Gateway-Request-Id:
-      - rrt-03489e325e6bcf6de-c-eu-12767-18246169-3
+      - rrt-03489e325e6bcf6de-c-eu-12766-18693766-2
       Content-Type:
       - application/json
       Date:
-      - Thu, 23 Nov 2017 17:08:04 GMT
+      - Fri, 24 Nov 2017 11:02:23 GMT
       Server:
       - Amadeus
       User-Agent:
-      - Ruby
+      - amadeus-ruby/0.1.0 ruby/2.4.2
       X-Forwarded-For:
       - 88.98.227.83
       X-Forwarded-Port:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: "\n        {\n            \"type\": \"amadeusOAuth2Token\",\n            \"username\":
         \"cristiano@betta.io\",\n            \"application_name\": \"BetaTest_cbetta\",\n
-        \           \"client_id\": \"123\",\n            \"token_type\":
+        \           \"client_id\": \"abc123\",\n            \"token_type\":
         \"Bearer\",\n            \"access_token\": \"ySBMXEC2ac0pEM8gFiU1Vc8B1F8m\",\n
         \           \"expires_in\": 1799,\n            \"state\": \"approved\",\n
         \           \"scope\": \"\"\n        }\n        "
-    http_version: 
-  recorded_at: Thu, 23 Nov 2017 17:08:04 GMT
+    http_version:
+  recorded_at: Fri, 24 Nov 2017 11:02:23 GMT
 recorded_with: VCR 3.0.3

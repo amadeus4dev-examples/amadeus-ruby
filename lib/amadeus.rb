@@ -3,6 +3,7 @@ require 'amadeus/exceptions'
 require 'amadeus/location'
 require 'amadeus/response'
 require 'amadeus/client/decorator'
+require 'amadeus/client/access_token'
 require 'amadeus/client'
 
 require 'amadeus/client/travel'

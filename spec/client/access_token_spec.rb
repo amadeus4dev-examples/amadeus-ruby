@@ -13,7 +13,7 @@ RSpec.describe Amadeus::Client::AccessToken do
     @access_token = Amadeus::Client::AccessToken.new(@client)
 
     @response = double('Amadeus::Response')
-    allow(@response).to receive(:data).and_return(
+    allow(@response).to receive(:json).and_return(
       'access_token' => 'abc',
       'expires_in' => 1799
     )
