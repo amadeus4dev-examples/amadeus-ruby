@@ -48,6 +48,10 @@ Alternatively it can be initialized without any paramters if the environment var
 
 Your credentials can be found on the [Amadeus dashboard](https://dashboard.developer.amadeus.com/client_ids). [Sign up](https://developer.amadeus.com/register) for an account today.
 
+By default the environment for the SDK is the `:test` environment. To switch to a production (paid-for) environment please switch the hostname as follows:
+
+    amadeus = Amadeus::Client.new(hostname: :production)
+
 __Next__: [Learn more about our initializing the Ruby SDK](https://developer.amadeus.com/docs/ruby/get_started_initialize) in our documentation.
 
 ## Documentation

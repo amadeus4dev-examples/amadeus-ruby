@@ -110,6 +110,11 @@
 
 <p>Your credentials can be found on the <a href="https://dashboard.developer.amadeus.com/client_ids">Amadeus dashboard</a>. <a href="https://developer.amadeus.com/register">Sign up</a> for an account today.</p>
 
+<p>By default the environment for the SDK is the <code>:test</code> environment. To switch to a production (paid-for) environment please switch the hostname as follows:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>hostname:</span> <span class='symbol'>:production</span><span class='rparen'>)</span>
+</code></pre>
+
 <p><strong>Next</strong>: <a href="https://developer.amadeus.com/docs/ruby/get_started_initialize">Learn more about our initializing the Ruby SDK</a> in our documentation.</p>
 
 <h2 id="documentation">Documentation</h2>
@@ -216,7 +221,7 @@ attribute.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Nov 24 14:23:56 2017 by
+  Generated on Fri Nov 24 14:46:54 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.10 (ruby-2.4.2).
 </div>
