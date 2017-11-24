@@ -25,6 +25,8 @@ module Amadeus
     attr_reader :custom_app_id
     # A custom App version to be passed in the User Agent to the server
     attr_reader :custom_app_version
+    # The Net:HTTP compatible HTTP client in use
+    attr_reader :http
 
     # The available hosts for this API
     HOSTS = {
@@ -50,10 +52,12 @@ module Amadeus
       initialize_logger(options)
       initialize_host(options)
       initialize_custom_app(options)
+      initialize_http(options)
 
       recognized_options = %i[client_id client_secret
                               logger log_level host hostname
-                              custom_app_id custom_app_version]
+                              custom_app_id custom_app_version
+                              http]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 
@@ -77,6 +81,10 @@ module Amadeus
     def initialize_custom_app(options)
       @custom_app_id = init_optional(:custom_app_id, options, nil)
       @custom_app_version = init_optional(:custom_app_version, options, nil)
+    end
+
+    def initialize_http(options)
+      @http = init_optional(:http, options, Net::HTTP)
     end
   end
 end
