@@ -13,7 +13,7 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
     source 'https://gLLtXNBEsQWTe4u5Un2w@gem.fury.io/workbetta/' do
-      gem 'amadeus', '~> 0.1.0'
+      gem 'amadeus', '~> 0.2.0'
     end
 
 
