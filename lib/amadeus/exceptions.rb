@@ -23,10 +23,18 @@ module Amadeus
     end
 
     # A 404 error
-    class HTTPNotFound < Base
+    class HTTPNotFoundError < Base
       # For a 404 we return the URL called
       def error_message
         response.http_response.uri
+      end
+    end
+
+    # A 401 error
+    class UnauthorizedError < Base
+      # For a 401 we return the error description
+      def error_message
+        response.json['error_description']
       end
     end
 
@@ -37,13 +45,23 @@ module Amadeus
       def error_message
         response.json['errors']
       end
+
+      # Defines the error to throw for a 4XX (non 404 error)
+      def self.for(http_response)
+        return UnauthorizedError if http_response.code == '401'
+        HTTPClientError
+      end
     end
 
     # A 5XX error
     class HTTPServerError < Base
       # For a 500 error we return no extra message
       # @return [String]
-      def error_message; end
+      def error_message
+        response.json['errors'].first['detail']
+      rescue NoMethodError, JSON::ParserError
+        'Server Error'
+      end
     end
 
     # A network error

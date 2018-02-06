@@ -121,7 +121,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Exceptions::HTTPNotFound)
+          raise_error(Amadeus::Exceptions::HTTPNotFoundError)
         )
       end
     end

@@ -78,7 +78,7 @@ For example, `GET /v2/reference-data/urls/checkin-links?airline=1X` would be:
 
 Similarly, to select a resource by ID, you can pass in the ID to the path.
 
-For example,  `GET /v1/shopping/hotel/123hotel-offers` would be:
+For example,  `GET /v1/shopping/hotel/123/hotel-offers` would be:
 
     amadeus.hotels(123).hotel_offers.get(...)
 
