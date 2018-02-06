@@ -27,7 +27,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request without access token' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Exceptions::HTTPClientError => error
+      rescue Amadeus::Exceptions::UnauthorizedError => error
         response = error.response
       end
       expect(response.json['errors'].first['status']).to eq('401')
@@ -98,7 +98,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request without access token' do
       begin
         @client.call(:GET, '/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Exceptions::HTTPClientError => error
+      rescue Amadeus::Exceptions::UnauthorizedError => error
         response = error.response
       end
       expect(response.json['errors'].first['status']).to eq('401')

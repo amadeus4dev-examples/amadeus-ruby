@@ -15,9 +15,9 @@ module Amadeus
 
         case http_response
         when Net::HTTPNotFound
-          raise Amadeus::Exceptions::HTTPNotFound, self
+          raise Amadeus::Exceptions::HTTPNotFoundError, self
         when Net::HTTPClientError
-          raise Amadeus::Exceptions::HTTPClientError, self
+          raise(Amadeus::Exceptions::HTTPClientError.for(http_response), self)
         when Net::HTTPServerError
           raise Amadeus::Exceptions::HTTPServerError, self
         end
