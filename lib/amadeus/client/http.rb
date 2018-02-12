@@ -1,6 +1,6 @@
 require 'net/https'
 
-require 'amadeus/request'
+require 'amadeus/client/request'
 
 module Amadeus
   class Client
@@ -84,7 +84,8 @@ module Amadeus
 
       # Builds the URI, the request object, and makes the actual API calls.
       #
-      # Passes the response to a Amadeus::Response object for further parsing.
+      # Passes the response to a Amadeus::Response object for further
+      # parsing.
       def request(verb, path, params, token)
         request = Amadeus::Request.new(self, verb, path, params, token)
         response = request.call
