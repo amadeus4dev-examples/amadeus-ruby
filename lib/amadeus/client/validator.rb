@@ -2,7 +2,10 @@ module Amadeus
   class Client
     # A set of helper methods to allow the validating of
     # arguments past into the {Amadeus::Client}
+    # @!visibility private
     module Validator
+      private
+
       # Uses {init_optional} to find an entry, and it that returns
       # nil it raises an ArgumentError
       #

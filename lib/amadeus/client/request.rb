@@ -36,6 +36,7 @@ module Amadeus
     #   Amadeus::AccessToken object to use
     #
     # @return [Amadeus::Request]
+    # @!visibility private
     def initialize(client, verb, path, params, access_token)
       @client = client
       @verb = verb
@@ -52,6 +53,7 @@ module Amadeus
     # Execute the API call
     #
     # @return [Amadeus::Response]
+    # @!visibility private
     def call
       log_request
       fetch(@uri, @request)
@@ -63,6 +65,7 @@ module Amadeus
     # @param [Hash] params The parameters to merge into the existing ones
     #
     # @return [Amadeus::Request]
+    # @!visibility private
     def merge(params)
       new_params = @params.merge(params)
       Amadeus::Request.new(@client, @verb, @path, new_params,

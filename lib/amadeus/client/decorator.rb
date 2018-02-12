@@ -4,6 +4,7 @@ module Amadeus
     # to easily wrap the client object
     #
     # @abstract
+    # @!visibility private
     class Decorator
       # The API client
       # @return [Amadeus::Client]

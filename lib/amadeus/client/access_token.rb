@@ -4,6 +4,7 @@ module Amadeus
   class Client
     # A helper library to create and maintain the
     # OAuth2 AccessTokens between requests
+    # @!visibility private
     class AccessToken < Amadeus::Client::Decorator
       # The number of seconds before the token expires, when
       # we will already try to refresh it
@@ -37,18 +38,15 @@ module Amadeus
       # Fetches a new access token and stores it and its expiry date
       def update_access_token
         response = fetch_access_token
-        store_access_token(response.json)
+        store_access_token(response.result)
       end
 
       # Fetches a new access token
       def fetch_access_token
-        client.logger.debug(self.class.name) { 'Refreshing Access Token' }
-
-        client.post('/v1/security/oauth2/token', {
-                      grant_type: 'client_credentials',
-                      client_id: client.client_id,
-                      client_secret: client.client_secret
-                    }, nil)
+        client.unauthenticated_post('/v1/security/oauth2/token',
+                                    grant_type: 'client_credentials',
+                                    client_id: client.client_id,
+                                    client_secret: client.client_secret)
       end
 
       # Store an access token and calculates the expiry date

@@ -18,20 +18,11 @@ module Amadeus
       #   amadeus.get('/v2/reference-data/urls/checkin-links', {
       #     airline: '1X'
       #   })
-      #
-      # To make an unauthenticated API call, make sure to pass in an explicit
-      # nil as a third parameter for the access token:
-      #
-      #   amadeus.get('/v2/reference-data/urls/checkin-links', {
-      #     airline: '1X'
-      #   }, nil)
-      #
       # @param [String] path the full path for the API call
       # @param [Hash] params the optional GET params to pass to the API
-      # @param [String] token the optional OAuth2 bearer token
       #
-      def get(path, params = {}, token = access_token)
-        request(:GET, path, params, token)
+      def get(path, params = {})
+        request(:GET, path, params, access_token)
       end
 
       # A helper module for making generic POST requests calls. It is used by
@@ -51,11 +42,24 @@ module Amadeus
       #
       # @param [String] path the full path for the API call
       # @param [Hash] params the optional POST params to pass to the API
-      # @param [String] token the optional OAuth2 bearer token
       #
-      def post(path, params = {}, token = access_token)
-        request(:POST, path, params, token)
+      def post(path, params = {})
+        request(:POST, path, params, access_token)
       end
+
+      # A helper module for making generic unauthenticated POST requests calls.
+      # It is used bythe access token to get a first token.
+      #
+      #   amadeus.foo.bar.unauthenticated_post(some: 'data')
+      #
+      # @param [String] path the full path for the API call
+      # @param [Hash] params the optional POST params to pass to the API
+      # @!visibility private
+      def unauthenticated_post(path, params = {})
+        request(:POST, path, params, nil)
+      end
+
+      private
 
       # A helper module for making generic GET/POST requests calls. It is
       # used by every namespaced API POST method.
@@ -79,8 +83,6 @@ module Amadeus
       def call(verb, path, params = {}, token = access_token)
         request(verb, path, params, token)
       end
-
-      private
 
       # Builds the URI, the request object, and makes the actual API calls.
       #

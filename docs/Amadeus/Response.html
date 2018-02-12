@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span>, <span class='object_link'><a href="Response/Parser.html" title="Amadeus::Response::Parser (module)">Parser</a></span></dd>
+      <dd><span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span></dd>
   </dl>
   
   
@@ -122,7 +122,7 @@ JSON.</p>
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span>, <span class='object_link'><a href="Response/Parser.html" title="Amadeus::Response::Parser (module)">Parser</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span>
     
   
     
@@ -134,6 +134,35 @@ JSON.</p>
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body-instance_method" title="#body (instance method)">#<strong>body</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The raw body received from the API.</p>
+</div></span>
+  
+</li>
+
     
       <li class="public ">
   <span class="summary_signature">
@@ -187,7 +216,7 @@ JSON.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The actual HTTPResponse object returned from the API.</p>
+<p>The actual HTTPResponse object returned from the Net::HTTP request.</p>
 </div></span>
   
 </li>
@@ -196,7 +225,7 @@ JSON.</p>
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#json-instance_method" title="#json (instance method)">#<strong>json</strong>  &#x21d2; Hash </a>
+      <a href="#parsed-instance_method" title="#parsed (instance method)">#<strong>parsed</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -216,7 +245,7 @@ JSON.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The parsed JSON data - if the body contained JSON.</p>
+<p>Wether the raw body has been parsed into JSON.</p>
 </div></span>
   
 </li>
@@ -245,7 +274,65 @@ JSON.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The actual Amadeus::Request object used to make the API call.</p>
+<p>The actual Amadeus::Request object used to make this API call.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#result-instance_method" title="#result (instance method)">#<strong>result</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The parsed JSON received from the API, if the result was JSON.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status_code-instance_method" title="#status_code (instance method)">#<strong>status_code</strong>  &#x21d2; Number </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The HTTP status code for the response, if any.</p>
 </div></span>
   
 </li>
@@ -256,44 +343,6 @@ JSON.</p>
 
 
 
-  
-    <h2>
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(http_response, request)  &#x21d2; Response </a>
-    
-
-    
-  </span>
-  
-  
-    <span class="note title constructor">constructor</span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Initialize the Response object with the HTTPResponse object to parse, the
-client that made the request and the original request made.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
 
   
   
@@ -301,7 +350,7 @@ client that made the request and the original request made.</p>
   
   
   
-  
+  <h2>Method Summary</h2>
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Response/Pagination.html#first-instance_method" title="Amadeus::Response::Pagination#first (method)">#first</a></span>, <span class='object_link'><a href="Response/Pagination.html#last-instance_method" title="Amadeus::Response::Pagination#last (method)">#last</a></span>, <span class='object_link'><a href="Response/Pagination.html#next-instance_method" title="Amadeus::Response::Pagination#next (method)">#next</a></span>, <span class='object_link'><a href="Response/Pagination.html#previous-instance_method" title="Amadeus::Response::Pagination#previous (method)">#previous</a></span></p>
@@ -311,13 +360,16 @@ client that made the request and the original request made.</p>
   
   
   
-  <div id="constructor_details" class="method_details_list">
-  <h2>Constructor Details</h2>
   
-    <div class="method_details first">
-  <h3 class="signature first" id="initialize-instance_method">
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="body-instance_method">
   
-    #<strong>initialize</strong>(http_response, request)  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Response (class)">Response</a></span></tt> 
+    #<strong>body</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -326,50 +378,26 @@ client that made the request and the original request made.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Initialize the Response object with the HTTPResponse object to parse, the
-client that made the request and the original request made</p>
+<p>The raw body received from the API</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
   
     <li>
       
-        <span class='name'>http_response</span>
+      
+        <span class='type'>(<tt>String</tt>)</span>
       
       
-        <span class='type'>(<tt>Net:::HTTPResponse</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the HTTPResponse returned</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>request</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Request.html" title="Amadeus::Request (class)">Amadeus::Request</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the request object used to make the API call</p>
-</div>
       
     </li>
   
 </ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -377,38 +405,25 @@ client that made the request and the original request made</p>
       <pre class="lines">
 
 
-35
-36
-37
-38
-39
-40
-41</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 29</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_http_response'>http_response</span><span class='comma'>,</span> <span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
-  <span class='ivar'>@http_response</span> <span class='op'>=</span> <span class='id identifier rubyid_http_response'>http_response</span>
-  <span class='ivar'>@request</span> <span class='op'>=</span> <span class='id identifier rubyid_request'>request</span>
-
-  <span class='id identifier rubyid_log_response'>log_response</span>
-  <span class='id identifier rubyid_parse_response'>parse_response</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
+  <span class='ivar'>@body</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
 </div>
-  
-</div>
-
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
     
       
       <span id=""></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="data-instance_method">
+      <div class="method_details ">
+  <h3 class="signature " id="data-instance_method">
   
     #<strong>data</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
   
@@ -475,7 +490,7 @@ client that made the request and the original request made</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The actual HTTPResponse object returned from the API</p>
+<p>The actual HTTPResponse object returned from the Net::HTTP request</p>
 
 
   </div>
@@ -520,9 +535,9 @@ client that made the request and the original request made</p>
       
       <span id=""></span>
       <div class="method_details ">
-  <h3 class="signature " id="json-instance_method">
+  <h3 class="signature " id="parsed-instance_method">
   
-    #<strong>json</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+    #<strong>parsed</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -531,7 +546,7 @@ client that made the request and the original request made</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The parsed JSON data - if the body contained JSON</p>
+<p>Wether the raw body has been parsed into JSON</p>
 
 
   </div>
@@ -544,7 +559,7 @@ client that made the request and the original request made</p>
     <li>
       
       
-        <span class='type'>(<tt>Hash</tt>)</span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
@@ -558,15 +573,15 @@ client that made the request and the original request made</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_json'>json</span>
-  <span class='ivar'>@json</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_parsed'>parsed</span>
+  <span class='ivar'>@parsed</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -587,7 +602,7 @@ client that made the request and the original request made</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The actual Amadeus::Request object used to make the API call</p>
+<p>The actual Amadeus::Request object used to make this API call</p>
 
 
   </div>
@@ -629,13 +644,125 @@ client that made the request and the original request made</p>
 </table>
 </div>
     
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="result-instance_method">
+  
+    #<strong>result</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The parsed JSON received from the API, if the result was JSON</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span>
+  <span class='ivar'>@result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="status_code-instance_method">
+  
+    #<strong>status_code</strong>  &#x21d2; <tt>Number</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The HTTP status code for the response, if any</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Number</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_status_code'>status_code</span>
+  <span class='ivar'>@status_code</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 12 17:19:42 2018 by
+  Generated on Mon Feb 12 18:35:03 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.2).
 </div>

@@ -87,11 +87,6 @@
   
   
   
-  <dl>
-      <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span></dd>
-  </dl>
-  
   
 
   
@@ -118,17 +113,7 @@ starts the API call</p>
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span>
-    
-  
-    
-  
-</p>
-
+</div>
 
 
 
@@ -314,246 +299,13 @@ starts the API call</p>
 
 
 
-  
-    <h2>
-      Instance Method Summary
-      <small><a href="#" class="summary_toggle">collapse</a></small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#call-instance_method" title="#call (instance method)">#<strong>call</strong>  &#x21d2; Amadeus::Response </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Execute the API call.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(client, verb, path, params, access_token)  &#x21d2; Amadeus::Request </a>
-    
-
-    
-  </span>
-  
-  
-    <span class="note title constructor">constructor</span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Initialize a Request, ready to make an API call.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#merge-instance_method" title="#merge (instance method)">#<strong>merge</strong>(params)  &#x21d2; Amadeus::Request </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Build a new <code>Amadeus::Request</code> with all the same argument as
-this request and merging in the provided params to the existing ones.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
 
   
   
   
   
   
-  <div id="constructor_details" class="method_details_list">
-  <h2>Constructor Details</h2>
   
-    <div class="method_details first">
-  <h3 class="signature first" id="initialize-instance_method">
-  
-    #<strong>initialize</strong>(client, verb, path, params, access_token)  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Request (class)">Amadeus::Request</a></span></tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Initialize a Request, ready to make an API call.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>client</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Client.html" title="Amadeus::Client (class)">Amadeus::Client</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The Amadeus::Client that will make the API call</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>verb</span>
-      
-      
-        <span class='type'>(<tt>Symbol</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The verb used to make an API call (:GET or :POST)</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>path</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The path of the API to be called</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The GET/POST params for the API call</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>access_token</span>
-      
-      
-        <span class='type'>(<tt>Amadeus::AcessToken</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>An initialized Amadeus::AccessToken object to use</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/request.rb', line 39</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_access_token'>access_token</span><span class='rparen'>)</span>
-  <span class='ivar'>@client</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span>
-  <span class='ivar'>@verb</span> <span class='op'>=</span> <span class='id identifier rubyid_verb'>verb</span>
-  <span class='ivar'>@path</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
-  <span class='ivar'>@params</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span>
-  <span class='ivar'>@access_token</span> <span class='op'>=</span> <span class='id identifier rubyid_access_token'>access_token</span>
-  <span class='ivar'>@bearer_token</span> <span class='op'>=</span> <span class='ivar'>@access_token</span><span class='period'>.</span><span class='id identifier rubyid_bearer_token'>bearer_token</span> <span class='kw'>if</span> <span class='ivar'>@access_token</span>
-
-  <span class='ivar'>@uri</span> <span class='op'>=</span> <span class='id identifier rubyid_build_uri'>build_uri</span>
-  <span class='ivar'>@request</span> <span class='op'>=</span> <span class='id identifier rubyid_build_request'>build_request</span>
-  <span class='ivar'>@user_agent</span> <span class='op'>=</span> <span class='id identifier rubyid_build_user_agent'>build_user_agent</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-  
-</div>
-
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -675,7 +427,7 @@ this request and merging in the provided params to the existing ones.</p>
       <div class="method_details ">
   <h3 class="signature " id="params-instance_method">
   
-    #<strong>params</strong>  &#x21d2; <tt><span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span></tt>  <span class="extras">(readonly)</span>
+    #<strong>params</strong>  &#x21d2; <tt><span class='object_link'>Hash</span></tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -697,7 +449,7 @@ this request and merging in the provided params to the existing ones.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
       
       
       
@@ -884,151 +636,10 @@ this request and merging in the provided params to the existing ones.</p>
   </div>
 
 
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="call-instance_method">
-  
-    #<strong>call</strong>  &#x21d2; <tt><span class='object_link'><a href="Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Execute the API call</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-55
-56
-57
-58</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/request.rb', line 55</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_call'>call</span>
-  <span class='id identifier rubyid_log_request'>log_request</span>
-  <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='ivar'>@uri</span><span class='comma'>,</span> <span class='ivar'>@request</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="merge-instance_method">
-  
-    #<strong>merge</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Request (class)">Amadeus::Request</a></span></tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Build a new <code>Amadeus::Request</code> with all the same argument as
-this request and merging in the provided params to the existing ones.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Request/Hash.html" title="Amadeus::Request::Hash (module)">Hash</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The parameters to merge into the existing ones</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Amadeus::Request (class)">Amadeus::Request</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-66
-67
-68
-69
-70</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/request.rb', line 66</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_new_params'>new_params</span> <span class='op'>=</span> <span class='ivar'>@params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Amadeus::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@client</span><span class='comma'>,</span> <span class='ivar'>@verb</span><span class='comma'>,</span> <span class='ivar'>@path</span><span class='comma'>,</span> <span class='id identifier rubyid_new_params'>new_params</span><span class='comma'>,</span>
-                       <span class='ivar'>@access_token</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 12 17:19:41 2018 by
+  Generated on Mon Feb 12 18:35:02 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.2).
 </div>
