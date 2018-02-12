@@ -4,29 +4,32 @@ module Amadeus
   class Response
     # Helper methods to for the {Amadeus::Response} object to help it
     # parse the response received from the API
+    # @!visibility private
     module Parser
       private
 
       # Tries to parse the HTTPResponse, parsing the JSON and raising the
       # appropriate errors
       def parse_response
-        @json = parse_json(http_response)
-        @data = @json.fetch('data', nil) if @json
+        @result = parse_json(http_response)
+        @data = @result.fetch('data', nil) if @result
 
         case http_response
         when Net::HTTPNotFound
-          raise Amadeus::Errors::HTTPNotFoundError, self
+          raise Amadeus::Errors::NotFoundError, self
         when Net::HTTPClientError
-          raise(Amadeus::Errors::HTTPClientError.for(http_response), self)
+          raise(Amadeus::Errors::ClientError.for(http_response), self)
         when Net::HTTPServerError
-          raise Amadeus::Errors::HTTPServerError, self
+          raise Amadeus::Errors::ServerError, self
         end
       end
 
       # Tries to parse the JSON, if there is any
       def parse_json(http_response)
+        @status_code = http_response.code
+        @body = http_response.body
         return unless json?(http_response)
-        JSON.parse(http_response.body)
+        JSON.parse(@body)
       rescue JSON::ParserError
         raise Amadeus::Errors::ParserError, self
       end

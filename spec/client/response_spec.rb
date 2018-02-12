@@ -6,6 +6,8 @@ RSpec.describe Amadeus::Response do
       @http_response = double('HTTPResponse')
       allow(@http_response).to receive(:[]).and_return('application/json')
       allow(@http_response).to receive(:body).and_return('{}')
+      allow(@http_response).to receive(:code).at_least(1).times
+                                             .and_return('200')
 
       @logger = double('Logger')
 

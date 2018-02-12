@@ -25,6 +25,8 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times
                                        .and_return('{ "data" : { "a" : 1 } }')
 
+        expect(@http).to receive(:code).at_least(1).times.and_return('200')
+
         response = Amadeus::Response.new(@http, @request)
         expect(response.data).to eq('a' => 1)
       end
@@ -34,6 +36,7 @@ RSpec.describe Amadeus::Response::Parser do
                                      .and_return('application/json')
 
         expect(@http).to receive(:body).at_least(1).times.and_return(nil)
+        expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
         response = Amadeus::Response.new(@http, @request)
         expect(response.data).to eq(nil)
@@ -48,6 +51,8 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times
                                        .and_return('{ "data" : { "a" : 1 } }')
 
+        expect(@http).to receive(:code).at_least(1).times.and_return('200')
+
         response = Amadeus::Response.new(@http, @request)
         expect(response.data).to eq('a' => 1)
       end
@@ -58,6 +63,7 @@ RSpec.describe Amadeus::Response::Parser do
         )
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{')
+        expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
           raise_error(Amadeus::Errors::ParserError)
@@ -72,6 +78,7 @@ RSpec.describe Amadeus::Response::Parser do
         )
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
+        expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
         response = Amadeus::Response.new(@http, @request)
         expect(response).to be_instance_of(Amadeus::Response)
@@ -89,7 +96,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::HTTPClientError)
+          raise_error(Amadeus::Errors::ClientError)
         )
       end
     end
@@ -105,7 +112,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::HTTPClientError)
+          raise_error(Amadeus::Errors::ClientError)
         )
       end
     end
@@ -121,7 +128,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::HTTPNotFoundError)
+          raise_error(Amadeus::Errors::NotFoundError)
         )
       end
     end
@@ -137,7 +144,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
         expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::HTTPServerError)
+          raise_error(Amadeus::Errors::ServerError)
         )
       end
     end

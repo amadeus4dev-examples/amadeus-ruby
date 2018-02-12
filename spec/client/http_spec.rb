@@ -12,25 +12,16 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Errors::HTTPClientError => error
+      rescue Amadeus::Errors::ClientError => error
         response = error.response
-        expect(response.json['errors'].first['status']).to eq(400)
+        expect(response.result['errors'].first['status']).to eq(400)
       end
     end
 
     it 'should be able to  make and parse a GET request with params' do
       params = { airline: '1X' }
       response = @client.get('/v2/reference-data/urls/checkin-links', params)
-      expect(response.json['meta']['count']).to eq(2)
-    end
-
-    it 'should be able to make and parse a GET request without access token' do
-      begin
-        @client.get('/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Errors::UnauthorizedError => error
-        response = error.response
-      end
-      expect(response.json['errors'].first['status']).to eq('401')
+      expect(response.result['meta']['count']).to eq(2)
     end
 
     it 'should be able to handle a broken connection' do
@@ -54,25 +45,30 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a POST request' do
       begin
         @client.post('/v1/security/oauth2/token')
-      rescue Amadeus::Errors::HTTPClientError => error
+      rescue Amadeus::Errors::ClientError => error
         response = error.response
       end
 
-      expect(response.json['error']).to eq('invalid_request')
+      expect(response.result['error']).to eq('invalid_request')
     end
 
     it 'should be able to make and parse a POST request with params' do
-      response = @client.post('/v1/security/oauth2/token', @params, nil)
+      response = @client.unauthenticated_post(
+        '/v1/security/oauth2/token',
+        @params
+      )
 
-      expect(response.json['access_token']).to(
+      expect(response.result['access_token']).to(
         eq('rghQPhQhoud0gtghohg5HpRisfmN')
       )
     end
 
     it 'should be able to make and parse a POST request without access token' do
-      response = @client.post('/v1/security/oauth2/token', @params, nil)
+      response = @client.unauthenticated_post(
+        '/v1/security/oauth2/token', @params
+      )
 
-      expect(response.json['access_token']).to(
+      expect(response.result['access_token']).to(
         eq('ySBMXEC2ac0pEM8gFiU1Vc8B1F8m')
       )
     end
@@ -81,33 +77,37 @@ RSpec.describe Amadeus::Client::HTTP do
   describe 'Amadeus::Client.call', :vcr do
     it 'should be able to make and parse any request' do
       begin
-        @client.call(:GET, '/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Errors::HTTPClientError => error
+        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links')
+      rescue Amadeus::Errors::ClientError => error
         response = error.response
-        expect(response.json['errors'].first['status']).to eq(400)
+        expect(response.result['errors'].first['status']).to eq(400)
       end
     end
 
     it 'should be able to  make and parse a GET request with params' do
       params = { airline: '1X' }
-      response = @client.call(:GET, '/v2/reference-data/urls/checkin-links',
+      response = @client.send(:call, :GET,
+                              '/v2/reference-data/urls/checkin-links',
                               params)
-      expect(response.json['meta']['count']).to eq(2)
+      expect(response.result['meta']['count']).to eq(2)
     end
 
     it 'should be able to make and parse a GET request without access token' do
       begin
-        @client.call(:GET, '/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Errors::UnauthorizedError => error
+        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links', {},
+                     false)
+      rescue Amadeus::Errors::AuthenticationError => error
         response = error.response
       end
-      expect(response.json['errors'].first['status']).to eq('401')
+      expect(response.result['errors'].first['status']).to eq('401')
     end
 
     it 'should be able to handle a broken connection' do
       allow(Net::HTTP).to receive(:start).and_raise(SocketError)
 
-      expect { @client.call(:GET, '/v2/reference-data/urls/checkin-links') }.to(
+      expect do
+        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links')
+      end.to(
         raise_error(Amadeus::Errors::NetworkError)
       )
     end
