@@ -12,7 +12,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Exceptions::HTTPClientError => error
+      rescue Amadeus::Errors::HTTPClientError => error
         response = error.response
         expect(response.json['errors'].first['status']).to eq(400)
       end
@@ -27,7 +27,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request without access token' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Exceptions::UnauthorizedError => error
+      rescue Amadeus::Errors::UnauthorizedError => error
         response = error.response
       end
       expect(response.json['errors'].first['status']).to eq('401')
@@ -37,7 +37,7 @@ RSpec.describe Amadeus::Client::HTTP do
       allow(Net::HTTP).to receive(:start).and_raise(SocketError)
 
       expect { @client.get('/v2/reference-data/urls/checkin-links') }.to(
-        raise_error(Amadeus::Exceptions::NetworkError)
+        raise_error(Amadeus::Errors::NetworkError)
       )
     end
   end
@@ -54,7 +54,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a POST request' do
       begin
         @client.post('/v1/security/oauth2/token')
-      rescue Amadeus::Exceptions::HTTPClientError => error
+      rescue Amadeus::Errors::HTTPClientError => error
         response = error.response
       end
 
@@ -82,7 +82,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse any request' do
       begin
         @client.call(:GET, '/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Exceptions::HTTPClientError => error
+      rescue Amadeus::Errors::HTTPClientError => error
         response = error.response
         expect(response.json['errors'].first['status']).to eq(400)
       end
@@ -98,7 +98,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request without access token' do
       begin
         @client.call(:GET, '/v2/reference-data/urls/checkin-links', {}, false)
-      rescue Amadeus::Exceptions::UnauthorizedError => error
+      rescue Amadeus::Errors::UnauthorizedError => error
         response = error.response
       end
       expect(response.json['errors'].first['status']).to eq('401')
@@ -108,7 +108,7 @@ RSpec.describe Amadeus::Client::HTTP do
       allow(Net::HTTP).to receive(:start).and_raise(SocketError)
 
       expect { @client.call(:GET, '/v2/reference-data/urls/checkin-links') }.to(
-        raise_error(Amadeus::Exceptions::NetworkError)
+        raise_error(Amadeus::Errors::NetworkError)
       )
     end
   end

@@ -1,6 +1,6 @@
 require 'logger'
 require 'amadeus/client/validator'
-require 'amadeus/client/namespaces'
+require 'amadeus/namespaces/core'
 require 'amadeus/client/http'
 
 module Amadeus
@@ -8,8 +8,8 @@ module Amadeus
   # the travel APIs
   class Client
     include Validator
-    include Namespaces
     include HTTP
+    include Amadeus::Namespaces
 
     # The API key used to authenticate against the API
     attr_reader :client_id
