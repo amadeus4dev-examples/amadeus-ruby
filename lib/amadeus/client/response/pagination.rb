@@ -39,7 +39,7 @@ module Amadeus
 
       # Determine the page number for the given page name
       def page_number_for(name)
-        json['meta']['links'][name.to_s].split('=').last.to_i
+        result['meta']['links'][name.to_s].split('=').last.to_i
       rescue NoMethodError
         nil
       end
