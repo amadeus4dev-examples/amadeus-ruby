@@ -18,7 +18,7 @@ RSpec.describe Amadeus::Response::Pagination do
                                            .and_return(@request)
         expect(@request).to receive(:call)
 
-        expect(@response).to receive(:json).and_return(
+        expect(@response).to receive(:result).and_return(
           'meta' => { 'links' => { key => 'http://foo.com?page[offset]=1' } }
         )
 
@@ -31,7 +31,7 @@ RSpec.describe Amadeus::Response::Pagination do
         expect(@request).not_to receive(:merge)
         expect(@request).not_to receive(:call)
 
-        expect(@response).to receive(:json).and_return(
+        expect(@response).to receive(:result).and_return(
           'meta' => { 'links' => {} }
         )
 
