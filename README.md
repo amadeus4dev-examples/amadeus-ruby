@@ -30,10 +30,14 @@ To send make your first API call you will need to [register for an Amadeus Devel
       client_secret: '[YOUR_CLIENT_SECRET]'
     })
 
-    amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
-    # => {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
+    begin
+      amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
+      # => {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
+    rescue Amadeus::ResponseError => error
+      puts error
+    end
 
-__Next__: [Learn more about Locations](https://developer.amadeus.com/docs/ruby/get_started/locations) with our Ruby SDK.
+__Next__: [Learn more about checkin links](https://developer.amadeus.com/docs/ruby/get_started/checkin_links) with our Ruby SDK.
 
 ## Initialization
 
@@ -86,20 +90,23 @@ You can make any arbitrary API call as well directly with the `.get` method:
 
     amadeus.get('/v2/reference-data/urls/checkin-links', airline: '1X')
 
-## Response & Pagination
+## Response
 
 Every API call returns a `Amadeus::Response` object. If the API call contained
-a JSON response it will parse the JSON into the `.json` attribute. If this data
+a JSON response it will parse the JSON into the `.result` attribute. If this data
 also contains a `data` key, it will make that available as the `.data`
-attribute.
+attribute. The raw body of the response is always avaulable as the `.body` attribute.
 
     response = amadeus.reference_data.locations.get(
       keyword: 'LON',
       subType: Amadeus::Location::ANY
     )
 
-    p reponse.json #=> The complete JSON response
-    p response.data #=> The list of locations
+    p reponse.body #=> The raw response, as a string
+    p reponse.result #=> The body parsed as JSON, if the result was parsable
+    p response.data #=> The list of locations, extracted from the JSON
+
+## Pagination
 
 If an API endpoint supports pagination, the other pages are available under the
 `.next`, `.previous`, `.last` and `.first` methods.
