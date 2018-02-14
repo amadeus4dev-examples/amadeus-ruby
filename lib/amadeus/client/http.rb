@@ -72,7 +72,9 @@ module Amadeus
       #
       # @!visibility private
       def unauthenticated_request(verb, path, params, bearer_token = nil)
-        execute(build_request(verb, path, params, bearer_token))
+        request = build_request(verb, path, params, bearer_token)
+        log(request)
+        execute(request)
       end
 
       private
@@ -91,7 +93,10 @@ module Amadeus
       # Executes the request and wraps it in a Response
       def execute(request)
         http_response = fetch(request)
-        Amadeus::Response.new(http_response, request)
+        log(http_response)
+        response = Amadeus::Response.new(http_response, request)
+        log(response)
+        response
       end
 
       # Actually make the HTTP call, making sure to catch it in case of an error
@@ -107,6 +112,19 @@ module Amadeus
       # A memoized AccessToken object, so we don't keep reauthenticating
       def access_token
         @access_token ||= AccessToken.new(self)
+      end
+
+      # Log any object
+      def log(object)
+        logger.warn(object.class.name.to_s) do
+          # :nocov:
+          JSON.pretty_generate(
+            ::Hash[object.instance_variables.map do |ivar|
+              [ivar, object.instance_variable_get(ivar)]
+            end]
+          )
+          # :nocov:
+        end
       end
     end
   end

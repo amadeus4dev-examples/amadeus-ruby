@@ -132,14 +132,14 @@ The SDK makes it easy to add your own logger.
       logger: Logger.new(STDOUT)
     )
 
-Additionally, to enable more verbose logging, you can set the appropriate level either via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
+Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the `AMADEUS_DEBUG` environment variable.
 
     require 'logger'
 
     amadeus = Amadeus::Client.new(
       client_id: '...',
       client_secret: '...',
-      log_level: Logger::DEBUG # defaults to Logger::WARN, aka "2"
+      debug: true
     )
 
 ## License

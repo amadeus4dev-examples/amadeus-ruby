@@ -29,6 +29,8 @@ module Amadeus
     attr_reader :custom_app_version
     # The Net:HTTP compatible HTTP client in use
     attr_reader :http
+    # If this client is running in debug mode
+    attr_reader :debug
 
     # The available hosts for this API
     HOSTS = {
@@ -57,9 +59,9 @@ module Amadeus
       initialize_http(options)
 
       recognized_options = %i[client_id client_secret
-                              logger log_level host hostname
+                              logger host hostname
                               custom_app_id custom_app_version
-                              http]
+                              http debug]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 
@@ -71,8 +73,11 @@ module Amadeus
     end
 
     def initialize_logger(options)
-      @logger = init_optional(:logger, options, Logger.new(STDOUT))
-      @logger.level = init_optional(:log_level, options, Logger::WARN)
+      default_logger = Logger.new(STDOUT)
+      default_logger.level = Logger::ERROR
+      @logger       = init_optional(:logger, options, default_logger)
+      @debug        = init_optional(:debug, options, false)
+      @logger.level = @debug ? Logger::DEBUG : @logger.level
     end
 
     def initialize_host(options)
