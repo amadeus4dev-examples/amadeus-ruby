@@ -1,7 +1,5 @@
 module Amadeus
-  # A custom namespace for all Amadeus exceptions
-  # An abstract exception to provide shared functionality between all
-  # Amadeus exceptions
+  # A custom generic Amadeus error.
   #
   # @abstract
   class ResponseError < RuntimeError
@@ -18,8 +16,7 @@ module Amadeus
     # @return [String]
     attr_reader :code
 
-    # A short description of the error, extracted from the returned JSON, if
-    # any is present
+    # The content of the response that describes the error
     #
     # @return [Hash]
     attr_reader :description
@@ -32,79 +29,38 @@ module Amadeus
     # @!visibility private
     def initialize(response)
       @response = response
-      super(error_message)
+      @description = determine_description
+      super(@description)
+      @code = determine_code
+    end
+
+    private
+
+    def determine_description
+      return nil unless response && response.parsed
+      result = response.result
+      return result['errors'] if result['errors']
+      return result if result['error_description']
+    end
+
+    def determine_code
+      self.class.to_s.split('::').last
     end
   end
 
+  # The errors that can be thrown by the SDK
   module Errors
-    # A 404 error
-    class NotFoundError < Amadeus::ResponseError
-      # For a 404 we return the URL called
-      def error_message
-        response.http_response.uri
-      end
-    end
-
-    # A 401 error
-    class AuthenticationError < Amadeus::ResponseError
-      # For a 401 we return the error description
-      def error_message
-        response.result['error_description']
-      end
-    end
-
-    # A 4XX (non 404) error
-    class ClientError < Amadeus::ResponseError
-      # For a 400 we return the parsed errors as the message
-      # @return [String]
-      def error_message
-        response.result['errors']
-      end
-
-      # Defines the error to throw for a 4XX (non 404 error)
-      # @!visibility private
-      def self.for(http_response)
-        return AuthenticationError if http_response.code == '401'
-        ClientError
-      end
-    end
-
-    # A 5XX error
-    class ServerError < Amadeus::ResponseError
-      # For a 500 error we return no extra message
-      # @return [String]
-      def error_message
-        response.result['errors'].first['detail']
-      rescue NoMethodError, JSON::ParserError
-        'Server Error'
-      end
-    end
-
-    # A network error
-    class NetworkError < Amadeus::ResponseError
-      # For a network error we return no extra message
-      # @return [String]
-      def error_message
-        response.message
-      end
-    end
-
-    # A JSON parsing error
-    class ParserError < Amadeus::ResponseError
-      # For a Parse error we return the raw data
-      # @return [String]
-      def error_message
-        response.http_response.body
-      end
-    end
-
-    # When we are not sure what error is thrown
-    class UnknownError < Amadeus::ResponseError
-      # For a Parse error we return the raw data
-      # @return [String]
-      def error_message
-        response.http_response.body
-      end
-    end
+    # This error occurs when there is some kind of error in the network
+    class NetworkError < Amadeus::ResponseError; end
+    # This error occurs when the response type was JSOn but could not be parsed
+    class ParserError < Amadeus::ResponseError; end
+    # This error occurs when there is an error on the server
+    class ServerError < Amadeus::ResponseError; end
+    # This error occurs when the client did not provide the right parameters
+    class ClientError < Amadeus::ResponseError; end
+    # This error occurs when the client did not provide the right credentials
+    class AuthenticationError < Amadeus::ResponseError; end
+    # This error occurs when the path could not be found
+    class NotFoundError < Amadeus::ResponseError; end
   end
 end

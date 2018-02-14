@@ -4,7 +4,7 @@ RSpec.describe Amadeus::Client::Pagination do
   before do
     @client = Amadeus::Client.new(client_id: '123', client_secret: '234')
     @http_response = double('Response')
-    allow(@http_response).to receive(:code)
+    allow(@http_response).to receive(:code).and_return(200)
     allow(@http_response).to receive(:[]).with('Content-Type')
                                          .and_return('application/json')
 
