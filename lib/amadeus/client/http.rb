@@ -22,7 +22,7 @@ module Amadeus
       # @param [Hash] params the optional GET params to pass to the API
       #
       def get(path, params = {})
-        request(:GET, path, params, access_token)
+        request(:GET, path, params)
       end
 
       # A helper module for making generic POST requests calls. It is used by
@@ -44,55 +44,64 @@ module Amadeus
       # @param [Hash] params the optional POST params to pass to the API
       #
       def post(path, params = {})
-        request(:POST, path, params, access_token)
+        request(:POST, path, params)
       end
 
-      # A helper module for making generic unauthenticated POST requests calls.
-      # It is used bythe access token to get a first token.
+      # A more generic helper for making authenticated API calls
       #
-      #   amadeus.foo.bar.unauthenticated_post(some: 'data')
-      #
+      # @param [Symbol] verb the HTTP verb to use
       # @param [String] path the full path for the API call
       # @param [Hash] params the optional POST params to pass to the API
       # @!visibility private
-      def unauthenticated_post(path, params = {})
-        request(:POST, path, params, nil)
-      end
-
-      private
-
-      # A helper module for making generic GET/POST requests calls. It is
-      # used by every namespaced API POST method.
       #
-      #   amadeus.foo.bar.post(some: 'data')
-      #
-      # It can be used to make any generic API call that is automatically
-      # authenticated using your API credentials:
-      #
-      #   amadeus.call(:GET, '/v2/foo/bar', { some: 'data' })
-      #
-      # To make an unauthenticated API call, make sure to pass in an explicit
-      # nil for the access token:
-      #
-      #   amadeus.call(:GET, '/v2/foo/bar', { some: 'data' }, nil)
-      #
-      # @param [String] path the full path for the API call
-      # @param [Hash] params the optional POST params to pass to the API
-      # @param [String] token the optional OAuth2 bearer token
-      #
-      def call(verb, path, params = {}, token = access_token)
-        request(verb, path, params, token)
+      def request(verb, path, params = {})
+        unauthenticated_request(verb, path, params, access_token.bearer_token)
       end
 
       # Builds the URI, the request object, and makes the actual API calls.
       #
+      # Used by the AccessToken to fetch a new Bearer Token
+      #
       # Passes the response to a Amadeus::Response object for further
       # parsing.
-      def request(verb, path, params, token)
-        request = Amadeus::Request.new(self, verb, path, params, token)
-        response = request.call
+      #
+      # @param [Symbol] verb the HTTP verb to use
+      # @param [String] path the full path for the API call
+      # @param [Hash] params the optional POST params to pass to the API
+      # @param [String] bearer_token the optional OAuth2 bearer token
+      #
+      # @!visibility private
+      def unauthenticated_request(verb, path, params, bearer_token = nil)
+        execute(build_request(verb, path, params, bearer_token))
+      end
 
-        Amadeus::Response.new(response, request)
+      private
+
+      # Builds a HTTP request object that contains all the information about
+      # this request
+      def build_request(verb, path, params, bearer_token)
+        Amadeus::Request.new(
+          host: @host, verb: verb, path: path, params: params,
+          bearer_token: bearer_token, client_version: Amadeus::VERSION,
+          language_version: RUBY_VERSION, app_id: @custom_app_id,
+          app_version: @custom_app_version
+        )
+      end
+
+      # Executes the request and wraps it in a Response
+      def execute(request)
+        http_response = fetch(request)
+        Amadeus::Response.new(http_response, request)
+      end
+
+      # Actually make the HTTP call, making sure to catch it in case of an error
+      def fetch(request)
+        uri = request.uri
+        @http.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          http.request(request.http_request)
+        end
+      rescue StandardError => error
+        raise(Amadeus::Errors::NetworkError, error)
       end
 
       # A memoized AccessToken object, so we don't keep reauthenticating

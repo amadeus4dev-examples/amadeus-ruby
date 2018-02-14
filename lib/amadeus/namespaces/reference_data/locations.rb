@@ -29,7 +29,7 @@ module Amadeus
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Errors::Base] an exception if the call failed
         # @example Find any location starting with 'lon'
-        #   amadeus.reference_data.location.get(
+        #   amadeus.reference_data.locations.get(
         #     keyword: 'lon',
         #     subType: Amadeus::Location::ANY
         #   )

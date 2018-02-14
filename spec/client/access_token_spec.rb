@@ -22,10 +22,11 @@ RSpec.describe Amadeus::Client::AccessToken do
   describe '.bearer_token' do
     it 'should make a new API call if no token has been loaded before' do
       expect(@client).to(
-        receive(:unauthenticated_post).with('/v1/security/oauth2/token',
-                                            grant_type: 'client_credentials',
-                                            client_id: '123',
-                                            client_secret: '234')
+        receive(:unauthenticated_request).with(:POST,
+                                               '/v1/security/oauth2/token',
+                                               grant_type: 'client_credentials',
+                                               client_id: '123',
+                                               client_secret: '234')
         .and_return(@response)
       )
 
@@ -33,8 +34,9 @@ RSpec.describe Amadeus::Client::AccessToken do
     end
 
     it 'should return a cached token if it still valid' do
-      expect(@client).to receive(:unauthenticated_post).once
-        .with('/v1/security/oauth2/token',
+      expect(@client).to receive(:unauthenticated_request).once
+        .with(:POST,
+              '/v1/security/oauth2/token',
               grant_type: 'client_credentials',
               client_id: '123',
               client_secret: '234').and_return(@response)
@@ -44,8 +46,9 @@ RSpec.describe Amadeus::Client::AccessToken do
     end
 
     it 'should make a new API call the old token expired' do
-      expect(@client).to receive(:unauthenticated_post).twice
-        .with('/v1/security/oauth2/token',
+      expect(@client).to receive(:unauthenticated_request).twice
+        .with(:POST,
+              '/v1/security/oauth2/token',
               grant_type: 'client_credentials',
               client_id: '123',
               client_secret: '234').and_return(@response)

@@ -3,59 +3,79 @@ require 'spec_helper'
 RSpec.describe Amadeus::Request do
   describe '.initialize' do
     before do
+      @host = 'https://example.com'
       @verb = :GET
       @path = '/foo/bar'
       @params = { foo: :bar }
-      @client = Amadeus::Client.new(client_id: 123, client_secret: 234)
-      @access_token = double('Amadeus::Client::AccessToken')
+      @bearer_token = 'Bearer 123'
+      @client_version = '1.2.3'
+      @language_version = '2.3.4'
+      @app_id = 'amadeus-cli'
+      @app_version = '3.4.5'
+
+      @request = Amadeus::Request.new(
+        host: @host,
+        verb: @verb,
+        path: @path,
+        params: @params,
+        bearer_token: @bearer_token,
+        client_version: @client_version,
+        language_version: @language_version,
+        app_id: @app_id,
+        app_version: @app_version
+      )
     end
 
     it 'should store the params' do
-      request = Amadeus::Request.new(@client, @verb, @path, @params,
-                                     nil)
-      expect(request.client).to equal(@client)
-      expect(request.verb).to equal(@verb)
-      expect(request.path).to equal(@path)
-      expect(request.params).to equal(@params)
-      expect(request.bearer_token).to be_nil
-      expect(request.user_agent).to eq(
-        "amadeus-ruby/#{Amadeus::VERSION} ruby/#{RUBY_VERSION}"
-      )
+      expect(@request.host).to equal(@host)
+      expect(@request.verb).to equal(@verb)
+      expect(@request.path).to equal(@path)
+      expect(@request.params).to equal(@params)
+      expect(@request.bearer_token).to equal(@bearer_token)
+      expect(@request.client_version).to equal(@client_version)
+      expect(@request.language_version).to equal(@language_version)
+      expect(@request.app_id).to equal(@app_id)
+      expect(@request.app_version).to equal(@app_version)
     end
 
-    it 'should set the bearer_token if an access token was provided' do
-      expect(@access_token).to receive(:bearer_token).and_return('Bearer 123')
-
-      request = Amadeus::Request.new(@client, @verb, @path,
-                                     @params, @access_token)
-
-      expect(request.bearer_token).to eq('Bearer 123')
+    describe '.uri' do
+      it 'should return a URI' do
+        expect(@request.uri).to be_kind_of(URI::Generic)
+        expect(@request.uri.to_s).to eq('https://example.com/foo/bar?foo=bar')
+      end
     end
 
-    it 'should determine a cust user agent if provided' do
-      client = Amadeus::Client.new(client_id: 123,
-                                   client_secret: 234,
-                                   custom_app_id: 'app',
-                                   custom_app_version: 1)
+    describe '.http_request' do
+      it 'should return a GET HTTP Request' do
+        expect(@request.http_request).to be_kind_of(Net::HTTP::Get)
+        expect(@request.http_request.body).to be_nil
+        expect(@request.http_request['Content-Type']).to be_nil
+        expect(@request.http_request['Authorization']).to eq(@bearer_token)
+        expect(@request.http_request['Accept']).to eq('application/json')
+        expect(@request.http_request['User-Agent']).to(
+          eq('amadeus-ruby/1.2.3 ruby/2.3.4 amadeus-cli/3.4.5')
+        )
+      end
 
-      request = Amadeus::Request.new(client, @verb, @path, @params, nil)
-      expect(request.user_agent).to eq(
-        "amadeus-ruby/#{Amadeus::VERSION} ruby/#{RUBY_VERSION} app/1"
-      )
-    end
-  end
+      it 'should return a POSt HTTP Request' do
+        @request = Amadeus::Request.new(
+          host: @host,
+          verb: :POST,
+          path: @path,
+          params: @params,
+          bearer_token: @bearer_token,
+          client_version: @client_version,
+          language_version: @language_version,
+          app_id: @app_id,
+          app_version: @app_version
+        )
 
-  describe '.merge' do
-    before do
-      @client = Amadeus::Client.new(client_id: 123, client_secret: 234)
-      @request = Amadeus::Request.new(@client, :GET, '/foo/bar',
-                                      { a: :b }, nil)
-    end
-
-    it 'should return a new Request with the params merged in' do
-      request = @request.merge(page: { offset: 2 })
-      expect(request).to be_instance_of(Amadeus::Request)
-      expect(request.params).to eq(a: :b, page: { offset: 2 })
+        expect(@request.http_request).to be_kind_of(Net::HTTP::Post)
+        expect(@request.http_request.body).to eq('foo=bar')
+        expect(@request.http_request['Content-Type']).to(
+          eq('application/x-www-form-urlencoded')
+        )
+      end
     end
   end
 end

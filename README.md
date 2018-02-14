@@ -109,7 +109,7 @@ If an API endpoint supports pagination, the other pages are available under the
       subType: Amadeus::Location::ANY
     )
 
-    response.next #=> returns a new response for the next page
+    amadeus.next(response) #=> returns a new response for the next page
 
 If a page is not available, the method will return `nil`.
 
