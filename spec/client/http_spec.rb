@@ -53,7 +53,8 @@ RSpec.describe Amadeus::Client::HTTP do
     end
 
     it 'should be able to make and parse a POST request with params' do
-      response = @client.unauthenticated_post(
+      response = @client.unauthenticated_request(
+        :POST,
         '/v1/security/oauth2/token',
         @params
       )
@@ -64,7 +65,8 @@ RSpec.describe Amadeus::Client::HTTP do
     end
 
     it 'should be able to make and parse a POST request without access token' do
-      response = @client.unauthenticated_post(
+      response = @client.unauthenticated_request(
+        :POST,
         '/v1/security/oauth2/token', @params
       )
 
@@ -74,10 +76,10 @@ RSpec.describe Amadeus::Client::HTTP do
     end
   end
 
-  describe 'Amadeus::Client.call', :vcr do
+  describe 'Amadeus::Client.request', :vcr do
     it 'should be able to make and parse any request' do
       begin
-        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links')
+        @client.send(:request, :GET, '/v2/reference-data/urls/checkin-links')
       rescue Amadeus::Errors::ClientError => error
         response = error.response
         expect(response.result['errors'].first['status']).to eq(400)
@@ -86,7 +88,7 @@ RSpec.describe Amadeus::Client::HTTP do
 
     it 'should be able to  make and parse a GET request with params' do
       params = { airline: '1X' }
-      response = @client.send(:call, :GET,
+      response = @client.send(:request, :GET,
                               '/v2/reference-data/urls/checkin-links',
                               params)
       expect(response.result['meta']['count']).to eq(2)
@@ -94,8 +96,10 @@ RSpec.describe Amadeus::Client::HTTP do
 
     it 'should be able to make and parse a GET request without access token' do
       begin
-        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links', {},
-                     false)
+        @client.send(
+          :unauthenticated_request,
+          :GET, '/v2/reference-data/urls/checkin-links', {}
+        )
       rescue Amadeus::Errors::AuthenticationError => error
         response = error.response
       end
@@ -106,7 +110,7 @@ RSpec.describe Amadeus::Client::HTTP do
       allow(Net::HTTP).to receive(:start).and_raise(SocketError)
 
       expect do
-        @client.send(:call, :GET, '/v2/reference-data/urls/checkin-links')
+        @client.send(:request, :GET, '/v2/reference-data/urls/checkin-links')
       end.to(
         raise_error(Amadeus::Errors::NetworkError)
       )

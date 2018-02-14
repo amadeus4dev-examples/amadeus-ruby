@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></dd>
+      <dd><span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span>, <span class='object_link'><a href="Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></dd>
   </dl>
   
   
@@ -100,7 +100,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/client.rb<span class="defines">,<br />
-  lib/amadeus/client/http.rb,<br /> lib/amadeus/client/decorator.rb,<br /> lib/amadeus/client/validator.rb,<br /> lib/amadeus/client/access_token.rb</span>
+  lib/amadeus/client/http.rb,<br /> lib/amadeus/client/decorator.rb,<br /> lib/amadeus/client/validator.rb,<br /> lib/amadeus/client/pagination.rb,<br /> lib/amadeus/client/access_token.rb</span>
 </dd>
   </dl>
   
@@ -121,7 +121,7 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span>
     
   
     
@@ -452,6 +452,17 @@
   
   
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Client/Pagination.html#first-instance_method" title="Amadeus::Client::Pagination#first (method)">#first</a></span>, <span class='object_link'><a href="Client/Pagination.html#last-instance_method" title="Amadeus::Client::Pagination#last (method)">#last</a></span>, <span class='object_link'><a href="Client/Pagination.html#next-instance_method" title="Amadeus::Client::Pagination#next (method)">#next</a></span>, <span class='object_link'><a href="Client/Pagination.html#previous-instance_method" title="Amadeus::Client::Pagination#previous (method)">#previous</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Client/HTTP.html#get-instance_method" title="Amadeus::Client::HTTP#get (method)">#get</a></span>, <span class='object_link'><a href="Client/HTTP.html#post-instance_method" title="Amadeus::Client::HTTP#post (method)">#post</a></span></p>
 
@@ -501,8 +512,6 @@
       <pre class="lines">
 
 
-50
-51
 52
 53
 54
@@ -513,10 +522,12 @@
 59
 60
 61
-62</pre>
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_initialize_client_credentials'>initialize_client_credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -569,12 +580,12 @@
       <pre class="lines">
 
 
-15
-16
-17</pre>
+17
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client_id'>client_id</span>
   <span class='ivar'>@client_id</span>
@@ -612,12 +623,12 @@
       <pre class="lines">
 
 
-17
-18
-19</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client_secret'>client_secret</span>
   <span class='ivar'>@client_secret</span>
@@ -655,12 +666,12 @@
       <pre class="lines">
 
 
-25
-26
-27</pre>
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_custom_app_id'>custom_app_id</span>
   <span class='ivar'>@custom_app_id</span>
@@ -698,12 +709,12 @@
       <pre class="lines">
 
 
-27
-28
-29</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_custom_app_version'>custom_app_version</span>
   <span class='ivar'>@custom_app_version</span>
@@ -741,12 +752,12 @@
       <pre class="lines">
 
 
-23
-24
-25</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_host'>host</span>
   <span class='ivar'>@host</span>
@@ -784,12 +795,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hostname'>hostname</span>
   <span class='ivar'>@hostname</span>
@@ -827,12 +838,12 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_http'>http</span>
   <span class='ivar'>@http</span>
@@ -870,12 +881,12 @@
       <pre class="lines">
 
 
-19
-20
-21</pre>
+21
+22
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_logger'>logger</span>
   <span class='ivar'>@logger</span>
@@ -891,7 +902,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 12 18:35:02 2018 by
+  Generated on Wed Feb 14 13:57:06 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.2).
 </div>

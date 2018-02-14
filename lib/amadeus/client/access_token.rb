@@ -12,8 +12,8 @@ module Amadeus
 
       # The bearer token that can be used directly in API request headers
       #
-      # @example A HTTP header
-      #     Authorization: [bearer_token]
+      # @example A full token
+      #     Bearer 12345678
       def bearer_token
         "Bearer #{token}"
       end
@@ -43,10 +43,10 @@ module Amadeus
 
       # Fetches a new access token
       def fetch_access_token
-        client.unauthenticated_post('/v1/security/oauth2/token',
-                                    grant_type: 'client_credentials',
-                                    client_id: client.client_id,
-                                    client_secret: client.client_secret)
+        client.unauthenticated_request(:POST, '/v1/security/oauth2/token',
+                                       grant_type: 'client_credentials',
+                                       client_id: client.client_id,
+                                       client_secret: client.client_secret)
       end
 
       # Store an access token and calculates the expiry date

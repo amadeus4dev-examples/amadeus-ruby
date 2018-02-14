@@ -87,11 +87,6 @@
   
   
   
-  <dl>
-      <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span></dd>
-  </dl>
-  
   
 
   
@@ -100,7 +95,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/client/response.rb<span class="defines">,<br />
-  lib/amadeus/client/response/parser.rb,<br /> lib/amadeus/client/response/pagination.rb</span>
+  lib/amadeus/client/response/parser.rb</span>
 </dd>
   </dl>
   
@@ -109,8 +104,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A wrapper for a HTTPResponse object. Parses the body if the response was
-JSON.</p>
+<p>The response object returned for every API call.</p>
 
 
   </div>
@@ -118,17 +112,7 @@ JSON.</p>
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span>
-    
-  
-    
-  
-</p>
-
+</div>
 
 
 
@@ -350,17 +334,6 @@ JSON.</p>
   
   
   
-  <h2>Method Summary</h2>
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Response/Pagination.html" title="Amadeus::Response::Pagination (module)">Pagination</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Response/Pagination.html#first-instance_method" title="Amadeus::Response::Pagination#first (method)">#first</a></span>, <span class='object_link'><a href="Response/Pagination.html#last-instance_method" title="Amadeus::Response::Pagination#last (method)">#last</a></span>, <span class='object_link'><a href="Response/Pagination.html#next-instance_method" title="Amadeus::Response::Pagination#next (method)">#next</a></span>, <span class='object_link'><a href="Response/Pagination.html#previous-instance_method" title="Amadeus::Response::Pagination#previous (method)">#previous</a></span></p>
-
-  
-  
-  
-  
-  
-  
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -405,12 +378,12 @@ JSON.</p>
       <pre class="lines">
 
 
-29
-30
-31</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
   <span class='ivar'>@body</span>
@@ -461,12 +434,12 @@ JSON.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_data'>data</span>
   <span class='ivar'>@data</span>
@@ -517,12 +490,12 @@ JSON.</p>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 10</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_http_response'>http_response</span>
   <span class='ivar'>@http_response</span>
@@ -573,12 +546,12 @@ JSON.</p>
       <pre class="lines">
 
 
-33
-34
-35</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parsed'>parsed</span>
   <span class='ivar'>@parsed</span>
@@ -629,12 +602,12 @@ JSON.</p>
       <pre class="lines">
 
 
-17
-18
-19</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request'>request</span>
   <span class='ivar'>@request</span>
@@ -685,12 +658,12 @@ JSON.</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span>
   <span class='ivar'>@result</span>
@@ -741,12 +714,12 @@ JSON.</p>
       <pre class="lines">
 
 
-37
-38
-39</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client/response.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_status_code'>status_code</span>
   <span class='ivar'>@status_code</span>
@@ -762,7 +735,7 @@ JSON.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 12 18:35:03 2018 by
+  Generated on Wed Feb 14 13:52:26 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.2).
 </div>

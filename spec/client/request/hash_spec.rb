@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe Amadeus::Request::Hash do
   before do
     @client = Amadeus::Client.new(client_id: 123, client_secret: 234)
-    @request = Amadeus::Request.new(@client, :GET, '/foo/bar', {}, nil)
+    @request = Amadeus::Request.new({})
   end
 
   describe 'Amadeus::Request.flatten_keys' do

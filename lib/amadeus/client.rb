@@ -2,6 +2,7 @@ require 'logger'
 require 'amadeus/client/validator'
 require 'amadeus/namespaces/core'
 require 'amadeus/client/http'
+require 'amadeus/client/pagination'
 
 module Amadeus
   # The Amadeus client library for accessing
@@ -9,6 +10,7 @@ module Amadeus
   class Client
     include Validator
     include HTTP
+    include Pagination
     include Amadeus::Namespaces
 
     # The API key used to authenticate against the API

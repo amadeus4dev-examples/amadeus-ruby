@@ -1,12 +1,9 @@
 require 'amadeus/client/response/parser'
-require 'amadeus/client/response/pagination'
 
 module Amadeus
-  # A wrapper for a HTTPResponse object. Parses the body if the
-  # response was JSON.
+  # The response object returned for every API call.
   class Response
     include Parser
-    include Pagination
 
     # The actual HTTPResponse object returned from the Net::HTTP request
     # @return [Net::HTTPResponse]
@@ -47,19 +44,7 @@ module Amadeus
     def initialize(http_response, request)
       @http_response = http_response
       @request = request
-
-      log_response
       parse_response
-    end
-
-    private
-
-    def log_response
-      @request.client.logger.debug('Amadeus::Response') do
-        # :nocov:
-        "#{http_response.class.name}\n#{http_response.body}"
-        # :nocov:
-      end
     end
   end
 end
