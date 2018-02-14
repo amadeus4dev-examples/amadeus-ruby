@@ -8,30 +8,38 @@ module Amadeus
     module Parser
       private
 
+      # Tries to parse the received data from raw string to parsed data and into
+      # a data object
+      def parse_data
+        @parsed = false
+        @result = parse_json(http_response)
+        @data = @result.fetch('data', nil) if @result
+      end
+
       # Tries to parse the HTTPResponse, parsing the JSON and raising the
       # appropriate errors
       def parse_response
-        @result = parse_json(http_response)
-        @data = @result.fetch('data', nil) if @result
-
-        case http_response
-        when Net::HTTPNotFound
-          raise Amadeus::Errors::NotFoundError, self
-        when Net::HTTPClientError
-          raise(Amadeus::Errors::ClientError.for(http_response), self)
-        when Net::HTTPServerError
-          raise Amadeus::Errors::ServerError, self
-        end
+        raise(Amadeus::Errors::ServerError, self) if @status_code >= 500
+        raise(Amadeus::Errors::AuthenticationError, self) if @status_code == 401
+        raise(Amadeus::Errors::NotFoundError, self) if @status_code == 404
+        raise(Amadeus::Errors::ClientError, self) if @status_code >= 400
+        raise(Amadeus::Errors::ParserError, self) unless @parsed
       end
 
       # Tries to parse the JSON, if there is any
       def parse_json(http_response)
-        @status_code = http_response.code
         @body = http_response.body
         return unless json?(http_response)
-        JSON.parse(@body)
+        json = JSON.parse(@body)
+        @parsed = true
+        return json
       rescue JSON::ParserError
         raise Amadeus::Errors::ParserError, self
+      end
+
+      def parse_status_code
+        @status_code = http_response.code
+        @status_code = @status_code.to_i if @status_code
       end
 
       # checks if the HTTPResponse included JSON

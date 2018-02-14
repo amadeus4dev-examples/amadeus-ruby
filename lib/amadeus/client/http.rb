@@ -100,8 +100,8 @@ module Amadeus
         @http.start(uri.hostname, uri.port, use_ssl: true) do |http|
           http.request(request.http_request)
         end
-      rescue StandardError => error
-        raise(Amadeus::Errors::NetworkError, error)
+      rescue StandardError
+        raise(Amadeus::Errors::NetworkError, nil)
       end
 
       # A memoized AccessToken object, so we don't keep reauthenticating

@@ -31,17 +31,6 @@ RSpec.describe Amadeus::Response::Parser do
         expect(response.data).to eq('a' => 1)
       end
 
-      it 'should not parse the body if it is empty' do
-        expect(@http).to receive(:[]).with('Content-Type')
-                                     .and_return('application/json')
-
-        expect(@http).to receive(:body).at_least(1).times.and_return(nil)
-        expect(@http).to receive(:code).at_least(1).times.and_return('200')
-
-        response = Amadeus::Response.new(@http, @request)
-        expect(response.data).to eq(nil)
-      end
-
       it 'should parse the body if the content type was vnd.amadeus+json' do
         expect(@http).to(
           receive(:[]).with('Content-Type')
