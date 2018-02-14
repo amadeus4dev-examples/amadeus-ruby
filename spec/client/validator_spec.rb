@@ -40,7 +40,7 @@ RSpec.describe Amadeus::Client::Validator do
 
     describe 'with missing parameters' do
       %i[client_id client_secret].each do |key|
-        it "should refuse to create a new client without #{key}" do
+        it "should refuse to create a new client without #{key.inspect}" do
           @valid_params.delete(key)
           expect{ Amadeus::Client.new(@valid_params) }.to(
             raise_error(ArgumentError)
@@ -52,30 +52,46 @@ RSpec.describe Amadeus::Client::Validator do
     it 'should by default have a logger' do
       amadeus = Amadeus::Client.new(@valid_params)
       expect(amadeus.logger).to be_instance_of(Logger)
-      expect(amadeus.logger.level).to eq(Logger::WARN)
+      expect(amadeus.logger.level).to eq(Logger::ERROR)
     end
 
     [:logger, 'logger'].each do |key|
-      it "should allow for setting a custom logger (#{key})" do
+      it "should allow for setting a custom logger (#{key.inspect})" do
         logger = Logger.new(STDOUT)
+        logger.level = Logger::WARN
         @valid_params[key] = logger
         amadeus = Amadeus::Client.new(@valid_params)
         expect(amadeus.logger).to equal(logger)
         expect(amadeus.logger.level).to eq(Logger::WARN)
       end
+
+      it "should persist a custom log level (#{key.inspect})" do
+        logger = Logger.new(STDOUT)
+        logger.level = Logger::DEBUG
+        @valid_params[key] = logger
+        amadeus = Amadeus::Client.new(@valid_params)
+        expect(amadeus.logger).to equal(logger)
+        expect(amadeus.logger.level).to eq(Logger::DEBUG)
+      end
     end
 
-    [:log_level, 'log_level'].each do |key|
-      it "should allow for setting a custom log level (#{key})" do
-        @valid_params[key] = Logger::FATAL
+    [:debug, 'debug'].each do |key|
+      it "the log level should default to Logger::ERROR (#{key.inspect})" do
         amadeus = Amadeus::Client.new(@valid_params)
-        expect(amadeus.logger.level).to eq(Logger::FATAL)
+        expect(amadeus.logger.level).to eq(Logger::ERROR)
+      end
+
+      it "log level should be Logger::DEBUG if debugging (#{key.inspect})" do
+        @valid_params[key] = true
+        amadeus = Amadeus::Client.new(@valid_params)
+        expect(amadeus.logger.level).to eq(Logger::DEBUG)
       end
     end
 
     it 'should warn when an unrecognized option is passed in' do
       logger = double('Logger')
       allow(logger).to receive(:level=).with(2)
+      allow(logger).to receive(:level).and_return(2)
       expect(logger).to receive(:warn).with('Amadeus::Client::Validator')
 
       @valid_params[:logger] = logger

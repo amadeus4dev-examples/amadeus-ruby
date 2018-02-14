@@ -17,8 +17,6 @@ RSpec.describe Amadeus::Response do
     end
 
     it 'should take a http response object and request' do
-      allow(@logger).to receive(:debug)
-
       response = Amadeus::Response.new(@http_response, @request)
       expect(response.http_response).to eq(@http_response)
     end
