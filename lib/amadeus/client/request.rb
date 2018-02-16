@@ -11,6 +11,12 @@ module Amadeus
     # The port for this API call. Standard set to 443.
     # @return [Number]
     attr_reader :port
+    # Wether to use SSL for a call, defaults to true
+    # @return [Boolean]
+    attr_reader :ssl
+    # The scheme used to make the API call
+    # @return [String]
+    attr_reader :scheme
     # The GET/POST params for the API call
     # @return [Hash]
     attr_reader :params
@@ -23,6 +29,9 @@ module Amadeus
     # The bearer token (if any) that is used for authentication
     # @return [String]
     attr_reader :bearer_token
+    # The headers used for the API call
+    # @return [Hash]
+    attr_reader :headers
     # The library version used for this request
     # @return [String]
     attr_reader :client_version
@@ -44,42 +53,47 @@ module Amadeus
     def initialize(options)
       initialize_options(options)
       initialize_headers
-    end
-
-    # Builds the URI object
-    def uri
-      uri = URI("#{@host}#{@path}")
-      params = flatten_keys(@params)
-      uri.query = URI.encode_www_form(params) if @verb == :GET
-      uri
+      http_request
     end
 
     # Builds the request object
     def http_request
-      request = request_for_verb
-      add_post_data(request)
-      add_bearer_token(request)
-      add_headers(request)
-      request
+      @http_request ||= begin
+        request = request_for_verb
+        add_post_data(request)
+        add_bearer_token(request)
+        add_headers(request)
+        request
+      end
     end
 
     private
 
     def initialize_options(options)
-      @host           = options[:host]
-      @port           = 443
-      @verb           = options[:verb]
-      @path           = options[:path]
-      @params         = options[:params]
-      @bearer_token   = options[:bearer_token]
-      @client_version = options[:client_version]
+      initialize_basic_call(options)
+      initialize_extras(options)
+    end
+
+    def initialize_basic_call(options)
+      @host             = options[:host]
+      @port             = options[:port]
+      @ssl              = options[:ssl]
+      @scheme           = @ssl ? 'https' : 'http'
+      @verb             = options[:verb]
+      @path             = options[:path]
+      @params           = options[:params]
+      @bearer_token     = options[:bearer_token]
+    end
+
+    def initialize_extras(options)
+      @client_version   = options[:client_version]
       @language_version = options[:language_version]
-      @app_id         = options[:app_id]
-      @app_version    = options[:app_version]
+      @app_id           = options[:app_id]
+      @app_version      = options[:app_version]
     end
 
     def initialize_headers
-      @headers        = {
+      @headers = {
         'User-Agent' => build_user_agent,
         'Accept' => 'application/json'
       }
@@ -111,6 +125,19 @@ module Amadeus
       user_agent = "amadeus-ruby/#{@client_version} ruby/#{@language_version}"
       return user_agent unless @app_id
       user_agent + " #{@app_id}/#{@app_version}"
+    end
+
+    def uri
+      url = "#{@scheme}://#{@host}#{@path}"
+      url += ":#{@port}" unless port_matches_scheme
+      uri = URI(url)
+      params = flatten_keys(@params)
+      uri.query = URI.encode_www_form(params) if @verb == :GET
+      uri
+    end
+
+    def port_matches_scheme
+      (@ssl && @port == 443) || (!@ssl && @port == 80)
     end
   end
 end

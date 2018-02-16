@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe Amadeus::Request do
   describe '.initialize' do
     before do
-      @host = 'https://example.com'
+      @host = 'example.com'
       @verb = :GET
       @path = '/foo/bar'
       @params = { foo: :bar }
@@ -12,6 +12,8 @@ RSpec.describe Amadeus::Request do
       @language_version = '2.3.4'
       @app_id = 'amadeus-cli'
       @app_version = '3.4.5'
+      @ssl = true
+      @port = 443
 
       @request = Amadeus::Request.new(
         host: @host,
@@ -22,7 +24,9 @@ RSpec.describe Amadeus::Request do
         client_version: @client_version,
         language_version: @language_version,
         app_id: @app_id,
-        app_version: @app_version
+        app_version: @app_version,
+        ssl: @ssl,
+        port: @port
       )
     end
 
@@ -36,13 +40,6 @@ RSpec.describe Amadeus::Request do
       expect(@request.language_version).to equal(@language_version)
       expect(@request.app_id).to equal(@app_id)
       expect(@request.app_version).to equal(@app_version)
-    end
-
-    describe '.uri' do
-      it 'should return a URI' do
-        expect(@request.uri).to be_kind_of(URI::Generic)
-        expect(@request.uri.to_s).to eq('https://example.com/foo/bar?foo=bar')
-      end
     end
 
     describe '.http_request' do

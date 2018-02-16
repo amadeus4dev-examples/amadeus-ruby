@@ -23,6 +23,10 @@ module Amadeus
     attr_reader :hostname
     # The host domain used to make API calls against
     attr_reader :host
+    # Wether to use HTTPS to connect
+    attr_reader :ssl
+    # The port to connect to, if not the default 443
+    attr_reader :port
     # A custom App ID to be passed in the User Agent to the server
     attr_reader :custom_app_id
     # A custom App version to be passed in the User Agent to the server
@@ -34,8 +38,8 @@ module Amadeus
 
     # The available hosts for this API
     HOSTS = {
-      test: 'https://test.api.amadeus.com',
-      production: 'https://production.api.amadeus.com'
+      test: 'test.api.amadeus.com',
+      production: 'production.api.amadeus.com'
     }.freeze
 
     # Initialize using your credentials:
@@ -51,6 +55,24 @@ module Amadeus
     #
     #   amadeus = Amadeus::Client.new
     #
+    # @option options [string] :clientId the API key used to authenticate the
+    #   API
+    # @option options [string] :clientSecret the API secret used to authenticate
+    #  the API
+    # @option options [Object] :logger ('Logger') a `Logger`-compatible logger
+    #  that accepts a debug call
+    # @option options [string] :hostname ('production') the name of the server
+    #  API calls are made to (`production` or `test`)
+    # @option options [string] :custom_app_id (null) a custom App ID to be
+    #  passed in the User Agent to the server.
+    # @option options [string] :custom_app_version (null) a custom App Version
+    #  number to be passed in the User Agent to the server.
+    # @option options [Object] :http (Net::HTTP) an optional
+    #  Node/HTTPS-compatible client that accepts a 'request()' call with an
+    #  array of options.
+    # @option options [boolean] :debug (false) if this client is running in
+    #  debug mode
+    # @option options [boolean] :ssl (true) if this client is will use HTTPS
     def initialize(options = {})
       initialize_client_credentials(options)
       initialize_logger(options)
@@ -61,7 +83,7 @@ module Amadeus
       recognized_options = %i[client_id client_secret
                               logger host hostname
                               custom_app_id custom_app_version
-                              http debug]
+                              http debug ssl]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 
@@ -83,6 +105,8 @@ module Amadeus
     def initialize_host(options)
       @hostname = init_optional(:hostname, options, :test).to_sym
       @host = init_optional(:host, options, HOSTS[hostname])
+      @ssl =  init_optional(:ssl, options, true)
+      @port = init_optional(:port, options, 443)
     end
 
     def initialize_custom_app(options)
