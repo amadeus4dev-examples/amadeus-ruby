@@ -206,15 +206,15 @@ attribute. The raw body of the response is always avaulable as the <code>.body</
 <span class='rparen'>)</span>
 </code></pre>
 
-<p>Additionally, to enable more verbose logging, you can set the appropriate level either via a parameter on initialization, or using the <code>AMADEUS_LOG_LEVEL</code> environment variable.</p>
+<p>Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the <code>AMADEUS_DEBUG</code> environment variable.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logger</span><span class='tstring_end'>&#39;</span></span>
 
 <span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span>
   <span class='label'>client_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>log_level:</span> <span class='const'>Logger</span><span class='op'>::</span><span class='const'>DEBUG</span> <span class='comment'># defaults to Logger::WARN, aka &quot;2&quot;
-</span><span class='rparen'>)</span>
+  <span class='label'>debug:</span> <span class='kw'>true</span>
+<span class='rparen'>)</span>
 </code></pre>
 
 <h2 id="license">License</h2>
@@ -228,7 +228,7 @@ attribute. The raw body of the response is always avaulable as the <code>.body</
 </div></div>
 
       <div id="footer">
-  Generated on Wed Feb 14 15:04:16 2018 by
+  Generated on Fri Feb 16 11:15:12 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.2).
 </div>

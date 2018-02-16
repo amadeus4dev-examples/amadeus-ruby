@@ -86,7 +86,7 @@ module Amadeus
           host: @host, verb: verb, path: path, params: params,
           bearer_token: bearer_token, client_version: Amadeus::VERSION,
           language_version: RUBY_VERSION, app_id: @custom_app_id,
-          app_version: @custom_app_version
+          app_version: @custom_app_version, ssl: @ssl, port: @port
         )
       end
 
@@ -101,8 +101,9 @@ module Amadeus
 
       # Actually make the HTTP call, making sure to catch it in case of an error
       def fetch(request)
-        uri = request.uri
-        @http.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        @http.start(
+          request.host, request.port, use_ssl: request.ssl
+        ) do |http|
           http.request(request.http_request)
         end
       rescue StandardError

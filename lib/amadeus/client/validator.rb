@@ -14,8 +14,9 @@ module Amadeus
       # @raise [ArgumentError] when no entry can be found
       #
       def init_required(key, options)
-        init_optional(key, options) ||
-          raise(ArgumentError, "Missing required argument: #{key}")
+        init_optional(key, options).tap do |val|
+          raise(ArgumentError, "Missing required argument: #{key}") if val.nil?
+        end
       end
 
       # Tries to find an option by string or symbol in the options hash and
@@ -27,10 +28,11 @@ module Amadeus
       # @param [Object] default an optional default value to return
       #
       def init_optional(key, options, default = nil)
-        options[key] ||
-          options[key.to_s] ||
-          ENV["AMADEUS_#{key.to_s.upcase}"] ||
-          default
+        value = options[key]
+        value = options[key.to_s] if value.nil?
+        value = ENV["AMADEUS_#{key.to_s.upcase}"] if value.nil?
+        value = default if value.nil?
+        value
       end
 
       # Checks a list of options for unrecognized keys and warns the user.
