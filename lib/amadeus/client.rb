@@ -83,7 +83,7 @@ module Amadeus
       recognized_options = %i[client_id client_secret
                               logger host hostname
                               custom_app_id custom_app_version
-                              http debug ssl]
+                              http debug ssl port]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 
