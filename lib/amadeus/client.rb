@@ -19,6 +19,8 @@ module Amadeus
     attr_reader :client_secret
     # The logger used to output warnings and debug messages
     attr_reader :logger
+    # If this client is running in debug, warn, or silent mode
+    attr_reader :log_level
     # The short name of the host used to make API calls against
     attr_reader :hostname
     # The host domain used to make API calls against
@@ -33,8 +35,6 @@ module Amadeus
     attr_reader :custom_app_version
     # The Net:HTTP compatible HTTP client in use
     attr_reader :http
-    # If this client is running in debug mode
-    attr_reader :debug
 
     # The available hosts for this API
     HOSTS = {
@@ -61,6 +61,8 @@ module Amadeus
     #  the API
     # @option options [Object] :logger ('Logger') a `Logger`-compatible logger
     #  that accepts a debug call
+    # @option options [string] :log_level ('warn') if this client is running in
+    #  debug, warn, or silent mode
     # @option options [string] :hostname ('production') the name of the server
     #  API calls are made to (`production` or `test`)
     # @option options [string] :custom_app_id (null) a custom App ID to be
@@ -70,8 +72,6 @@ module Amadeus
     # @option options [Object] :http (Net::HTTP) an optional
     #  Node/HTTPS-compatible client that accepts a 'request()' call with an
     #  array of options.
-    # @option options [boolean] :debug (false) if this client is running in
-    #  debug mode
     # @option options [boolean] :ssl (true) if this client is will use HTTPS
     def initialize(options = {})
       initialize_client_credentials(options)
@@ -83,7 +83,7 @@ module Amadeus
       recognized_options = %i[client_id client_secret
                               logger host hostname
                               custom_app_id custom_app_version
-                              http debug ssl port]
+                              http log_level ssl port]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
 
@@ -95,11 +95,8 @@ module Amadeus
     end
 
     def initialize_logger(options)
-      default_logger = Logger.new(STDOUT)
-      default_logger.level = Logger::ERROR
-      @logger       = init_optional(:logger, options, default_logger)
-      @debug        = init_optional(:debug, options, false)
-      @logger.level = @debug ? Logger::DEBUG : @logger.level
+      @logger       = init_optional(:logger, options, Logger.new(STDOUT))
+      @log_level    = init_optional(:log_level, options, 'warn')
     end
 
     def initialize_host(options)

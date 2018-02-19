@@ -18,7 +18,7 @@ module Amadeus
           # @option params [String] :query period when consumers are travelling
           #   in YYYY-MM format
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call failed
+          # @raise [Amadeus::Base] an exception if the call failed
           # @example Find the air traffic from LHR in January 2011
           #   amadeus.travel.analytics.air_traffics.get(
           #     origin: 'LHR',

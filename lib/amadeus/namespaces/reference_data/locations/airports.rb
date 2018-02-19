@@ -18,7 +18,7 @@ module Amadeus
           # @option params [Double] :longitude longitude location to be at the
           #   center of the search circle - required
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call
+          # @raise [Amadeus::Base] an exception if the call
           #   failed
           # @example Find the nearest airport to the 49.0000,2.55 lat/long
           #   amadeus.reference_data.locations.airports.get(

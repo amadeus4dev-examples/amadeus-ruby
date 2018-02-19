@@ -20,7 +20,7 @@ module Amadeus
         # @option params [String] :hotels Comma separated list of Amadeus hotel
         #   codes to request. Example: RTPAR001
         # @return [Amadeus::Response] a parsed response
-        # @raise [Amadeus::Errors::Base] an exception if the call failed
+        # @raise [Amadeus::Base] an exception if the call failed
         # @example Search for hotels in London
         #   amadeus.shopping.hotel_offers.get(
         #     origin: 'LHR'

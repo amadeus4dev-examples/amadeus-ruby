@@ -32,7 +32,7 @@ module Amadeus
           # Get room and rate details
           #
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call failed
+          # @raise [Amadeus::Base] an exception if the call failed
           # @example Search for hotels in London
           #   amadeus.hotels(123).offers(234).get
           #

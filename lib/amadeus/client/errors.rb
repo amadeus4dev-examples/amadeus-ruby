@@ -34,6 +34,17 @@ module Amadeus
       @code = determine_code
     end
 
+    # PROTECTED
+
+    def log(client)
+      # :nocov:
+      return unless client.log_level == 'warn'
+      client.logger.warn("Amadeus #{@code}") do
+        JSON.pretty_generate(@description) if @description
+      end
+      # :nocov:
+    end
+
     private
 
     def determine_description
@@ -48,19 +59,16 @@ module Amadeus
     end
   end
 
-  # The errors that can be thrown by the SDK
-  module Errors
-    # This error occurs when there is some kind of error in the network
-    class NetworkError < Amadeus::ResponseError; end
-    # This error occurs when the response type was JSOn but could not be parsed
-    class ParserError < Amadeus::ResponseError; end
-    # This error occurs when there is an error on the server
-    class ServerError < Amadeus::ResponseError; end
-    # This error occurs when the client did not provide the right parameters
-    class ClientError < Amadeus::ResponseError; end
-    # This error occurs when the client did not provide the right credentials
-    class AuthenticationError < Amadeus::ResponseError; end
-    # This error occurs when the path could not be found
-    class NotFoundError < Amadeus::ResponseError; end
-  end
+  # This error occurs when there is some kind of error in the network
+  class NetworkError < Amadeus::ResponseError; end
+  # This error occurs when the response type was JSOn but could not be parsed
+  class ParserError < Amadeus::ResponseError; end
+  # This error occurs when there is an error on the server
+  class ServerError < Amadeus::ResponseError; end
+  # This error occurs when the client did not provide the right parameters
+  class ClientError < Amadeus::ResponseError; end
+  # This error occurs when the client did not provide the right credentials
+  class AuthenticationError < Amadeus::ResponseError; end
+  # This error occurs when the path could not be found
+  class NotFoundError < Amadeus::ResponseError; end
 end

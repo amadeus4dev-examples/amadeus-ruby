@@ -17,7 +17,7 @@ module Amadeus
         # @option params [String] :destination City/Airport IATA code to which
         #   the traveler is going. PAR, for example
         # @return [Amadeus::Response] a parsed response
-        # @raise [Amadeus::Errors::Base] an exception if the call failed
+        # @raise [Amadeus::Base] an exception if the call failed
         # @example Find the cheapest destination from London to Paris for Xmas
         #   amadeus.shopping.flight_offers.get(
         #     origin: 'LHR',

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe Amadeus::Errors do
+RSpec.describe Amadeus::ResponseError do
   describe '.description' do
     it 'should determine no description if no response is present' do
-      error = Amadeus::Errors::NetworkError.new(nil)
+      error = Amadeus::NetworkError.new(nil)
       expect(error.description).to be_nil
     end
 
@@ -14,7 +14,7 @@ RSpec.describe Amadeus::Errors do
       allow(http_response).to receive(:[]).and_return('application/json')
 
       response = Amadeus::Response.new(http_response, nil)
-      error = Amadeus::Errors::NetworkError.new(response)
+      error = Amadeus::NetworkError.new(response)
       expect(error.description).to be_nil
     end
 
@@ -27,8 +27,8 @@ RSpec.describe Amadeus::Errors do
       )
       allow(http_response).to receive(:[]).and_return('application/json')
 
-      response = Amadeus::Response.new(http_response, nil)
-      error = Amadeus::Errors::NetworkError.new(response)
+      response = Amadeus::Response.new(http_response, nil).parse({})
+      error = Amadeus::NetworkError.new(response)
       expect(error.description).to eq([{ 'detail' => 'error' }])
     end
 
@@ -41,15 +41,15 @@ RSpec.describe Amadeus::Errors do
       )
       allow(http_response).to receive(:[]).and_return('application/json')
 
-      response = Amadeus::Response.new(http_response, nil)
-      error = Amadeus::Errors::NetworkError.new(response)
+      response = Amadeus::Response.new(http_response, nil).parse({})
+      error = Amadeus::NetworkError.new(response)
       expect(error.description).to eq('error_description' => 'error')
     end
   end
 
   describe '.code' do
     it 'should determine the code off the class name' do
-      error = Amadeus::Errors::NetworkError.new(nil)
+      error = Amadeus::NetworkError.new(nil)
       expect(error.code).to eq('NetworkError')
     end
   end

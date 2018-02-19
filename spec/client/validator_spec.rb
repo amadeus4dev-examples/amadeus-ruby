@@ -52,7 +52,7 @@ RSpec.describe Amadeus::Client::Validator do
     it 'should by default have a logger' do
       amadeus = Amadeus::Client.new(@valid_params)
       expect(amadeus.logger).to be_instance_of(Logger)
-      expect(amadeus.logger.level).to eq(Logger::ERROR)
+      expect(amadeus.log_level).to eq('warn')
     end
 
     [:logger, 'logger'].each do |key|
@@ -71,19 +71,6 @@ RSpec.describe Amadeus::Client::Validator do
         @valid_params[key] = logger
         amadeus = Amadeus::Client.new(@valid_params)
         expect(amadeus.logger).to equal(logger)
-        expect(amadeus.logger.level).to eq(Logger::DEBUG)
-      end
-    end
-
-    [:debug, 'debug'].each do |key|
-      it "the log level should default to Logger::ERROR (#{key.inspect})" do
-        amadeus = Amadeus::Client.new(@valid_params)
-        expect(amadeus.logger.level).to eq(Logger::ERROR)
-      end
-
-      it "log level should be Logger::DEBUG if debugging (#{key.inspect})" do
-        @valid_params[key] = true
-        amadeus = Amadeus::Client.new(@valid_params)
         expect(amadeus.logger.level).to eq(Logger::DEBUG)
       end
     end

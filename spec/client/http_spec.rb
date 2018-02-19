@@ -4,7 +4,8 @@ RSpec.describe Amadeus::Client::HTTP do
   before do
     @client = Amadeus::Client.new(
       client_id: 'abc123',
-      client_secret: 'def234'
+      client_secret: 'def234',
+      log_level: 'silent'
     )
   end
 
@@ -12,7 +13,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Errors::ClientError => error
+      rescue Amadeus::ClientError => error
         response = error.response
         expect(response.result['errors'].first['status']).to eq(400)
       end
@@ -28,7 +29,7 @@ RSpec.describe Amadeus::Client::HTTP do
       allow(Net::HTTP).to receive(:start).and_raise(SocketError)
 
       expect { @client.get('/v2/reference-data/urls/checkin-links') }.to(
-        raise_error(Amadeus::Errors::NetworkError)
+        raise_error(Amadeus::NetworkError)
       )
     end
   end
@@ -45,7 +46,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a POST request' do
       begin
         @client.post('/v1/security/oauth2/token')
-      rescue Amadeus::Errors::ClientError => error
+      rescue Amadeus::ClientError => error
         response = error.response
       end
 
@@ -80,7 +81,7 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse any request' do
       begin
         @client.send(:request, :GET, '/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::Errors::ClientError => error
+      rescue Amadeus::ClientError => error
         response = error.response
         expect(response.result['errors'].first['status']).to eq(400)
       end
@@ -100,7 +101,7 @@ RSpec.describe Amadeus::Client::HTTP do
           :unauthenticated_request,
           :GET, '/v2/reference-data/urls/checkin-links', {}
         )
-      rescue Amadeus::Errors::AuthenticationError => error
+      rescue Amadeus::AuthenticationError => error
         response = error.response
       end
       expect(response.result['errors'].first['status']).to eq('401')
@@ -112,7 +113,7 @@ RSpec.describe Amadeus::Client::HTTP do
       expect do
         @client.send(:request, :GET, '/v2/reference-data/urls/checkin-links')
       end.to(
-        raise_error(Amadeus::Errors::NetworkError)
+        raise_error(Amadeus::NetworkError)
       )
     end
   end
