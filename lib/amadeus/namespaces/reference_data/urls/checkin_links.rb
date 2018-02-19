@@ -17,7 +17,7 @@ module Amadeus
           # @option params [String] :airline airline ID - required
           # @option params [String] :language (en-GB) the locale for the links
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call failed
+          # @raise [Amadeus::Base] an exception if the call failed
           # @example Find a the checkin links for Branson AirExpress
           #   amadeus.reference_data.urls.checkin_links.get(airline: '1X')
           #

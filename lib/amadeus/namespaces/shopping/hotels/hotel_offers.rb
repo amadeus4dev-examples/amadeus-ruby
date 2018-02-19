@@ -28,7 +28,7 @@ module Amadeus
           # Get one hotel and its available offers
           #
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call failed
+          # @raise [Amadeus::Base] an exception if the call failed
           # @example Search for hotels in London
           #   amadeus.hotels(123).hotel_offers.get
           #

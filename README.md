@@ -12,9 +12,7 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
-    source 'https://gLLtXNBEsQWTe4u5Un2w@gem.fury.io/workbetta/' do
-      gem 'amadeus'
-    end
+    gem 'amadeus'
 
 
 __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
@@ -31,7 +29,7 @@ To send make your first API call you will need to [register for an Amadeus Devel
     })
 
     begin
-      amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
+      puts amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
       # => {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
     rescue Amadeus::ResponseError => error
       puts error
@@ -132,14 +130,14 @@ The SDK makes it easy to add your own logger.
       logger: Logger.new(STDOUT)
     )
 
-Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the `AMADEUS_DEBUG` environment variable.
+Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
 
     require 'logger'
 
     amadeus = Amadeus::Client.new(
       client_id: '...',
       client_secret: '...',
-      debug: true
+      log_level: 'debug'
     )
 
 ## License

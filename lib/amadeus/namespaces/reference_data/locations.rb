@@ -27,7 +27,7 @@ module Amadeus
         # @option params [String] :subType the {Amadeus::Location} to
         #   search for
         # @return [Amadeus::Response] a parsed response
-        # @raise [Amadeus::Errors::Base] an exception if the call failed
+        # @raise [Amadeus::Base] an exception if the call failed
         # @example Find any location starting with 'lon'
         #   amadeus.reference_data.locations.get(
         #     keyword: 'lon',

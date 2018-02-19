@@ -18,6 +18,7 @@ RSpec.describe Amadeus::Client::Pagination do
           "{\"meta\":{\"links\":{\"#{key}\":\"http://foo.com?page=1\"}}}"
         )
         @response = Amadeus::Response.new(@http_response, @request)
+                                     .parse(@client)
         allow(@request).to receive(:params).and_return({})
         allow(@request).to receive(:verb).and_return(:GET)
         allow(@request).to receive(:path).and_return('/foo/bar')

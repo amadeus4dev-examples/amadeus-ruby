@@ -93,9 +93,9 @@ module Amadeus
       # Executes the request and wraps it in a Response
       def execute(request)
         http_response = fetch(request)
-        log(http_response)
-        response = Amadeus::Response.new(http_response, request)
+        response = Amadeus::Response.new(http_response, request).parse(self)
         log(response)
+        response.detect_error(self)
         response
       end
 
@@ -107,7 +107,9 @@ module Amadeus
           http.request(request.http_request)
         end
       rescue StandardError
-        raise(Amadeus::Errors::NetworkError, nil)
+        error = Amadeus::NetworkError.new(nil)
+        error.log(self)
+        raise error
       end
 
       # A memoized AccessToken object, so we don't keep reauthenticating
@@ -117,15 +119,16 @@ module Amadeus
 
       # Log any object
       def log(object)
-        logger.warn(object.class.name.to_s) do
-          # :nocov:
+        # :nocov:
+        return unless @log_level == 'debug'
+        logger.debug(object.class.name.to_s) do
           JSON.pretty_generate(
             ::Hash[object.instance_variables.map do |ivar|
               [ivar, object.instance_variable_get(ivar)]
             end]
           )
-          # :nocov:
         end
+        # :nocov:
       end
     end
   end

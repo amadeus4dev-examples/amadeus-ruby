@@ -8,10 +8,10 @@ RSpec.describe Amadeus::Response::Parser do
       allow(@http).to receive(:body).and_return('{}')
 
       @logger = double('Logger')
-      allow(@logger).to receive(:debug)
 
       @client = double('Amadeus::Client')
       allow(@client).to receive(:logger).and_return(@logger)
+      allow(@client).to receive(:log_level).and_return('silent')
 
       @request = double('Amadeus::Request')
       allow(@request).to receive(:client).and_return(@client)
@@ -27,7 +27,7 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
-        response = Amadeus::Response.new(@http, @request)
+        response = Amadeus::Response.new(@http, @request).parse(@client)
         expect(response.data).to eq('a' => 1)
       end
 
@@ -42,7 +42,7 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
-        response = Amadeus::Response.new(@http, @request)
+        response = Amadeus::Response.new(@http, @request).parse(@client)
         expect(response.data).to eq('a' => 1)
       end
 
@@ -54,8 +54,12 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{')
         expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
-        expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::ParserError)
+        expect do
+          Amadeus::Response.new(@http, @request)
+                           .parse(@client)
+                           .detect_error(@client)
+        end.to(
+          raise_error(Amadeus::ParserError)
         )
       end
     end
@@ -69,7 +73,7 @@ RSpec.describe Amadeus::Response::Parser do
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
         expect(@http).to receive(:code).at_least(1).times.and_return('200')
 
-        response = Amadeus::Response.new(@http, @request)
+        response = Amadeus::Response.new(@http, @request).parse(@client)
         expect(response).to be_instance_of(Amadeus::Response)
       end
     end
@@ -84,8 +88,12 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
-        expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::ClientError)
+        expect do
+          Amadeus::Response.new(@http, @request)
+                           .parse(@client)
+                           .detect_error(@client)
+        end.to(
+          raise_error(Amadeus::ClientError)
         )
       end
     end
@@ -100,8 +108,12 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
-        expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::ClientError)
+        expect do
+          Amadeus::Response.new(@http, @request)
+                           .parse(@client)
+                           .detect_error(@client)
+        end.to(
+          raise_error(Amadeus::ClientError)
         )
       end
     end
@@ -116,8 +128,12 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
-        expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::NotFoundError)
+        expect do
+          Amadeus::Response.new(@http, @request)
+                           .parse(@client)
+                           .detect_error(@client)
+        end.to(
+          raise_error(Amadeus::NotFoundError)
         )
       end
     end
@@ -132,8 +148,12 @@ RSpec.describe Amadeus::Response::Parser do
 
         expect(@http).to receive(:body).at_least(1).times.and_return('{}')
 
-        expect{ Amadeus::Response.new(@http, @request) }.to(
-          raise_error(Amadeus::Errors::ServerError)
+        expect do
+          Amadeus::Response.new(@http, @request)
+                           .parse(@client)
+                           .detect_error(@client)
+        end.to(
+          raise_error(Amadeus::ServerError)
         )
       end
     end

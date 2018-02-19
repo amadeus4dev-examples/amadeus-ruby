@@ -44,9 +44,12 @@ module Amadeus
     def initialize(http_response, request)
       @http_response = http_response
       @request = request
+    end
+
+    def parse(client)
       parse_status_code
-      parse_data
-      parse_response
+      parse_data(client)
+      self
     end
   end
 end

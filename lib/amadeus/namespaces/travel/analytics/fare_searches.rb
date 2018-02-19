@@ -27,7 +27,7 @@ module Amadeus
           #   to current year and previous month or week are valid. Future
           #   dates are not supported.
           # @return [Amadeus::Response] a parsed response
-          # @raise [Amadeus::Errors::Base] an exception if the call failed
+          # @raise [Amadeus::Base] an exception if the call failed
           # @example Find the fare searches for LHR, made from France in 2011
           #   amadeus.travel.analytics.fare_searches.get(
           #     origin: 'LHR',
