@@ -1,3 +1,38 @@
+## Development and Testing
+
+To run the project locally, clone the repository and install the dependencies.
+
+```
+git clone https://github.com/amadeusdev/amadeus-ruby.git
+cd amadeus-ruby
+bundle
+```
+
+### Running tests
+
+To run tests, simply run `rake` or `guard` to keep watching the source for changes and test accordingly.
+
+We are trying to keep 100% coverage, so keep an eye on the `coverage` folder for an overview of the coverage.
+
+### Using a library locally
+
+To use a library locally as a dependency, simply link to this library in your project by path:
+
+```ruby
+gem 'amadeus', path: '../path/to/clone'
+```
+
+To install quickly get playing with your code we have added a console that automatically includes the gem into the gem path.
+
+```sh
+rake console
+> amadeus = Amadeus::Client.new
+```
+
+### Releasing
+
+To release, make sure to update the version number, submit all your changes, and run `rake release`. This will be replaced in the future by a deploy through Travis CI.
+
 ## How to contribute to the Amadeus Ruby Gem
 
 #### **Did you find a bug?**

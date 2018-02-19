@@ -140,6 +140,11 @@ Additionally, to enable more verbose logging, you can set the appropriate level 
       log_level: 'debug'
     )
 
+## Development & Contributing
+
+Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for guidance on installing and running this code in a development environment.
+
+
 ## License
 
 This library is released under the [MIT License](LICENSE).
