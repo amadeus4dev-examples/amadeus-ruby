@@ -769,8 +769,6 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-76
-77
 78
 79
 80
@@ -781,10 +779,12 @@ call with an array of options.</p>
 85
 86
 87
-88</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_initialize_client_credentials'>initialize_client_credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -794,9 +794,9 @@ call with an array of options.</p>
   <span class='id identifier rubyid_initialize_http'>initialize_http</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_recognized_options'>recognized_options</span> <span class='op'>=</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>client_id</span><span class='words_sep'> </span><span class='tstring_content'>client_secret</span><span class='words_sep'>
-</span><span class='tstring_content'>                          logger</span><span class='words_sep'> </span><span class='tstring_content'>host</span><span class='words_sep'> </span><span class='tstring_content'>hostname</span><span class='words_sep'>
-</span><span class='tstring_content'>                          custom_app_id</span><span class='words_sep'> </span><span class='tstring_content'>custom_app_version</span><span class='words_sep'>
-</span><span class='tstring_content'>                          http</span><span class='words_sep'> </span><span class='tstring_content'>log_level</span><span class='words_sep'> </span><span class='tstring_content'>ssl</span><span class='words_sep'> </span><span class='tstring_content'>port</span><span class='words_sep'>]</span>
+                          </span><span class='tstring_content'>logger</span><span class='words_sep'> </span><span class='tstring_content'>host</span><span class='words_sep'> </span><span class='tstring_content'>hostname</span><span class='words_sep'>
+                          </span><span class='tstring_content'>custom_app_id</span><span class='words_sep'> </span><span class='tstring_content'>custom_app_version</span><span class='words_sep'>
+                          </span><span class='tstring_content'>http</span><span class='words_sep'> </span><span class='tstring_content'>log_level</span><span class='words_sep'> </span><span class='tstring_content'>ssl</span><span class='words_sep'> </span><span class='tstring_content'>port</span><span class='tstring_end'>]</span></span>
   <span class='id identifier rubyid_warn_on_unrecognized_options'>warn_on_unrecognized_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_logger'>logger</span><span class='comma'>,</span> <span class='id identifier rubyid_recognized_options'>recognized_options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -837,12 +837,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-17
-18
-19</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client_id'>client_id</span>
   <span class='ivar'>@client_id</span>
@@ -880,12 +880,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-19
-20
-21</pre>
+21
+22
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client_secret'>client_secret</span>
   <span class='ivar'>@client_secret</span>
@@ -923,12 +923,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-33
-34
-35</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_custom_app_id'>custom_app_id</span>
   <span class='ivar'>@custom_app_id</span>
@@ -966,12 +966,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-35
-36
-37</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_custom_app_version'>custom_app_version</span>
   <span class='ivar'>@custom_app_version</span>
@@ -1009,12 +1009,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-27
-28
-29</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_host'>host</span>
   <span class='ivar'>@host</span>
@@ -1052,12 +1052,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hostname'>hostname</span>
   <span class='ivar'>@hostname</span>
@@ -1095,12 +1095,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-37
-38
-39</pre>
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_http'>http</span>
   <span class='ivar'>@http</span>
@@ -1138,12 +1138,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-23
-24
-25</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log_level'>log_level</span>
   <span class='ivar'>@log_level</span>
@@ -1181,12 +1181,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_logger'>logger</span>
   <span class='ivar'>@logger</span>
@@ -1224,12 +1224,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-31
-32
-33</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_port'>port</span>
   <span class='ivar'>@port</span>
@@ -1267,12 +1267,12 @@ call with an array of options.</p>
       <pre class="lines">
 
 
-29
-30
-31</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ssl'>ssl</span>
   <span class='ivar'>@ssl</span>
@@ -1288,9 +1288,9 @@ call with an array of options.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 19 17:19:06 2018 by
+  Generated on Fri Mar  2 11:09:10 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.2).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

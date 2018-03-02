@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'amadeus/client/request/hash'
 
 module Amadeus

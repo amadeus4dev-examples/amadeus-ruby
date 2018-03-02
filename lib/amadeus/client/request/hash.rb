@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   class Request
     # Helper methods to for the {Amadeus::Request} object to help it

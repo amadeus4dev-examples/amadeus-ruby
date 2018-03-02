@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   class Client
     # A superclass that allows any namespaced superclass

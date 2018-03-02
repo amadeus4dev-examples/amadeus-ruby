@@ -343,13 +343,13 @@ Hotel ID</p>
       <pre class="lines">
 
 
-22
-23
 24
-25</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='id identifier rubyid_hotel_id'>hotel_id</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
@@ -393,12 +393,12 @@ Hotel ID</p>
       <pre class="lines">
 
 
-14
-15
-16</pre>
+16
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hotel_id'>hotel_id</span>
   <span class='ivar'>@hotel_id</span>
@@ -486,13 +486,13 @@ resource, yet</p>
       <pre class="lines">
 
 
-61
-62
 63
-64</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@hotel_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -550,14 +550,14 @@ resource, yet</p>
       <pre class="lines">
 
 
-46
-47
 48
 49
-50</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hotel_offers'>hotel_offers</span>
   <span class='const'><span class='object_link'><a href="../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Shopping.html" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Shopping::Hotels (class)">Hotels</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Hotels/HotelOffers.html" title="Amadeus::Namespaces::Shopping::Hotels::HotelOffers (class)">HotelOffers</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Hotels/HotelOffers.html#initialize-instance_method" title="Amadeus::Namespaces::Shopping::Hotels::HotelOffers#initialize (method)">new</a></span></span><span class='lparen'>(</span>
@@ -638,14 +638,14 @@ resource, yet</p>
       <pre class="lines">
 
 
-34
-35
 36
 37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotels.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_offers'>offers</span><span class='lparen'>(</span><span class='id identifier rubyid_offer_id'>offer_id</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Shopping.html" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Shopping::Hotels (class)">Hotels</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Hotels/Offers.html" title="Amadeus::Namespaces::Shopping::Hotels::Offers (class)">Offers</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Hotels/Offers.html#initialize-instance_method" title="Amadeus::Namespaces::Shopping::Hotels::Offers#initialize (method)">new</a></span></span><span class='lparen'>(</span>
@@ -662,9 +662,9 @@ resource, yet</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 19 17:19:07 2018 by
+  Generated on Fri Mar  2 11:09:10 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.2).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>
