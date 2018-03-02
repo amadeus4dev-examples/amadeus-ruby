@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   class Client
     # A set of helper methods to allow the validating of

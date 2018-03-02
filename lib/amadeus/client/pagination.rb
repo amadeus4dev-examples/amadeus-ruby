@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   class Client
     # Helper methods to for the {Amadeus::Response} object to help it

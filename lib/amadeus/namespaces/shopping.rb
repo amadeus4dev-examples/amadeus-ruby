@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   module Namespaces
     # A namespaced client for the

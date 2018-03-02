@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   # The namespaces that allow this API to map the paths
   # of the API to similar calls on the SDK

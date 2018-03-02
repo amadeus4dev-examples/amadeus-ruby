@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'amadeus/version'
 require 'amadeus/client/location'
 require 'amadeus/client/response'

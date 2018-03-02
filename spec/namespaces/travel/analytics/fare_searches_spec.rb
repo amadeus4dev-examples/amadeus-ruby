@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe Amadeus::Namespaces::Travel::Analytics::FareSearches do

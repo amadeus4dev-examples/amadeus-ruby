@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'logger'
 require 'amadeus/client/validator'
 require 'amadeus/namespaces/core'

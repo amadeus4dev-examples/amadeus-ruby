@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'amadeus/client/response/parser'
 
 module Amadeus
@@ -46,6 +48,11 @@ module Amadeus
       @request = request
     end
 
+    # Parses the response, using the client to log any errors
+    #
+    # @param [Amadeus::Client] client  the client used to output any errors
+    # @return [Amadeus::Response] returns itself
+    # @!visibility private
     def parse(client)
       parse_status_code
       parse_data(client)

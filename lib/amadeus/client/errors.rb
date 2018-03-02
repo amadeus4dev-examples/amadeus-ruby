@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Amadeus
   # A custom generic Amadeus error.
   #
