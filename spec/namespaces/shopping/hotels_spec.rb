@@ -11,7 +11,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels(:hotel_id).hotel_offers.get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/hotel-offers', {}
+        '/v1/shopping/hotels/123/hotel-offers', {}
       ).once
 
       @api.hotels(123).hotel_offers.get
@@ -21,7 +21,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels.get(:hotel_id).hotel_offers.get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/hotel-offers', {}
+        '/v1/shopping/hotels/123/hotel-offers', {}
       ).once
 
       @api.hotels.get(id: 123).hotel_offers.get
@@ -31,7 +31,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels.get(:hotel_id).offers.get(:offer_id)' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/offers/345', {}
+        '/v1/shopping/hotels/123/offers/345', {}
       ).once
 
       @api.hotels.get(id: 123).offers.get(id: 345)
@@ -41,7 +41,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels(:hotel_id).offers(:offer_id).get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/offers/345', {}
+        '/v1/shopping/hotels/123/offers/345', {}
       ).once
 
       @api.hotels(123).offers(345).get
@@ -51,7 +51,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels.get(:hotel_id).offers(:offer_id).get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/offers/345', {}
+        '/v1/shopping/hotels/123/offers/345', {}
       ).once
 
       @api.hotels.get(id: 123).offers(345).get
@@ -61,7 +61,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotels do
   describe '.hotels.get(:hotel_id).offers(:offer_id).get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel/123/offers/345', {}
+        '/v1/shopping/hotels/123/offers/345', {}
       ).once
 
       @api.hotels(123).offers.get(id: 345)

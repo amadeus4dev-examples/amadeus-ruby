@@ -31,7 +31,7 @@ module Amadeus
         # @param [Number] offer_id The ID for the offer to find details for
         # @return [Amadeus::Namespaces::Shopping::Hotels::Offers]
         # @example
-        #   amadeus.shopping.hotels('SMPARCOL').offers(234)
+        #   amadeus.shopping.hotels('SMPARCOL').offers('AC7D4DA2C')
         #
         def offers(offer_id = nil)
           Amadeus::Namespaces::Shopping::Hotels::Offers.new(
