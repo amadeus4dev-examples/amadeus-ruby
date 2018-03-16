@@ -25,7 +25,7 @@ module Amadeus
         # @raise [Amadeus::Base] an exception if the call failed
         # @example Search for hotels in London
         #   amadeus.shopping.hotel_offers.get(
-        #     origin: 'LHR'
+        #     cityCode: 'PAR'
         #   )
         #
         def get(params = {})
