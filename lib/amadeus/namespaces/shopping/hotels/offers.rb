@@ -36,7 +36,7 @@ module Amadeus
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call failed
           # @example Search for hotels in London
-          #   amadeus.hotels(123).offers(234).get
+          #   amadeus.shopping.hotels('SMPARCOL').offers('AC7D4DA2C').get
           #
           def get(params = {})
             @offer_id ||= begin
@@ -47,7 +47,7 @@ module Amadeus
             end
 
             client.get(
-              "/v1/shopping/hotel/#{@hotel_id}/offers/#{@offer_id}", params
+              "/v1/shopping/hotels/#{@hotel_id}/offers/#{@offer_id}", params
             )
           end
         end
