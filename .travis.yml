@@ -1,20 +1,20 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.2
-  - 2.3
-  - 2.4
-  - 2.5
-  - ruby-head
-  - jruby
+- 2.2
+- 2.3
+- 2.4
+- 2.5
+- ruby-head
+- jruby
 matrix:
   allow_failures:
-    - rvm: ruby-head
-    - rvm: jruby
+  - rvm: ruby-head
+  - rvm: jruby
 deploy:
   provider: rubygems
   email: developer@amadeus.com
-  client_id:
-    secure: [insert travis key]
   on:
     tags: true
+  api_key:
+    secure: h45vQ8aTa48KMc0/VSIWqvoxINhGg7Tu2oi+cjRRWwel//J+kD0iuKPp+ylrqWG5ojeLe07nWietiY4rPKkL+lmcm94tUNtFkbmPcfgWo7rsy6DLe9gI6b9S5qiDkrPWX8dFy73wBfamiLJ/Bp+LEituI2iV5ls+QFNggtOHpj2msGBMyKw9X7F9Rm/jqPfH/oBGQi1wNaU2U8i4OL+MC3AbRMIYSjdVze9ULjenEA+GgSi1qBxBWgHwZPrUSS201zuG3YEfHPpZRoYIrjY2phSCeTHQRRn6hWHSn3Knn25bqOqyb5srdzo6RTsxfwVNU8OV70EHLyeix8iGapyEcsS/cMLkzOQBh4PVqZpucYC5KwwmAAyqi9Ei12Lwd4cfC+b+jMoaXKnrjWf93ryJNtpEvP8+WKIG48Mhpxofst8ZyPxbBVHaIhyq4ovNGdufbOy/yPU/eAWbXg4ig9vIaJGDIXQIkDvcy9HJWLovyZUJC/9uGpTlanP95hRQjfghkPKXM1PswDGN9WluRGFI/PR41Dfxl6usjz4+2Zaup1/hr8ZKvKGMyG7pXi+M6FG6hmu7rKvsOMmdsf9C4NkBXmEufc8q4j4FItdokJNF4qjdMq5SFgaEQ79I2H7ObEi3oERZTjNySpbEbmh5LKHXoHwT4rVajVALdbbxrVIVARk=
