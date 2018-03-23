@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0.beta2 - 2018-03-24
+
+* Updated documentation for RubyInfo.org
+
+
 ## 1.0.0.beta1 - 2018-03-23
 
 * First Beta release with support for all the initial API endpoints
