@@ -1,7 +1,7 @@
 # Amadeus Ruby SDK
 
 [![Gem Version](https://badge.fury.io/rb/amadeus.svg)](https://badge.fury.io/rb/amadeus)
-[![Build Status](http://img.shields.io/travis/twilio/twilio-ruby.svg)][travis]
+[![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)][travis]
 [![Contact Support](https://img.shields.io/badge/contact-support-blue.svg)][support]
 
 Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
@@ -153,6 +153,6 @@ This library is released under the [MIT License](LICENSE).
 
 Our [developer support team](https://developer.amadeus.com/developers) is here to help you. You can find us on [Twitter](#), [StackOverflow](#), and [email](#).
 
-[gem]: https://rubygems.org/gems/twilio-ruby
-[travis]: http://travis-ci.org/twilio/twilio-ruby
+[gem]: https://rubygems.org/gems/amadeus
+[travis]: http://travis-ci.org/amadeus4dev/amadeus-ruby
 [support]: http://developer.amadeus.com/support
