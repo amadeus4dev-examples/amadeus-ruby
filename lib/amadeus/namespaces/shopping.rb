@@ -59,7 +59,7 @@ module Amadeus
       #   amadeus.shopping.hotels
       #
       def hotels(hotel_id = nil)
-        Amadeus::Namespaces::Shopping::Hotels.new(client, hotel_id)
+        Amadeus::Namespaces::Shopping::Hotel.new(client, hotel_id)
       end
     end
   end

@@ -11,7 +11,7 @@ module Amadeus
       #   amadeus = Amadeus::Client.new
       #   amadeus.shopping.hotels(123)
       #
-      class Hotels < Amadeus::Client::Decorator
+      class Hotel < Amadeus::Client::Decorator
         # the Hotel ID
         attr_reader :hotel_id
 
@@ -34,7 +34,7 @@ module Amadeus
         #   amadeus.shopping.hotels('SMPARCOL').offers(234)
         #
         def offers(offer_id = nil)
-          Amadeus::Namespaces::Shopping::Hotels::Offers.new(
+          Amadeus::Namespaces::Shopping::Hotel::Offer.new(
             client, @hotel_id, offer_id
           )
         end
@@ -46,23 +46,9 @@ module Amadeus
         #   amadeus.shopping.hotels('SMPARCOL').hotel_offers
         #
         def hotel_offers
-          Amadeus::Namespaces::Shopping::Hotels::HotelOffers.new(
+          Amadeus::Namespaces::Shopping::Hotel::HotelOffers.new(
             client, @hotel_id
           )
-        end
-
-        # Simply returns this same object with the hotel_id set. No need to make
-        # an actual API call (yet) as this API does not support the singular
-        # hotel resource, yet
-        #
-        # @param params [Integer] :id The ID for the hotel to find
-        # @return [Amadeus::Namespaces::Shopping::Hotels]
-        # @example
-        #   amadeus.travel.hotels('SMPARCOL')
-        #
-        def get(params = {})
-          @hotel_id = params[:id] || params['id']
-          self
         end
       end
     end

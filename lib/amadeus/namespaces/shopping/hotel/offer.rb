@@ -3,7 +3,7 @@
 module Amadeus
   module Namespaces
     class Shopping
-      class Hotels
+      class Hotel
         # A namespaced client for the
         # +/v1/shopping/hotels/:id/offers+ endpoints
         #
@@ -12,7 +12,7 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.shopping.hotels.offers
         #
-        class Offers < Amadeus::Client::Decorator
+        class Offer < Amadeus::Client::Decorator
           # the Hotel ID
           attr_reader :hotel_id
           # the Offer ID
