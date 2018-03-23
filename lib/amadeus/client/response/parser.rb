@@ -41,7 +41,7 @@ module Amadeus
         return unless json?(http_response)
         json = JSON.parse(@body)
         @parsed = true
-        return json
+        json
       rescue JSON::ParserError
         raise_error(Amadeus::ParserError, client)
       end

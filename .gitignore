@@ -8,6 +8,8 @@
 /tmp/
 test.rb
 docs
+vendor
+*.gem
 
 # rspec failure tracking
 .rspec_status
