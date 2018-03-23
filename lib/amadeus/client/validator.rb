@@ -6,6 +6,44 @@ module Amadeus
     # arguments past into the {Amadeus::Client}
     # @!visibility private
     module Validator
+      # PROTECTED
+
+      # Ensures credentials were provided
+      # @!visibility private
+      def initialize_client_credentials(options)
+        @client_id = init_required(:client_id, options)
+        @client_secret = init_required(:client_secret, options)
+      end
+
+      # Initializes the logger
+      # @!visibility private
+      def initialize_logger(options)
+        @logger       = init_optional(:logger, options, Logger.new(STDOUT))
+        @log_level    = init_optional(:log_level, options, 'warn')
+      end
+
+      # Initializes the port, hostname, and use of SSL
+      # @!visibility private
+      def initialize_host(options)
+        @hostname = init_optional(:hostname, options, :test).to_sym
+        @host = init_optional(:host, options, HOSTS[hostname])
+        @ssl =  init_optional(:ssl, options, true)
+        @port = init_optional(:port, options, 443)
+      end
+
+      # Initializes the custom app ID and secret
+      # @!visibility private
+      def initialize_custom_app(options)
+        @custom_app_id = init_optional(:custom_app_id, options, nil)
+        @custom_app_version = init_optional(:custom_app_version, options, nil)
+      end
+
+      # Initializes the HTTP object
+      # @!visibility private
+      def initialize_http(options)
+        @http = init_optional(:http, options, Net::HTTP)
+      end
+
       private
 
       # Uses {init_optional} to find an entry, and it that returns

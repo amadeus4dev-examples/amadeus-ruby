@@ -88,33 +88,5 @@ module Amadeus
                               http log_level ssl port]
       warn_on_unrecognized_options(options, logger, recognized_options)
     end
-
-    private
-
-    def initialize_client_credentials(options)
-      @client_id = init_required(:client_id, options)
-      @client_secret = init_required(:client_secret, options)
-    end
-
-    def initialize_logger(options)
-      @logger       = init_optional(:logger, options, Logger.new(STDOUT))
-      @log_level    = init_optional(:log_level, options, 'warn')
-    end
-
-    def initialize_host(options)
-      @hostname = init_optional(:hostname, options, :test).to_sym
-      @host = init_optional(:host, options, HOSTS[hostname])
-      @ssl =  init_optional(:ssl, options, true)
-      @port = init_optional(:port, options, 443)
-    end
-
-    def initialize_custom_app(options)
-      @custom_app_id = init_optional(:custom_app_id, options, nil)
-      @custom_app_version = init_optional(:custom_app_version, options, nil)
-    end
-
-    def initialize_http(options)
-      @http = init_optional(:http, options, Net::HTTP)
-    end
   end
 end
