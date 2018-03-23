@@ -9,7 +9,8 @@ rvm:
 - jruby
 branches:
   only:
-    master
+    - master
+    - /^v[0-9]/
 matrix:
   fast_finish: true
   allow_failures:
