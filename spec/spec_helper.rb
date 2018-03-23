@@ -7,7 +7,10 @@ require 'awesome_print'
 require 'vcr'
 require 'coveralls'
 
-Coveralls.wear!
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+  add_filter 'app/secrets'
+end
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
