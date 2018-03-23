@@ -60,7 +60,7 @@
       <div id="content"><div id='filecontents'><h1 id="amadeus-ruby-sdk">Amadeus Ruby SDK</h1>
 
 <p><a href="https://badge.fury.io/rb/amadeus"><img src="https://badge.fury.io/rb/amadeus.svg" alt="Gem Version" /></a>
-<a href="http://travis-ci.org/twilio/twilio-ruby"><img src="http://img.shields.io/travis/twilio/twilio-ruby.svg" alt="Build Status" /></a>
+<a href="http://travis-ci.org/amadeus4dev/amadeus-ruby"><img src="https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master" alt="Build Status" /></a>
 <a href="http://developer.amadeus.com/support"><img src="https://img.shields.io/badge/contact-support-blue.svg" alt="Contact Support" /></a></p>
 
 <p>Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.</p>
@@ -71,8 +71,9 @@
 
 <p>This gem requires Ruby 2.2+. You can install install it directly or via bundler.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amadeus</span><span class='tstring_end'>&#39;</span></span>
-</code></pre>
+<p><code>sh
+gem 'amadeus'
+</code></p>
 
 <p><strong>Next</strong>: <a href="https://developer.amadeus.com/docs/ruby/get_started/initialize">Get Started with the Ruby SDK.</a></p>
 
@@ -80,20 +81,21 @@
 
 <p>To send make your first API call you will need to <a href="https://developer.amadeus.com/register">register for an Amadeus Developer Account</a> and <a href="https://dashboard.developer.amadeus.com/applications">set up your first application</a>.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amadeus</span><span class='tstring_end'>&#39;</span></span>
+<p>```rb
+require ‘amadeus’</p>
 
-<span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbrace'>{</span>
-  <span class='label'>client_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>[YOUR_CLIENT_ID]</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>[YOUR_CLIENT_SECRET]</span><span class='tstring_end'>&#39;</span></span>
-<span class='rbrace'>}</span><span class='rparen'>)</span>
+<p>amadeus = Amadeus::Client.new({
+  client_id: ‘[YOUR_CLIENT_ID]’,
+  client_secret: ‘[YOUR_CLIENT_SECRET]’
+})</p>
 
-<span class='kw'>begin</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1X</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='comment'># =&gt; {&quot;meta&quot;=&gt;{&quot;count&quot;=&gt;2, &quot;links&quot;=&gt;{&quot;self&quot;=&gt;&quot;https://test.api.amadeus.com...
-</span><span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/ResponseError.html" title="Amadeus::ResponseError (class)">ResponseError</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_error'>error</span>
-<span class='kw'>end</span>
-</code></pre>
+<p>begin
+  puts amadeus.reference_data.urls.checkin_links.get({ airline: ‘1X’ })
+  # =&gt; {“meta”=&gt;{“count”=&gt;2, “links”=&gt;{“self”=&gt;”https://test.api.amadeus.com…
+rescue Amadeus::ResponseError =&gt; error
+  puts error
+end
+```</p>
 
 <p><strong>Next</strong>: <a href="https://developer.amadeus.com/docs/ruby/get_started/checkin_links">Learn more about checkin links</a> with our Ruby SDK.</p>
 
@@ -101,21 +103,24 @@
 
 <p>The client can be initialized directly.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='comment'># Initialize using parameters
-</span><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>client_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
+<p><code>rb
+# Initialize using parameters
+amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
+</code></p>
 
 <p>Alternatively it can be initialized without any paramters if the environment variables <code>AMADEUS_CLIENT_ID</code> and <code>AMADEUS_CLIENT_SECRET</code> are present.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-</code></pre>
+<p><code>rb
+amadeus = Amadeus::Client.new
+</code></p>
 
 <p>Your credentials can be found on the <a href="https://dashboard.developer.amadeus.com/client_ids">Amadeus dashboard</a>. <a href="https://developer.amadeus.com/register">Sign up</a> for an account today.</p>
 
 <p>By default the environment for the SDK is the <code>:test</code> environment. To switch to a production (paid-for) environment please switch the hostname as follows:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>hostname:</span> <span class='symbol'>:production</span><span class='rparen'>)</span>
-</code></pre>
+<p><code>rb
+amadeus = Amadeus::Client.new(hostname: :production)
+</code></p>
 
 <p><strong>Next</strong>: <a href="https://developer.amadeus.com/docs/ruby/get_started_initialize">Learn more about our initializing the Ruby SDK</a> in our documentation.</p>
 
@@ -136,7 +141,7 @@
 
 <p>Alternatively, head over to our <a href="https://developer.amadeus.com/docs/ruby/reference">Reference</a> documentation for in-depth information about every SDK method, it’s arguments and return types.</p>
 
-<p>Additionally, this SDK has extensive documentation of itself available on <a href="https://workbetta.github.io/amadeus-ruby/">RubyDoc.info</a>.</p>
+<p>Additionally, this SDK has extensive documentation of itself available on <a href="https://amadeus4dev.github.io/amadeus-ruby/">RubyDoc.info</a>.</p>
 
 <h2 id="making-api-calls">Making API calls</h2>
 
@@ -144,20 +149,23 @@
 
 <p>For example, <code>GET /v2/reference-data/urls/checkin-links?airline=1X</code> would be:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1X</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
+<p><code>rb
+amadeus.reference_data.urls.checkin_links.get(airline: '1X')
+</code></p>
 
 <p>Similarly, to select a resource by ID, you can pass in the ID to the path.</p>
 
 <p>For example,  <code>GET /v1/shopping/hotel/123/hotel-offers</code> would be:</p>
 
-<pre class="code ruby"><code class="ruby">amadeus.hotels(123).hotel_offers.get(...)
-</code></pre>
+<p><code>rb
+amadeus.hotels(123).hotel_offers.get(...)
+</code></p>
 
 <p>You can make any arbitrary API call as well directly with the <code>.get</code> method:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v2/reference-data/urls/checkin-links</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1X</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-</code></pre>
+<p><code>rb
+amadeus.get('/v2/reference-data/urls/checkin-links', airline: '1X')
+</code></p>
 
 <h2 id="response">Response</h2>
 
@@ -166,28 +174,30 @@ a JSON response it will parse the JSON into the <code>.result</code> attribute. 
 also contains a <code>data</code> key, it will make that available as the <code>.data</code>
 attribute. The raw body of the response is always avaulable as the <code>.body</code> attribute.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>keyword:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LON</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>subType:</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Location.html" title="Amadeus::Location (module)">Location</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Location.html#ANY-constant" title="Amadeus::Location::ANY (constant)">ANY</a></span></span>
-<span class='rparen'>)</span>
+<p>```rb
+response = amadeus.reference_data.locations.get(
+  keyword: ‘LON’,
+  subType: Amadeus::Location::ANY
+)</p>
 
-<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_reponse'>reponse</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='comment'>#=&gt; The raw response, as a string
-</span><span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_reponse'>reponse</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='comment'>#=&gt; The body parsed as JSON, if the result was parsable
-</span><span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span> <span class='comment'>#=&gt; The list of locations, extracted from the JSON
-</span></code></pre>
+<p>p reponse.body #=&gt; The raw response, as a string
+p reponse.result #=&gt; The body parsed as JSON, if the result was parsable
+p response.data #=&gt; The list of locations, extracted from the JSON
+```</p>
 
 <h2 id="pagination">Pagination</h2>
 
 <p>If an API endpoint supports pagination, the other pages are available under the
 <code>.next</code>, <code>.previous</code>, <code>.last</code> and <code>.first</code> methods.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>keyword:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LON</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>subType:</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Location.html" title="Amadeus::Location (module)">Location</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Location.html#ANY-constant" title="Amadeus::Location::ANY (constant)">ANY</a></span></span>
-<span class='rparen'>)</span>
+<p>```rb
+response = amadeus.reference_data.locations.get(
+  keyword: ‘LON’,
+  subType: Amadeus::Location::ANY
+)</p>
 
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span> <span class='comment'>#=&gt; returns a new response for the next page
-</span></code></pre>
+<p>amadeus.next(response) #=&gt; returns a new response for the next page
+```</p>
 
 <p>If a page is not available, the method will return <code>nil</code>.</p>
 
@@ -195,25 +205,27 @@ attribute. The raw body of the response is always avaulable as the <code>.body</
 
 <p>The SDK makes it easy to add your own logger.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logger</span><span class='tstring_end'>&#39;</span></span>
+<p>```rb
+require ‘logger’</p>
 
-<span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span>
-  <span class='label'>client_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>logger:</span> <span class='const'>Logger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>STDOUT</span><span class='rparen'>)</span>
-<span class='rparen'>)</span>
-</code></pre>
+<p>amadeus = Amadeus::Client.new(
+  client_id: ‘…’,
+  client_secret: ‘…’,
+  logger: Logger.new(STDOUT)
+)
+```</p>
 
 <p>Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the <code>AMADEUS_LOG_LEVEL</code> environment variable.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logger</span><span class='tstring_end'>&#39;</span></span>
+<p>```rb
+require ‘logger’</p>
 
-<span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span>
-  <span class='label'>client_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>log_level:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>debug</span><span class='tstring_end'>&#39;</span></span>
-<span class='rparen'>)</span>
-</code></pre>
+<p>amadeus = Amadeus::Client.new(
+  client_id: ‘…’,
+  client_secret: ‘…’,
+  log_level: ‘debug’
+)
+```</p>
 
 <h2 id="development--contributing">Development &amp; Contributing</h2>
 
@@ -230,7 +242,7 @@ attribute. The raw body of the response is always avaulable as the <code>.body</
 </div></div>
 
       <div id="footer">
-  Generated on Fri Mar  2 11:09:09 2018 by
+  Generated on Fri Mar 23 15:22:24 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>
