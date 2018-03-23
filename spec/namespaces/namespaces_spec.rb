@@ -41,6 +41,12 @@ RSpec.describe Amadeus::Namespaces do
           be_instance_of Amadeus::Namespaces::ReferenceData::Locations
         )
       end
+
+      it 'should return a Location object if an ID is provided' do
+        expect(@amadeus.reference_data.locations('ALHR')).to(
+          be_instance_of Amadeus::Namespaces::ReferenceData::Location
+        )
+      end
     end
 
     describe '.reference_data.locations' do
