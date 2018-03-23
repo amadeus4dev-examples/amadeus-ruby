@@ -10,10 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ['developer@amadeus.com', 'cristiano@betta.io']
 
   spec.summary       = 'Amadeus travel APIs'
-  spec.description   = <<-EOF
+  spec.description   = <<-DESCRIPTION
     Ruby library for the Amadeus travel APIs, providing hotel, flight, airport,
     and other travel related APIs.
-  EOF
+  DESCRIPTION
   spec.homepage      = 'https://github.com/amadeusdev/amadeus-ruby'
   spec.license       = 'MIT'
 
