@@ -77,7 +77,7 @@ Amadeus has a large set of APIs, and our documentation is here to get you starte
 
 Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentation for in-depth information about every SDK method, it's arguments and return types.
 
-Additionally, this SDK has extensive documentation of itself available on [RubyDoc.info](https://amadeus4dev.github.io/amadeus-ruby/).
+Additionally, this SDK has extensive documentation of itself available on [RubyDoc.info](http://www.rubydoc.info/gems/amadeus/0.1.0).
 
 ## Making API calls
 
