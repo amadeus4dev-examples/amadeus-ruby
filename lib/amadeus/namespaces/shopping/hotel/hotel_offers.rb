@@ -3,7 +3,7 @@
 module Amadeus
   module Namespaces
     class Shopping
-      class Hotels
+      class Hotel
         # A namespaced client for the
         # +/v1/shopping/hotels/:id/hotel-offers+ endpoints
         #
