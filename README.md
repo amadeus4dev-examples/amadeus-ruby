@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/amadeus.svg)](https://badge.fury.io/rb/amadeus)
 [![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)][travis]
-[![Coverage Status](https://coveralls.io/repos/github/amadeus4dev/amadeus-ruby/badge.svg?branch=master)](https://coveralls.io/github/amadeus4dev/amadeus-ruby?branch=master)
 [![Contact Support](https://img.shields.io/badge/contact-support-blue.svg)][support]
 
 Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
