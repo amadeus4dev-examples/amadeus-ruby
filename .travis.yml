@@ -7,6 +7,9 @@ rvm:
 - 2.5
 - ruby-head
 - jruby
+branches:
+  only:
+    master
 matrix:
   fast_finish: true
   allow_failures:
