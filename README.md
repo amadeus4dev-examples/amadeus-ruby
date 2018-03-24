@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/amadeus.svg)](https://badge.fury.io/rb/amadeus)
 [![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)][travis]
-[![Code Quality](http://img.shields.io/codeclimate/github/amadeus/amadeus-ruby.svg)][codeclimate]
+[![Code Quality](http://img.shields.io/codeclimate/github/amadeus4dev/amadeus-ruby.svg)][codeclimate]
 [![Contact Support](https://img.shields.io/badge/contact-support-blue.svg)][support]
 
 Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
@@ -180,4 +180,4 @@ Our [developer support team](https://developer.amadeus.com/developers) is here t
 [gem]: https://rubygems.org/gems/amadeus
 [travis]: http://travis-ci.org/amadeus4dev/amadeus-ruby
 [support]: http://developer.amadeus.com/support
-[codeclimate]: https://codeclimate.com/github/amadeus/amadeus-ruby
+[codeclimate]: https://codeclimate.com/github/amadeus4dev/amadeus-ruby
