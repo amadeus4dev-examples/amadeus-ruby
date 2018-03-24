@@ -5,3 +5,8 @@ Metrics/BlockLength:
 Layout/SpaceBeforeBlockBraces:
   Exclude:
     - "**/*_spec.rb"
+Style/HashSyntax:
+  Exclude:
+    - "spec/client/request/hash_spec.rb"
+AllCops:
+  TargetRubyVersion: 2.2
