@@ -2,15 +2,9 @@
 
 require 'bundler/setup'
 require 'simplecov'
-require 'simplecov-console'
 require 'amadeus'
 require 'awesome_print'
 require 'vcr'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::Console
-]
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
