@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.0.0.beta2 - 2018-03-24
+## 1.0.0.beta3 - 2018-03-24
+
+* Updates gemspec to specify a minimum Ruby version
+
+## 1.0.0.beta2 - 2018-03-23
 
 * Updated documentation for RubyInfo.org
 
