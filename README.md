@@ -15,7 +15,7 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
 ```rb
-gem 'amadeus', "~> 1.0.0.beta3"
+gem 'amadeus', '~> 1.0.0.beta3'
 
 ```
 
