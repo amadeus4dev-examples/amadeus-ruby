@@ -16,7 +16,6 @@ This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
 ```rb
 gem 'amadeus', '~> 1.0.0.beta3'
-
 ```
 
 __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
