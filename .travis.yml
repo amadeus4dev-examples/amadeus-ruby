@@ -21,7 +21,7 @@ matrix:
 before_deploy: bundle exec yard
 deploy:
   - provider: pages
-    local-dir: docs
+    local-dir: doc
     github-token: $GITHUB_TOKEN
     skip-cleanup: true
     keep-history: true
