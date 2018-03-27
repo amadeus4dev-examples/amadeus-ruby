@@ -1,6 +1,6 @@
 # Amadeus Ruby SDK
 
-[![Gem Version](https://badge.fury.io/rb/amadeus.svg)](gem)
+[![Gem Version](https://badge.fury.io/rb/amadeus.svg)][gem]
 [![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)][travis]
 [![Maintainability](https://api.codeclimate.com/v1/badges/d2e15221a502a7d71144/maintainability)](https://codeclimate.com/github/amadeus4dev/amadeus-ruby/maintainability)
 [![Dependencies](.github/images/dependencies.svg)](gem)
@@ -15,7 +15,7 @@ For more details see the [Ruby documentation](https://developer.amadeus.com/docs
 This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 
 ```rb
-gem 'amadeus'
+gem 'amadeus', '~> 1.0.0.beta3'
 ```
 
 __Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
