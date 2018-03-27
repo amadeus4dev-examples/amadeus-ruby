@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(/^(test|spec|features|.github|docs|.gitignore|.rspec)/) ||
+    f.match(/^(test|spec|features|.github|docs|doc|.gitignore|.rspec)/) ||
       f.match(/^(.rubocop.yml|.simplecov|.travis.yml|.yardopts)/) ||
       f.match(/^(CODE_OF_CONDUCT|Rakefile|Guardfile|Gemfile)/)
   end
