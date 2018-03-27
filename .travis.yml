@@ -18,7 +18,7 @@ matrix:
   - rvm: ruby-head
   - rvm: jruby
   - rvm: 2.5.0
-before_deploy: yard
+before_deploy: bundle exec yard
 deploy:
   - provider: pages
     local-dir: docs
@@ -33,5 +33,5 @@ deploy:
     email: developer@amadeus.com
     on:
       tags: true
-      rvm: 2.5.0p0
+      rvm: 2.5.0
     api_key: $RUBYGEMS_API_KEY
