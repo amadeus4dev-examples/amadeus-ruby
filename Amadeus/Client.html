@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Amadeus::Client
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Amadeus::Client";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span>
+     &raquo; 
+    <span class="title">Client</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Amadeus::Client
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Amadeus::Client</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span>, <span class='object_link'><a href="Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/amadeus/client.rb<span class="defines">,<br />
+  lib/amadeus/client/http.rb,<br /> lib/amadeus/client/decorator.rb,<br /> lib/amadeus/client/validator.rb,<br /> lib/amadeus/client/pagination.rb,<br /> lib/amadeus/client/access_token.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Amadeus client library for accessing the travel APIs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span>, <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span>
+    
+  
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="HOSTS-constant" class="">HOSTS =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The available hosts for this API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>test:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test.api.amadeus.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>production:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>production.api.amadeus.com</span><span class='tstring_end'>&#39;</span></span>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+    
+  </dl>
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#client_id-instance_method" title="#client_id (instance method)">#<strong>client_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The API key used to authenticate against the API.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#client_secret-instance_method" title="#client_secret (instance method)">#<strong>client_secret</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The API secret used to authenticate against the API.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#custom_app_id-instance_method" title="#custom_app_id (instance method)">#<strong>custom_app_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A custom App ID to be passed in the User Agent to the server.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#custom_app_version-instance_method" title="#custom_app_version (instance method)">#<strong>custom_app_version</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A custom App version to be passed in the User Agent to the server.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#host-instance_method" title="#host (instance method)">#<strong>host</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The host domain used to make API calls against.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hostname-instance_method" title="#hostname (instance method)">#<strong>hostname</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The short name of the host used to make API calls against.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#http-instance_method" title="#http (instance method)">#<strong>http</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The Net:HTTP compatible HTTP client in use.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#log_level-instance_method" title="#log_level (instance method)">#<strong>log_level</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If this client is running in debug, warn, or silent mode.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#logger-instance_method" title="#logger (instance method)">#<strong>logger</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The logger used to output warnings and debug messages.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#port-instance_method" title="#port (instance method)">#<strong>port</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The port to connect to, if not the default 443.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ssl-instance_method" title="#ssl (instance method)">#<strong>ssl</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Wether to use HTTPS to connect.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(options = {})  &#x21d2; Client </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initialize using your credentials:.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Namespaces.html#reference_data-instance_method" title="Amadeus::Namespaces#reference_data (method)">#reference_data</a></span>, <span class='object_link'><a href="Namespaces.html#shopping-instance_method" title="Amadeus::Namespaces#shopping (method)">#shopping</a></span>, <span class='object_link'><a href="Namespaces.html#travel-instance_method" title="Amadeus::Namespaces#travel (method)">#travel</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/Pagination.html" title="Amadeus::Client::Pagination (module)">Pagination</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Client/Pagination.html#first-instance_method" title="Amadeus::Client::Pagination#first (method)">#first</a></span>, <span class='object_link'><a href="Client/Pagination.html#last-instance_method" title="Amadeus::Client::Pagination#last (method)">#last</a></span>, <span class='object_link'><a href="Client/Pagination.html#next-instance_method" title="Amadeus::Client::Pagination#next (method)">#next</a></span>, <span class='object_link'><a href="Client/Pagination.html#previous-instance_method" title="Amadeus::Client::Pagination#previous (method)">#previous</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Client/HTTP.html" title="Amadeus::Client::HTTP (module)">HTTP</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Client/HTTP.html#get-instance_method" title="Amadeus::Client::HTTP#get (method)">#get</a></span>, <span class='object_link'><a href="Client/HTTP.html#post-instance_method" title="Amadeus::Client::HTTP#post (method)">#post</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Client (class)">Client</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initialize using your credentials:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='label'>client_id:</span>    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_CLIENT_ID</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>client_secret:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_CLIENT_SECRET</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+</code></pre>
+
+<p>Alternatively, initialize the library using the environment variables
+<code>AMADEUS_CLIENT_ID</code> and <code>AMADEUS_CLIENT_SECRET</code></p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:clientId</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the API key used to authenticate the API</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:clientSecret</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the API secret used to authenticate the API</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:logger</span>
+          <span class="type">(<tt>Object</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>&#39;Logger&#39;</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>a `Logger`-compatible logger that accepts a debug call</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:log_level</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>&#39;warn&#39;</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>if this client is running in debug, warn, or silent mode</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:hostname</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>&#39;production&#39;</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the name of the server API calls are made to (`production` or `test`)</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:custom_app_id</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>null</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>a custom App ID to be passed in the User Agent to the server.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:custom_app_version</span>
+          <span class="type">(<tt>string</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>null</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>a custom App Version number to be passed in the User Agent to the server.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:http</span>
+          <span class="type">(<tt>Object</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>Net::HTTP</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>an optional Node/HTTPS-compatible client that accepts a &#39;request()&#39;
+call with an array of options.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:ssl</span>
+          <span class="type">(<tt>boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>true</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>if this client is will use HTTPS</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_client_credentials'>initialize_client_credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_logger'>initialize_logger</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_host'>initialize_host</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_custom_app'>initialize_custom_app</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_initialize_http'>initialize_http</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_recognized_options'>recognized_options</span> <span class='op'>=</span> <span class='qsymbols_beg'>%i[</span><span class='tstring_content'>client_id</span><span class='words_sep'> </span><span class='tstring_content'>client_secret</span><span class='words_sep'>
+                          </span><span class='tstring_content'>logger</span><span class='words_sep'> </span><span class='tstring_content'>host</span><span class='words_sep'> </span><span class='tstring_content'>hostname</span><span class='words_sep'>
+                          </span><span class='tstring_content'>custom_app_id</span><span class='words_sep'> </span><span class='tstring_content'>custom_app_version</span><span class='words_sep'>
+                          </span><span class='tstring_content'>http</span><span class='words_sep'> </span><span class='tstring_content'>log_level</span><span class='words_sep'> </span><span class='tstring_content'>ssl</span><span class='words_sep'> </span><span class='tstring_content'>port</span><span class='tstring_end'>]</span></span>
+  <span class='id identifier rubyid_warn_on_unrecognized_options'>warn_on_unrecognized_options</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_logger'>logger</span><span class='comma'>,</span> <span class='id identifier rubyid_recognized_options'>recognized_options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="client_id-instance_method">
+  
+    #<strong>client_id</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The API key used to authenticate against the API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_client_id'>client_id</span>
+  <span class='ivar'>@client_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="client_secret-instance_method">
+  
+    #<strong>client_secret</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The API secret used to authenticate against the API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_client_secret'>client_secret</span>
+  <span class='ivar'>@client_secret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="custom_app_id-instance_method">
+  
+    #<strong>custom_app_id</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A custom App ID to be passed in the User Agent to the server</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_custom_app_id'>custom_app_id</span>
+  <span class='ivar'>@custom_app_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="custom_app_version-instance_method">
+  
+    #<strong>custom_app_version</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A custom App version to be passed in the User Agent to the server</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_custom_app_version'>custom_app_version</span>
+  <span class='ivar'>@custom_app_version</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="host-instance_method">
+  
+    #<strong>host</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The host domain used to make API calls against</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_host'>host</span>
+  <span class='ivar'>@host</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hostname-instance_method">
+  
+    #<strong>hostname</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The short name of the host used to make API calls against</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hostname'>hostname</span>
+  <span class='ivar'>@hostname</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="http-instance_method">
+  
+    #<strong>http</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The Net:HTTP compatible HTTP client in use</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_http'>http</span>
+  <span class='ivar'>@http</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="log_level-instance_method">
+  
+    #<strong>log_level</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If this client is running in debug, warn, or silent mode</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_log_level'>log_level</span>
+  <span class='ivar'>@log_level</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="logger-instance_method">
+  
+    #<strong>logger</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The logger used to output warnings and debug messages</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_logger'>logger</span>
+  <span class='ivar'>@logger</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="port-instance_method">
+  
+    #<strong>port</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The port to connect to, if not the default 443</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_port'>port</span>
+  <span class='ivar'>@port</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="ssl-instance_method">
+  
+    #<strong>ssl</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Wether to use HTTPS to connect</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/client.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ssl'>ssl</span>
+  <span class='ivar'>@ssl</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Mar 27 11:46:48 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.5.0).
+</div>
+
+    </div>
+  </body>
+</html>
