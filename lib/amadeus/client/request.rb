@@ -97,7 +97,7 @@ module Amadeus
     def initialize_headers
       @headers = {
         'User-Agent' => build_user_agent,
-        'Accept' => 'application/json'
+        'Accept' => 'application/json, application/vnd.amadeus+json'
       }
     end
 

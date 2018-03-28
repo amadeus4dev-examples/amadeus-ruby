@@ -56,7 +56,7 @@ RSpec.describe Amadeus::Request do
         )
       end
 
-      it 'should return a POSt HTTP Request' do
+      it 'should return a POST HTTP Request' do
         @request = Amadeus::Request.new(
           host: @host,
           verb: :POST,
