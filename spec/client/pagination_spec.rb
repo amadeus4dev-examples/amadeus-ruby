@@ -14,7 +14,7 @@ RSpec.describe Amadeus::Client::Pagination do
   end
 
   %w[next previous last first].each do |key|
-    describe "Amadeus::Response.#{key}" do
+    describe "Client.#{key}" do
       it "should create a new request with the #{key} page and call it" do
         allow(@http_response).to receive(:body).and_return(
           "{\"meta\":{\"links\":{\"#{key}\":\"http://foo.com?page=1\"}}}"
