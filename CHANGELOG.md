@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0.beta5 - 2018-03-28
+
+Add support for Amadeus's specific `Accept` request header.
+
 ## 1.0.0.beta4 - 2018-03-28
 
 Update singular endpoints to use singular names.
