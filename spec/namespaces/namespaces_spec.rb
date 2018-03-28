@@ -43,13 +43,13 @@ RSpec.describe Amadeus::Namespaces do
       end
 
       it 'should return a Location object if an ID is provided' do
-        expect(@amadeus.reference_data.locations('ALHR')).to(
+        expect(@amadeus.reference_data.location('ALHR')).to(
           be_instance_of Amadeus::Namespaces::ReferenceData::Location
         )
       end
     end
 
-    describe '.reference_data.locations' do
+    describe '.reference_data.locations.airports' do
       it 'should return a Airports object' do
         expect(@amadeus.reference_data.locations.airports).to(
           be_instance_of Amadeus::Namespaces::ReferenceData::Locations::Airports
@@ -99,7 +99,7 @@ RSpec.describe Amadeus::Namespaces do
 
     describe '.shopping.hotels' do
       it 'should return a Hotels object' do
-        expect(@amadeus.shopping.hotels(123)).to(
+        expect(@amadeus.shopping.hotel(123)).to(
           be_instance_of Amadeus::Namespaces::Shopping::Hotel
         )
       end
@@ -107,7 +107,7 @@ RSpec.describe Amadeus::Namespaces do
 
     describe '.shopping.hotels.offers' do
       it 'should return a Offers object' do
-        expect(@amadeus.shopping.hotels(123).offers(234)).to(
+        expect(@amadeus.shopping.hotel(123).offer(234)).to(
           be_instance_of Amadeus::Namespaces::Shopping::Hotel::Offer
         )
       end
@@ -115,7 +115,7 @@ RSpec.describe Amadeus::Namespaces do
 
     describe '.shopping.hotels.hotel_offers' do
       it 'should return a Offers object' do
-        expect(@amadeus.shopping.hotels(123).hotel_offers).to(
+        expect(@amadeus.shopping.hotel(123).hotel_offers).to(
           be_instance_of Amadeus::Namespaces::Shopping::Hotel::HotelOffers
         )
       end

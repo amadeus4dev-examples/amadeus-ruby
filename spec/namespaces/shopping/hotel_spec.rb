@@ -14,27 +14,17 @@ RSpec.describe Amadeus::Namespaces::Shopping::Hotel do
         '/v1/shopping/hotels/123/hotel-offers', {}
       ).once
 
-      @api.hotels(123).hotel_offers.get
+      @api.hotel(123).hotel_offers.get
     end
   end
 
-  describe '.hotels(:hotel_id).offers(:offer_id).get' do
+  describe '.hotel(:hotel_id).offers(:offer_id).get' do
     it 'should make the right API call' do
       expect(@client).to receive(:get).with(
         '/v1/shopping/hotels/123/offers/345', {}
       ).once
 
-      @api.hotels(123).offers(345).get
-    end
-  end
-
-  describe '.hotels.get(:hotel_id).offers(:offer_id).get' do
-    it 'should make the right API call' do
-      expect(@client).to receive(:get).with(
-        '/v1/shopping/hotels/123/offers/345', {}
-      ).once
-
-      @api.hotels(123).offers.get(id: 345)
+      @api.hotel(123).offer(345).get
     end
   end
 end

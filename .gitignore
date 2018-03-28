@@ -10,6 +10,7 @@ test.rb
 docs
 vendor
 *.gem
+doc
 
 # rspec failure tracking
 .rspec_status

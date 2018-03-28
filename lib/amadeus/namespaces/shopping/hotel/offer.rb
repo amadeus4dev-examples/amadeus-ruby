@@ -40,13 +40,6 @@ module Amadeus
           #     .offers('AC7D4DA2C322A73AF0824318A4965DA2805A3FC2').get
           #
           def get(params = {})
-            @offer_id ||= begin
-              offer_id = params[:id] || params['id']
-              params.delete(:id)
-              params.delete('id')
-              offer_id
-            end
-
             client.get(
               "/v1/shopping/hotels/#{@hotel_id}/offers/#{@offer_id}", params
             )

@@ -54,11 +54,11 @@ module Amadeus
       # The namespace for the Hotels API:
       #
       # @param [Number] hotel_id The ID for the hotel to find offers for
-      # @return [Amadeus::Namespaces::Shopping::Hotels]
+      # @return [Amadeus::Namespaces::Shopping::Hotel]
       # @example
-      #   amadeus.shopping.hotels
+      #   amadeus.shopping.hotel(hotel_id)
       #
-      def hotels(hotel_id = nil)
+      def hotel(hotel_id)
         Amadeus::Namespaces::Shopping::Hotel.new(client, hotel_id)
       end
     end

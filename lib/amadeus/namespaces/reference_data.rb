@@ -23,18 +23,24 @@ module Amadeus
 
       # The namespace for the Locations APIs:
       #
-      # @param [Number] location_id The optional ID for the location
       # @return [Amadeus::Namespaces::ReferenceData::Locations]
       # @example
       #   amadeus.reference_data.locations
       #   amadeus.reference_data.locations.airports
       #
-      def locations(location_id = nil)
-        if location_id
-          Amadeus::Namespaces::ReferenceData::Location.new(client, location_id)
-        else
-          Amadeus::Namespaces::ReferenceData::Locations.new(client)
-        end
+      def locations
+        Amadeus::Namespaces::ReferenceData::Locations.new(client)
+      end
+
+      # The namespace for the Location APIs - accessing a specific location
+      #
+      # @param [Number] location_id The ID for the location
+      # @return [Amadeus::Namespaces::ReferenceData::Locations]
+      # @example
+      #   amadeus.reference_data.location('ALHR')
+      #
+      def location(location_id)
+        Amadeus::Namespaces::ReferenceData::Location.new(client, location_id)
       end
     end
   end
