@@ -50,7 +50,9 @@ RSpec.describe Amadeus::Request do
         expect(@request.http_request.body).to be_nil
         expect(@request.http_request['Content-Type']).to be_nil
         expect(@request.http_request['Authorization']).to eq(@bearer_token)
-        expect(@request.http_request['Accept']).to eq('application/json')
+        expect(@request.http_request['Accept']).to(
+          eq('application/json, application/vnd.amadeus+json')
+        )
         expect(@request.http_request['User-Agent']).to(
           eq('amadeus-ruby/1.2.3 ruby/2.3.4 amadeus-cli/3.4.5')
         )
