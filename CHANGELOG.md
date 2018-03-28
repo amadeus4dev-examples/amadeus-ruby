@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.0.0.beta4 - 2018-03-28
+
+Update singular endpoints to use singular names.
+
+For example:
+
+```sh
+GET /v1/shopping/hotels/SMPARCOL/hotel-offers
+```
+
+becomes
+
+```rb
+amadeus.shopping.hotel('SMPARCOL').hotel_offers.get
+```
+
 ## 1.0.0.beta3 - 2018-03-24
 
 * Updates gemspec to specify a minimum Ruby version
