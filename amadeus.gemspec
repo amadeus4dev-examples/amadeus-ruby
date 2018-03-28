@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
     Ruby library for the Amadeus travel APIs, providing hotel, flight, airport,
     and other travel related APIs.
   DESCRIPTION
-  spec.homepage      = 'https://github.com/amadeusdev/amadeus-ruby'
+  spec.homepage      = 'https://github.com/amadeus4dev/amadeus-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
