@@ -58,6 +58,8 @@ module Amadeus
       http_request
     end
 
+    # PROTECTED
+
     # Builds the request object
     def http_request
       @http_request ||= begin
