@@ -8,7 +8,7 @@
 
 Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
 
-For more details see the [Ruby documentation](https://developer.amadeus.com/docs/ruby) on [Amadeus.com](https://developer.amadeus.com).
+For more details see the [Ruby documentation](https://developer.amadeus.com/docs/ruby) on [Amadeus.com](https://developer.amadeus.com) and the [class reference](https://amadeus4dev.github.io/amadeus-ruby) here on GitHub.
 
 ## Installation
 
