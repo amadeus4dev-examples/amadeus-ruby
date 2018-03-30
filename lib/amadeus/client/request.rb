@@ -132,8 +132,9 @@ module Amadeus
     end
 
     def uri
-      url = "#{@scheme}://#{@host}#{@path}"
+      url = "#{@scheme}://#{@host}"
       url += ":#{@port}" unless port_matches_scheme
+      url += @path.to_s
       uri = URI(url)
       params = flatten_keys(@params)
       uri.query = URI.encode_www_form(params) if @verb == :GET

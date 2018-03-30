@@ -68,13 +68,38 @@ RSpec.describe Amadeus::Request do
           client_version: @client_version,
           language_version: @language_version,
           app_id: @app_id,
-          app_version: @app_version
+          app_version: @app_version,
+          ssl: @ssl,
+          port: @port
         )
 
         expect(@request.http_request).to be_kind_of(Net::HTTP::Post)
+        expect(@request.http_request.uri.to_s).to(
+          eq('https://example.com/foo/bar')
+        )
         expect(@request.http_request.body).to eq('foo=bar')
         expect(@request.http_request['Content-Type']).to(
           eq('application/x-www-form-urlencoded')
+        )
+      end
+
+      it 'should allow for setting a different scheme/port' do
+        @request = Amadeus::Request.new(
+          host: @host,
+          verb: :POST,
+          path: @path,
+          params: @params,
+          bearer_token: @bearer_token,
+          client_version: @client_version,
+          language_version: @language_version,
+          app_id: @app_id,
+          app_version: @app_version,
+          ssl: false,
+          port: 5000
+        )
+
+        expect(@request.http_request.uri.to_s).to(
+          eq('http://example.com:5000/foo/bar')
         )
       end
     end
