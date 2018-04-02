@@ -41,7 +41,7 @@ module Amadeus
     # The available hosts for this API
     HOSTS = {
       test: 'test.api.amadeus.com',
-      production: 'production.api.amadeus.com'
+      production: 'api.amadeus.com'
     }.freeze
 
     # Initialize using your credentials:
