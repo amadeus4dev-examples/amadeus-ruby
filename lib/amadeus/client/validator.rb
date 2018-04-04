@@ -19,7 +19,7 @@ module Amadeus
       # @!visibility private
       def initialize_logger(options)
         @logger       = init_optional(:logger, options, Logger.new(STDOUT))
-        @log_level    = init_optional(:log_level, options, 'warn')
+        @log_level    = init_optional(:log_level, options, 'silent')
       end
 
       # Initializes the port, hostname, and use of SSL

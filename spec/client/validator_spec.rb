@@ -54,7 +54,7 @@ RSpec.describe Amadeus::Client::Validator do
     it 'should by default have a logger' do
       amadeus = Amadeus::Client.new(@valid_params)
       expect(amadeus.logger).to be_instance_of(Logger)
-      expect(amadeus.log_level).to eq('warn')
+      expect(amadeus.log_level).to eq('silent')
     end
 
     [:logger, 'logger'].each do |key|

@@ -63,8 +63,8 @@ module Amadeus
     #  the API
     # @option options [Object] :logger ('Logger') a `Logger`-compatible logger
     #  that accepts a debug call
-    # @option options [string] :log_level ('warn') if this client is running in
-    #  debug, warn, or silent mode
+    # @option options [string] :log_level ('silent') if this client is running
+    #  in debug, warn, or silent mode
     # @option options [string] :hostname ('production') the name of the server
     #  API calls are made to (`production` or `test`)
     # @option options [string] :custom_app_id (null) a custom App ID to be

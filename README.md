@@ -161,7 +161,7 @@ require 'logger'
 amadeus = Amadeus::Client.new(
   client_id: '...',
   client_secret: '...',
-  log_level: 'debug'
+  log_level: 'debug' # or "warn" or "silent", defaults to "silent"
 )
 ```
 

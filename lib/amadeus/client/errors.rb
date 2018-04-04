@@ -18,11 +18,6 @@ module Amadeus
     # @return [String]
     attr_reader :code
 
-    # The content of the response that describes the error
-    #
-    # @return [Hash]
-    attr_reader :description
-
     # Initializes an error by storing the {Amadeus::Response} object
     # that raised this error. The continues to determien the custom
     # error message
@@ -31,9 +26,9 @@ module Amadeus
     # @!visibility private
     def initialize(response)
       @response = response
-      @description = determine_description
-      super(@description)
       @code = determine_code
+
+      super(description)
     end
 
     # PROTECTED
@@ -49,13 +44,52 @@ module Amadeus
 
     private
 
-    def determine_description
-      return nil unless response && response.parsed
-      result = response.result
-      return result['errors'] if result['errors']
-      return result if result['error_description']
+    # Determines the description for this error, as used in in the error output
+    def description
+      description = short_description
+      description += long_description
+      description
     end
 
+    # Determines the short description, printed after on the same line as the
+    # error class name
+    def short_description
+      if response.respond_to?(:status_code) && response.status_code
+        "[#{response.status_code}]"
+      else
+        '[---]'
+      end
+    end
+
+    # Determines the longer description, printed after the initial error
+    def long_description
+      return '' unless response && response.parsed
+      message = ''
+      message += error_description if response.result['error_description']
+      message += errors_description if response.result['errors']
+      message
+    end
+
+    # Returns the description of a single error
+    def error_description
+      message = ''
+      message += "\n#{response.result['error']}" if response.result['error']
+      message += "\n#{response.result['error_description']}"
+      message
+    end
+
+    # Returns the description of multiple errors
+    def errors_description
+      response.result['errors'].map do |error|
+        message = "\n"
+        if error['source'] && error['source']['parameter']
+          message += "[#{error['source']['parameter']}] "
+        end
+        message + error['detail'] if error['detail']
+      end.join
+    end
+
+    # Determines the code for this error
     def determine_code
       self.class.to_s.split('::').last
     end
