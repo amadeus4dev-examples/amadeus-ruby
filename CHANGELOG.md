@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0.beta6 - 2018-04-05
+
+Adds easier to read error messages
+
 ## 1.0.0.beta5 - 2018-03-28
 
 Add support for Amadeus's specific `Accept` request header.
