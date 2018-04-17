@@ -143,10 +143,10 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
-    describe '.travel.analytics.air_traffics' do
-      it 'should return a AirTraffics object' do
-        expect(@amadeus.travel.analytics.air_traffics).to(
-          be_instance_of Amadeus::Namespaces::Travel::Analytics::AirTraffics
+    describe '.travel.analytics.air_traffic' do
+      it 'should return a AirTraffic object' do
+        expect(@amadeus.travel.analytics.air_traffic).to(
+          be_instance_of Amadeus::Namespaces::Travel::Analytics::AirTraffic
         )
       end
     end

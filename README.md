@@ -8,7 +8,9 @@
 
 Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
 
-For more details see the [Ruby documentation](https://developer.amadeus.com/docs/ruby) on [Amadeus.com](https://developer.amadeus.com) and the [class reference](https://amadeus4dev.github.io/amadeus-ruby) here on GitHub.
+For more details see the [Ruby
+documentation](https://amadeus4dev.github.io/amadeus-ruby/) on
+[Amadeus.com](https://developers.amadeus.com).
 
 ## Installation
 
@@ -18,11 +20,11 @@ This gem requires Ruby 2.2+. You can install install it directly or via bundler.
 gem 'amadeus', '~> 1.0.0.beta6'
 ```
 
-__Next__: [Get Started with the Ruby SDK.](https://developer.amadeus.com/docs/ruby/get_started/initialize)
-
 ## Getting Started
 
-To send make your first API call you will need to [register for an Amadeus Developer Account](https://developer.amadeus.com/register) and [set up your first application](https://dashboard.developer.amadeus.com/applications).
+To send make your first API call you will need to [register for an Amadeus
+Developer Account](https://developers.amadeus.com/create-account) and set up
+your first application.
 
 ```rb
 require 'amadeus'
@@ -40,8 +42,6 @@ rescue Amadeus::ResponseError => error
 end
 ```
 
-__Next__: [Learn more about checkin links](https://developer.amadeus.com/docs/ruby/get_started/checkin_links) with our Ruby SDK.
-
 ## Initialization
 
 The client can be initialized directly.
@@ -51,35 +51,37 @@ The client can be initialized directly.
 amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
 ```
 
-Alternatively it can be initialized without any paramters if the environment variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
+Alternatively it can be initialized without any paramters if the environment
+variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
 
 ```rb
 amadeus = Amadeus::Client.new
 ```
 
-Your credentials can be found on the [Amadeus dashboard](https://dashboard.developer.amadeus.com/client_ids). [Sign up](https://developer.amadeus.com/register) for an account today.
+Your credentials can be found on the [Amadeus
+dashboard](https://developers.amadeus.com/my-apps). [Sign
+up](https://developers.amadeus.com/create-account) for an account today.
 
-By default the environment for the SDK is the `:test` environment. To switch to a production (paid-for) environment please switch the hostname as follows:
+By default the environment for the SDK is the `:test` environment. To switch to
+a production (paid-for) environment please switch the hostname as follows:
 
 ```rb
 amadeus = Amadeus::Client.new(hostname: :production)
 ```
 
-__Next__: [Learn more about our initializing the Ruby SDK](https://developer.amadeus.com/docs/ruby/get_started_initialize) in our documentation.
-
 ## Documentation
 
-Amadeus has a large set of APIs, and our documentation is here to get you started today.
+Amadeus has a large set of APIs, and our documentation is here to get you
+started today. Head over to our
+[Reference](https://amadeus4dev.github.io/amadeus-ruby/) documentation for
+in-depth information about every SDK method, its arguments and return types.
 
-* [Get Started](https://developer.amadeus.com/docs/ruby/get_started) documentation
-  * [Initialize the SDK](https://developer.amadeus.com/docs/ruby/get_started/initialize)
-  * [Find an Airport](https://developer.amadeus.com/docs/ruby/get_started/find_an_airport)
-  * [Book a Flight](https://developer.amadeus.com/docs/ruby/get_started/book_a_flight)
-  * [Get Flight Inspiration](https://developer.amadeus.com/docs/ruby/get_started/get_flight_inspiration)
 
-Alternatively, head over to our [Reference](https://developer.amadeus.com/docs/ruby/reference) documentation for in-depth information about every SDK method, it's arguments and return types.
-
-Additionally, this SDK has extensive documentation of itself available on [RubyDoc.info](http://www.rubydoc.info/gems/amadeus/).
+* [Get Started](https://amadeus4dev.github.io/amadeus-ruby/) documentation
+  * [Initialize the SDK](https://amadeus4dev.github.io/amadeus-ruby/)
+  * [Find an Airport](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/ReferenceData/Locations/Airports.html)
+  * [Find a Flight](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightOffers.html)
+  * [Get Flight Inspiration](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightDestinations.html)
 
 ## Making API calls
 
@@ -153,7 +155,10 @@ amadeus = Amadeus::Client.new(
 )
 ```
 
-Additionally, to enable more verbose logging, you can set the appropriate level on your own logger, though the easiest way would be to enable debugging via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
+Additionally, to enable more verbose logging, you can set the appropriate level
+on your own logger, though the easiest way would be to enable debugging via a
+parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment
+variable.
 
 ```rb
 require 'logger'
@@ -167,7 +172,8 @@ amadeus = Amadeus::Client.new(
 
 ## Development & Contributing
 
-Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for guidance on installing and running this code in a development environment.
+Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for
+guidance on installing and running this code in a development environment.
 
 
 ## License
@@ -176,9 +182,12 @@ This library is released under the [MIT License](LICENSE).
 
 ## Help
 
-Our [developer support team](https://developer.amadeus.com/developers) is here to help you. You can find us on [Twitter](#), [StackOverflow](#), and [email](#).
+Our [developer support team](https://developers.amadeus.com/support) is here
+to help you. You can find us on
+[StackOverflow](https://stackoverflow.com/questions/tagged/amadeus) and
+[email](mailto:developers@amadeus.com).
 
 [gem]: https://rubygems.org/gems/amadeus
 [travis]: http://travis-ci.org/amadeus4dev/amadeus-ruby
-[support]: http://developer.amadeus.com/support
+[support]: http://developers.amadeus.com/support
 [codeclimate]: https://codeclimate.com/github/amadeus4dev/amadeus-ruby

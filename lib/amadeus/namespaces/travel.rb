@@ -15,7 +15,7 @@ module Amadeus
       #
       # @return [Amadeus::Namespaces::Travel::Analytics]
       # @example
-      #   amadeus.travel.analytics.air_traffics
+      #   amadeus.travel.analytics.air_traffic
       #   amadeus.travel.analytics.fare_searches
       #
       def analytics
