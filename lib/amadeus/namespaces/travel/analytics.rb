@@ -12,14 +12,14 @@ module Amadeus
       #   amadeus.travel.analytics
       #
       class Analytics < Amadeus::Client::Decorator
-        # The namespace for the AirTraffics API:
+        # The namespace for the AirTraffic API:
         #
-        # @return [Amadeus::Namespaces::Travel::Analytics::AirTraffics]
+        # @return [Amadeus::Namespaces::Travel::Analytics::AirTraffic]
         # @example
-        #   amadeus.travel.analytics.air_traffics
+        #   amadeus.travel.analytics.air_traffic
         #
-        def air_traffics
-          Amadeus::Namespaces::Travel::Analytics::AirTraffics.new(client)
+        def air_traffic
+          Amadeus::Namespaces::Travel::Analytics::AirTraffic.new(client)
         end
 
         # The namespace for the FareSearches API:
