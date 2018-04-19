@@ -26,6 +26,7 @@ require 'amadeus/namespaces/shopping/hotel/hotel_offers'
 require 'amadeus/namespaces/travel/analytics'
 require 'amadeus/namespaces/travel/analytics/fare_searches'
 require 'amadeus/namespaces/travel/analytics/air_traffic'
+require 'amadeus/namespaces/travel/analytics/air_traffic/traveled'
 
 # The namespace for the files used to make API
 # calls to the Amadeus travel APIs

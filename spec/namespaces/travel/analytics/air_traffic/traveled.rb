@@ -2,10 +2,12 @@
 
 require 'spec_helper'
 
-RSpec.describe Amadeus::Namespaces::Travel::Analytics::AirTraffic do
+RSpec.describe Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled do
   before do
     @client = double('Amadeus::Client')
-    @api = Amadeus::Namespaces::Travel::Analytics::AirTraffic.new(@client)
+    @api = Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled.new(
+      @client
+    )
   end
 
   describe '.get' do
