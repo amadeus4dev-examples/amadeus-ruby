@@ -173,7 +173,46 @@ amadeus = Amadeus::Client.new(
   log_level: 'debug' # or "warn" or "silent", defaults to "silent"
 )
 ```
+## List of supported endpoints:
+```rb
+# Flight Cheapest Date Search
+amadeus.shopping.flight_dates.get(origin: 'NCE', destination: 'PAR', duration: 1)
 
+# Flight Inspiration Search
+amadeus.shopping.flight_destinations.get(origin: 'MAD')
+
+# Flight Low-fare Search
+amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureDate: '2018-07-08')
+
+# Flight Check-in Links
+amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
+
+# Airport & City Search (autocomplete)
+# Find all the cities and airports starting by the keyword 'Lon'
+amadeus.reference_data.locations.get(
+  keyword: 'Lon',
+  subType: Amadeus::Location::ANY
+)
+# Get a specific city or airport based on its id
+amadeus.reference_data.location('ALHR').get
+
+# Airport Nearest Relevant 
+amadeus.reference_data.locations.airports.get(longitude: 49.0000, latitude: 2.55)
+
+# Flight Most Searched Destinations
+amadeus.travel.analytics.fare_searches.get(origin: 'NCE', sourceCountry: 'FR', period: '2017-08')
+
+# Flight Most Traveled Destinations
+ramadeus.travel.analytics.air_traffic.traveled.get(origin: 'NCE', period: '2017-08')
+
+# Hotel Search API
+# Get list of hotels by cityCode
+amadeus.shopping.hotel_offers.get(cityCode: 'PAR')
+# Get list of offers for a specific hotel
+amadeus.shopping.hotel('SMPARCOL').hotel_offers.get
+# Confirm the availability of a specific offer for a specific hotel
+amadeus.shopping.hotel('SMPARCOL').offer('4BA070CE929E135B3268A9F2D0C51E9D4A6CF318BA10485322FA2C7E78C7852E').get
+```
 ## Development & Contributing
 
 Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for
