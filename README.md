@@ -173,7 +173,7 @@ amadeus = Amadeus::Client.new(
   log_level: 'debug' # or "warn" or "silent", defaults to "silent"
 )
 ```
-## List of supported endpoints:
+## List of supported endpoints
 ```rb
 # Flight Cheapest Date Search
 amadeus.shopping.flight_dates.get(origin: 'NCE', destination: 'PAR', duration: 1)
