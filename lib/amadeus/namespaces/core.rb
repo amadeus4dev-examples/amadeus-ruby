@@ -41,7 +41,7 @@ module Amadeus
     #
     # @return [Amadeus::Namespaces::Travel]
     # @example Some of the further namespaces available
-    #   amadeus.travel.analytics.air_traffics
+    #   amadeus.travel.analytics.air_traffic
     #   amadeus.travel.analytics.fare_searches
     #
     def travel
