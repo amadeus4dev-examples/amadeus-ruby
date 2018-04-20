@@ -69,37 +69,29 @@ href="https://codeclimate.com/github/amadeus4dev/amadeus-ruby/maintainability"><
 src="https://api.codeclimate.com/v1/badges/d2e15221a502a7d71144/maintainability"></a>
 <a href="gem"><img
 src="https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/dependencies.svg?sanitize=true"></a>
-<a href="http://developer.amadeus.com/support"><img
+<a href="http://developers.amadeus.com/support"><img
 src="https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/support.svg?sanitize=true"></a></p>
 
 <p>Amadeus provides a set of APIs for the travel industry. Flights, Hotels,
 Locations and more.</p>
 
 <p>For more details see the <a
-href="https://developer.amadeus.com/docs/ruby">Ruby documentation</a> on <a
-href="https://developer.amadeus.com">Amadeus.com</a> and the <a
-href="https://amadeus4dev.github.io/amadeus-ruby">class reference</a> here
-on GitHub.</p>
+href="https://amadeus4dev.github.io/amadeus-ruby/">Ruby documentation</a>
+on <a href="https://developers.amadeus.com">Amadeus.com</a>.</p>
 
 <h2 id="label-Installation">Installation</h2>
 
 <p>This gem requires Ruby 2.2+. You can install install it directly or via
 bundler.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amadeus</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~&gt; 1.0.0.beta6</span><span class='tstring_end'>&#39;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amadeus</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~&gt; 1.0.0.beta7</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
-
-<p><strong>Next</strong>: <a
-href="https://developer.amadeus.com/docs/ruby/get_started/initialize">Get
-Started with the Ruby SDK.</a></p>
 
 <h2 id="label-Getting+Started">Getting Started</h2>
 
 <p>To send make your first API call you will need to <a
-href="https://developer.amadeus.com/register">register for an Amadeus
-Developer Account</a> and <a
-href="https://dashboard.developer.amadeus.com/applications">set up your
-first application</a>.</p>
+href="https://developers.amadeus.com/create-account">register for an
+Amadeus Developer Account</a> and set up your first application.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amadeus</span><span class='tstring_end'>&#39;</span></span>
 
@@ -115,10 +107,6 @@ first application</a>.</p>
   <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_error'>error</span>
 <span class='kw'>end</span>
 </code></pre>
-
-<p><strong>Next</strong>: <a
-href="https://developer.amadeus.com/docs/ruby/get_started/checkin_links">Learn
-more about checkin links</a> with our Ruby SDK.</p>
 
 <h2 id="label-Initialization">Initialization</h2>
 
@@ -136,9 +124,9 @@ environment variables <code>AMADEUS_CLIENT_ID</code> and
 </code></pre>
 
 <p>Your credentials can be found on the <a
-href="https://dashboard.developer.amadeus.com/client_ids">Amadeus
-dashboard</a>. <a href="https://developer.amadeus.com/register">Sign up</a>
-for an account today.</p>
+href="https://developers.amadeus.com/my-apps">Amadeus dashboard</a>. <a
+href="https://developers.amadeus.com/create-account">Sign up</a> for an
+account today.</p>
 
 <p>By default the environment for the SDK is the <code>:test</code>
 environment. To switch to a production (paid-for) environment please switch
@@ -147,42 +135,32 @@ the hostname as follows:</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Amadeus/Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>hostname:</span> <span class='symbol'>:production</span><span class='rparen'>)</span>
 </code></pre>
 
-<p><strong>Next</strong>: <a
-href="https://developer.amadeus.com/docs/ruby/get_started_initialize">Learn
-more about our initializing the Ruby SDK</a> in our documentation.</p>
-
 <h2 id="label-Documentation">Documentation</h2>
 
 <p>Amadeus has a large set of APIs, and our documentation is here to get you
-started today.</p>
+started today. Head over to our <a
+href="https://amadeus4dev.github.io/amadeus-ruby/">Reference</a>
+documentation for in-depth information about every SDK method, its
+arguments and return types.</p>
 <ul><li>
-<p><a href="https://developer.amadeus.com/docs/ruby/get_started">Get
-Started</a> documentation</p>
+<p><a href="https://amadeus4dev.github.io/amadeus-ruby/">Get Started</a>
+documentation</p>
+</li><li>
+<p><a href="https://amadeus4dev.github.io/amadeus-ruby/">Initialize the
+SDK</a></p>
 </li><li>
 <p><a
-href="https://developer.amadeus.com/docs/ruby/get_started/initialize">Initialize
-the SDK</a></p>
-</li><li>
-<p><a
-href="https://developer.amadeus.com/docs/ruby/get_started/find_an_airport">Find
+href="https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/ReferenceData/Locations/Airports.html">Find
 an Airport</a></p>
 </li><li>
 <p><a
-href="https://developer.amadeus.com/docs/ruby/get_started/book_a_flight">Book
+href="https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightOffers.html">Find
 a Flight</a></p>
 </li><li>
 <p><a
-href="https://developer.amadeus.com/docs/ruby/get_started/get_flight_inspiration">Get
+href="https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightDestinations.html">Get
 Flight Inspiration</a></p>
 </li></ul>
-
-<p>Alternatively, head over to our <a
-href="https://developer.amadeus.com/docs/ruby/reference">Reference</a>
-documentation for in-depth information about every SDK method, it&#39;s
-arguments and return types.</p>
-
-<p>Additionally, this SDK has extensive documentation of itself available on
-<a href="http://www.rubydoc.info/gems/amadeus/">RubyDoc.info</a>.</p>
 
 <h2 id="label-Making+API+calls">Making API calls</h2>
 
@@ -282,13 +260,14 @@ environment.</p>
 
 <h2 id="label-Help">Help</h2>
 
-<p>Our <a href="https://developer.amadeus.com/developers">developer support
-team</a> is here to help you. You can find us on <a href="#">Twitter</a>,
-<a href="#">StackOverflow</a>, and <a href="#">email</a>.</p>
+<p>Our <a href="https://developers.amadeus.com/support">developer support
+team</a> is here to help you. You can find us on <a
+href="https://stackoverflow.com/questions/tagged/amadeus">StackOverflow</a>
+and <a href="mailto:developers@amadeus.com">email</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Apr 17 11:29:39 2018 by
+  Generated on Fri Apr 20 00:10:06 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>
