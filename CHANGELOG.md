@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 - 2018-04-19
+
+The first stable version of the Amadeus for Developers ruby SDK
+
+## 1.0.0.beta7 - 2018-04-19
+
+Fix the Flight Most Traveled Destinations endpoint (air_traffic/traveled)
+
 ## 1.0.0.beta6 - 2018-04-05
 
 Adds easier to read error messages
