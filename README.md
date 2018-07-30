@@ -26,7 +26,7 @@ gem 'amadeus'
 
 ## Getting Started
 
-To send make your first API call you will need to [register for an Amadeus
+To make your first API call you will need to [register for an Amadeus
 Developer Account](https://developers.amadeus.com/create-account) and set up
 your first application.
 
@@ -185,7 +185,10 @@ amadeus.shopping.flight_destinations.get(origin: 'MAD')
 amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureDate: '2018-07-08')
 
 # Flight Check-in Links
-amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
+amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
+
+# Flight Check-in Links
+amadeus.reference_data.airlines.get({ IATAcode: 'U2' })
 
 # Airport & City Search (autocomplete)
 # Find all the cities and airports starting by the keyword 'Lon'
@@ -203,7 +206,13 @@ amadeus.reference_data.locations.airports.get(longitude: 49.0000, latitude: 2.55
 amadeus.travel.analytics.fare_searches.get(origin: 'NCE', sourceCountry: 'FR', period: '2017-08')
 
 # Flight Most Traveled Destinations
-ramadeus.travel.analytics.air_traffic.traveled.get(origin: 'NCE', period: '2017-08')
+amadeus.travel.analytics.air_traffic.traveled.get(origin: 'NCE', period: '2017-08')
+
+# Flight Most Booked Destinations
+amadeus.travel.analytics.air_traffic.booked.get(origin: 'NCE', period: '2017-08')
+
+# Flight Busiest Period
+amadeus.travel.analytics.air_traffic.busiest_period.get(city: 'NCE', period: '2017')
 
 # Hotel Search API
 # Get list of hotels by cityCode

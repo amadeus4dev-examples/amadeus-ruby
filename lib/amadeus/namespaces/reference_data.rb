@@ -42,6 +42,17 @@ module Amadeus
       def location(location_id)
         Amadeus::Namespaces::ReferenceData::Location.new(client, location_id)
       end
+
+      # The namespace for the Airline Code APIs - accessing a specific airline
+      #
+      # @param [Number] airline_id The IATA ID for the airline
+      # @return [Amadeus::Namespaces::ReferenceData::Airlines]
+      # @example
+      #   amadeus.reference_data.airlines('U2')
+      #
+      def airlines
+        Amadeus::Namespaces::ReferenceData::Airlines.new(client)
+      end
     end
   end
 end

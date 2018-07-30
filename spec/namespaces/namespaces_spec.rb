@@ -35,6 +35,14 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
+    describe '.reference_data.urls.airlines' do
+      it 'should return an Airline object' do
+        expect(@amadeus.reference_data.airlines).to(
+          be_instance_of Amadeus::Namespaces::ReferenceData::Airlines
+        )
+      end
+    end
+
     describe '.reference_data.locations' do
       it 'should return a Locations object' do
         expect(@amadeus.reference_data.locations).to(
@@ -158,6 +166,26 @@ RSpec.describe Amadeus::Namespaces do
         expect(@amadeus.travel.analytics.air_traffic.traveled).to(
           be_instance_of(
             Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled
+          )
+        )
+      end
+    end
+
+    describe '.travel.analytics.air_traffic.booked' do
+      it 'should return a Booked object' do
+        expect(@amadeus.travel.analytics.air_traffic.booked).to(
+          be_instance_of(
+            Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked
+          )
+        )
+      end
+    end
+
+    describe '.travel.analytics.air_traffic.busiest-period' do
+      it 'should return a BusiestPeriod object' do
+        expect(@amadeus.travel.analytics.air_traffic.busiest_period).to(
+          be_instance_of(
+            Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod
           )
         )
       end
