@@ -14,7 +14,7 @@ RSpec.describe Amadeus::Namespaces::Travel::Analytics::
 
   describe '.get' do
     it 'should call client.get with the right params' do
-      params = { cityCode: 'MAD', period: '2017' }
+      params = { cityCode: 'MAD', period: '2017', direction: Amadeus::Direction::ARRIVING }
 
       expect(@client).to receive(:get).with(
         '/v1/travel/analytics/air-traffic/busiest-period', params

@@ -20,14 +20,16 @@ module Amadeus
             # @option params [String] :city IATA code of the origin city -
             #   e.g. BOS for Boston - required
             # @option params [String] :period period when consumers
-            # are travelling
-            #   in YYYY format
+            #   are travelling in YYYY format
+            # @option params [String] :direction to select between 
+            # arrivals and departures (default: arrivals)
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
             # @example What was the busiest travel period in 2017
             #   amadeus.travel.analytics.air_traffic.busiest_period.get(
             #     city: 'MAD',
-            #     period: '2017'
+            #     period: '2017',
+            #     direction: Amadeus::Direction::ARRIVING
             #   )
             #
             def get(params = {})

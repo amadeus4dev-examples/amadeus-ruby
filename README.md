@@ -212,7 +212,11 @@ amadeus.travel.analytics.air_traffic.traveled.get(origin: 'NCE', period: '2017-0
 amadeus.travel.analytics.air_traffic.booked.get(origin: 'NCE', period: '2017-08')
 
 # Flight Busiest Period
-amadeus.travel.analytics.air_traffic.busiest_period.get(city: 'NCE', period: '2017')
+amadeus.travel.analytics.air_traffic.busiest_period.get(
+  city: 'NCE', 
+  period: '2017',
+  direction = Amadeus::Direction:ARRIVING
+)
 
 # Hotel Search API
 # Get list of hotels by cityCode

@@ -2,6 +2,7 @@
 
 require 'amadeus/version'
 require 'amadeus/client/location'
+require 'amadeus/client/direction'
 require 'amadeus/client/response'
 require 'amadeus/client/decorator'
 require 'amadeus/client/access_token'
