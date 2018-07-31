@@ -48,7 +48,7 @@ git add --all
 This is required because the files that are packaged in the library (edited) can only be packaged if they are added to the git repo
 (not commited).
 
-Then run the following 3 commands to generate the gem locally and to install it in the amadeus-ruby project:
+Then run the following 3 commands to generate the gem locally and install it in the amadeus-ruby project:
 
 ```sh
 build amadeus.gemspec
