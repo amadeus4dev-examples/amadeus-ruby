@@ -187,7 +187,7 @@ amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureD
 # Flight Check-in Links
 amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
 
-# Flight Check-in Links
+# Airline Code Lookup
 amadeus.reference_data.airlines.get({ IATAcode: 'U2' })
 
 # Airport & City Search (autocomplete)

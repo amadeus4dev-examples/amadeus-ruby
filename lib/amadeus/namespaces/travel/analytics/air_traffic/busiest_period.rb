@@ -6,27 +6,28 @@ module Amadeus
       class Analytics
         class AirTraffic
           # A namespaced client for the
-          # +/v1/travel/analytics/air-traffic/booked+ endpoints
+          # +/v1/travel/analytics/air-traffic/busiest-period+ endpoints
           #
           # Access via the +Amadeus::Client+ object
           #
           #   amadeus = Amadeus::Client.new
-          #   amadeus.travel.analytics.air_traffic.booked
+          #   amadeus.travel.analytics.air_traffic.busiest_period
           #
           class BusiestPeriod < Amadeus::Client::Decorator
-            # Returns a list of air traffic reports, based on bookings.
+            # Returns the months of the selected year, ordered from busiest
+            # to least busy.
             #
-            # @option params [String] :origin IATA code of the origin city -
+            # @option params [String] :city IATA code of the origin city -
             #   e.g. BOS for Boston - required
-            # @option params [String] :query period when consumers
+            # @option params [String] :period period when consumers
             # are travelling
-            #   in YYYY-MM format
+            #   in YYYY format
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
-            # @example Find the air traffic from LHR in January 2011
-            #   amadeus.travel.analytics.air_traffic.booked.get(
-            #     origin: 'LHR',
-            #     period: '2017-03'
+            # @example What was the busiest travel period in 2017
+            #   amadeus.travel.analytics.air_traffic.busiest_period.get(
+            #     city: 'MAD',
+            #     period: '2017'
             #   )
             #
             def get(params = {})
