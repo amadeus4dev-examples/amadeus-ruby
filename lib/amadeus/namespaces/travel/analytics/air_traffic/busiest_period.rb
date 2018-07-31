@@ -21,7 +21,7 @@ module Amadeus
             #   e.g. BOS for Boston - required
             # @option params [String] :period period when consumers
             #   are travelling in YYYY format
-            # @option params [String] :direction to select between 
+            # @option params [String] :direction to select between
             # arrivals and departures (default: arrivals)
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed

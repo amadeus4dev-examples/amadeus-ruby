@@ -7,6 +7,5 @@ module Amadeus
     ARRIVING = 'ARRIVING'.freeze
     # City
     DEPARTING = 'DEPARTING'.freeze
-    
   end
 end

@@ -215,7 +215,7 @@ amadeus.travel.analytics.air_traffic.booked.get(origin: 'NCE', period: '2017-08'
 amadeus.travel.analytics.air_traffic.busiest_period.get(
   city: 'NCE', 
   period: '2017',
-  direction = Amadeus::Direction:ARRIVING
+  direction = Amadeus::Direction::ARRIVING
 )
 
 # Hotel Search API
