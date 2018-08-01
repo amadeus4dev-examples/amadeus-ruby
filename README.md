@@ -182,7 +182,7 @@ amadeus.shopping.flight_dates.get(origin: 'NCE', destination: 'PAR', duration: 1
 amadeus.shopping.flight_destinations.get(origin: 'MAD')
 
 # Flight Low-fare Search
-amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureDate: '2018-07-08')
+amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureDate: '2018-11-01')
 
 # Flight Check-in Links
 amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
@@ -213,9 +213,9 @@ amadeus.travel.analytics.air_traffic.booked.get(origin: 'NCE', period: '2017-08'
 
 # Flight Busiest Period
 amadeus.travel.analytics.air_traffic.busiest_period.get(
-  city: 'NCE', 
+  cityCode: 'MAD', 
   period: '2017',
-  direction = Amadeus::Direction::ARRIVING
+  direction: Amadeus::Direction::ARRIVING
 )
 
 # Hotel Search API
