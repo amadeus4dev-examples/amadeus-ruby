@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled
+  Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked
   
     &mdash; Documentation by YARD 0.9.15
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled";
+  pathId = "Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked";
   relpath = '../../../../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../../../_index.html">Index (T)</a> &raquo;
+    <a href="../../../../../_index.html">Index (B)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../AirTraffic.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span>
      &raquo; 
-    <span class="title">Traveled</span>
+    <span class="title">Booked</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled
+      <div id="content"><h1>Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled</li>
+            <li class="next">Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb</dd>
+    <dd>lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb</dd>
   </dl>
   
 </div>
@@ -105,12 +105,12 @@
   <div class="discussion">
     
 <p>A namespaced client for the
-<code>/v1/travel/analytics/air-traffic/traveled</code> endpoints</p>
+<code>/v1/travel/analytics/air-traffic/booked</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_traveled'>traveled</span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_booked'>booked</span>
 </code></pre>
 
 
@@ -152,7 +152,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a list of air traffic reports.</p>
+<p>Returns a list of air traffic reports, based on bookings.</p>
 </div></span>
   
 </li>
@@ -185,7 +185,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a list of air traffic reports.</p>
+<p>Returns a list of air traffic reports, based on bookings.</p>
 
 <p>are travelling</p>
 
@@ -205,7 +205,7 @@
 <p>Find the air traffic from LHR in January 2011</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_traveled'>traveled</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_booked'>booked</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
   <span class='label'>origin:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHR</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-03</span><span class='tstring_end'>&#39;</span></span>
 <span class='rparen'>)</span></code></pre>
@@ -317,10 +317,10 @@
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/traveled</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/booked</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>

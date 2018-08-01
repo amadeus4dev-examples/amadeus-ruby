@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Module: Amadeus::Location
+  Module: Amadeus::Direction
   
     &mdash; Documentation by YARD 0.9.15
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Amadeus::Location";
+  pathId = "Amadeus::Direction";
   relpath = '../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../_index.html">Index (L)</a> &raquo;
+    <a href="../_index.html">Index (D)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span>
      &raquo; 
-    <span class="title">Location</span>
+    <span class="title">Direction</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Module: Amadeus::Location
+      <div id="content"><h1>Module: Amadeus::Direction
   
   
   
@@ -78,7 +78,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/client/location.rb</dd>
+    <dd>lib/amadeus/client/direction.rb</dd>
   </dl>
   
 </div>
@@ -86,7 +86,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A list of location types, as used in searching for locations</p>
+<p>A list of directions, as used in Busiest Travel Period</p>
 
 
   </div>
@@ -103,7 +103,7 @@
 
     <dl class="constants">
       
-        <dt id="AIRPORT-constant" class="">AIRPORT =
+        <dt id="ARRIVING-constant" class="">ARRIVING =
           <div class="docstring">
   <div class="discussion">
     
@@ -117,9 +117,9 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AIRPORT</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ARRIVING</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
-        <dt id="CITY-constant" class="">CITY =
+        <dt id="DEPARTING-constant" class="">DEPARTING =
           <div class="docstring">
   <div class="discussion">
     
@@ -133,23 +133,7 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>CITY</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-      
-        <dt id="ANY-constant" class="">ANY =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Any</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-        </dt>
-        <dd><pre class="code"><span class='lbracket'>[</span><span class='const'><span class='object_link'><a href="#AIRPORT-constant" title="Amadeus::Location::AIRPORT (constant)">AIRPORT</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#CITY-constant" title="Amadeus::Location::CITY (constant)">CITY</a></span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DEPARTING</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
   
