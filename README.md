@@ -175,14 +175,14 @@ amadeus = Amadeus::Client.new(
 ```
 ## List of supported endpoints
 ```rb
-# Flight Cheapest Date Search
-amadeus.shopping.flight_dates.get(origin: 'NCE', destination: 'PAR', duration: 1)
-
 # Flight Inspiration Search
 amadeus.shopping.flight_destinations.get(origin: 'MAD')
 
+# Flight Cheapest Date Search
+amadeus.shopping.flight_dates.get(origin: 'NYC', destination: 'MAD')
+
 # Flight Low-fare Search
-amadeus.shopping.flight_offers.get(origin: 'MAD', destination: 'OPO', departureDate: '2018-11-01')
+amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
 
 # Flight Check-in Links
 amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
