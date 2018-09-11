@@ -28,7 +28,7 @@ module Amadeus
           # The namespace for the Booked API:
           #
           # @return
-          #   [Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked]
+          #  [Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked]
           # @example
           #   amadeus.travel.analytics.air_traffic.booked
           def booked
@@ -40,9 +40,9 @@ module Amadeus
           # The namespace for the Busiest Period API:
           #
           # @return
-          # [Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod]
+          #  [Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod]
           # @example
-          # amadeus.travel.analytics.air_traffic.busiest_period
+          #   amadeus.travel.analytics.air_traffic.busiest_period
           def busiest_period
             Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod
               .new(client)
