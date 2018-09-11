@@ -123,6 +123,7 @@ module Amadeus
       def log(object)
         # :nocov:
         return unless @log_level == 'debug'
+
         logger.debug(object.class.name.to_s) do
           JSON.pretty_generate(
             ::Hash[object.instance_variables.map do |ivar|

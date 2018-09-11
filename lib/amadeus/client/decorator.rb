@@ -20,6 +20,7 @@ module Amadeus
         if client.nil?
           raise(ArgumentError, 'Missing required parameter: Amadeus::Client')
         end
+
         @client = client
       end
     end

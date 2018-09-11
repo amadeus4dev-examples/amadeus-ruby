@@ -87,6 +87,7 @@ module Amadeus
       def warn_on_unrecognized_options(options, logger, recognized_options)
         options.each_key do |key|
           next if recognized_options.include?(key.to_sym)
+
           logger.warn('Amadeus::Client::Validator') do
             # :nocov:
             "Unrecognized option: #{key}"

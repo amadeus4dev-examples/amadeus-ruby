@@ -26,6 +26,7 @@ module Amadeus
       # or refreshes it if it is not (or about to expire)
       def token
         return @access_token if @access_token && !needs_refresh?
+
         update_access_token
         @access_token
       end

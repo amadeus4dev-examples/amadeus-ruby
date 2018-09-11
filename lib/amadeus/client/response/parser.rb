@@ -39,6 +39,7 @@ module Amadeus
       def parse_json(http_response, client)
         @body = http_response.body
         return unless json?(http_response)
+
         json = JSON.parse(@body)
         @parsed = true
         json

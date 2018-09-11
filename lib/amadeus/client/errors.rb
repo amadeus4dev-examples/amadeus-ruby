@@ -36,6 +36,7 @@ module Amadeus
     def log(client)
       # :nocov:
       return unless client.log_level == 'warn'
+
       client.logger.warn("Amadeus #{@code}") do
         JSON.pretty_generate(@description) if @description
       end
@@ -64,6 +65,7 @@ module Amadeus
     # Determines the longer description, printed after the initial error
     def long_description
       return '' unless response && response.parsed
+
       message = ''
       message += error_description if response.result['error_description']
       message += errors_description if response.result['errors']

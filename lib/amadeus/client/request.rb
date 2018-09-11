@@ -110,12 +110,14 @@ module Amadeus
 
     def add_post_data(request)
       return unless @verb == :POST
+
       @headers['Content-Type'] = 'application/x-www-form-urlencoded'
       request.form_data = @params
     end
 
     def add_bearer_token(_request)
       return if @bearer_token.nil?
+
       @headers['Authorization'] = @bearer_token
     end
 
@@ -128,6 +130,7 @@ module Amadeus
     def build_user_agent
       user_agent = "amadeus-ruby/#{@client_version} ruby/#{@language_version}"
       return user_agent unless @app_id
+
       user_agent + " #{@app_id}/#{@app_version}"
     end
 

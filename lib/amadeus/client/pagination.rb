@@ -93,6 +93,7 @@ module Amadeus
       def page(name, response)
         page_number = page_number_for(name, response)
         return nil unless page_number
+
         params = response.request.params.clone
         params['page'] ||= {}
         params['page']['offset'] = page_number
