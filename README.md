@@ -188,7 +188,7 @@ amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureD
 amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
 
 # Airline Code Lookup
-amadeus.reference_data.airlines.get({ IATAcode: 'U2' })
+amadeus.reference_data.airlines.get({ IATACode: 'U2' })
 
 # Airport & City Search (autocomplete)
 # Find all the cities and airports starting by the keyword 'Lon'
