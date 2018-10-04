@@ -23,10 +23,10 @@ module Amadeus
             #   in YYYY-MM format
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
-            # @example Find the air traffic from LHR in January 2011
+            # @example Find the air traffic from Nice in August 2017
             #   amadeus.travel.analytics.air_traffic.booked.get(
-            #     origin: 'LHR',
-            #     period: '2017-03'
+            #     origin: 'NCE',
+            #     period: '2017-08'
             #   )
             #
             def get(params = {})

@@ -20,9 +20,9 @@ module Amadeus
         #   the flight is going. BOS, for example.
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
-        # @example Find the cheapest flight from London Heathrow to Paris
-        #   amadeus.shopping.flight_dates.get(origin: 'LHR',
-        #                                     destination: 'PAR')
+        # @example Find the cheapest flight dates from New-York to Madrid
+        #   amadeus.shopping.flight_dates.get(origin: 'NYC',
+        #                                     destination: 'MAD')
         #
         def get(params = {})
           client.get('/v1/shopping/flight-dates', params)

@@ -30,11 +30,11 @@ module Amadeus
           #   dates are not supported.
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call failed
-          # @example Find the fare searches for LHR, made from France in 2011
+          # @example Find the fare searches for Nice, made from France in August 2017
           #   amadeus.travel.analytics.fare_searches.get(
-          #     origin: 'LHR',
+          #     origin: 'NCE',
           #     sourceCountry: 'FR'
-          #     period: '2011'
+          #     period: '2017-08'
           #   )
           def get(params = {})
             client.get('/v1/travel/analytics/fare-searches', params)
