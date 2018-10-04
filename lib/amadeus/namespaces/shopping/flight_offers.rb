@@ -20,7 +20,8 @@ module Amadeus
         #   the traveler is going. PAR, for example
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
-        # @example Find the cheapest flight offers from New-York to Madrid for the first of August 2019
+        # @example Find the cheapest flight offers from New-York to Madrid,
+        #   for the first of August 2019
         #   amadeus.shopping.flight_offers.get(
         #     origin: 'NYC',
         #     destination: 'MAD',

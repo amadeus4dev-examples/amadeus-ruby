@@ -14,7 +14,8 @@ module Amadeus
           #   amadeus.travel.analytics.air_traffic.traveled
           #
           class Traveled < Amadeus::Client::Decorator
-            # Returns a list of air traffic reports based on number of people traveling.
+            # Returns a list of air traffic reports,
+            #   based on number of people traveling.
             #
             # @option params [String] :origin IATA code of the origin city -
             #   e.g. BOS for Boston - required
