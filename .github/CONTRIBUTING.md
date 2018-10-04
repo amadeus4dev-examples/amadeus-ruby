@@ -3,7 +3,7 @@
 To run the project locally, clone the repository and install the dependencies.
 
 ```
-git clone https://github.com/amadeusdev/amadeus-ruby.git
+git clone https://github.com/amadeus4dev/amadeus-ruby.git
 cd amadeus-ruby
 bundle
 ```
@@ -52,9 +52,9 @@ Travis will bow build the gem and release it to RubyGems.
 
 #### **Did you find a bug?**
 
-* **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/amadeusdev/amadeus-ruby/issues).
+* **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/amadeus4dev/amadeus-ruby/issues).
 
-* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/amadeusdev/amadeus-ruby/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
+* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/amadeus4dev/amadeus-ruby/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
 
 #### **Did you write a patch that fixes a bug?**
 
@@ -64,7 +64,7 @@ Travis will bow build the gem and release it to RubyGems.
 
 #### **Do you intend to add a new feature or change an existing one?**
 
-* Suggest your change [in a new issue](https://github.com/amadeusdev/amadeus-ruby/issues/new) and start writing code.
+* Suggest your change [in a new issue](https://github.com/amadeus4dev/amadeus-ruby/issues/new) and start writing code.
 
 * Make sure your new code does not break any tests and include new tests.
 
@@ -74,7 +74,7 @@ Travis will bow build the gem and release it to RubyGems.
 
 #### **Do you have questions about the source code?**
 
-* Ask any question about how to use the library by [raising a new issue](https://github.com/amadeusdev/amadeus-ruby/issues/new).
+* Ask any question about how to use the library by [raising a new issue](https://github.com/amadeus4dev/amadeus-ruby/issues/new).
 
 #### **Do you want to contribute to the documentation?**
 
