@@ -20,7 +20,7 @@ module Amadeus
           # @option params [String] :language (en-GB) the locale for the links
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call failed
-          # @example Find a the checkin links for Branson AirExpress
+          # @example Find a the checkin links for British Airways
           #   amadeus.reference_data.urls.checkin_links.get(airline: 'BA')
           #
           def get(params = {})

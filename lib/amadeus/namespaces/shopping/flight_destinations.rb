@@ -18,8 +18,8 @@ module Amadeus
         #   flight will depart. BOS, for example.
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
-        # @example Find the cheapest destination from London Heathrow
-        #   amadeus.shopping.flight_destinations.get(origin: 'LHR')
+        # @example Find the cheapest destinations from Madrid
+        #   amadeus.shopping.flight_destinations.get(origin: 'MAD')
         #
         def get(params = {})
           client.get('/v1/shopping/flight-destinations', params)

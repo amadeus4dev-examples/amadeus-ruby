@@ -14,7 +14,8 @@ module Amadeus
           #   amadeus.travel.analytics.air_traffic.traveled
           #
           class Traveled < Amadeus::Client::Decorator
-            # Returns a list of air traffic reports.
+            # Returns a list of air traffic reports,
+            #   based on number of people traveling.
             #
             # @option params [String] :origin IATA code of the origin city -
             #   e.g. BOS for Boston - required
@@ -23,10 +24,10 @@ module Amadeus
             #   in YYYY-MM format
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
-            # @example Find the air traffic from LHR in January 2011
+            # @example Find the air traffic from Nice in August 2017
             #   amadeus.travel.analytics.air_traffic.traveled.get(
-            #     origin: 'LHR',
-            #     period: '2017-03'
+            #     origin: 'NCE',
+            #     period: '2017-08'
             #   )
             #
             def get(params = {})
