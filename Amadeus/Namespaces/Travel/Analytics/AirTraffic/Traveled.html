@@ -152,7 +152,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a list of air traffic reports.</p>
+<p>Returns a list of air traffic reports,   based on number of people
+traveling.</p>
 </div></span>
   
 </li>
@@ -185,7 +186,10 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a list of air traffic reports.</p>
+<p>Returns a list of air traffic reports,</p>
+
+<pre class="code ruby"><code class="ruby">based on number of people traveling.
+</code></pre>
 
 <p>are travelling</p>
 
@@ -202,12 +206,12 @@
     
       
         <p class="example_title"><div class='inline'>
-<p>Find the air traffic from LHR in January 2011</p>
+<p>Find the air traffic from Nice in August 2017</p>
 </div></p>
       
       <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_traveled'>traveled</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>origin:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHR</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-03</span><span class='tstring_end'>&#39;</span></span>
+  <span class='label'>origin:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NCE</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-08</span><span class='tstring_end'>&#39;</span></span>
 <span class='rparen'>)</span></code></pre>
     
   </div>
@@ -312,12 +316,12 @@
       <pre class="lines">
 
 
-32
 33
-34</pre>
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/traveled</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -332,7 +336,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Oct  4 13:49:31 2018 by
+  Generated on Tue Oct  9 10:02:43 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.0).
 </div>

@@ -201,13 +201,14 @@ travelers are performing the searches.</p>
     
       
         <p class="example_title"><div class='inline'>
-<p>Find the fare searches for LHR, made from France in 2011</p>
+<p>Find the fare searches for Nice,</p>
 </div></p>
       
-      <pre class="example code"><code>amadeus.travel.analytics.fare_searches.get(
-  origin: &#39;LHR&#39;,
+      <pre class="example code"><code>made from France in August 2017
+amadeus.travel.analytics.fare_searches.get(
+  origin: &#39;NCE&#39;,
   sourceCountry: &#39;FR&#39;
-  period: &#39;2011&#39;
+  period: &#39;2017-08&#39;
 )</code></pre>
     
   </div>
@@ -329,12 +330,12 @@ and previous month or week are valid. Future dates are not supported.</p>
       <pre class="lines">
 
 
-39
 40
-41</pre>
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/fare_searches.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/fare_searches.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/fare-searches</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -349,7 +350,7 @@ and previous month or week are valid. Future dates are not supported.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Oct  4 13:49:31 2018 by
+  Generated on Tue Oct  9 10:02:43 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.0).
 </div>
