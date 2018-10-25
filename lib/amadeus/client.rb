@@ -47,8 +47,8 @@ module Amadeus
     # Initialize using your credentials:
     #
     #   amadeus = Amadeus::Client.new(
-    #     client_id:    'YOUR_CLIENT_ID',
-    #     client_secret: 'YOUR_CLIENT_SECRET'
+    #     client_id:    'REPLACE_BY_YOUR_API_KEY',
+    #     client_secret: 'REPLACE_BY_YOUR_API_SECRET'
     #   )
     #
     # Alternatively, initialize the library using

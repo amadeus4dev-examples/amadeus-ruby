@@ -34,13 +34,12 @@ your first application.
 require 'amadeus'
 
 amadeus = Amadeus::Client.new({
-  client_id: '[YOUR_CLIENT_ID]',
-  client_secret: '[YOUR_CLIENT_SECRET]'
+  client_id: 'REPLACE_BY_YOUR_API_KEY',
+  client_secret: 'REPLACE_BY_YOUR_API_SECRET'
 })
 
 begin
-  puts amadeus.reference_data.urls.checkin_links.get({ airline: '1X' })
-  # => {"meta"=>{"count"=>2, "links"=>{"self"=>"https://test.api.amadeus.com...
+  puts amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
 rescue Amadeus::ResponseError => error
   puts error
 end
@@ -52,7 +51,7 @@ The client can be initialized directly.
 
 ```rb
 # Initialize using parameters
-amadeus = Amadeus::Client.new(client_id: '...', client_secret: '...')
+amadeus = Amadeus::Client.new(client_id: 'REPLACE_BY_YOUR_API_KEY', client_secret: 'REPLACE_BY_YOUR_API_SECRET')
 ```
 
 Alternatively it can be initialized without any paramters if the environment
@@ -91,10 +90,10 @@ in-depth information about every SDK method, its arguments and return types.
 
 This library conveniently maps every API path to a similar path.
 
-For example, `GET /v2/reference-data/urls/checkin-links?airline=1X` would be:
+For example, `GET /v2/reference-data/urls/checkin-links?airline=BA` would be:
 
 ```rb
-amadeus.reference_data.urls.checkin_links.get(airline: '1X')
+amadeus.reference_data.urls.checkin_links.get(airline: 'BA')
 ```
 
 Similarly, to select a resource by ID, you can pass in the ID to the **singular** path.
@@ -108,7 +107,7 @@ amadeus.hotel(123).offer(234).get(...)
 You can make any arbitrary API call as well directly with the `.get` method:
 
 ```rb
-amadeus.get('/v2/reference-data/urls/checkin-links', airline: '1X')
+amadeus.get('/v2/reference-data/urls/checkin-links', airline: 'BA')
 ```
 
 ## Response
@@ -153,8 +152,8 @@ The SDK makes it easy to add your own logger.
 require 'logger'
 
 amadeus = Amadeus::Client.new(
-  client_id: '...',
-  client_secret: '...',
+  client_id: 'REPLACE_BY_YOUR_API_KEY',
+  client_secret: 'REPLACE_BY_YOUR_API_SECRET',
   logger: Logger.new(STDOUT)
 )
 ```
@@ -168,8 +167,8 @@ variable.
 require 'logger'
 
 amadeus = Amadeus::Client.new(
-  client_id: '...',
-  client_secret: '...',
+  client_id: 'REPLACE_BY_YOUR_API_KEY',
+  client_secret: 'REPLACE_BY_YOUR_API_SECRET',
   log_level: 'debug' # or "warn" or "silent", defaults to "silent"
 )
 ```
@@ -191,36 +190,36 @@ amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
 amadeus.reference_data.airlines.get({ IATACode: 'U2' })
 
 # Airport & City Search (autocomplete)
-# Find all the cities and airports starting by the keyword 'Lon'
+# Find all the cities and airports starting by the keyword 'LON'
 amadeus.reference_data.locations.get(
-  keyword: 'Lon',
+  keyword: 'LON',
   subType: Amadeus::Location::ANY
 )
 # Get a specific city or airport based on its id
 amadeus.reference_data.location('ALHR').get
 
-# Airport Nearest Relevant 
+# Airport Nearest Relevant
 amadeus.reference_data.locations.airports.get(longitude: 49.0000, latitude: 2.55)
 
 # Flight Most Searched Destinations
-amadeus.travel.analytics.fare_searches.get(origin: 'NCE', sourceCountry: 'FR', period: '2017-08')
-
-# Flight Most Traveled Destinations
-amadeus.travel.analytics.air_traffic.traveled.get(origin: 'NCE', period: '2017-08')
+amadeus.travel.analytics.fare_searches.get(origin: 'MAD', sourceCountry: 'SP', period: '2017-08')
 
 # Flight Most Booked Destinations
-amadeus.travel.analytics.air_traffic.booked.get(origin: 'NCE', period: '2017-08')
+amadeus.travel.analytics.air_traffic.booked.get(origin: 'MAD', period: '2017-08')
+
+# Flight Most Traveled Destinations
+amadeus.travel.analytics.air_traffic.traveled.get(origin: 'MAD', period: '2017-01')
 
 # Flight Busiest Period
 amadeus.travel.analytics.air_traffic.busiest_period.get(
-  cityCode: 'MAD', 
+  cityCode: 'MAD',
   period: '2017',
   direction: Amadeus::Direction::ARRIVING
 )
 
 # Hotel Search API
 # Get list of hotels by cityCode
-amadeus.shopping.hotel_offers.get(cityCode: 'PAR')
+amadeus.shopping.hotel_offers.get(cityCode: 'MAD')
 # Get list of offers for a specific hotel
 amadeus.shopping.hotel('SMPARCOL').hotel_offers.get
 # Confirm the availability of a specific offer for a specific hotel
