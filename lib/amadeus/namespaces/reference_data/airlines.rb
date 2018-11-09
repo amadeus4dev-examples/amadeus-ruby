@@ -13,12 +13,12 @@ module Amadeus
       #
       class Airlines < Amadeus::Client::Decorator
         # Returns the airline name for a given IATA code
-        # @option params [String] :airline airline ID - required
-        # @option params [String] :language (en-GB) the locale for the links
+        # @option params [String] :airlineCodes airline IATA code or ICAO code
+        # - required
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
         # @example what is the name of airline code 'U2'
-        #   amadeus.reference_data.airlines.get(IATACode: 'U2')
+        #   amadeus.reference_data.airlines.get(airlineCodes: 'U2')
         #
         def get(params = {})
           client.get('/v1/reference-data/airlines', params)

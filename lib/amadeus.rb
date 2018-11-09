@@ -26,10 +26,11 @@ require 'amadeus/namespaces/shopping/hotel'
 require 'amadeus/namespaces/shopping/hotel/offer'
 require 'amadeus/namespaces/shopping/hotel/hotel_offers'
 require 'amadeus/namespaces/travel/analytics'
-require 'amadeus/namespaces/travel/analytics/fare_searches'
 require 'amadeus/namespaces/travel/analytics/air_traffic'
 require 'amadeus/namespaces/travel/analytics/air_traffic/traveled'
 require 'amadeus/namespaces/travel/analytics/air_traffic/booked'
+require 'amadeus/namespaces/travel/analytics/air_traffic/searched'
+require 'amadeus/namespaces/travel/analytics/air_traffic/searched_by_destination'
 require 'amadeus/namespaces/travel/analytics/air_traffic/busiest_period'
 
 # The namespace for the files used to make API

@@ -2,20 +2,24 @@
 
 require 'spec_helper'
 
-RSpec.describe Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked do
+RSpec.describe Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched do
   before do
     @client = double('Amadeus::Client')
-    @api = Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked.new(
+    @api = Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched.new(
       @client
     )
   end
 
   describe '.get' do
     it 'should call client.get with the right params' do
-      params = { originCityCode: 'LHR', period: '2017-01' }
+      params = {
+        originCityCode: 'MAD',
+        searchPeriod: '2017-08',
+        marketCountryCode: 'ES'
+      }
 
       expect(@client).to receive(:get).with(
-        '/v1/travel/analytics/air-traffic/booked', params
+        '/v1/travel/analytics/air-traffic/searched', params
       )
 
       @api.get(params)
@@ -23,7 +27,7 @@ RSpec.describe Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked do
 
     it 'should default to an empty hash' do
       expect(@client).to receive(:get).with(
-        '/v1/travel/analytics/air-traffic/booked', {}
+        '/v1/travel/analytics/air-traffic/searched', {}
       )
 
       @api.get

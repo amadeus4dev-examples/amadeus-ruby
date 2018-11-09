@@ -54,7 +54,7 @@ The client can be initialized directly.
 amadeus = Amadeus::Client.new(client_id: 'REPLACE_BY_YOUR_API_KEY', client_secret: 'REPLACE_BY_YOUR_API_SECRET')
 ```
 
-Alternatively it can be initialized without any paramters if the environment
+Alternatively it can be initialized without any parameters if the environment
 variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
 
 ```rb
@@ -123,8 +123,8 @@ response = amadeus.reference_data.locations.get(
   subType: Amadeus::Location::ANY
 )
 
-p reponse.body #=> The raw response, as a string
-p reponse.result #=> The body parsed as JSON, if the result was parsable
+p response.body #=> The raw response, as a string
+p response.result #=> The body parsed as JSON, if the result was parsable
 p response.data #=> The list of locations, extracted from the JSON
 ```
 
@@ -184,10 +184,10 @@ amadeus.shopping.flight_dates.get(origin: 'NYC', destination: 'MAD')
 amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
 
 # Flight Check-in Links
-amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
+amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' })
 
 # Airline Code Lookup
-amadeus.reference_data.airlines.get({ IATACode: 'U2' })
+amadeus.reference_data.airlines.get({ airlineCodes: 'U2' })
 
 # Airport & City Search (autocomplete)
 # Find all the cities and airports starting by the keyword 'LON'
@@ -202,13 +202,16 @@ amadeus.reference_data.location('ALHR').get
 amadeus.reference_data.locations.airports.get(longitude: 49.0000, latitude: 2.55)
 
 # Flight Most Searched Destinations
-amadeus.travel.analytics.fare_searches.get(origin: 'MAD', sourceCountry: 'SP', period: '2017-08')
+# Get the most searched destinations from an origin
+amadeus.travel.analytics.air_traffic.searched.get(originCityCode: 'MAD', searchPeriod: '2017-08', marketCountryCode: 'ES')
+# How many people in Spain searched for a trip from Madrid to New-York in August 2017?
+amadeus.travel.analytics.air_traffic.searched_by_destination.get(originCityCode: 'MAD', destinationCityCode: 'NYC', searchPeriod: '2017-08', marketCountryCode: 'ES')
 
 # Flight Most Booked Destinations
-amadeus.travel.analytics.air_traffic.booked.get(origin: 'MAD', period: '2017-08')
+amadeus.travel.analytics.air_traffic.booked.get(originCityCode: 'MAD', period: '2017-08')
 
 # Flight Most Traveled Destinations
-amadeus.travel.analytics.air_traffic.traveled.get(origin: 'MAD', period: '2017-01')
+amadeus.travel.analytics.air_traffic.traveled.get(originCityCode: 'MAD', period: '2017-01')
 
 # Flight Busiest Period
 amadeus.travel.analytics.air_traffic.busiest_period.get(

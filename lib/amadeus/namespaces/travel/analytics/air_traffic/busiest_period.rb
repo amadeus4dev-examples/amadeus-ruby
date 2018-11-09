@@ -17,17 +17,17 @@ module Amadeus
             # Returns the months of the selected year, ordered from busiest
             # to least busy.
             #
-            # @option params [String] :city IATA code of the origin city -
+            # @option params [String] :cityCode IATA code of the origin city -
             #   e.g. BOS for Boston - required
             # @option params [String] :period period when consumers
-            #   are travelling in YYYY format
+            #   are travelling in YYYY format - required
             # @option params [String] :direction to select between
-            # arrivals and departures (default: arrivals)
+            # arrivals and departures (default: arrivals) - required
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
             # @example What was the busiest travel period in 2017
             #   amadeus.travel.analytics.air_traffic.busiest_period.get(
-            #     city: 'MAD',
+            #     cityCode: 'MAD',
             #     period: '2017',
             #     direction: Amadeus::Direction::ARRIVING
             #   )

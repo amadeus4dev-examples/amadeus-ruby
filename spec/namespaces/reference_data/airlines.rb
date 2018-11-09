@@ -5,15 +5,12 @@ require 'spec_helper'
 RSpec.describe Amadeus::Namespaces::ReferenceData::Airlines do
   before do
     @client = double('Amadeus::Client')
-    @airline_id = 'U2'
-    @api = Amadeus::Namespaces::ReferenceData::Airlines.new(
-      @client, @airline_id
-    )
+    @api = Amadeus::Namespaces::ReferenceData::Airlines.new(@client)
   end
 
   describe '.get' do
     it 'should call client.get with the right params' do
-      params = { foo: :bar }
+      params = { airlineCodes: 'BA' }
 
       expect(@client).to receive(:get).with(
         '/v1/reference-data/airlines', params
