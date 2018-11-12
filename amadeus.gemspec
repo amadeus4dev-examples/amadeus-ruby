@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'amadeus'
   spec.version       = Amadeus::VERSION
   spec.authors       = ['Amadeus', 'Cristiano Betta']
-  spec.email         = ['developer@amadeus.com', 'cristiano@betta.io']
+  spec.email         = ['developer@amadeus.com', 'cristiano@betta.io','anthony.roux@amadeus.com']
 
   spec.summary       = 'Amadeus travel APIs'
   spec.description   = <<-DESCRIPTION
