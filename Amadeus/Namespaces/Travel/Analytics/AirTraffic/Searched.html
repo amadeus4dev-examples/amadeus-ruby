@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod
+  Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched
   
     &mdash; Documentation by YARD 0.9.16
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod";
+  pathId = "Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched";
   relpath = '../../../../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../../../_index.html">Index (B)</a> &raquo;
+    <a href="../../../../../_index.html">Index (S)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../AirTraffic.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span>
      &raquo; 
-    <span class="title">BusiestPeriod</span>
+    <span class="title">Searched</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod
+      <div id="content"><h1>Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod</li>
+            <li class="next">Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb</dd>
+    <dd>lib/amadeus/namespaces/travel/analytics/air_traffic/searched.rb</dd>
   </dl>
   
 </div>
@@ -105,12 +105,12 @@
   <div class="discussion">
     
 <p>A namespaced client for the
-<code>/v1/travel/analytics/air-traffic/busiest-period</code> endpoints</p>
+<code>/v1/travel/analytics/air-traffic/searched</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_busiest_period'>busiest_period</span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_searched'>searched</span>
 </code></pre>
 
 
@@ -152,8 +152,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the months of the selected year, ordered from busiest to least
-busy.</p>
+<p>Returns a list of air traffic reports, based on searches.</p>
 </div></span>
   
 </li>
@@ -186,10 +185,31 @@ busy.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the months of the selected year, ordered from busiest to least
-busy.</p>
+<p>Returns a list of air traffic reports, based on searches.</p>
 
-<p>arrivals and departures (default: arrivals) - required</p>
+<p>IATA code of the origin city -</p>
+
+<pre class="code ruby"><code class="ruby">e.g. MAD for Madrid - required
+</code></pre>
+
+<p>IATA code of the country from which the searches were made -</p>
+
+<pre class="code ruby"><code class="ruby">e.g. ES for Spain - required
+</code></pre>
+
+<p>are searching -</p>
+
+<pre class="code ruby"><code class="ruby">in YYYY-MM format - required
+</code></pre>
+
+<p>from Madrid in August 2017?</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_searched'>searched</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+  <span class='label'>originCityCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MAD</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>searchPeriod:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-08</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>marketCountryCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ES</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+</code></pre>
 
 
   </div>
@@ -201,14 +221,10 @@ busy.</p>
     
       
         <p class="example_title"><div class='inline'>
-<p>What was the busiest travel period in 2017</p>
+<p>Which were the most searched flight destinations</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_busiest_period'>busiest_period</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>cityCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MAD</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>direction:</span> <span class='const'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Direction.html" title="Amadeus::Direction (module)">Direction</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Direction.html#ARRIVING-constant" title="Amadeus::Direction::ARRIVING (constant)">ARRIVING</a></span></span>
-<span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -241,40 +257,32 @@ busy.</p>
     <ul class="option">
       
         <li>
-          <span class="name">:cityCode</span>
+          <span class="name">:originCityCode</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
-          
-            &mdash; <div class='inline'>
-<p>IATA code of the origin city - e.g. BOS for Boston - required</p>
-</div>
           
         </li>
       
         <li>
-          <span class="name">:period</span>
+          <span class="name">:marketCountryCode</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
-          
-            &mdash; <div class='inline'>
-<p>period when consumers are travelling in YYYY format - required</p>
-</div>
           
         </li>
       
         <li>
-          <span class="name">:direction</span>
+          <span class="name">:searchPeriod</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
           
             &mdash; <div class='inline'>
-<p>to select between</p>
+<p>when consumers</p>
 </div>
           
         </li>
@@ -325,17 +333,15 @@ busy.</p>
       <pre class="lines">
 
 
-35
-36
-37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/searched.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/busiest-period</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-             <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/searched</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>

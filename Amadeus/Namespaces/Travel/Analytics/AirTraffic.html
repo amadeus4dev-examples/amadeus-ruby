@@ -97,7 +97,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/namespaces/travel/analytics/air_traffic.rb<span class="defines">,<br />
-  lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb</span>
+  lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/searched.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/searched_by_destination.rb</span>
 </dd>
   </dl>
   
@@ -127,7 +127,7 @@ endpoints</p>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="AirTraffic/Booked.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked (class)">Booked</a></span>, <span class='object_link'><a href="AirTraffic/BusiestPeriod.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod (class)">BusiestPeriod</a></span>, <span class='object_link'><a href="AirTraffic/Traveled.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled (class)">Traveled</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="AirTraffic/Booked.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked (class)">Booked</a></span>, <span class='object_link'><a href="AirTraffic/BusiestPeriod.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod (class)">BusiestPeriod</a></span>, <span class='object_link'><a href="AirTraffic/Searched.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched (class)">Searched</a></span>, <span class='object_link'><a href="AirTraffic/SearchedByDestination.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination (class)">SearchedByDestination</a></span>, <span class='object_link'><a href="AirTraffic/Traveled.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Traveled (class)">Traveled</a></span>
     
   
 </p>
@@ -189,6 +189,54 @@ endpoints</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>The namespace for the Busiest Period API:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#searched-instance_method" title="#searched (instance method)">#<strong>searched</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The namespace for the Searched API:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#searched_by_destination-instance_method" title="#searched_by_destination (instance method)">#<strong>searched_by_destination</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The namespace for the SearchedByDestination API:.</p>
 </div></span>
   
 </li>
@@ -356,16 +404,156 @@ endpoints</p>
       <pre class="lines">
 
 
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_busiest_period'>busiest_period</span>
+  <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AirTraffic/BusiestPeriod.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod (class)">BusiestPeriod</a></span></span>
+    <span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="searched-instance_method">
+  
+    #<strong>searched</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The namespace for the Searched API:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_searched'>searched</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 46
 47
 48
-49</pre>
+49
+50</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic.rb', line 46</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_busiest_period'>busiest_period</span>
-  <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AirTraffic/BusiestPeriod.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod (class)">BusiestPeriod</a></span></span>
+<span class='kw'>def</span> <span class='id identifier rubyid_searched'>searched</span>
+  <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AirTraffic/Searched.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched (class)">Searched</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_client'>client</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="searched_by_destination-instance_method">
+  
+    #<strong>searched_by_destination</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The namespace for the SearchedByDestination API:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_searched_by_destination'>searched_by_destination</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_searched_by_destination'>searched_by_destination</span>
+  <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AirTraffic/SearchedByDestination.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination (class)">SearchedByDestination</a></span></span>
     <span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -449,7 +637,7 @@ endpoints</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  6 11:45:51 2018 by
+  Generated on Mon Nov 12 15:31:51 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.0).
 </div>

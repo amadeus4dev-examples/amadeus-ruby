@@ -187,9 +187,14 @@
     
 <p>Returns a list of air traffic reports, based on bookings.</p>
 
-<p>are travelling</p>
+<p>IATA code of the origin city -</p>
 
-<pre class="code ruby"><code class="ruby">in YYYY-MM format
+<pre class="code ruby"><code class="ruby">e.g. BOS for Boston - required
+</code></pre>
+
+<p>are booking</p>
+
+<pre class="code ruby"><code class="ruby">in YYYY-MM format - required
 </code></pre>
 
 
@@ -206,7 +211,7 @@
 </div></p>
       
       <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_booked'>booked</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>origin:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NCE</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>originCityCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NCE</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-08</span><span class='tstring_end'>&#39;</span></span>
 <span class='rparen'>)</span></code></pre>
     
@@ -241,20 +246,16 @@
     <ul class="option">
       
         <li>
-          <span class="name">:origin</span>
+          <span class="name">:originCityCode</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>IATA code of the origin city - e.g. BOS for Boston - required</p>
-</div>
-          
         </li>
       
         <li>
-          <span class="name">:query</span>
+          <span class="name">:period</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
@@ -312,12 +313,12 @@
       <pre class="lines">
 
 
-32
 33
-34</pre>
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/booked</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -332,7 +333,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  6 11:45:52 2018 by
+  Generated on Mon Nov 12 15:31:51 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.0).
 </div>
