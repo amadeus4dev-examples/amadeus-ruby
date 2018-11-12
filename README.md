@@ -184,10 +184,10 @@ amadeus.shopping.flight_dates.get(origin: 'NYC', destination: 'MAD')
 amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
 
 # Flight Check-in Links
-amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' })
+amadeus.reference_data.urls.checkin_links.get(airlineCode: 'BA')
 
 # Airline Code Lookup
-amadeus.reference_data.airlines.get({ airlineCodes: 'U2' })
+amadeus.reference_data.airlines.get(airlineCodes: 'U2')
 
 # Airport & City Search (autocomplete)
 # Find all the cities and airports starting by the keyword 'LON'
