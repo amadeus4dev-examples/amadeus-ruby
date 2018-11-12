@@ -11,6 +11,7 @@ docs
 vendor
 *.gem
 doc
+.DS_Store
 
 # rspec failure tracking
 .rspec_status

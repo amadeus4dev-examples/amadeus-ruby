@@ -12,16 +12,6 @@ module Amadeus
       #   amadeus.travel.analytics
       #
       class Analytics < Amadeus::Client::Decorator
-        # The namespace for the FareSearches API:
-        #
-        # @return [Amadeus::Namespaces::Travel::Analytics::FareSearches]
-        # @example
-        #   amadeus.travel.analytics.fare_searches
-        #
-        def fare_searches
-          Amadeus::Namespaces::Travel::Analytics::FareSearches.new(client)
-        end
-
         # The namespace for the travel Analytics APIs:
         #
         # @return [Amadeus::Namespaces::Travel::Analytics]

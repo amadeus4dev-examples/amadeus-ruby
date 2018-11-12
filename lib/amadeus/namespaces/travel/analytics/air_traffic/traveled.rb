@@ -17,16 +17,17 @@ module Amadeus
             # Returns a list of air traffic reports,
             #   based on number of people traveling.
             #
-            # @option params [String] :origin IATA code of the origin city -
+            # @option params [String] :originCityCode
+            # IATA code of the origin city -
             #   e.g. BOS for Boston - required
-            # @option params [String] :query period when consumers
+            # @option params [String] :period period when consumers
             # are travelling
-            #   in YYYY-MM format
+            #   in YYYY-MM format - required
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
             # @example Find the air traffic from Nice in August 2017
             #   amadeus.travel.analytics.air_traffic.traveled.get(
-            #     origin: 'NCE',
+            #     originCityCode: 'NCE',
             #     period: '2017-08'
             #   )
             #

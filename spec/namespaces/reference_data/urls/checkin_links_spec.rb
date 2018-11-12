@@ -10,7 +10,7 @@ RSpec.describe Amadeus::Namespaces::ReferenceData::Urls::CheckinLinks do
 
   describe '.get' do
     it 'should call client.get with the right params' do
-      params = { airline: '1X' }
+      params = { airlineCode: 'BA' }
 
       expect(@client).to receive(:get).with(
         '/v2/reference-data/urls/checkin-links', params

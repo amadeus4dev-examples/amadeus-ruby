@@ -16,12 +16,12 @@ module Amadeus
           # Returns the checkin links for an airline, for the
           # language of your choice
           #
-          # @option params [String] :airline airline ID - required
+          # @option params [String] :airlineCode airline ID - required
           # @option params [String] :language (en-GB) the locale for the links
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call failed
           # @example Find a the checkin links for British Airways
-          #   amadeus.reference_data.urls.checkin_links.get(airline: 'BA')
+          #   amadeus.reference_data.urls.checkin_links.get(airlineCode: 'BA')
           #
           def get(params = {})
             client.get('/v2/reference-data/urls/checkin-links', params)
