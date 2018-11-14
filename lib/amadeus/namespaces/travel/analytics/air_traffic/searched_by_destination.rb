@@ -31,13 +31,13 @@ module Amadeus
             #   in YYYY-MM format - required
             # @return [Amadeus::Response] a parsed response
             # @raise [Amadeus::Base] an exception if the call failed
-            # @example How many people in France searched for a trip
-            # from Nice to Paris in September 2015?
+            # @example How many people in Spain searched for a trip
+            # from Madrid to New-York in August 2017?
             #  amadeus.travel.analytics.air_traffic.searched_by_destination.get(
-            #     originCityCode: 'NCE',
-            #     destinationCityCode: 'PAR',
-            #     searchPeriod: '2015-09',
-            #     marketCountryCode: 'FR'
+            #     originCityCode: 'MAD',
+            #     destinationCityCode: 'NYC',
+            #     searchPeriod: '2017-08',
+            #     marketCountryCode: 'ES'
             #   )
             #
             def get(params = {})
