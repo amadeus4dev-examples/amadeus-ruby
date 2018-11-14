@@ -6,7 +6,7 @@
 * 1st endpoint to find the most searched destinations
 * 2nd endpoint to have more data about a dedicated origin & destination
 
-[Flight Most Booked Destinations](https://developers.amadeus.com/self-service/category/203/api-doc/6):
+[Flight Most Booked Destinations](https://developers.amadeus.com/self-service/category/203/api-doc/27):
 * Rename origin to originCityCode
 
 [Flight Most Traveled Destinations](https://developers.amadeus.com/self-service/category/203/api-doc/7):
