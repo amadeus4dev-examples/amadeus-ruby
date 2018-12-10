@@ -4,7 +4,7 @@ module Amadeus
   module Namespaces
     class Shopping
       # A namespaced client for the
-      # +/v1/shopping/hotel-offers+ endpoints
+      # +/v2/shopping/hotel-offers+ endpoints
       #
       # Access via the +Amadeus::Client+ object
       #
@@ -19,7 +19,7 @@ module Amadeus
         #   search around. Example: 52.5238
         # @option params [Double] :longitude Longitude of geographic location to
         #   search around. Example: 13.3835
-        # @option params [String] :hotels Comma separated list of Amadeus hotel
+        # @option params [String] :hotelIds Comma separated list of Amadeus hotel
         #   codes to request. Example: RTPAR001
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
@@ -29,7 +29,7 @@ module Amadeus
         #   )
         #
         def get(params = {})
-          client.get('/v1/shopping/hotel-offers', params)
+          client.get('/v2/shopping/hotel-offers', params)
         end
       end
     end

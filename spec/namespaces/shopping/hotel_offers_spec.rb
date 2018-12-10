@@ -13,7 +13,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::HotelOffers do
       params = { cityCode: 'LON' }
 
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel-offers', params
+        '/v2/shopping/hotel-offers', params
       )
 
       @api.get(params)
@@ -21,7 +21,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::HotelOffers do
 
     it 'should default to an empty hash' do
       expect(@client).to receive(:get).with(
-        '/v1/shopping/hotel-offers', {}
+        '/v2/shopping/hotel-offers', {}
       )
 
       @api.get

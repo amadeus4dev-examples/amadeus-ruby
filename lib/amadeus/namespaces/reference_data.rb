@@ -45,7 +45,6 @@ module Amadeus
 
       # The namespace for the Airline Code APIs - accessing a specific airline
       #
-      # @param [Number] airline_id The IATA ID for the airline
       # @return [Amadeus::Namespaces::ReferenceData::Airlines]
       # @example
       #   amadeus.reference_data.airlines('U2')
