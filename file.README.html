@@ -108,7 +108,7 @@ Amadeus Developer Account</a> and set up your first application.</p>
 <span class='rbrace'>}</span><span class='rparen'>)</span>
 
 <span class='kw'>begin</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>airlineCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/ResponseError.html" title="Amadeus::ResponseError (class)">ResponseError</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_error'>error</span>
 <span class='kw'>end</span>
@@ -173,9 +173,9 @@ Flight Inspiration</a></p>
 <p>This library conveniently maps every API path to a similar path.</p>
 
 <p>For example, <code>GET
-/v2/reference-data/urls/checkin-links?airline=BA</code> would be:</p>
+/v2/reference-data/urls/checkin-links?airlineCode=BA</code> would be:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='label'>airlineCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 </code></pre>
 
 <p>Similarly, to select a resource by ID, you can pass in the ID to the
@@ -189,7 +189,7 @@ Flight Inspiration</a></p>
 <p>You can make any arbitrary API call as well directly with the
 <code>.get</code> method:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v2/reference-data/urls/checkin-links</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>airline:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v2/reference-data/urls/checkin-links</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>airlineCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 </code></pre>
 
 <h2 id="label-Response">Response</h2>
@@ -330,7 +330,7 @@ and <a href="mailto:developers@amadeus.com">email</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Jan  8 13:44:42 2019 by
+  Generated on Tue Jan  8 13:48:26 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.0).
 </div>
