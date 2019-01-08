@@ -39,7 +39,7 @@ amadeus = Amadeus::Client.new({
 })
 
 begin
-  puts amadeus.reference_data.urls.checkin_links.get({ airline: 'BA' })
+  puts amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' })
 rescue Amadeus::ResponseError => error
   puts error
 end
@@ -90,10 +90,10 @@ in-depth information about every SDK method, its arguments and return types.
 
 This library conveniently maps every API path to a similar path.
 
-For example, `GET /v2/reference-data/urls/checkin-links?airline=BA` would be:
+For example, `GET /v2/reference-data/urls/checkin-links?airlineCode=BA` would be:
 
 ```rb
-amadeus.reference_data.urls.checkin_links.get(airline: 'BA')
+amadeus.reference_data.urls.checkin_links.get(airlineCode: 'BA')
 ```
 
 Similarly, to select a resource by ID, you can pass in the ID to the **singular** path.
@@ -107,7 +107,7 @@ amadeus.hotel(123).offer(234).get(...)
 You can make any arbitrary API call as well directly with the `.get` method:
 
 ```rb
-amadeus.get('/v2/reference-data/urls/checkin-links', airline: 'BA')
+amadeus.get('/v2/reference-data/urls/checkin-links', airlineCode: 'BA')
 ```
 
 ## Response
