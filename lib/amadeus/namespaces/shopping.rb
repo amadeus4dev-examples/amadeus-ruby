@@ -51,15 +51,25 @@ module Amadeus
         Amadeus::Namespaces::Shopping::HotelOffers.new(client)
       end
 
-      # The namespace for the Hotels API:
+      # The namespace for the HotelOffersByHotel API:
       #
-      # @param [Number] hotel_id The ID for the hotel to find offers for
-      # @return [Amadeus::Namespaces::Shopping::Hotel]
+      # @return [Amadeus::Namespaces::Shopping::HotelOffersByHotel]
       # @example
-      #   amadeus.shopping.hotel(hotel_id)
+      #   amadeus.shopping.hotel_offers_by_hotel
       #
-      def hotel(hotel_id)
-        Amadeus::Namespaces::Shopping::Hotel.new(client, hotel_id)
+      def hotel_offers_by_hotel
+        Amadeus::Namespaces::Shopping::HotelOffersByHotel.new(client)
+      end
+
+      # The namespace for the HotelOffers API:
+      #
+      # @param [Number] offer_id The ID for the offer for a specific hotel
+      # @return [Amadeus::Namespaces::Shopping::HotelOffer]
+      # @example
+      #   amadeus.shopping.hotel_offer(offer_id)
+      #
+      def hotel_offer(offer_id)
+        Amadeus::Namespaces::Shopping::HotelOffer.new(client, offer_id)
       end
     end
   end
