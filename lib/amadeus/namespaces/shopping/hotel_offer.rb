@@ -34,7 +34,7 @@ module Amadeus
         #   amadeus.shopping.hotel_offer('XXXX').get
         #
         def get(params = {})
-          client.get("/v2/shopping/hotel_offers/#{@offer_id}", params)
+          client.get("/v2/shopping/hotel-offers/#{@offer_id}", params)
         end
       end
     end
