@@ -14,7 +14,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::HotelOffer do
 
     it 'should call client.get with the right params' do
       expect(@client).to receive(:get).with(
-        '/v2/shopping/hotel_offers/123', params
+        '/v2/shopping/hotel-offers/123', params
       )
 
       @api.get(params)
@@ -22,7 +22,7 @@ RSpec.describe Amadeus::Namespaces::Shopping::HotelOffer do
 
     it 'should default to an empty hash' do
       expect(@client).to receive(:get).with(
-        '/v2/shopping/hotel_offers/123', {}
+        '/v2/shopping/hotel-offers/123', {}
       )
 
       @api.get
