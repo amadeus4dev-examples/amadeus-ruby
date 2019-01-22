@@ -6,7 +6,7 @@
 <title>
   Class: Amadeus::Namespaces::Shopping
   
-    &mdash; Documentation by YARD 0.9.16
+    &mdash; Documentation by YARD 0.9.18
   
 </title>
 
@@ -97,7 +97,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/namespaces/shopping.rb<span class="defines">,<br />
-  lib/amadeus/namespaces/shopping/hotel.rb,<br /> lib/amadeus/namespaces/shopping/hotel/offer.rb,<br /> lib/amadeus/namespaces/shopping/flight_dates.rb,<br /> lib/amadeus/namespaces/shopping/hotel_offers.rb,<br /> lib/amadeus/namespaces/shopping/flight_offers.rb,<br /> lib/amadeus/namespaces/shopping/hotel/hotel_offers.rb,<br /> lib/amadeus/namespaces/shopping/flight_destinations.rb</span>
+  lib/amadeus/namespaces/shopping/hotel_offer.rb,<br /> lib/amadeus/namespaces/shopping/flight_dates.rb,<br /> lib/amadeus/namespaces/shopping/hotel_offers.rb,<br /> lib/amadeus/namespaces/shopping/flight_offers.rb,<br /> lib/amadeus/namespaces/shopping/flight_destinations.rb,<br /> lib/amadeus/namespaces/shopping/hotel_offers_by_hotel.rb</span>
 </dd>
   </dl>
   
@@ -126,7 +126,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Shopping/FlightDates.html" title="Amadeus::Namespaces::Shopping::FlightDates (class)">FlightDates</a></span>, <span class='object_link'><a href="Shopping/FlightDestinations.html" title="Amadeus::Namespaces::Shopping::FlightDestinations (class)">FlightDestinations</a></span>, <span class='object_link'><a href="Shopping/FlightOffers.html" title="Amadeus::Namespaces::Shopping::FlightOffers (class)">FlightOffers</a></span>, <span class='object_link'><a href="Shopping/Hotel.html" title="Amadeus::Namespaces::Shopping::Hotel (class)">Hotel</a></span>, <span class='object_link'><a href="Shopping/HotelOffers.html" title="Amadeus::Namespaces::Shopping::HotelOffers (class)">HotelOffers</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Shopping/FlightDates.html" title="Amadeus::Namespaces::Shopping::FlightDates (class)">FlightDates</a></span>, <span class='object_link'><a href="Shopping/FlightDestinations.html" title="Amadeus::Namespaces::Shopping::FlightDestinations (class)">FlightDestinations</a></span>, <span class='object_link'><a href="Shopping/FlightOffers.html" title="Amadeus::Namespaces::Shopping::FlightOffers (class)">FlightOffers</a></span>, <span class='object_link'><a href="Shopping/HotelOffer.html" title="Amadeus::Namespaces::Shopping::HotelOffer (class)">HotelOffer</a></span>, <span class='object_link'><a href="Shopping/HotelOffers.html" title="Amadeus::Namespaces::Shopping::HotelOffers (class)">HotelOffers</a></span>, <span class='object_link'><a href="Shopping/HotelOffersByHotel.html" title="Amadeus::Namespaces::Shopping::HotelOffersByHotel (class)">HotelOffersByHotel</a></span>
     
   
 </p>
@@ -220,7 +220,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hotel-instance_method" title="#hotel (instance method)">#<strong>hotel</strong>(hotel_id)  &#x21d2; Amadeus::Namespaces::Shopping::Hotel </a>
+      <a href="#hotel_offer-instance_method" title="#hotel_offer (instance method)">#<strong>hotel_offer</strong>(offer_id)  &#x21d2; Amadeus::Namespaces::Shopping::HotelOffer </a>
     
 
     
@@ -235,7 +235,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The namespace for the Hotels API:.</p>
+<p>The namespace for the HotelOffers API:.</p>
 </div></span>
   
 </li>
@@ -260,6 +260,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The namespace for the HotelOffers API:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hotel_offers_by_hotel-instance_method" title="#hotel_offers_by_hotel (instance method)">#<strong>hotel_offers_by_hotel</strong>  &#x21d2; Amadeus::Namespaces::Shopping::HotelOffersByHotel </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The namespace for the HotelOffersByHotel API:.</p>
 </div></span>
   
 </li>
@@ -467,9 +491,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="hotel-instance_method">
+  <h3 class="signature " id="hotel_offer-instance_method">
   
-    #<strong>hotel</strong>(hotel_id)  &#x21d2; <tt><span class='object_link'><a href="Shopping/Hotel.html" title="Amadeus::Namespaces::Shopping::Hotel (class)">Amadeus::Namespaces::Shopping::Hotel</a></span></tt> 
+    #<strong>hotel_offer</strong>(offer_id)  &#x21d2; <tt><span class='object_link'><a href="Shopping/HotelOffer.html" title="Amadeus::Namespaces::Shopping::HotelOffer (class)">Amadeus::Namespaces::Shopping::HotelOffer</a></span></tt> 
   
 
   
@@ -478,7 +502,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The namespace for the Hotels API:</p>
+<p>The namespace for the HotelOffers API:</p>
 
 
   </div>
@@ -489,7 +513,7 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_hotel'>hotel</span><span class='lparen'>(</span><span class='id identifier rubyid_hotel_id'>hotel_id</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_hotel_offer'>hotel_offer</span><span class='lparen'>(</span><span class='id identifier rubyid_offer_id'>offer_id</span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -497,7 +521,7 @@
   
     <li>
       
-        <span class='name'>hotel_id</span>
+        <span class='name'>offer_id</span>
       
       
         <span class='type'>(<tt>Number</tt>)</span>
@@ -506,7 +530,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The ID for the hotel to find offers for</p>
+<p>The ID for the offer for a specific hotel</p>
 </div>
       
     </li>
@@ -519,7 +543,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Shopping/Hotel.html" title="Amadeus::Namespaces::Shopping::Hotel (class)">Amadeus::Namespaces::Shopping::Hotel</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Shopping/HotelOffer.html" title="Amadeus::Namespaces::Shopping::HotelOffer (class)">Amadeus::Namespaces::Shopping::HotelOffer</a></span></tt>)</span>
       
       
       
@@ -533,15 +557,15 @@
       <pre class="lines">
 
 
-61
-62
-63</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping.rb', line 71</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_hotel'>hotel</span><span class='lparen'>(</span><span class='id identifier rubyid_hotel_id'>hotel_id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Shopping/Hotel.html" title="Amadeus::Namespaces::Shopping::Hotel (class)">Hotel</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Shopping/Hotel.html#initialize-instance_method" title="Amadeus::Namespaces::Shopping::Hotel#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='id identifier rubyid_hotel_id'>hotel_id</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_hotel_offer'>hotel_offer</span><span class='lparen'>(</span><span class='id identifier rubyid_offer_id'>offer_id</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Shopping/HotelOffer.html" title="Amadeus::Namespaces::Shopping::HotelOffer (class)">HotelOffer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Shopping/HotelOffer.html#initialize-instance_method" title="Amadeus::Namespaces::Shopping::HotelOffer#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='id identifier rubyid_offer_id'>offer_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -610,14 +634,76 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="hotel_offers_by_hotel-instance_method">
+  
+    #<strong>hotel_offers_by_hotel</strong>  &#x21d2; <tt><span class='object_link'><a href="Shopping/HotelOffersByHotel.html" title="Amadeus::Namespaces::Shopping::HotelOffersByHotel (class)">Amadeus::Namespaces::Shopping::HotelOffersByHotel</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The namespace for the HotelOffersByHotel API:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_hotel_offers_by_hotel'>hotel_offers_by_hotel</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Shopping/HotelOffersByHotel.html" title="Amadeus::Namespaces::Shopping::HotelOffersByHotel (class)">Amadeus::Namespaces::Shopping::HotelOffersByHotel</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hotel_offers_by_hotel'>hotel_offers_by_hotel</span>
+  <span class='const'><span class='object_link'><a href="../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Shopping/HotelOffersByHotel.html" title="Amadeus::Namespaces::Shopping::HotelOffersByHotel (class)">HotelOffersByHotel</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Tue Jan 15 11:50:36 2019 by
+  Generated on Tue Jan 22 08:40:02 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.0).
+  0.9.18 (ruby-2.5.0).
 </div>
 
     </div>

@@ -6,7 +6,7 @@
 <title>
   Class: Amadeus::Namespaces::Shopping::HotelOffers
   
-    &mdash; Documentation by YARD 0.9.16
+    &mdash; Documentation by YARD 0.9.18
   
 </title>
 
@@ -104,7 +104,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A namespaced client for the <code>/v1/shopping/hotel-offers</code>
+<p>A namespaced client for the <code>/v2/shopping/hotel-offers</code>
 endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
@@ -274,7 +274,7 @@ endpoints</p>
         </li>
       
         <li>
-          <span class="name">:hotels</span>
+          <span class="name">:hotelIds</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
@@ -340,7 +340,7 @@ endpoints</p>
       <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/hotel_offers.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/shopping/hotel-offers</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v2/shopping/hotel-offers</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -352,9 +352,9 @@ endpoints</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Jan 15 11:50:37 2019 by
+  Generated on Tue Jan 22 08:40:02 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.5.0).
+  0.9.18 (ruby-2.5.0).
 </div>
 
     </div>
