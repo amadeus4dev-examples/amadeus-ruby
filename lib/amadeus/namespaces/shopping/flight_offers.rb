@@ -12,6 +12,15 @@ module Amadeus
       #   amadeus.shopping.flight_offers
       #
       class FlightOffers < Amadeus::Client::Decorator
+        # The namespace for the Prediction API:
+        #
+        # @return [Amadeus::Namespaces::Shopping::FlightOffers::Prediction]
+        # @example
+        #   amadeus.shopping.flight-offers.prediction
+        #
+        def prediction
+          Amadeus::Namespaces::Shopping::FlightOffers::Prediction.new(client)
+        end
         # Find the cheapest bookable flights.
         #
         # @option params [String] :origin City/Airport IATA code from which the
