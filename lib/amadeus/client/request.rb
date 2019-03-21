@@ -99,7 +99,8 @@ module Amadeus
     def initialize_headers
       @headers = {
         'User-Agent' => build_user_agent,
-        'Accept' => 'application/json, application/vnd.amadeus+json'
+        'Accept' => 'application/json, application/vnd.amadeus+json',
+        'x-api-key' => 'xDOCjEDVOsMw2TxWMGBbckgtXEAsHF2zupXwJIh0'
       }
     end
 
@@ -110,9 +111,13 @@ module Amadeus
 
     def add_post_data(request)
       return unless @verb == :POST
-
-      @headers['Content-Type'] = 'application/x-www-form-urlencoded'
-      request.form_data = @params
+      if @bearer_token.nil?
+        @headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        request.form_data = @params
+      else
+        @headers['Content-Type'] = 'application/json'
+        request.body = @params
+      end
     end
 
     def add_bearer_token(_request)
