@@ -178,7 +178,7 @@ amadeus = Amadeus::Client.new(
 amadeus.shopping.flight_destinations.get(origin: 'MAD')
 
 # Flight Cheapest Date Search
-amadeus.shopping.flight_dates.get(origin: 'NYC', destination: 'MAD')
+amadeus.shopping.flight_dates.get(origin: 'MAD', destination: 'MUC')
 
 # Flight Low-fare Search
 amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
