@@ -65,6 +65,24 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
+    describe '.reference_data.locations.point_of_interests' do
+      it 'should return a PointOfInterests object' do
+        expect(@amadeus.reference_data.locations.point_of_interests).to(
+          be_instance_of Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests
+        )
+      end
+    end
+
+    describe '.reference_data.locations..point_of_interests.by_square' do
+      it 'should return a PointOfInterests::BySquare object' do
+        expect(@amadeus.reference_data.locations.point_of_interests.by_square).to(
+          be_instance_of(
+            Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare
+          )
+        )
+      end
+    end
+
     describe '.shopping' do
       it 'should return a Shopping object' do
         expect(@amadeus.shopping).to(

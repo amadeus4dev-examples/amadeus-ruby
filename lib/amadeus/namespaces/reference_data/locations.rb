@@ -22,6 +22,16 @@ module Amadeus
           Amadeus::Namespaces::ReferenceData::Locations::Airports.new(client)
         end
 
+        # The namespace for the Point Of Interest API:
+        #
+        # @return [Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests]
+        # @example
+        #   amadeus.reference_data.locations.point_of_interests
+        #
+        def point_of_interests
+          Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests.new(client)
+        end
+
         # Returns a list of airports and cities matching a given keyword.
         #
         # @option params [String] :keyword keyword that should represent the
