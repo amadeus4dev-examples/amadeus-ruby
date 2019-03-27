@@ -66,18 +66,18 @@ RSpec.describe Amadeus::Namespaces do
     end
 
     describe '.reference_data.locations.points_of_interest' do
-      it 'should return a PointOfInterests object' do
+      it 'should return a PointsOfInterest object' do
         expect(@amadeus.reference_data.locations.points_of_interest).to(
-          be_instance_of Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests
+          be_instance_of Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest
         )
       end
     end
 
     describe '.reference_data.locations..points_of_interest.by_square' do
-      it 'should return a PointOfInterests::BySquare object' do
+      it 'should return a PointsOfInterest::BySquare object' do
         expect(@amadeus.reference_data.locations.points_of_interest.by_square).to(
           be_instance_of(
-            Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare
+            Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
           )
         )
       end

@@ -4,7 +4,7 @@ module Amadeus
   module Namespaces
     class ReferenceData
       class Locations
-        class PointOfInterests
+        class PointsOfInterest
           # A namespaced client for the
           # +/v1/reference-data/locations/pois/by-square+ endpoints
           #

@@ -2,10 +2,10 @@
 
 require 'spec_helper'
 
-RSpec.describe Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare do
+RSpec.describe Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare do
   before do
     @client = double('Amadeus::Client')
-    @api = Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare.new(@client)
+    @api = Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare.new(@client)
   end
 
   describe '.get' do

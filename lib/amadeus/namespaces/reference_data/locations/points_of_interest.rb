@@ -12,15 +12,15 @@ module Amadeus
         #   amadeus = Amadeus::Client.new
         #   amadeus.reference_data.locations.points_of_interest
         #
-        class PointOfInterests < Amadeus::Client::Decorator
+        class PointsOfInterest < Amadeus::Client::Decorator
           # The namespace for the Point Of Interest API:
           #
-          # @return [Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests]
+          # @return [Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest]
           # @example
           #   amadeus.reference_data.locations.points_of_interest.by_square
           #
           def by_square
-            Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare.new(client)
+            Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare.new(client)
           end
 
           # Returns a list of relevant point of interests near to a given point.
