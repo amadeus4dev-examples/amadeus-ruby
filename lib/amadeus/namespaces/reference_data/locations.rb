@@ -26,9 +26,9 @@ module Amadeus
         #
         # @return [Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests]
         # @example
-        #   amadeus.reference_data.locations.point_of_interests
+        #   amadeus.reference_data.locations.points_of_interest
         #
-        def point_of_interests
+        def points_of_interest
           Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests.new(client)
         end
 

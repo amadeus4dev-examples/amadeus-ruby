@@ -10,14 +10,14 @@ module Amadeus
         # Access via the +Amadeus::Client+ object
         #
         #   amadeus = Amadeus::Client.new
-        #   amadeus.reference_data.locations.point_of_interests
+        #   amadeus.reference_data.locations.points_of_interest
         #
         class PointOfInterests < Amadeus::Client::Decorator
           # The namespace for the Point Of Interest API:
           #
           # @return [Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests]
           # @example
-          #   amadeus.reference_data.locations.point_of_interests.by_square
+          #   amadeus.reference_data.locations.points_of_interest.by_square
           #
           def by_square
             Amadeus::Namespaces::ReferenceData::Locations::PointOfInterests::BySquare.new(client)
@@ -33,7 +33,7 @@ module Amadeus
           # @raise [Amadeus::Base] an exception if the call
           #   failed
           # @example What are the popular places in Barcelona?
-          #   amadeus.reference_data.locations.point_of_interests.get(
+          #   amadeus.reference_data.locations.points_of_interest.get(
           #     latitude: 41.397158,
           #     longitude: 2.160873
           #   )

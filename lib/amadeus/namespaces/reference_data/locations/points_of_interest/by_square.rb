@@ -11,7 +11,7 @@ module Amadeus
           # Access via the +Amadeus::Client+ object
           #
           #   amadeus = Amadeus::Client.new
-          #   amadeus.reference_data.locations.point_of_interests.by_square
+          #   amadeus.reference_data.locations.points_of_interest.by_square
           #
           class BySquare < Amadeus::Client::Decorator
             # Returns a list of relevant point of interests
@@ -25,7 +25,7 @@ module Amadeus
             # @raise [Amadeus::Base] an exception if the call
             #   failed
             # @example What are the popular places in Barcelona?
-            #   amadeus.reference_data.locations.point_of_interests.by_square.get(
+            #   amadeus.reference_data.locations.points_of_interest.by_square.get(
             #     north: 41.397158,
             #     west: 2.160873,
             #     south: 41.394582,
