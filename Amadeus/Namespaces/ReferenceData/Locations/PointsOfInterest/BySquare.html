@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked
+  Class: Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
   
     &mdash; Documentation by YARD 0.9.18
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked";
+  pathId = "Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare";
   relpath = '../../../../../';
 </script>
 
@@ -37,9 +37,9 @@
         <div id="menu">
   
     <a href="../../../../../_index.html">Index (B)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../AirTraffic.html" title="Amadeus::Namespaces::Travel::Analytics::AirTraffic (class)">AirTraffic</a></span></span>
+    <span class='title'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../ReferenceData.html" title="Amadeus::Namespaces::ReferenceData (class)">ReferenceData</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Locations.html" title="Amadeus::Namespaces::ReferenceData::Locations (class)">Locations</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../PointsOfInterest.html" title="Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest (class)">PointsOfInterest</a></span></span>
      &raquo; 
-    <span class="title">Booked</span>
+    <span class="title">BySquare</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked
+      <div id="content"><h1>Class: Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::Travel::Analytics::AirTraffic::Booked</li>
+            <li class="next">Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb</dd>
+    <dd>lib/amadeus/namespaces/reference_data/locations/points_of_interest/by_square.rb</dd>
   </dl>
   
 </div>
@@ -105,12 +105,12 @@
   <div class="discussion">
     
 <p>A namespaced client for the
-<code>/v1/travel/analytics/air-traffic/booked</code> endpoints</p>
+<code>/v1/reference-data/locations/pois/by-square</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_booked'>booked</span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_points_of_interest'>points_of_interest</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span>
 </code></pre>
 
 
@@ -152,7 +152,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a list of air traffic reports, based on bookings.</p>
+<p>Returns a list of relevant point of interests  around a defined square (4
+points).</p>
 </div></span>
   
 </li>
@@ -185,16 +186,9 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a list of air traffic reports, based on bookings.</p>
+<p>Returns a list of relevant point of interests</p>
 
-<p>IATA code of the origin city -</p>
-
-<pre class="code ruby"><code class="ruby">e.g. BOS for Boston - required
-</code></pre>
-
-<p>are booking</p>
-
-<pre class="code ruby"><code class="ruby">in YYYY-MM format - required
+<pre class="code ruby"><code class="ruby">around a defined square (4 points).
 </code></pre>
 
 
@@ -207,12 +201,14 @@
     
       
         <p class="example_title"><div class='inline'>
-<p>Find the air traffic from Nice in August 2017</p>
+<p>What are the popular places in Barcelona?</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span><span class='period'>.</span><span class='id identifier rubyid_booked'>booked</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
-  <span class='label'>originCityCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NCE</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>period:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2017-08</span><span class='tstring_end'>&#39;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_points_of_interest'>points_of_interest</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+  <span class='label'>north:</span> <span class='float'>41.397158</span><span class='comma'>,</span>
+  <span class='label'>west:</span> <span class='float'>2.160873</span><span class='comma'>,</span>
+  <span class='label'>south:</span> <span class='float'>41.394582</span><span class='comma'>,</span>
+  <span class='label'>east:</span> <span class='float'>2.177181</span>
 <span class='rparen'>)</span></code></pre>
     
   </div>
@@ -246,23 +242,53 @@
     <ul class="option">
       
         <li>
-          <span class="name">:originCityCode</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-        </li>
-      
-        <li>
-          <span class="name">:period</span>
-          <span class="type">(<tt>String</tt>)</span>
+          <span class="name">:north</span>
+          <span class="type">(<tt>Double</tt>)</span>
           <span class="default">
             
           </span>
           
             &mdash; <div class='inline'>
-<p>period when consumers</p>
+<p>Latitude north of bounding box - required</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:west</span>
+          <span class="type">(<tt>Double</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Longitude west of bounding box - required</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:south</span>
+          <span class="type">(<tt>Double</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Latitude south of bounding box - required</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:east</span>
+          <span class="type">(<tt>Double</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Longitude east of bounding box - required</p>
 </div>
           
         </li>
@@ -313,15 +339,15 @@
       <pre class="lines">
 
 
-33
-34
-35</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/reference_data/locations/points_of_interest/by_square.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/travel/analytics/air-traffic/booked</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/reference-data/locations/pois/by-square</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -333,7 +359,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr  1 07:59:26 2019 by
+  Generated on Mon Apr  1 07:59:27 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.18 (ruby-2.5.0).
 </div>
