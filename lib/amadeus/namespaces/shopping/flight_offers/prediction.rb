@@ -20,7 +20,7 @@ module Amadeus
           # @raise [Amadeus::Base] an exception if the call
           #   failed
           # @example
-          #   amadeus.shopping.flight_offers.prediction.post(flight_offers_response)
+          #   amadeus.shopping.flight_offers.prediction.post(flight_offers_response.body)
           #
           def post(params = {})
             client.post('/v1/shopping/flight-offers/prediction', params)

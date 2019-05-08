@@ -16,7 +16,7 @@ module Amadeus
         #
         # @return [Amadeus::Namespaces::Shopping::FlightOffers::Prediction]
         # @example
-        #   amadeus.shopping.flight-offers.prediction
+        #   amadeus.shopping.flight_offers.prediction
         #
         def prediction
           Amadeus::Namespaces::Shopping::FlightOffers::Prediction.new(client)

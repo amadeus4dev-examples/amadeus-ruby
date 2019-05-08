@@ -183,9 +183,6 @@ amadeus.shopping.flight_dates.get(origin: 'MAD', destination: 'MUC')
 # Flight Low-fare Search
 amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
 
-# Flight Low-fare Search
-amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2019-08-01')
-
 # Flight Choice Prediction / Be careful, this example combines 2 API calls: 1. Flight Low-fare Search then Flight Choice Prediction
 amadeus.shopping.flight_offers.prediction.post(amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2020-01-01').body)
 
