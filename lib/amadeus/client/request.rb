@@ -110,7 +110,7 @@ module Amadeus
 
     def add_post_data(request)
       return unless @verb == :POST
-g
+
       if @bearer_token.nil?
         @headers['Content-Type'] = 'application/x-www-form-urlencoded'
         request.form_data = @params
