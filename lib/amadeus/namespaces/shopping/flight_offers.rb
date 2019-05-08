@@ -37,6 +37,7 @@ module Amadeus
         #     departureDate: '2019-08-01'
         #   )
         #
+
         def get(params = {})
           client.get('/v1/shopping/flight-offers', params)
         end

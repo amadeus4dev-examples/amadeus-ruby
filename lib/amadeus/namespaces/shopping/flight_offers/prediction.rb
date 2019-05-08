@@ -19,13 +19,11 @@ module Amadeus
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call
           #   failed
-          # @example TODO:
-          #   amadeus.shopping.flight-offers.prediction.post(body: flight_offers_response)
+          # @example
+          #   amadeus.shopping.flight_offers.prediction.post(flight_offers_response)
           #
           def post(params = {})
-            # client.post('/v1/shopping/flight_offers/prediction', params)
-            client.host = 'prod-bizox.1a-lab.net'
-            client.post('/v1/predict', params)
+            client.post('/v1/shopping/flight-offers/prediction', params)
           end
         end
       end

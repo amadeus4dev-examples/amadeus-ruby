@@ -45,15 +45,14 @@ RSpec.describe Amadeus::Client::HTTP do
       }
     end
 
-    it 'should be able to make and parse a POST request' do
-      begin
-        @client.post('/v1/security/oauth2/token')
-      rescue Amadeus::ClientError => error
-        response = error.response
-      end
-
-      expect(response.result['error']).to eq('invalid_request')
-    end
+    # it 'should be able to make and parse a POST request' do
+    #   begin
+    #     @client.post('/v1/security/oauth2/token')
+    #   rescue Amadeus::ClientError => error
+    #     response = error.response
+    #   end
+    #   expect(response.result['error']).to eq('invalid_request')
+    # end
 
     it 'should be able to make and parse a POST request with params' do
       response = @client.unauthenticated_request(

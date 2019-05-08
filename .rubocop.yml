@@ -3,6 +3,7 @@ inherit_from: .rubocop_todo.yml
 Metrics/BlockLength:
   Exclude:
     - "**/*_spec.rb"
+    - "spec/namespaces/shopping/flight_offers/prediction.spec.rb"
     - "amadeus.gemspec"
 Layout/SpaceBeforeBlockBraces:
   Exclude:
@@ -10,5 +11,6 @@ Layout/SpaceBeforeBlockBraces:
 Style/HashSyntax:
   Exclude:
     - "spec/client/request/hash_spec.rb"
+    - "spec/client/request_spec.rb"
 AllCops:
   TargetRubyVersion: 2.2

@@ -26,7 +26,7 @@ module Amadeus
     # The short name of the host used to make API calls against
     attr_reader :hostname
     # The host domain used to make API calls against
-    attr_writer :host
+    attr_reader :host
     # Wether to use HTTPS to connect
     attr_reader :ssl
     # The port to connect to, if not the default 443

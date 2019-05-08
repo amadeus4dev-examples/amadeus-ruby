@@ -77,9 +77,9 @@ RSpec.describe Amadeus::Request do
         expect(@request.http_request.uri.to_s).to(
           eq('https://example.com/foo/bar')
         )
-        expect(@request.http_request.body).to eq('foo=bar')
+        expect(@request.http_request.body).to eq(:foo => :bar)
         expect(@request.http_request['Content-Type']).to(
-          eq('application/x-www-form-urlencoded')
+          eq('application/vnd.amadeus+json')
         )
       end
 
