@@ -2,5 +2,5 @@
 
 module Amadeus
   # The current client version
-  VERSION = '3.1.0'.freeze
+  VERSION = '3.2.0'.freeze
 end
