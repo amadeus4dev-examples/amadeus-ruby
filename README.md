@@ -223,13 +223,17 @@ amadeus.travel.analytics.air_traffic.busiest_period.get(
   direction: Amadeus::Direction::ARRIVING
 )
 
-# Hotel Search API
+# Hotel Search
 # Get list of hotels by cityCode
 amadeus.shopping.hotel_offers.get(cityCode: 'MAD')
 # Get list of offers for a specific hotel
 amadeus.shopping.hotel_offers_by_hotel.get(hotelId: 'IALONCHO')
 # Confirm the availability of a specific offer
 amadeus.shopping.hotel_offer('D5BEE9D0D08B6678C2F5FAD910DC110BCDA187D21D4FCE68ED423426D0A246BB').get
+
+# Hotel Ratings
+# What are the reviews for the Holiday INN Manhattan and the Hilton London Paddington
+amadeus.e_reputation.hotel_sentiments.get(hotelIds: 'SJNYCAJA,TELONMFS')
 
 # Point of Interest
 # What are the popular places in Barcelona (based a geo location and a radius)
@@ -241,7 +245,6 @@ amadeus.reference_data.locations.points_of_interest.by_square.get(north: 41.3971
 
 Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for
 guidance on installing and running this code in a development environment.
-
 
 ## License
 

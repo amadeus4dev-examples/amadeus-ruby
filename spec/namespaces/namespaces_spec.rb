@@ -107,6 +107,14 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
+    describe '.shopping.flight_offers.prediction' do
+      it 'should return a Prediction object' do
+        expect(@amadeus.shopping.flight_offers.prediction).to(
+          be_instance_of Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+        )
+      end
+    end
+
     describe '.shopping.flight_dates' do
       it 'should return a FlightDates object' do
         expect(@amadeus.shopping.flight_dates).to(
@@ -209,6 +217,24 @@ RSpec.describe Amadeus::Namespaces do
         expect(@amadeus.travel.analytics.air_traffic.busiest_period).to(
           be_instance_of(
             Amadeus::Namespaces::Travel::Analytics::AirTraffic::BusiestPeriod
+          )
+        )
+      end
+    end
+
+    describe '.e_reputation' do
+      it 'should return a EReputattion object' do
+        expect(@amadeus.e_reputation).to(
+          be_instance_of Amadeus::Namespaces::EReputation
+        )
+      end
+    end
+
+    describe '.e_reputation.hotel_sentiments' do
+      it 'should return a HotelSentiments object' do
+        expect(@amadeus.e_reputation.hotel_sentiments).to(
+          be_instance_of(
+            Amadeus::Namespaces::EReputation::HotelSentiments
           )
         )
       end
