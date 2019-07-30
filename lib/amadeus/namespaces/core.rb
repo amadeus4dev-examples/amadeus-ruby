@@ -47,5 +47,15 @@ module Amadeus
     def travel
       Travel.new(self)
     end
+
+    # The namespace for the E Reputation  APIs:
+    #
+    # @return [Amadeus::Namespaces::EReputation]
+    # @example Some of the further namespaces available
+    #   amadeus.e_reputation.hotel_sentiments
+    #
+    def e_reputation
+      EReputation.new(self)
+    end
   end
 end
