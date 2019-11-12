@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_development_dependency 'awesome_print', '~> 1.8'
-  spec.add_development_dependency 'bundler', '~> 2.0.1'
+  spec.add_development_dependency 'bundler', '~> 2.0.2'
   spec.add_development_dependency 'guard', '~> 2.14'
   spec.add_development_dependency 'guard-rake', '~> 1.0'
   spec.add_development_dependency 'guard-yard', '~> 2.2'
