@@ -1,8 +1,14 @@
 # Changelog
+## 3.3.0 - 2019-11-12
+Release of the [Hotel Ratings](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings)
+
+> The Hotel Ratings API uses a sentiment analysis algorithm to return an overall rating for a hotel as well as ratings for different criteria like location, comfort, service, staff, internet, food, facilities, pool or sleep quality. The ratings are on a scale of 0 to 100. The API is used to provide valuable content during the hotel search and shopping experience and permits hotel results to sorted by overall ratings or category ratings.
+
 ## 3.2.0 - 2019-05-08
 Release of the [Flight Choice Prediction API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction)
 
 > The Flight Choice Prediction API allows developers to forecast traveler choices in the context of search & shopping. Exposing machine learning & AI services for travel, this API consumes the output of the Flight Low-fare Search API and returns augmented content with probabilities of choices for each flight offers.
+
 ## 3.1.0 - 2019-03-25
 Release of the [Point of Interest API](https://developers.amadeus.com/self-service/category/210/api-doc/55)
 
@@ -51,7 +57,7 @@ Release of the [Point of Interest API](https://developers.amadeus.com/self-servi
 
 ## 1.1.0 - 2018-08-01
 
-New version of the ruby gem to support our 3 new endpoints: 
+New version of the ruby gem to support our 3 new endpoints:
 
 * [Flight Most Booked Destinations](https://developers.amadeus.com/self-service/category/203/api-doc/27)
 

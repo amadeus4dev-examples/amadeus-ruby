@@ -12,6 +12,6 @@ vendor
 *.gem
 doc
 .DS_Store
-
+.vscode/
 # rspec failure tracking
 .rspec_status
