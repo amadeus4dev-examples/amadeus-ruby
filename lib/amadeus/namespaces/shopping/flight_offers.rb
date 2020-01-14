@@ -30,11 +30,11 @@ module Amadeus
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
         # @example Find the cheapest flight offers from New-York to Madrid,
-        #   for the first of August 2019
+        #   for the first of August 2020
         #   amadeus.shopping.flight_offers.get(
         #     origin: 'NYC',
         #     destination: 'MAD',
-        #     departureDate: '2019-08-01'
+        #     departureDate: '2020-08-01'
         #   )
         #
 
