@@ -14,7 +14,7 @@ documentation](https://amadeus4dev.github.io/amadeus-ruby/) on
 
 ## Installation
 
-This gem requires Ruby 2.3+. You can install install it directly or via bundler.
+This gem requires Ruby 2.4+. You can install install it directly or via bundler.
 #### Command line
 ```bash
 gem install amadeus
@@ -224,6 +224,10 @@ amadeus.shopping.hotel_offers.get(cityCode: 'MAD')
 amadeus.shopping.hotel_offers_by_hotel.get(hotelId: 'IALONCHO')
 # Confirm the availability of a specific offer
 amadeus.shopping.hotel_offer('D5BEE9D0D08B6678C2F5FAD910DC110BCDA187D21D4FCE68ED423426D0A246BB').get
+
+# Hotel Booking
+# The offerId comes from the hotel_offer above
+amadeus.booking.hotel_bookings.post(offerId, guests, payments)
 
 # Hotel Ratings
 # What are the reviews for the Holiday INN Manhattan and the Hilton London Paddington

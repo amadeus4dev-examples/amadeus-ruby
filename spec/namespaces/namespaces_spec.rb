@@ -147,6 +147,14 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
+    describe '.booking.hotel_bookings' do
+      it 'should return a HotelBookings object' do
+        expect(@amadeus.booking.hotel_bookings).to(
+          be_instance_of Amadeus::Namespaces::Booking::HotelBookings
+        )
+      end
+    end
+
     describe '.travel' do
       it 'should return a Travel object' do
         expect(@amadeus.travel).to(be_instance_of Amadeus::Namespaces::Travel)

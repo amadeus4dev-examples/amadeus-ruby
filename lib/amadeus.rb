@@ -13,6 +13,7 @@ require 'amadeus/namespaces/travel'
 require 'amadeus/namespaces/shopping'
 require 'amadeus/namespaces/reference_data'
 require 'amadeus/namespaces/e_reputation'
+require 'amadeus/namespaces/booking'
 require 'amadeus/namespaces/e_reputation/hotel_sentiments'
 require 'amadeus/namespaces/reference_data/airlines'
 require 'amadeus/namespaces/reference_data/urls'
@@ -34,6 +35,7 @@ require 'amadeus/namespaces/travel/analytics/air_traffic'
 require 'amadeus/namespaces/travel/analytics/air_traffic/traveled'
 require 'amadeus/namespaces/travel/analytics/air_traffic/booked'
 require 'amadeus/namespaces/travel/analytics/air_traffic/busiest_period'
+require 'amadeus/namespaces/booking/hotel_bookings'
 
 # The namespace for the files used to make API
 # calls to the Amadeus travel APIs

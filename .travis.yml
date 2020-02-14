@@ -1,11 +1,11 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.3
 - 2.4
 - 2.5
 - 2.6
-- 2.5.0 # explicit branch used for deploying docs
+- 2.7
+- 2.6.5 # explicit branch used for deploying docs
 - ruby-head
 - jruby
 branches:
@@ -17,7 +17,6 @@ matrix:
   allow_failures:
   - rvm: ruby-head
   - rvm: jruby
-  - rvm: 2.5.0
 before_install: gem install bundler
 before_deploy: bundle exec yard
 deploy:
@@ -28,11 +27,11 @@ deploy:
     keep-history: true
     on:
       branch: master
-      ruby: 2.5.0
+      ruby: 2.6.5
   - provider: rubygems
     gem: amadeus
     email: developer@amadeus.com
     on:
       tags: true
-      rvm: 2.5.0
+      rvm: 2.6.5
     api_key: $RUBYGEMS_API_KEY
