@@ -1,4 +1,11 @@
 # Changelog
+## 4.0.0 - 2020-02-12
+Release of the [Hotel Booking API](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking)
+
+> The Amadeus Hotel Booking API lets you complete bookings at over 150,000 hotels and accommodations around the world. To complete bookings, you must first use the Amadeus Hotel Search API to search for hotel deals, select the desired offer and confirm the final price and availability. You can then use the Hotel Booking API to complete the reservation by providing an offer id, guest information and payment information.
+
+Decommissioning of the `Flight Most Searched Destination API`
+
 ## 3.3.0 - 2019-11-12
 Release of the [Hotel Ratings](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings)
 
