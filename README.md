@@ -14,7 +14,7 @@ documentation](https://amadeus4dev.github.io/amadeus-ruby/) on
 
 ## Installation
 
-This gem requires Ruby 2.3+. You can install install it directly or via bundler.
+This gem requires Ruby 2.4+. You can install install it directly or via bundler.
 #### Command line
 ```bash
 gem install amadeus

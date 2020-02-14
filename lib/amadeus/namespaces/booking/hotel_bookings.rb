@@ -35,8 +35,8 @@ module Amadeus
         def prepare_body(hotel_offer_id, guests, payments)
           guests_info = [], pay_info = []
 
-          guests.is_a?(Array) ? guests_info.append(guests).flatten! : guests_info.append(guests)
-          payments.is_a?(Array) ? pay_info.append(payments).flatten! : pay_info.append(payments)
+          guests.is_a?(Array) ? guests_info.push(guests).flatten! : guests_info.push(guests)
+          payments.is_a?(Array) ? pay_info.push(payments).flatten! : pay_info.push(payments)
 
           {
             'data' => {
