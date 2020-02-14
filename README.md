@@ -204,12 +204,6 @@ amadeus.reference_data.location('ALHR').get
 # Airport Nearest Relevant (for London)
 amadeus.reference_data.locations.airports.get(longitude: 0.1278, latitude: 51.5074)
 
-# Flight Most Searched Destinations
-# Get the most searched destinations from an origin
-amadeus.travel.analytics.air_traffic.searched.get(originCityCode: 'MAD', searchPeriod: '2017-08', marketCountryCode: 'ES')
-# How many people in Spain searched for a trip from Madrid to New-York in August 2017?
-amadeus.travel.analytics.air_traffic.searched_by_destination.get(originCityCode: 'MAD', destinationCityCode: 'NYC', searchPeriod: '2017-08', marketCountryCode: 'ES')
-
 # Flight Most Booked Destinations
 amadeus.travel.analytics.air_traffic.booked.get(originCityCode: 'MAD', period: '2017-08')
 
