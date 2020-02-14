@@ -37,29 +37,6 @@ module Amadeus
             )
           end
 
-          # The namespace for the Searched API:
-          #
-          # @return
-          #  [Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched]
-          # @example
-          #   amadeus.travel.analytics.air_traffic.searched
-          def searched
-            Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched.new(
-              client
-            )
-          end
-
-          # The namespace for the SearchedByDestination API:
-          #
-          # @return
-          #  [Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination]
-          # @example
-          #   amadeus.travel.analytics.air_traffic.searched_by_destination
-          def searched_by_destination
-            Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination
-              .new(client)
-          end
-
           # The namespace for the Busiest Period API:
           #
           # @return

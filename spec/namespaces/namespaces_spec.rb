@@ -181,27 +181,6 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
-    describe '.travel.analytics.air_traffic.searched' do
-      it 'should return a Searched object' do
-        expect(@amadeus.travel.analytics.air_traffic.searched).to(
-          be_instance_of(
-            Amadeus::Namespaces::Travel::Analytics::AirTraffic::Searched
-          )
-        )
-      end
-    end
-
-    describe '.travel.analytics.air_traffic.searched_by_destination' do
-      it 'should return a SearchedByDestination object' do
-        expect(@amadeus.travel.analytics.air_traffic.searched_by_destination)
-          .to(
-            be_instance_of(
-              Amadeus::Namespaces::Travel::Analytics::AirTraffic::SearchedByDestination
-            )
-          )
-      end
-    end
-
     describe '.travel.analytics.air_traffic.booked' do
       it 'should return a Booked object' do
         expect(@amadeus.travel.analytics.air_traffic.booked).to(
