@@ -225,6 +225,10 @@ amadeus.shopping.hotel_offers_by_hotel.get(hotelId: 'IALONCHO')
 # Confirm the availability of a specific offer
 amadeus.shopping.hotel_offer('D5BEE9D0D08B6678C2F5FAD910DC110BCDA187D21D4FCE68ED423426D0A246BB').get
 
+# Hotel Booking
+# The offerId comes from the hotel_offer above
+amadeus.booking.hotel_bookings.post(offerId, guests, payments)
+
 # Hotel Ratings
 # What are the reviews for the Holiday INN Manhattan and the Hilton London Paddington
 amadeus.e_reputation.hotel_sentiments.get(hotelIds: 'SJNYCAJA,TELONMFS')

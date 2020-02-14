@@ -37,6 +37,16 @@ module Amadeus
       Shopping.new(self)
     end
 
+    # The namespace for the booking APIs:
+    #
+    # @return [Amadeus::Namespaces::Booking]
+    # @example Some of the further namespaces available
+    #   amadeus.booking.hotel_bookings
+    #
+    def booking
+      Booking.new(self)
+    end
+
     # The namespace for the travel analytics APIs:
     #
     # @return [Amadeus::Namespaces::Travel]
