@@ -16,10 +16,19 @@ module Amadeus
       # @return [Amadeus::Namespaces::Travel::Analytics]
       # @example
       #   amadeus.travel.analytics.air_traffic
-      #   amadeus.travel.analytics.fare_searches
       #
       def analytics
         Amadeus::Namespaces::Travel::Analytics.new(client)
+      end
+
+      # The namespace for the travel Predictions APIs:
+      #
+      # @return [Amadeus::Namespaces::Travel::Predictions]
+      # @example
+      #   amadeus.travel.predictions.trip_purpose
+      #
+      def predictions
+        Amadeus::Namespaces::Travel::Predictions.new(client)
       end
     end
   end
