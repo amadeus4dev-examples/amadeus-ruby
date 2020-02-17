@@ -97,7 +97,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/namespaces/travel.rb<span class="defines">,<br />
-  lib/amadeus/namespaces/travel/analytics.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb</span>
+  lib/amadeus/namespaces/travel/analytics.rb,<br /> lib/amadeus/namespaces/travel/predictions.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic.rb,<br /> lib/amadeus/namespaces/travel/predictions/trip_purpose.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/booked.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/traveled.rb,<br /> lib/amadeus/namespaces/travel/analytics/air_traffic/busiest_period.rb</span>
 </dd>
   </dl>
   
@@ -126,7 +126,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Travel/Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Travel/Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span>, <span class='object_link'><a href="Travel/Predictions.html" title="Amadeus::Namespaces::Travel::Predictions (class)">Predictions</a></span>
     
   
 </p>
@@ -164,6 +164,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The namespace for the travel Analytics APIs:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#predictions-instance_method" title="#predictions (instance method)">#<strong>predictions</strong>  &#x21d2; Amadeus::Namespaces::Travel::Predictions </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The namespace for the travel Predictions APIs:.</p>
 </div></span>
   
 </li>
@@ -207,8 +231,7 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_fare_searches'>fare_searches</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_analytics'>analytics</span><span class='period'>.</span><span class='id identifier rubyid_air_traffic'>air_traffic</span></code></pre>
     
   </div>
 
@@ -232,15 +255,77 @@
       <pre class="lines">
 
 
+20
 21
-22
-23</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_analytics'>analytics</span>
   <span class='const'><span class='object_link'><a href="../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Travel/Analytics.html" title="Amadeus::Namespaces::Travel::Analytics (class)">Analytics</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="predictions-instance_method">
+  
+    #<strong>predictions</strong>  &#x21d2; <tt><span class='object_link'><a href="Travel/Predictions.html" title="Amadeus::Namespaces::Travel::Predictions (class)">Amadeus::Namespaces::Travel::Predictions</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The namespace for the travel Predictions APIs:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_predictions'>predictions</span><span class='period'>.</span><span class='id identifier rubyid_trip_purpose'>trip_purpose</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Travel/Predictions.html" title="Amadeus::Namespaces::Travel::Predictions (class)">Amadeus::Namespaces::Travel::Predictions</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_predictions'>predictions</span>
+  <span class='const'><span class='object_link'><a href="../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Travel/Predictions.html" title="Amadeus::Namespaces::Travel::Predictions (class)">Predictions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -252,7 +337,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Feb 14 19:09:07 2020 by
+  Generated on Mon Feb 17 22:38:48 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>
