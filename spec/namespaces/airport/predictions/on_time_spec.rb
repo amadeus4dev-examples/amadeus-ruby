@@ -12,7 +12,7 @@ RSpec.describe Amadeus::Namespaces::Airport::Predictions::OnTime do
 
   describe '.get' do
     it 'should call client.get with the right params' do
-      params = { airportcode: 'JFK', date: '2020-09' }
+      params = { airportcode: 'JFK', date: '2020-09-01' }
 
       expect(@client).to receive(:get).with(
         '/v1/airport/predictions/on-time', params
