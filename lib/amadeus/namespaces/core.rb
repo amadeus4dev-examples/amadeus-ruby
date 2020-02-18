@@ -67,5 +67,15 @@ module Amadeus
     def e_reputation
       EReputation.new(self)
     end
+
+    # The namespace for the Airport  APIs:
+    #
+    # @return [Amadeus::Namespaces::Airport]
+    # @example Some of the further namespaces available
+    #   amadeus.airport.predictions
+    #
+    def airport
+      Airport.new(self)
+    end
   end
 end

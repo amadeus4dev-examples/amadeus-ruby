@@ -36,7 +36,8 @@ RSpec.describe Amadeus::Client::AccessToken do
     end
 
     it 'should return a cached token if it still valid' do
-      expect(@client).to receive(:unauthenticated_request).once
+      expect(@client).to receive(:unauthenticated_request)
+        .once
         .with(:POST,
               '/v1/security/oauth2/token',
               grant_type: 'client_credentials',
@@ -48,7 +49,8 @@ RSpec.describe Amadeus::Client::AccessToken do
     end
 
     it 'should make a new API call the old token expired' do
-      expect(@client).to receive(:unauthenticated_request).twice
+      expect(@client).to receive(:unauthenticated_request)
+        .twice
         .with(:POST,
               '/v1/security/oauth2/token',
               grant_type: 'client_credentials',

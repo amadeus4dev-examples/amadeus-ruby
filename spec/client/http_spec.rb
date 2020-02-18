@@ -15,8 +15,8 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse a GET request' do
       begin
         @client.get('/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::ClientError => error
-        response = error.response
+      rescue Amadeus::ClientError => e
+        response = e.response
         expect(response.result['errors'].first['status']).to eq(400)
       end
     end
@@ -82,8 +82,8 @@ RSpec.describe Amadeus::Client::HTTP do
     it 'should be able to make and parse any request' do
       begin
         @client.send(:request, :GET, '/v2/reference-data/urls/checkin-links')
-      rescue Amadeus::ClientError => error
-        response = error.response
+      rescue Amadeus::ClientError => e
+        response = e.response
         expect(response.result['errors'].first['status']).to eq(400)
       end
     end
@@ -102,8 +102,8 @@ RSpec.describe Amadeus::Client::HTTP do
           :unauthenticated_request,
           :GET, '/v2/reference-data/urls/checkin-links', {}
         )
-      rescue Amadeus::AuthenticationError => error
-        response = error.response
+      rescue Amadeus::AuthenticationError => e
+        response = e.response
       end
       expect(response.result['errors'].first['status']).to eq('401')
     end

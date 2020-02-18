@@ -4,9 +4,9 @@ module Amadeus
   # A list of location types, as used in searching for locations
   module Location
     # Airport
-    AIRPORT = 'AIRPORT'.freeze
+    AIRPORT = 'AIRPORT'
     # City
-    CITY = 'CITY'.freeze
+    CITY = 'CITY'
     # Any
     ANY = [AIRPORT, CITY].join(',')
   end

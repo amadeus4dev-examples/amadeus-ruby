@@ -13,4 +13,4 @@ Style/HashSyntax:
     - "spec/client/request/hash_spec.rb"
     - "spec/client/request_spec.rb"
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.4

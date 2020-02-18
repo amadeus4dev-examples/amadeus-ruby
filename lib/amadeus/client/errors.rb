@@ -64,11 +64,12 @@ module Amadeus
 
     # Determines the longer description, printed after the initial error
     def long_description
-      return '' unless response && response.parsed
-
       message = ''
-      message += error_description if response.result['error_description']
-      message += errors_description if response.result['errors']
+      if response&.parsed
+        message += error_description if response.result['error_description']
+        message += errors_description if response.result['errors']
+      end
+
       message
     end
 
