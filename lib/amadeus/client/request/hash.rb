@@ -25,7 +25,7 @@ module Amadeus
 
       # Used by .flatten_keys to add a sub key to a key
       def append_key(root_key, key)
-        root_key.nil? ? :"#{key}" : :"#{root_key}[#{key.to_s}]"
+        root_key.nil? ? :"#{key}" : :"#{root_key}[#{key}]"
       end
     end
   end
