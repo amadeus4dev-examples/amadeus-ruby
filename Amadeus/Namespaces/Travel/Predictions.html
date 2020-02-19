@@ -97,7 +97,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/amadeus/namespaces/travel/predictions.rb<span class="defines">,<br />
-  lib/amadeus/namespaces/travel/predictions/trip_purpose.rb</span>
+  lib/amadeus/namespaces/travel/predictions/flight_delay.rb,<br /> lib/amadeus/namespaces/travel/predictions/trip_purpose.rb</span>
 </dd>
   </dl>
   
@@ -126,7 +126,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Predictions/TripPurpose.html" title="Amadeus::Namespaces::Travel::Predictions::TripPurpose (class)">TripPurpose</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Predictions/FlightDelay.html" title="Amadeus::Namespaces::Travel::Predictions::FlightDelay (class)">FlightDelay</a></span>, <span class='object_link'><a href="Predictions/TripPurpose.html" title="Amadeus::Namespaces::Travel::Predictions::TripPurpose (class)">TripPurpose</a></span>
     
   
 </p>
@@ -144,6 +144,30 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flight_delay-instance_method" title="#flight_delay (instance method)">#<strong>flight_delay</strong>  &#x21d2; Amadeus::Namespaces::Travel::Predictions </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The namespace for the travel Predictions APIs:.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -185,7 +209,69 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="trip_purpose-instance_method">
+  <h3 class="signature first" id="flight_delay-instance_method">
+  
+    #<strong>flight_delay</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Predictions (class)">Amadeus::Namespaces::Travel::Predictions</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The namespace for the travel Predictions APIs:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_travel'>travel</span><span class='period'>.</span><span class='id identifier rubyid_predictions'>predictions</span><span class='period'>.</span><span class='id identifier rubyid_flight_delay'>flight_delay</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Predictions (class)">Amadeus::Namespaces::Travel::Predictions</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/travel/predictions.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_flight_delay'>flight_delay</span>
+  <span class='const'><span class='object_link'><a href="../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Travel.html" title="Amadeus::Namespaces::Travel (class)">Travel</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Predictions (class)">Predictions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Predictions/FlightDelay.html" title="Amadeus::Namespaces::Travel::Predictions::FlightDelay (class)">FlightDelay</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="trip_purpose-instance_method">
   
     #<strong>trip_purpose</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Amadeus::Namespaces::Travel::Predictions (class)">Amadeus::Namespaces::Travel::Predictions</a></span></tt> 
   
@@ -251,7 +337,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Feb 19 07:28:05 2020 by
+  Generated on Wed Feb 19 14:55:02 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>
