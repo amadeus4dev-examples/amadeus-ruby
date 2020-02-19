@@ -186,6 +186,8 @@ amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureD
 # Flight Choice Prediction / Be careful, this example combines 2 API calls: 1. Flight Low-fare Search then Flight Choice Prediction
 amadeus.shopping.flight_offers.prediction.post(amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2020-11-01').body)
 
+# Flight Delay Prediction
+amadeus.travel.predictions.flight_delay.get(originLocationCod: 'NCE', destinationLocationCod: 'IST', departureDat: '2020-08-01', departureTim: '18:20:00', arrivalDat: '2020-08-01', arrivalTim: '22:15:00', aircraftCod: '321', carrierCod: 'TK', flightNumber: '1816', duration: 'PT31H10M')
 # Flight Check-in Links
 amadeus.reference_data.urls.checkin_links.get(airlineCode: 'BA')
 
@@ -242,7 +244,7 @@ amadeus.reference_data.locations.points_of_interest.by_square.get(north: 41.3971
 # Airport On-Time Performance
 amadeus.airport.predictions.on_time.get(airportCode: 'JFK', date: '2020-08-01')
 
- # Trip Purpose Prediction
+# Trip Purpose Prediction
 amadeus.travel.predictions.trip_purpose.get(originLocationCode: 'ATH', destinationLocationCode: 'MAD', departureDate: '2020-08-01', returnDate: '2020-08-12', searchDate: '2020-06-11')
 ```
 ## Development & Contributing

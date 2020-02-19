@@ -21,6 +21,16 @@ module Amadeus
         def trip_purpose
           Amadeus::Namespaces::Travel::Predictions::TripPurpose.new(client)
         end
+
+        # The namespace for the travel Predictions APIs:
+        #
+        # @return [Amadeus::Namespaces::Travel::Predictions]
+        # @example
+        #   amadeus.travel.predictions.flight_delay
+        #
+        def flight_delay
+          Amadeus::Namespaces::Travel::Predictions::FlightDelay.new(client)
+        end
       end
     end
   end
