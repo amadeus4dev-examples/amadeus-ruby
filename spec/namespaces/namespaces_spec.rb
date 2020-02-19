@@ -161,6 +161,16 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
+    describe '.travel.predictions.flight_delay' do
+      it 'should return a Predictions object' do
+        expect(@amadeus.travel.predictions.flight_delay).to(
+          be_instance_of(
+            Amadeus::Namespaces::Travel::Predictions::FlightDelay
+          )
+        )
+      end
+    end
+
     describe '.travel.predictions.trip_purpose' do
       it 'should return a AirTraffic object' do
         expect(@amadeus.travel.predictions.trip_purpose).to(
