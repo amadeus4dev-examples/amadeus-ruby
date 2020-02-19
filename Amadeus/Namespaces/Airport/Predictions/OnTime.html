@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+  Class: Amadeus::Namespaces::Airport::Predictions::OnTime
   
     &mdash; Documentation by YARD 0.9.24
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "Amadeus::Namespaces::Shopping::FlightOffers::Prediction";
+  pathId = "Amadeus::Namespaces::Airport::Predictions::OnTime";
   relpath = '../../../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../../_index.html">Index (P)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Shopping.html" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../FlightOffers.html" title="Amadeus::Namespaces::Shopping::FlightOffers (class)">FlightOffers</a></span></span>
+    <a href="../../../../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Airport.html" title="Amadeus::Namespaces::Airport (class)">Airport</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Predictions.html" title="Amadeus::Namespaces::Airport::Predictions (class)">Predictions</a></span></span>
      &raquo; 
-    <span class="title">Prediction</span>
+    <span class="title">OnTime</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+      <div id="content"><h1>Class: Amadeus::Namespaces::Airport::Predictions::OnTime
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::Shopping::FlightOffers::Prediction</li>
+            <li class="next">Amadeus::Namespaces::Airport::Predictions::OnTime</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/shopping/flight_offers/prediction.rb</dd>
+    <dd>lib/amadeus/namespaces/airport/predictions/on_time.rb</dd>
   </dl>
   
 </div>
@@ -104,12 +104,12 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A namespaced client for the <code>/v1/shopping/flight-offers/prediction</code> endpoints</p>
+<p>A namespaced client for the <code>/v1/airport/predictions/on_time</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight'>flight</span><span class='op'>-</span><span class='id identifier rubyid_offers'>offers</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_airport'>airport</span><span class='period'>.</span><span class='id identifier rubyid_predictions'>predictions</span><span class='period'>.</span><span class='id identifier rubyid_on_time'>on_time</span>
 </code></pre>
 
 
@@ -136,7 +136,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#post-instance_method" title="#post (instance method)">#<strong>post</strong>(params = {})  &#x21d2; Amadeus::Response </a>
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(params = {})  &#x21d2; Amadeus::Response </a>
     
 
     
@@ -151,7 +151,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a list of flight offers including a choice prediction for each itineary.</p>
+<p>Returns a prediction on airport performance.</p>
 </div></span>
   
 </li>
@@ -173,9 +173,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="post-instance_method">
+  <h3 class="signature first" id="get-instance_method">
   
-    #<strong>post</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
+    #<strong>get</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
   
 
   
@@ -184,7 +184,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a list of flight offers including a choice prediction for each itineary.</p>
+<p>Returns a prediction on airport performance.</p>
 
 
   </div>
@@ -195,7 +195,7 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight_offers'>flight_offers</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_flight_offers_response'>flight_offers_response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_airport'>airport</span><span class='period'>.</span><span class='id identifier rubyid_predictions'>predictions</span><span class='period'>.</span><span class='id identifier rubyid_on_time'>on_time</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='label'>airportCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JFK</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>date:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>2020-09-01</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -203,11 +203,13 @@
   
     <li>
       
-        <span class='name'>body</span>
+        <span class='name'>params</span>
       
       
         <span class='type'>(<tt>Hash</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
@@ -222,6 +224,37 @@
   
     
     
+    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:airportCode</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>IATA code of the airport</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:date</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>date of the prediction, in the future</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -271,10 +304,10 @@
 27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/flight_offers/prediction.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/airport/predictions/on_time.rb', line 25</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/shopping/flight-offers/prediction</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/airport/predictions/on-time</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
