@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+  Class: Amadeus::Namespaces::Shopping::FlightOffersSearch::Prediction
   
     &mdash; Documentation by YARD 0.9.25
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "Amadeus::Namespaces::Shopping::FlightOffers::Prediction";
+  pathId = "Amadeus::Namespaces::Shopping::FlightOffersSearch::Prediction";
   relpath = '../../../../';
 </script>
 
@@ -37,7 +37,7 @@
         <div id="menu">
   
     <a href="../../../../_index.html">Index (P)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Shopping.html" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../FlightOffers.html" title="Amadeus::Namespaces::Shopping::FlightOffers (class)">FlightOffers</a></span></span>
+    <span class='title'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Shopping.html" title="Amadeus::Namespaces::Shopping (class)">Shopping</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../FlightOffersSearch.html" title="Amadeus::Namespaces::Shopping::FlightOffersSearch (class)">FlightOffersSearch</a></span></span>
      &raquo; 
     <span class="title">Prediction</span>
   
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+      <div id="content"><h1>Class: Amadeus::Namespaces::Shopping::FlightOffersSearch::Prediction
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::Shopping::FlightOffers::Prediction</li>
+            <li class="next">Amadeus::Namespaces::Shopping::FlightOffersSearch::Prediction</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/shopping/flight_offers/prediction.rb</dd>
+    <dd>lib/amadeus/namespaces/shopping/flight_offers_search/prediction.rb</dd>
   </dl>
   
 </div>
@@ -104,12 +104,12 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A namespaced client for the <code>/v1/shopping/flight-offers/prediction</code> endpoints</p>
+<p>A namespaced client for the <code>/v2/shopping/flight-offers/prediction</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight'>flight</span><span class='op'>-</span><span class='id identifier rubyid_offers'>offers</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight_offers_search'>flight_offers_search</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span>
 </code></pre>
 
 
@@ -195,7 +195,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight_offers'>flight_offers</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_flight_offers_response'>flight_offers_response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_shopping'>shopping</span><span class='period'>.</span><span class='id identifier rubyid_flight_offers_search'>flight_offers_search</span><span class='period'>.</span><span class='id identifier rubyid_prediction'>prediction</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span>
+ <span class='id identifier rubyid_flight_offers_search_response'>flight_offers_search_response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -266,15 +267,15 @@
       <pre class="lines">
 
 
-25
 26
-27</pre>
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/flight_offers/prediction.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/shopping/flight_offers_search/prediction.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/shopping/flight-offers/prediction</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v2/shopping/flight-offers/prediction</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -286,7 +287,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue May 12 12:25:51 2020 by
+  Generated on Thu May 14 17:24:39 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.6.5).
 </div>
