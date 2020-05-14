@@ -1,4 +1,11 @@
 # Changelog
+## 5.0.0 - 2020-05-14
+Release of the Flight Offers Search API.
+
+Add support for the Flight Choice Prediction v2.
+
+Decommission of the Flight Low-fare Search and Flight Choice Prediction v1.
+
 ## 4.0.0 - 2020-02-12
 Release of the [Hotel Booking API](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking)
 
