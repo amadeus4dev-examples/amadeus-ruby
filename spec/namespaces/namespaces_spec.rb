@@ -99,18 +99,18 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
-    describe '.shopping.flight_offers' do
-      it 'should return a FlightOffers object' do
-        expect(@amadeus.shopping.flight_offers).to(
-          be_instance_of Amadeus::Namespaces::Shopping::FlightOffers
+    describe '.shopping.flight_offers_search' do
+      it 'should return a FlightOffersSearch object' do
+        expect(@amadeus.shopping.flight_offers_search).to(
+          be_instance_of Amadeus::Namespaces::Shopping::FlightOffersSearch
         )
       end
     end
 
-    describe '.shopping.flight_offers.prediction' do
+    describe '.shopping.flight_offers_search.prediction' do
       it 'should return a Prediction object' do
-        expect(@amadeus.shopping.flight_offers.prediction).to(
-          be_instance_of Amadeus::Namespaces::Shopping::FlightOffers::Prediction
+        expect(@amadeus.shopping.flight_offers_search.prediction).to(
+          be_instance_of Amadeus::Namespaces::Shopping::FlightOffersSearch::Prediction
         )
       end
     end

@@ -23,12 +23,12 @@ module Amadeus
 
       # The namespace for the FlightOffers API:
       #
-      # @return [Amadeus::Namespaces::Shopping::FlightOffers]
+      # @return [Amadeus::Namespaces::Shopping::FlightOffersSearch]
       # @example
-      #   amadeus.shopping.flight_offers
+      #   amadeus.shopping.flight_offers_search
       #
-      def flight_offers
-        Amadeus::Namespaces::Shopping::FlightOffers.new(client)
+      def flight_offers_search
+        Amadeus::Namespaces::Shopping::FlightOffersSearch.new(client)
       end
 
       # The namespace for the FlightDates API:
