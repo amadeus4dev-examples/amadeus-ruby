@@ -180,11 +180,12 @@ amadeus.shopping.flight_destinations.get(origin: 'MAD')
 # Flight Cheapest Date Search
 amadeus.shopping.flight_dates.get(origin: 'MAD', destination: 'MUC')
 
-# Flight Low-fare Search
-amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2020-08-01')
+# Flight Offers Search
+amadeus.shopping.flight_offers_search.get(originLocationCode: 'NYC', destinationLocationCode: 'MAD', departureDate: '2020-10-01', adults: 1)
 
-# Flight Choice Prediction / Be careful, this example combines 2 API calls: 1. Flight Low-fare Search then Flight Choice Prediction
-amadeus.shopping.flight_offers.prediction.post(amadeus.shopping.flight_offers.get(origin: 'NYC', destination: 'MAD', departureDate: '2020-11-01').body)
+# Flight Choice Prediction / Be careful, this example combines 2 API calls: 1. Flight Offers Search then Flight Choice Prediction
+flight_offers = amadeus.shopping.flight_offers_search.get(originLocationCode: 'NYC', destinationLocationCode: 'MAD', departureDate: '2020-10-01', adults: 1, max: 1).body
+amadeus.shopping.flight_offers_search.prediction.post(flight_offers)
 
 # Flight Delay Prediction
 amadeus.travel.predictions.flight_delay.get(originLocationCod: 'NCE', destinationLocationCod: 'IST', departureDat: '2020-08-01', departureTim: '18:20:00', arrivalDat: '2020-08-01', arrivalTim: '22:15:00', aircraftCod: '321', carrierCod: 'TK', flightNumber: '1816', duration: 'PT31H10M')

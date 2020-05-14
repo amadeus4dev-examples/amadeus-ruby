@@ -34,7 +34,8 @@ module Amadeus
         #   amadeus.shopping.flight_offers_search.get(
         #     originLocationCode: 'NYC',
         #     destinationLocationCode: 'MAD',
-        #     departureDate: '2020-10-01'
+        #     departureDate: '2020-10-01',
+        #     adults: 1
         #   )
         #
 
