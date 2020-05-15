@@ -6,15 +6,11 @@
 [![Dependencies](https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/dependencies.svg?sanitize=true)](gem)
 [![Contact Support](https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/support.svg?sanitize=true)][support]
 
-Amadeus provides a set of APIs for the travel industry. Flights, Hotels, Locations and more.
-
-For more details see the [Ruby
-documentation](https://amadeus4dev.github.io/amadeus-ruby/) on
-[Amadeus.com](https://developers.amadeus.com).
+Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com) or the [SDK class reference](https://amadeus4dev.github.io/amadeus-ruby/).
 
 ## Installation
 
-This gem requires Ruby 2.4+. You can install install it directly or via bundler.
+This gem requires Ruby 2.4+. You can install it directly or via bundler.
 #### Command line
 ```bash
 gem install amadeus
@@ -26,9 +22,7 @@ gem 'amadeus'
 
 ## Getting Started
 
-To make your first API call you will need to [register for an Amadeus
-Developer Account](https://developers.amadeus.com/create-account) and set up
-your first application.
+To make your first API call, you will need to [register](https://developers.amadeus.com/register) for an Amadeus Developer Account and [set up your first application](https://developers.amadeus.com/my-apps).
 
 ```rb
 require 'amadeus'
@@ -54,19 +48,15 @@ The client can be initialized directly.
 amadeus = Amadeus::Client.new(client_id: 'REPLACE_BY_YOUR_API_KEY', client_secret: 'REPLACE_BY_YOUR_API_SECRET')
 ```
 
-Alternatively it can be initialized without any parameters if the environment
-variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
+Alternatively, it can be initialized without any parameters if the environment variables `AMADEUS_CLIENT_ID` and `AMADEUS_CLIENT_SECRET` are present.
 
 ```rb
 amadeus = Amadeus::Client.new
 ```
 
-Your credentials can be found on the [Amadeus
-dashboard](https://developers.amadeus.com/my-apps). [Sign
-up](https://developers.amadeus.com/create-account) for an account today.
+Your credentials can be found on the [Amadeus dashboard](https://developers.amadeus.com/my-apps).
 
-By default the environment for the SDK is the `:test` environment. To switch to
-a production (paid-for) environment please switch the hostname as follows:
+By default, the environment for the SDK is the `:test` environment. To switch to a production (pay-as-you-go) environment please switch the hostname as follows:
 
 ```rb
 amadeus = Amadeus::Client.new(hostname: :production)
@@ -74,34 +64,26 @@ amadeus = Amadeus::Client.new(hostname: :production)
 
 ## Documentation
 
-Amadeus has a large set of APIs, and our documentation is here to get you
-started today. Head over to our
-[Reference](https://amadeus4dev.github.io/amadeus-ruby/) documentation for
-in-depth information about every SDK method, its arguments and return types.
+Amadeus has a large set of APIs, and our documentation is here to get you started today. Head over to our [reference documentation](https://amadeus4dev.github.io/amadeus-ruby/) for in-depth information about every SDK method, its arguments and return types.
 
 
-* [Get Started](https://amadeus4dev.github.io/amadeus-ruby/) documentation
-  * [Initialize the SDK](https://amadeus4dev.github.io/amadeus-ruby/)
+  * [Get Started](https://amadeus4dev.github.io/amadeus-ruby/)
   * [Find an Airport](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/ReferenceData/Locations/Airports.html)
-  * [Find a Flight](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightOffers.html)
+  * [Find a Flight](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightOffersSearch.html)
   * [Get Flight Inspiration](https://amadeus4dev.github.io/amadeus-ruby/Amadeus/Namespaces/Shopping/FlightDestinations.html)
 
 ## Making API calls
 
-This library conveniently maps every API path to a similar path.
-
-For example, `GET /v2/reference-data/urls/checkin-links?airlineCode=BA` would be:
+This library conveniently maps every API path to a similar path. For example, `GET /v2/reference-data/urls/checkin-links?airlineCode=BA` would be:
 
 ```rb
 amadeus.reference_data.urls.checkin_links.get(airlineCode: 'BA')
 ```
 
-Similarly, to select a resource by ID, you can pass in the ID to the **singular** path.
-
-For example,  `GET /v2/shopping/hotel-offers/XZY` would be:
+Similarly, to select a resource by ID, you can pass in the ID to the **singular** path. For example,  `GET /v2/shopping/hotel-offers/XZY` would be:
 
 ```rb
-amadeus.shopping.hotel_offer('D5BEE9D0D08B6678C2F5FAD910DC110BCDA187D21D4FCE68ED423426D0A246BB').get
+amadeus.shopping.hotel_offer('XZY').get
 ```
 
 You can make any arbitrary API call as well directly with the `.get` method:
@@ -112,10 +94,7 @@ amadeus.get('/v2/reference-data/urls/checkin-links', airlineCode: 'BA')
 
 ## Response
 
-Every API call returns a `Amadeus::Response` object. If the API call contained
-a JSON response it will parse the JSON into the `.result` attribute. If this data
-also contains a `data` key, it will make that available as the `.data`
-attribute. The raw body of the response is always avaulable as the `.body` attribute.
+Every API call returns a `Amadeus::Response` object. If the API call contained a JSON response, it will parse the JSON into `.result` attribute. If this data also contains a `data` key, that will be made available in `.data` attribute. The raw body of the response is always available in `.body` attribute.
 
 ```rb
 response = amadeus.reference_data.locations.get(
@@ -158,10 +137,7 @@ amadeus = Amadeus::Client.new(
 )
 ```
 
-Additionally, to enable more verbose logging, you can set the appropriate level
-on your own logger, though the easiest way would be to enable debugging via a
-parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment
-variable.
+Additionally, to enable more verbose logging, you can set the appropriate level on your own logger. The easiest way would be to enable debugging via a parameter on initialization, or using the `AMADEUS_LOG_LEVEL` environment variable.
 
 ```rb
 require 'logger'
