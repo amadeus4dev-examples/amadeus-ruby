@@ -77,5 +77,15 @@ module Amadeus
     def airport
       Airport.new(self)
     end
+
+    # The namespace for the Safety related APIs:
+    #
+    # @return [Amadeus::Namespaces::Safety]
+    # @example Some of the further namespaces available
+    #   amadeus.safety.safety_rated_locations
+    #
+    def safety
+      Safety.new(self)
+    end
   end
 end

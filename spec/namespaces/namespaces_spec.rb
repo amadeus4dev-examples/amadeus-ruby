@@ -73,12 +73,52 @@ RSpec.describe Amadeus::Namespaces do
       end
     end
 
-    describe '.reference_data.locations..points_of_interest.by_square' do
+    describe '.reference_data.locations.points_of_interest.by_square' do
       it 'should return a PointsOfInterest::BySquare object' do
         expect(@amadeus.reference_data.locations.points_of_interest.by_square).to(
           be_instance_of(
             Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
           )
+        )
+      end
+    end
+
+    describe '.reference_data.locations.point_of_interest' do
+      it 'should return a PointOfInterest object' do
+        expect(@amadeus.reference_data.locations.point_of_interest('9CB40CB5D0')).to(
+          be_instance_of Amadeus::Namespaces::ReferenceData::Locations::PointOfInterest
+        )
+      end
+    end
+
+    describe '.shopping' do
+      it 'should return a Safety object' do
+        expect(@amadeus.safety).to(
+          be_instance_of Amadeus::Namespaces::Safety
+        )
+      end
+    end
+
+    describe '.safety.safety_rated_locations' do
+      it 'should return a SafetyRatedLocations object' do
+        expect(@amadeus.safety.safety_rated_locations).to(
+          be_instance_of Amadeus::Namespaces::Safety::SafetyRatedLocations
+        )
+      end
+    end
+
+    describe '.safety.safety_rated_location' do
+      it 'should return a SafetyRatedLocation object' do
+        expect(@amadeus.safety.safety_rated_location('CXXXX')).to(
+          be_instance_of Amadeus::Namespaces::Safety::SafetyRatedLocation
+        )
+      end
+    end
+
+    describe '.safety.safety_rated_locations.by_square' do
+      it 'should return a BySquare object' do
+        expect(@amadeus.safety.safety_rated_locations.by_square).to(
+          be_instance_of Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare
         )
       end
     end
