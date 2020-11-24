@@ -26,7 +26,7 @@ module Amadeus
           @location_id = location_id
         end
 
-        # Returns details for a specific airport
+        # Returns details for a specific place
         #
         # @return [Amadeus::Response] a parsed response
         # @raise [Amadeus::Base] an exception if the call failed
