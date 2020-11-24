@@ -3,7 +3,7 @@
 module Amadeus
   module Namespaces
     # A namespaced client for the
-    # +/v1/booking+ endpoints
+    # +/v1/safety+ endpoints
     #
     # Access via the +Amadeus::Client+ object
     #

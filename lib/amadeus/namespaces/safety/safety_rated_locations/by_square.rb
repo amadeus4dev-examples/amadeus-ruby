@@ -23,7 +23,7 @@ module Amadeus
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call
           #   failed
-          # @example What are the popular places in Barcelona?
+          # @example How safe is Barcelona?
           #   amadeus.safety.safety_rated_locations.by_square.get(
           #     north: 41.397158,
           #     west: 2.160873,
