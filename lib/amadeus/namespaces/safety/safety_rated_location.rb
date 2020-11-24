@@ -3,9 +3,6 @@
 module Amadeus
   module Namespaces
     class Safety
-      #
-      # Access via the +Amadeus::Client+ object
-      #
       #   amadeus = Amadeus::Client.new
       #   amadeus.safety.safety_rated_location('Q930400801')
       #
