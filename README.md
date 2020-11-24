@@ -213,11 +213,19 @@ amadeus.booking.hotel_bookings.post(offerId, guests, payments)
 # What are the reviews for the Holiday INN Manhattan and the Hilton London Paddington
 amadeus.e_reputation.hotel_sentiments.get(hotelIds: 'SJNYCAJA,TELONMFS')
 
-# Point of Interest
+# Points of Interest
 # What are the popular places in Barcelona (based a geo location and a radius)
 amadeus.reference_data.locations.points_of_interest.get(latitude: 41.397158, longitude: 2.160873)
 # What are the popular places in Barcelona? (based on a square)
 amadeus.reference_data.locations.points_of_interest.by_square.get(north: 41.397158, west: 2.160873, south: 41.394582, east: 2.177181)
+
+# Safe Place
+# How safe is Barcelona? (based a geo location and a radius)
+amadeus.safety.safety_rated_locations.get(latitude=41.397158, longitude=2.160873)
+# How safe is Barcelona? (based on a square)
+amadeus.safety.safety_rated_locations.by_square.get(north=41.397158, west=2.160873, south=41.394582, east=2.177181)
+# What is the safety information of a location based on it's Id?
+amadeus.safety.safety_rated_location('Q930402753').get()
 
 # Airport On-Time Performance
 amadeus.airport.predictions.on_time.get(airportCode: 'JFK', date: '2020-08-01')
