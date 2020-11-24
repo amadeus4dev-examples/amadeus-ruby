@@ -3,15 +3,11 @@
 module Amadeus
   module Namespaces
     class Safety
-      #   amadeus = Amadeus::Client.new
       #   amadeus.safety.safety_rated_location('Q930400801')
       #
       class SafetyRatedLocation < Amadeus::Client::Decorator
-        # the Location ID
         attr_reader :location_id
 
-        # Initialize this namespaced client with an
-        # {Amadeus::Client} instance and an optional Location ID
         #
         # @param [Amadeus::Client] client
         # @param [Number] location_id
