@@ -3,14 +3,14 @@
 module Amadeus
   module Namespaces
     class Safety
-      #   amadeus.safety.safety_rated_location('Q930400801')
+      #   amadeus.safety.safety_rated_location('Q930400801').get()
       #
       class SafetyRatedLocation < Amadeus::Client::Decorator
         attr_reader :safe_location_id
 
         #
         # @param [Amadeus::Client] client
-        # @param [Number] location_id
+        # @param [Number] safe_location_id
         #
         def initialize(client, safe_location_id = nil)
           super(client)

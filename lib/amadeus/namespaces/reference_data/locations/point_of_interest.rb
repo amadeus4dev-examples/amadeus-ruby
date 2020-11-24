@@ -20,7 +20,7 @@ module Amadeus
           # {Amadeus::Client} instance and an optional Location ID
           #
           # @param [Amadeus::Client] client
-          # @param [Number] location_id
+          # @param [Number] poi_location_id
           #
           def initialize(client, poi_location_id = nil)
             super(client)
