@@ -4,31 +4,31 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
+  Class: Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare
   
     &mdash; Documentation by YARD 0.9.25
   
 </title>
 
-  <link rel="stylesheet" href="../../../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="../../../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare";
-  relpath = '../../../../../';
+  pathId = "Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare";
+  relpath = '../../../../';
 </script>
 
 
-  <script type="text/javascript" charset="utf-8" src="../../../../../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
 
-  <script type="text/javascript" charset="utf-8" src="../../../../../js/app.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
 
 
   </head>
   <body>
     <div class="nav_wrap">
-      <iframe id="nav" src="../../../../../class_list.html?1"></iframe>
+      <iframe id="nav" src="../../../../class_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -36,8 +36,8 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../../../_index.html">Index (B)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../ReferenceData.html" title="Amadeus::Namespaces::ReferenceData (class)">ReferenceData</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Locations.html" title="Amadeus::Namespaces::ReferenceData::Locations (class)">Locations</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../PointsOfInterest.html" title="Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest (class)">PointsOfInterest</a></span></span>
+    <a href="../../../../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Namespaces.html" title="Amadeus::Namespaces (module)">Namespaces</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Safety.html" title="Amadeus::Namespaces::Safety (class)">Safety</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../SafetyRatedLocations.html" title="Amadeus::Namespaces::Safety::SafetyRatedLocations (class)">SafetyRatedLocations</a></span></span>
      &raquo; 
     <span class="title">BySquare</span>
   
@@ -46,7 +46,7 @@
         <div id="search">
   
     <a class="full_list_link" id="class_list_link"
-        href="../../../../../class_list.html">
+        href="../../../../class_list.html">
 
         <svg width="24" height="24">
           <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare
+      <div id="content"><h1>Class: Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'>Client::Decorator</span></li>
           
-            <li class="next">Amadeus::Namespaces::ReferenceData::Locations::PointsOfInterest::BySquare</li>
+            <li class="next">Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/amadeus/namespaces/reference_data/locations/points_of_interest/by_square.rb</dd>
+    <dd>lib/amadeus/namespaces/safety/safety_rated_locations/by_square.rb</dd>
   </dl>
   
 </div>
@@ -104,12 +104,12 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A namespaced client for the <code>/v1/reference-data/locations/pois/by-square</code> endpoints</p>
+<p>A namespaced client for the <code>/v1/safety/safety_rated_locations/by-square</code> endpoints</p>
 
 <p>Access via the <code>Amadeus::Client</code> object</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_points_of_interest'>points_of_interest</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_amadeus'>amadeus</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../../Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../../Client.html" title="Amadeus::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../../../Client.html#initialize-instance_method" title="Amadeus::Client#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_safety'>safety</span><span class='period'>.</span><span class='id identifier rubyid_safety_rated_locations'>safety_rated_locations</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span>
 </code></pre>
 
 
@@ -151,7 +151,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a list of relevant point of interests  around a defined square (4 points).</p>
+<p>Returns a list of relevant safety information  around a defined square (4 points).</p>
 </div></span>
   
 </li>
@@ -175,7 +175,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="get-instance_method">
   
-    #<strong>get</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="../../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
+    #<strong>get</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt> 
   
 
   
@@ -184,7 +184,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a list of relevant point of interests</p>
+<p>Returns a list of relevant safety information</p>
 
 <pre class="code ruby"><code class="ruby">around a defined square (4 points).
 </code></pre>
@@ -199,10 +199,10 @@
     
       
         <p class="example_title"><div class='inline'>
-<p>What are the popular places in Barcelona?</p>
+<p>How safe is Barcelona?</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_points_of_interest'>points_of_interest</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
+      <pre class="example code"><code><span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_safety'>safety</span><span class='period'>.</span><span class='id identifier rubyid_safety_rated_locations'>safety_rated_locations</span><span class='period'>.</span><span class='id identifier rubyid_by_square'>by_square</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span>
   <span class='label'>north:</span> <span class='float'>41.397158</span><span class='comma'>,</span>
   <span class='label'>west:</span> <span class='float'>2.160873</span><span class='comma'>,</span>
   <span class='label'>south:</span> <span class='float'>41.394582</span><span class='comma'>,</span>
@@ -300,7 +300,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Response.html" title="Amadeus::Response (class)">Amadeus::Response</a></span></tt>)</span>
       
       
       
@@ -337,15 +337,15 @@
       <pre class="lines">
 
 
+34
 35
-36
-37</pre>
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/reference_data/locations/points_of_interest/by_square.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/amadeus/namespaces/safety/safety_rated_locations/by_square.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/reference-data/locations/pois/by-square</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1/safety/safety-rated-locations/by-square</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
