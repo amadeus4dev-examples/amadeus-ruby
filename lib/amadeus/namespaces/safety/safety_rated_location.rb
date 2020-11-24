@@ -6,7 +6,7 @@ module Amadeus
       #   amadeus.safety.safety_rated_location('Q930400801')
       #
       class SafetyRatedLocation < Amadeus::Client::Decorator
-        attr_reader :location_id
+        attr_reader :safe_location_id
 
         #
         # @param [Amadeus::Client] client
@@ -14,7 +14,7 @@ module Amadeus
         #
         def initialize(client, location_id = nil)
           super(client)
-          @location_id = location_id
+          @safe_location_id = safe_location_id
         end
 
         # Returns details for a specific place
@@ -25,7 +25,7 @@ module Amadeus
         #   amadeus.safety.safety_rated_location('Q930402753').get
         #
         def get(params = {})
-          client.get("/v1/safety/safety-rated-locations/#{@location_id}", params)
+          client.get("/v1/safety/safety-rated-locations/#{@safe_location_id}", params)
         end
       end
     end
