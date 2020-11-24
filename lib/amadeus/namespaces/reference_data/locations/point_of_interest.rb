@@ -5,7 +5,7 @@ module Amadeus
     class ReferenceData
       class Locations
         # A namespaced client for the
-        # +/v1/reference-data/locations/pois+ endpoints
+        # +/v1/reference-data/locations/pois/:location_id+ endpoints
         #
         # Access via the +Amadeus::Client+ object
         #

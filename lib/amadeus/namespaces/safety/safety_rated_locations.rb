@@ -4,7 +4,7 @@ module Amadeus
   module Namespaces
     class Safety
       # A namespaced client for the
-      # +/v1/reference-data/locations/pois+ endpoints
+      # +/v1/safety/safety_rated_locations/+ endpoints
       #
       # Access via the +Amadeus::Client+ object
       #
@@ -12,7 +12,7 @@ module Amadeus
       #   amadeus.safety.safety_rated_locations
       #
       class SafetyRatedLocations < Amadeus::Client::Decorator
-        # The namespace for the Point Of Interest API:
+        # The namespace for the Safe Place API:
         #
         # @return [Amadeus::Namespaces::Safety::SafetyRatedLocations]
         # @example
@@ -22,7 +22,7 @@ module Amadeus
           Amadeus::Namespaces::Safety::SafetyRatedLocations::BySquare.new(client)
         end
 
-        # Returns a list of relevant point of interests near to a given point.
+        # Returns a list of relevant safety information near to a given point.
         #
         # @option params [Double] :latitude latitude location to be at the
         #   center of the search circle - required

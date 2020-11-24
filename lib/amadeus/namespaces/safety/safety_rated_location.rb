@@ -3,7 +3,6 @@
 module Amadeus
   module Namespaces
     class Safety
-      # A namespaced client for the
       # +/v1/safety/safety_rated_location/:location_id+ endpoints
       #
       # Access via the +Amadeus::Client+ object
