@@ -14,7 +14,7 @@ module Amadeus
         #
         class PointOfInterest < Amadeus::Client::Decorator
           # the Location ID
-          attr_reader :location_id
+          attr_reader :poi_location_id
 
           # Initialize this namespaced client with an
           # {Amadeus::Client} instance and an optional Location ID
@@ -22,9 +22,9 @@ module Amadeus
           # @param [Amadeus::Client] client
           # @param [Number] location_id
           #
-          def initialize(client, location_id = nil)
+          def initialize(client, poi_location_id = nil)
             super(client)
-            @location_id = location_id
+            @poi_location_id = poi_location_id
           end
 
           # Returns details for a specific poi
@@ -35,7 +35,7 @@ module Amadeus
           #   amadeus.reference_data.locations.point_of_interest('9CB40CB5D0').get
           #
           def get(params = {})
-            client.get("/v1/reference-data/locations/pois/#{@location_id}", params)
+            client.get("/v1/reference-data/locations/pois/#{@poi_location_id}", params)
           end
         end
       end

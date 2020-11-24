@@ -12,7 +12,7 @@ module Amadeus
         # @param [Amadeus::Client] client
         # @param [Number] location_id
         #
-        def initialize(client, location_id = nil)
+        def initialize(client, safe_location_id = nil)
           super(client)
           @safe_location_id = safe_location_id
         end
