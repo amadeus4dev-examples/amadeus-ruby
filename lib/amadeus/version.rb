@@ -2,5 +2,5 @@
 
 module Amadeus
   # The current client version
-  VERSION = '5.0.0'
+  VERSION = '5.1.0'
 end

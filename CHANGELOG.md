@@ -1,4 +1,8 @@
 # Changelog
+## 5.1.0 - 2020-11-26
+
+Add support for Safe Place API.
+Add support for retrieve by id for Points Of Interest API
 ## 5.0.0 - 2020-05-14
 Release of the Flight Offers Search API.
 
