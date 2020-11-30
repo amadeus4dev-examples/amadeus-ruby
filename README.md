@@ -34,7 +34,7 @@ amadeus = Amadeus::Client.new({
 })
 
 begin
-  puts amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' })
+  puts amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' }).body
 rescue Amadeus::ResponseError => error
   puts error
 end
