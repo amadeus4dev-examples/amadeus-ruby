@@ -90,7 +90,7 @@
 <span class='rbrace'>}</span><span class='rparen'>)</span>
 
 <span class='kw'>begin</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>airlineCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_amadeus'>amadeus</span><span class='period'>.</span><span class='id identifier rubyid_reference_data'>reference_data</span><span class='period'>.</span><span class='id identifier rubyid_urls'>urls</span><span class='period'>.</span><span class='id identifier rubyid_checkin_links'>checkin_links</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>airlineCode:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>BA</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span>
 <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="Amadeus.html" title="Amadeus (module)">Amadeus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Amadeus/ResponseError.html" title="Amadeus::ResponseError (class)">ResponseError</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_error'>error</span>
 <span class='kw'>end</span>
@@ -300,7 +300,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Nov 26 09:30:01 2020 by
+  Generated on Mon Nov 30 15:39:08 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.6.5).
 </div>
