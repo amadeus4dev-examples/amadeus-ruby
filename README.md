@@ -34,7 +34,7 @@ amadeus = Amadeus::Client.new({
 })
 
 begin
-  puts amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' }).body
+  puts amadeus.shopping.flight_offers_search.get(originLocationCode: 'NYC', destinationLocationCode: 'MAD', departureDate: '2021-05-01', adults: 1, max: 1).body
 rescue Amadeus::ResponseError => error
   puts error
 end
