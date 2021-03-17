@@ -87,5 +87,15 @@ module Amadeus
     def safety
       Safety.new(self)
     end
+
+    # The namespace for the Analytics related APIs:
+    #
+    # @return [Amadeus::Namespaces::Analytics]
+    # @example Some of the further namespaces available
+    #   amadeus.analytics.itinerary_price_metrics
+    #
+    def analytics
+      Analytics.new(self)
+    end
   end
 end
