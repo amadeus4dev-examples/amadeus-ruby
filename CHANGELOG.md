@@ -1,4 +1,7 @@
 # Changelog
+## 5.2.0 - 2021-03-20
+
+Add support for Flight Price Analysis. Thanks [@developius](https://github.com/developius) for the contribution.
 ## 5.1.0 - 2020-11-26
 
 Add support for Safe Place API.

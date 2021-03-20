@@ -24,9 +24,9 @@ module Amadeus
         # @raise [Amadeus::Base] an exception if the call failed
         # @example
         #   amadeus.analytics.itinerary_price_metrics.get(
-        #     originIataCode: 'AKL',
-        #     destinationIataCode: 'BRU',
-        #     departureDate: '2021-03-18'
+        #     originIataCode: 'AMS',
+        #     destinationIataCode: 'CDG',
+        #     departureDate: '2021-06-18'
         #   )
         #
         def get(params = {})

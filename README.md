@@ -221,7 +221,6 @@ amadeus.reference_data.locations.points_of_interest.by_square.get(north: 41.3971
 # Returns a single Point of Interest from a given id
 amadeus.reference_data.locations.point_of_interest('9CB40CB5D0').get()
 
-
 # Safe Place
 # How safe is Barcelona? (based a geo location and a radius)
 amadeus.safety.safety_rated_locations.get(latitude: 41.397158, longitude: 2.160873)
@@ -232,6 +231,9 @@ amadeus.safety.safety_rated_location('Q930402753').get()
 
 # Airport On-Time Performance
 amadeus.airport.predictions.on_time.get(airportCode: 'JFK', date: '2020-08-01')
+
+# Flight Price Analysis
+amadeus.analytics.itinerary_price_metrics.get(originIataCode: 'AMS', destinationIataCode: 'CDG', departureDate: '2021-08-18')
 
 # Trip Purpose Prediction
 amadeus.travel.predictions.trip_purpose.get(originLocationCode: 'ATH', destinationLocationCode: 'MAD', departureDate: '2020-08-01', returnDate: '2020-08-12', searchDate: '2020-06-11')
