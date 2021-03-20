@@ -11,7 +11,7 @@ Amadeus provides a rich set of APIs for the travel industry. For more details, c
 
 ## Installation
 
-This gem requires Ruby 2.4+. You can install it directly or via bundler.
+This gem requires Ruby 2.5+. You can install it directly or via bundler.
 #### Command line
 ```bash
 gem install amadeus
