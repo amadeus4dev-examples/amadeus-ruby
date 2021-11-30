@@ -20,6 +20,7 @@ jobs:
     - name: Run tests
       run: bundle exec rake
     - name: Publish to RubyGems
+      if: ${{ matrix.ruby-version == '2.6.5' }}
       run: |
           mkdir -p $HOME/.gem
           touch $HOME/.gem/credentials
@@ -29,4 +30,3 @@ jobs:
           gem push *.gem
       env:
           GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
-      if: ${{ steps.release.outputs.release_created }} && ${{ matrix.ruby-version == '2.6.5' }}
