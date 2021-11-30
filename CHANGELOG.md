@@ -1,4 +1,7 @@
 # Changelog
+## 5.2.1 - 2021-11-30
+Migrate to Github actions
+
 ## 5.2.0 - 2021-03-20
 
 Add support for Flight Price Analysis. Thanks [@developius](https://github.com/developius) for the contribution.
