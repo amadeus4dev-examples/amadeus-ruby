@@ -1,7 +1,7 @@
 # Amadeus Ruby SDK
 
 [![Gem Version](https://badge.fury.io/rb/amadeus.svg)][gem]
-[![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)][travis]
+![Build Status](https://travis-ci.org/amadeus4dev/amadeus-ruby.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d2e15221a502a7d71144/maintainability)](https://codeclimate.com/github/amadeus4dev/amadeus-ruby/maintainability)
 [![Dependencies](https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/dependencies.svg?sanitize=true)](gem)
 [![Contact Support](https://github.com/amadeus4dev/amadeus-ruby/raw/master/.github/images/support.svg?sanitize=true)][support]
