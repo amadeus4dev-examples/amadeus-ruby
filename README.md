@@ -255,6 +255,5 @@ to help you. You can find us on
 [email](mailto:developers@amadeus.com).
 
 [gem]: https://rubygems.org/gems/amadeus
-[travis]: http://travis-ci.org/amadeus4dev/amadeus-ruby
 [support]: http://developers.amadeus.com/support
 [codeclimate]: https://codeclimate.com/github/amadeus4dev/amadeus-ruby
