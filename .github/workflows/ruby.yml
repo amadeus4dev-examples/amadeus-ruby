@@ -1,4 +1,4 @@
-name: Ruby
+name: build
 on:
   push:
     # Sequence of patterns matched against refs/tags

@@ -41,12 +41,12 @@ To make a new release, follow the following steps:
 
 - [ ] Update the version in `version.rb` using semver rules
 - [ ] Update the `CHANGELOG.md` with the new version
-- [ ] Push all changes and ensure all tests pass on Travis
+- [ ] Push all changes and ensure all tests pass on GitHub Actions
 - [ ] Tag your release in git using `git --tag vX.X.X`
 - [ ] Push the new tag `git push --tags`
 - [ ] Update the [Releases](https://github.com/amadeus4dev/amadeus-ruby/releases) tab on GitHub with a new release for the tag, copying the description from the `CHANGELOG.md`
 
-Travis will bow build the gem and release it to RubyGems.
+GitHub Actions will bow build the gem and release it to RubyGems.
 
 ## How to contribute to the Amadeus Ruby Gem
 
