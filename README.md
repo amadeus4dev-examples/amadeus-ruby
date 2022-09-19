@@ -8,6 +8,11 @@
 
 Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com) or the [SDK class reference](https://amadeus4dev.github.io/amadeus-ruby/).
 
+## :warning: Important message :warning:
+
+:heavy_exclamation_mark: This SDK is maintained **by the developer community only**. The Amadeus for Developers team doesn't support or maintain it. :heavy_exclamation_mark: 
+
+
 ## Installation
 
 This gem requires Ruby 2.5+. You can install it directly or via bundler.
