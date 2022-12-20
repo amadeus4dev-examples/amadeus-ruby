@@ -16,13 +16,15 @@ We are trying to keep 100% coverage, so keep an eye on the `coverage` folder for
 
 ### Using a library locally
 
+#### Method 1
+
 To use a library locally as a dependency, simply link to this library in your project by path:
 
 ```ruby
 gem 'amadeus', path: '../path/to/clone'
 ```
 
-To install quickly get playing with your code we have added a console that automatically includes the gem into the gem path.
+To install quickly and get playing with your code we have added a console that automatically includes the gem into the gem path.
 
 ```sh
 rake console
@@ -34,6 +36,33 @@ Alternatively you can use Amadeus in your script as follows.
 ```sh
 ruby -r amadeus -I ./lib script.rb
 ```
+
+#### Method 2
+
+Add all your files to your git repo:
+
+```sh
+git add --all
+```
+
+This is required because the files that are packaged in the library (edited) can only be packaged if they are added to the git repo
+(not commited).
+
+Then run the following 3 commands to generate the gem locally and install it in the amadeus-ruby project:
+
+```sh
+build amadeus.gemspec
+```
+
+```sh
+gem uninstall amadeus
+```
+
+```sh
+gem install amadeus-1.0.0.gem
+```
+
+
 
 ### Releasing
 
